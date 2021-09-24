@@ -6,10 +6,20 @@ import {compilerOptions} from './tsconfig.json';
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  rootDir: './',
-  testMatch: ['<rootDir>/src/**/*.test.ts'],
+  roots: ['<rootDir>/src'],
+  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
+  transform: {
+    '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: '<rootDir>/',
   }),
+  globalSetup: '<rootDir>/test/jest.setup.ts',
+  globals: {
+    'ts-jest': {
+      tsconfig: '<rootDir>/tsconfig.jest.json',
+    },
+  },
 };
 export default config;
