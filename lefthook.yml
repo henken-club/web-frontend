@@ -3,7 +3,7 @@ pre-commit:
   commands:
     eslint:
       glob: '*.{js,jsx,ts,tsx}'
-      run: eslint {staged_files}
+      run: eslint {staged_files} --cache
     prettier:
       glob: '*.{json,yml,graphql}'
       run: prettier --check {staged_files}
