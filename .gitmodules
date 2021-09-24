@@ -1,0 +1,3 @@
+[submodule ".graphql"]
+	path = .graphql
+	url = git@github.com:henken-club/graphql-schema.git
