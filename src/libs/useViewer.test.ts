@@ -1,14 +1,8 @@
-import {act, renderHook, WrapperComponent} from '@testing-library/react-hooks';
-import {RecoilRoot} from 'recoil';
-import React from 'react';
+import {act, renderHook} from '@testing-library/react-hooks';
 
 import {useViewer} from './useViewer';
 
-const RecoilWrapper: WrapperComponent<unknown> = ({children}) => (
-  <RecoilRoot>
-    <>{children}</>
-  </RecoilRoot>
-);
+import {RecoilWrapper} from '~/tests/RecoilWrapper';
 
 describe('useViewer', () => {
   it('初期状態はundefined', () => {

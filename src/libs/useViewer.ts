@@ -1,15 +1,4 @@
-import gql from 'graphql-tag';
 import {atom, useRecoilValue, useSetRecoilState} from 'recoil';
-
-const UseViewerQuery = gql`
-  query GetViewer {
-    viewer {
-      id
-      alias
-      displayName
-    }
-  }
-`;
 
 export type Viewer = {
   id: string;
