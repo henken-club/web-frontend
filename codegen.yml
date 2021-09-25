@@ -1,29 +1,14 @@
 schema: .graphql/schema.graphql
 
 generates:
-  ./src/types/codegen.ts:
-    plugins:
-      - typescript
-    config:
-      scalars:
-        DateTime: string
-
-  ./src/libs/:
-    preset: near-operation-file
+  ./src/libs/codegen.ts:
     documents:
-      - 'src/libs/**/*.ts'
+      - 'src/libs/**/*.{ts,tsx}'
       - '!src/libs/**/*.codegen.ts'
     plugins:
       - typescript
       - typescript-operations
       - typescript-urql
-    presetConfig:
-      baseTypesPath: ../types/codegen.ts
-      extension: .codegen.ts
-
-  ./src/mocks/codegen.ts:
-    documents:
-      - 'src/**/*.{ts,tsx}'
-    plugins:
-      - typescript
-      - typescript-operations
+    config:
+      scalars:
+        DateTime: string
