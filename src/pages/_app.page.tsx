@@ -5,7 +5,7 @@ import {RecoilRoot} from 'recoil';
 
 import {localeDetector} from '~/i18n/detector';
 import TypesafeI18n from '~/i18n/i18n-react';
-import {UrqlClientProvider} from '~/libs/UrqlClientProvider';
+import {UrqlProvider} from '~/urql/UrqlProvider';
 import {Viewer} from '~/libs/Viewer';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -25,12 +25,12 @@ const App = ({
 
   return (
     <RecoilRoot>
-      <UrqlClientProvider>
+      <UrqlProvider>
         <Viewer />
         <TypesafeI18n initialLocale={detectedLocales}>
           <Component {...pageProps} />
         </TypesafeI18n>
-      </UrqlClientProvider>
+      </UrqlProvider>
     </RecoilRoot>
   );
 };

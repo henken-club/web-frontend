@@ -1,11 +1,17 @@
+/* eslint-disable import/extensions */
+
 import {graphql, GraphQLHandler} from 'msw';
 import faker from 'faker';
 
-import {GetViewerQuery, GetViewerQueryVariables} from './codegen';
+import {
+  GetViewerQuery,
+  GetViewerQueryVariables,
+  GetViewerDocument,
+} from '~/libs/Viewer.codegen';
 
 const devMocks: GraphQLHandler[] = [
   graphql.query<GetViewerQuery, GetViewerQueryVariables>(
-    'GetViewer',
+    GetViewerDocument,
     (req, res, ctx) => {
       if (req.headers.get('Authorization'))
         return res(
