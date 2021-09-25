@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import gql from 'graphql-tag';
 
-import {useGetViewerQuery} from './Viewer.codegen';
+import {useGetViewerQuery} from './codegen';
 import {useViewer} from './useViewer';
 
 const GetViewerQuery = gql`

@@ -1,5 +1,3 @@
-/* eslint-disable import/extensions */
-
 import {graphql, GraphQLHandler} from 'msw';
 import faker from 'faker';
 
@@ -7,7 +5,7 @@ import {
   GetViewerQuery,
   GetViewerQueryVariables,
   GetViewerDocument,
-} from '~/libs/Viewer.codegen';
+} from '~/libs/codegen';
 
 const devMocks: GraphQLHandler[] = [
   graphql.query<GetViewerQuery, GetViewerQueryVariables>(
