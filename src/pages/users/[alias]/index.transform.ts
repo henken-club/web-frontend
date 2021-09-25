@@ -128,9 +128,9 @@ export const transformer = ({
             })),
           },
           postsHenkens: {
-            count: user.postedHenkens.totalCount,
-            more: user.postedHenkens.pageInfo.hasNextPage,
-            henkens: user.postedHenkens.edges.map(({node}) => ({
+            count: user.postsHenkens.totalCount,
+            more: user.postsHenkens.pageInfo.hasNextPage,
+            henkens: user.postsHenkens.edges.map(({node}) => ({
               id: node.id,
               comment: node.comment,
               content: transformHenkenContent(node.content),

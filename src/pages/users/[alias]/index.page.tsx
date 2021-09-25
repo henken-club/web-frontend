@@ -134,6 +134,8 @@ export const Page: NextPage<PageProps> = ({className, user, ...props}) => {
   return (
     <>
       <p>{user.id}</p>
+      <p>{user.alias}</p>
+      <p>{user.displayName}</p>
     </>
   );
 };
