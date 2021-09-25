@@ -75,7 +75,7 @@ const UserPageQuery = gql`
             }
           }
         }
-        postedHenkens(first: 3) {
+        postsHenkens(first: 3) {
           totalCount
           pageInfo {
             hasNextPage

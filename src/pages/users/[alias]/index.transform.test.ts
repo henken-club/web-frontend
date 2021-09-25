@@ -63,7 +63,7 @@ describe('index.transform', () => {
                 },
               ],
             },
-            postedHenkens: {
+            postsHenkens: {
               __typename: 'HenkenConnection',
               totalCount: 3,
               pageInfo: {
