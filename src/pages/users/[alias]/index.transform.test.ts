@@ -181,6 +181,7 @@ describe('index.transform', () => {
                       __typename: 'UserActivityEdge' as const,
                       node: {
                         __typename: 'UserActivity' as const,
+                        id: faker.datatype.uuid(),
                         event: faker.random.arrayElement([
                           {
                             __typename: 'Henken' as const,
