@@ -138,6 +138,50 @@ const devMocks: GraphQLHandler[] = [
                   },
                 ],
               },
+              activities: {
+                __typename: 'UserActivityConnection',
+                pageInfo: {
+                  __typename: 'PageInfo',
+                  hasNextPage: faker.datatype.boolean(),
+                  endCursor: faker.random.arrayElement([
+                    faker.datatype.uuid(),
+                    null,
+                  ]),
+                },
+                edges: [
+                  {
+                    __typename: 'UserActivityEdge',
+                    node: {
+                      __typename: 'UserActivity',
+                      event: {
+                        __typename: 'Henken',
+                        id: faker.datatype.uuid(),
+                        createdAt: faker.date.past().toISOString(),
+                        comment: faker.lorem.sentence(),
+                        content: faker.random.arrayElement([
+                          {
+                            __typename: 'Book' as const,
+                            id: faker.datatype.uuid(),
+                            title: faker.lorem.words(),
+                          },
+                          {
+                            __typename: 'BookSeries' as const,
+                            id: faker.datatype.uuid(),
+                            title: faker.lorem.words(),
+                          },
+                        ]),
+                        postedBy: {
+                          __typename: 'User' as const,
+                          id: faker.datatype.uuid(),
+                          alias: faker.random.alphaNumeric(8),
+                          displayName: faker.name.findName(),
+                          avatar: faker.image.avatar(),
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
             },
           },
         }),
