@@ -1,5 +1,10 @@
 import gql from 'graphql-tag';
-import {GetServerSideProps, InferGetServerSidePropsType, NextPage} from 'next';
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+  NextPage,
+} from 'next';
 import React from 'react';
 import {Merge} from 'type-fest';
 
@@ -7,6 +12,25 @@ import {getSdk} from './index.page.codegen';
 import {TransformedProps, transformer} from './index.transform';
 
 import {graphqlClient} from '~/libs/graphql-request';
+
+const AllUserPagesQuery = gql`
+  query AllUserPages {
+    manyUsers(limit: 100) {
+      id
+      alias
+    }
+  }
+`;
+
+export type UrlQuery = {alias: string};
+export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
+  return getSdk(graphqlClient)
+    .AllUserPages()
+    .then(({manyUsers}) => ({
+      fallback: 'blocking',
+      paths: manyUsers.map(({alias}) => ({params: {alias}})),
+    }));
+};
 
 const UserPageQuery = gql`
   query UserPage($alias: String!) {
@@ -178,21 +202,21 @@ const UserPageQuery = gql`
   }
 `;
 
-export type UrlQuery = {alias: string};
-export type ServerSideProps = TransformedProps;
-export const getServerSideProps: GetServerSideProps<ServerSideProps, UrlQuery> =
-  async ({params}) => {
-    if (!params?.alias) return {notFound: true};
+export type StaticProps = TransformedProps;
+export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
+  params,
+}) => {
+  if (!params?.alias) return {notFound: true};
 
-    return getSdk(graphqlClient)
-      .UserPage({alias: params.alias})
-      .then(transformer)
-      .then((value) => (value ? {props: value} : {notFound: true}));
-  };
+  return getSdk(graphqlClient)
+    .UserPage({alias: params.alias})
+    .then(transformer)
+    .then((value) => (value ? {props: value} : {notFound: true}));
+};
 
 export type PageProps = Merge<
   {className?: string},
-  InferGetServerSidePropsType<typeof getServerSideProps>
+  InferGetStaticPropsType<typeof getStaticProps>
 >;
 export const Page: NextPage<PageProps> = ({className, user, ...props}) => {
   return (
