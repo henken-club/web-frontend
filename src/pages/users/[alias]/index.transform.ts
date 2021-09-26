@@ -5,6 +5,13 @@ import {
 
 type User = Exclude<UserPageQueryResult['findUser']['user'], null | undefined>;
 
+export const transformUser = <T extends Record<string, unknown>>({
+  __typename,
+  ...props
+}: {__typename: 'User'} & T) => ({
+  ...props,
+});
+
 type AnswerType = 'right' | 'wrong';
 export const transformAnswerType = (type: AnswerTypeEnum): AnswerType => {
   switch (type) {
@@ -68,7 +75,7 @@ export const transformActivitiesEdge = ({
           id: event.id,
           createdAt: event.createdAt,
           comment: event.comment,
-          postedBy: user(event.postedBy),
+          postedBy: transformUser(event.postedBy),
           content: transformHenkenContent(event.content),
         },
       };
@@ -84,7 +91,7 @@ export const transformActivitiesEdge = ({
             id: event.answerTo.id,
             createdAt: event.answerTo.createdAt,
             comment: event.answerTo.comment,
-            postedBy: user(event.answerTo.postedBy),
+            postedBy: transformUser(event.answerTo.postedBy),
             content: transformHenkenContent(event.answerTo.content),
           },
         },
@@ -197,20 +204,12 @@ export const transformer = ({
           followees: {
             count: user.followees.totalCount,
             more: user.followees.pageInfo.hasNextPage,
-            users: user.followees.edges.map(({node}) => ({
-              id: node.id,
-              alias: node.alias,
-              avatar: node.avatar,
-            })),
+            users: user.followees.edges.map(({node}) => transformUser(node)),
           },
           followers: {
             count: user.followers.totalCount,
             more: user.followers.pageInfo.hasNextPage,
-            users: user.followers.edges.map(({node}) => ({
-              id: node.id,
-              alias: node.alias,
-              avatar: node.avatar,
-            })),
+            users: user.followers.edges.map(({node}) => transformUser(node)),
           },
           postsHenkens: {
             count: user.postsHenkens.totalCount,
@@ -219,12 +218,7 @@ export const transformer = ({
               id: node.id,
               comment: node.comment,
               content: transformHenkenContent(node.content),
-              postsTo: {
-                id: node.postsTo.id,
-                alias: node.postsTo.alias,
-                displayName: node.postsTo.displayName,
-                avatar: node.postsTo.avatar,
-              },
+              postsTo: transformUser(node.postsTo),
               answer: node.answer
                 ? {
                     id: node.answer.id,
@@ -241,12 +235,7 @@ export const transformer = ({
               id: node.id,
               comment: node.comment,
               content: transformHenkenContent(node.content),
-              postedBy: {
-                id: node.postedBy.id,
-                alias: node.postedBy.alias,
-                displayName: node.postedBy.displayName,
-                avatar: node.postedBy.avatar,
-              },
+              postedBy: transformUser(node.postedBy),
               answer: node.answer
                 ? {
                     id: node.answer.id,
@@ -266,7 +255,3 @@ export const transformer = ({
         },
       }
     : null;
-
-export const user = <T>({__typename, ...props}: {__typename: 'User'} & T) => ({
-  ...props,
-});
