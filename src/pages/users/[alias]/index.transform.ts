@@ -1,7 +1,96 @@
 import {
-  AnswerType,
+  AnswerType as AnswerTypeEnum,
   UserPageQuery as UserPageQueryResult,
 } from './index.page.codegen';
+
+type User = Exclude<UserPageQueryResult['findUser']['user'], null | undefined>;
+
+type AnswerType = 'right' | 'wrong';
+export const transformAnswerType = (type: AnswerTypeEnum): AnswerType => {
+  switch (type) {
+    case AnswerTypeEnum.Right:
+      return 'right';
+    case AnswerTypeEnum.Wrong:
+      return 'wrong';
+  }
+};
+
+type ActivityNode =
+  | {
+      type: 'Henken';
+      henken: {
+        id: string;
+        createdAt: string;
+        comment: string;
+        postedBy: {
+          id: string;
+          alias: string;
+          displayName: string;
+          avatar: string;
+        };
+        content:
+          | {type: 'Book'; book: {id: string; title: string}}
+          | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
+      };
+    }
+  | {
+      type: 'Answer';
+      answer: {
+        id: string;
+        createdAt: string;
+        comment: string;
+        type: AnswerType;
+        answerTo: {
+          id: string;
+          createdAt: string;
+          comment: string;
+          postedBy: {
+            id: string;
+            alias: string;
+            displayName: string;
+            avatar: string;
+          };
+          content:
+            | {type: 'Book'; book: {id: string; title: string}}
+            | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
+        };
+      };
+    };
+
+export const transformActivitiesEdge = ({
+  node: {event},
+}: User['activities']['edges'][number]): ActivityNode => {
+  switch (event.__typename) {
+    case 'Henken':
+      return {
+        type: 'Henken',
+        henken: {
+          id: event.id,
+          createdAt: event.createdAt,
+          comment: event.comment,
+          postedBy: user(event.postedBy),
+          content: transformHenkenContent(event.content),
+        },
+      };
+    case 'Answer':
+      return {
+        type: 'Answer',
+        answer: {
+          id: event.id,
+          createdAt: event.createdAt,
+          comment: event.comment,
+          type: transformAnswerType(event.type),
+          answerTo: {
+            id: event.answerTo.id,
+            createdAt: event.answerTo.createdAt,
+            comment: event.answerTo.comment,
+            postedBy: user(event.answerTo.postedBy),
+            content: transformHenkenContent(event.answerTo.content),
+          },
+        },
+      };
+  }
+};
 
 export type TransformedProps = {
   user: {
@@ -45,7 +134,7 @@ export type TransformedProps = {
         answer: {
           id: string;
           comment: string;
-          type: 'right' | 'wrong';
+          type: AnswerType;
         } | null;
       }[];
     };
@@ -67,9 +156,14 @@ export type TransformedProps = {
         answer: {
           id: string;
           comment: string;
-          type: 'right' | 'wrong';
+          type: AnswerType;
         } | null;
       }[];
+    };
+    activities: {
+      more: boolean;
+      cursor: string | null;
+      nodes: ActivityNode[];
     };
   };
 };
@@ -87,15 +181,6 @@ export const transformHenkenContent = ({
       return {type: 'Book' as const, book: props};
     case 'BookSeries':
       return {type: 'BookSeries' as const, bookSeries: props};
-  }
-};
-
-export const transformAnswerType = (type: AnswerType) => {
-  switch (type) {
-    case AnswerType.Right:
-      return 'right';
-    case AnswerType.Wrong:
-      return 'wrong';
   }
 };
 
@@ -171,6 +256,17 @@ export const transformer = ({
                 : null,
             })),
           },
+          activities: {
+            cursor: user.activities.pageInfo.endCursor || null,
+            more: user.activities.pageInfo.hasNextPage,
+            nodes: user.activities.edges.map((edge) =>
+              transformActivitiesEdge(edge),
+            ),
+          },
         },
       }
     : null;
+
+export const user = <T>({__typename, ...props}: {__typename: 'User'} & T) => ({
+  ...props,
+});

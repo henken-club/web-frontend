@@ -1,3 +1,5 @@
+import faker from 'faker';
+
 import {AnswerType} from './index.page.codegen';
 import {transformer} from './index.transform';
 
@@ -15,6 +17,8 @@ describe('index.transform', () => {
     });
 
     it('findUser.userが存在するなら変換する', () => {
+      faker.seed(0);
+
       const actual = transformer({
         __typename: 'Query',
         findUser: {
@@ -227,176 +231,47 @@ describe('index.transform', () => {
                 },
               ],
             },
+            activities: {
+              __typename: 'UserActivityConnection',
+              pageInfo: {
+                __typename: 'PageInfo',
+                hasNextPage: true,
+                endCursor: faker.datatype.uuid(),
+              },
+              edges: [
+                {
+                  __typename: 'UserActivityEdge',
+                  node: {
+                    __typename: 'UserActivity',
+                    event: {
+                      __typename: 'Henken',
+                      id: faker.datatype.uuid(),
+                      comment: faker.lorem.sentence(),
+                      content: {
+                        __typename: 'Book',
+                        id: faker.datatype.uuid(),
+                        title: faker.lorem.words(),
+                      },
+                      createdAt: faker.date
+                        .between('2020-01-01', '2020-12-31')
+                        .toISOString(),
+                      postedBy: {
+                        __typename: 'User',
+                        id: faker.datatype.uuid(),
+                        alias: faker.random.alphaNumeric(8),
+                        displayName: faker.name.findName(),
+                        avatar: faker.image.avatar(),
+                      },
+                    },
+                  },
+                },
+              ],
+            },
           },
         },
       });
 
-      expect(actual).toStrictEqual({
-        user: {
-          id: 'id',
-          alias: 'alias',
-          displayName: 'displayName',
-          avatar: 'avatar',
-          followees: {
-            count: 1,
-            more: false,
-            users: [
-              {
-                alias: 'followee1.alias',
-                avatar: 'followee1.avatar',
-                id: 'followee1.id',
-              },
-            ],
-          },
-          followers: {
-            count: 2,
-            more: true,
-            users: [
-              {
-                alias: 'followers1.alias',
-                avatar: 'followers1.avatar',
-                id: 'followers1.id',
-              },
-            ],
-          },
-          postsHenkens: {
-            count: 3,
-            more: false,
-            henkens: [
-              {
-                id: 'posts1.id',
-                comment: 'posts1.comment',
-                content: {
-                  type: 'Book',
-                  book: {
-                    id: 'posts1.book.id',
-                    title: 'posts1.book.title',
-                  },
-                },
-                postsTo: {
-                  id: 'posts1.postsTo.id',
-                  alias: 'posts1.postsTo.alias',
-                  displayName: 'posts1.postsTo.displayName',
-                  avatar: 'posts1.postsTo.avatar',
-                },
-                answer: {
-                  id: 'posts1.answer.id',
-                  comment: 'posts1.answer.comment',
-                  type: 'right',
-                },
-              },
-              {
-                id: 'posts2.id',
-                comment: 'posts2.comment',
-                content: {
-                  type: 'Book',
-                  book: {
-                    id: 'posts2.book.id',
-                    title: 'posts2.book.title',
-                  },
-                },
-                postsTo: {
-                  id: 'posts2.postsTo.id',
-                  alias: 'posts2.postsTo.alias',
-                  displayName: 'posts2.postsTo.displayName',
-                  avatar: 'posts2.postsTo.avatar',
-                },
-                answer: null,
-              },
-              {
-                id: 'posts3.id',
-                comment: 'posts3.comment',
-                content: {
-                  type: 'BookSeries',
-                  bookSeries: {
-                    id: 'posts3.bookSeries.id',
-                    title: 'posts3.bookSeries.title',
-                  },
-                },
-                postsTo: {
-                  id: 'posts3.postsTo.id',
-                  alias: 'posts3.postsTo.alias',
-                  displayName: 'posts3.postsTo.displayName',
-                  avatar: 'posts3.postsTo.avatar',
-                },
-                answer: {
-                  id: 'posts3.answer.id',
-                  comment: 'posts3.answer.comment',
-                  type: 'wrong',
-                },
-              },
-            ],
-          },
-          recienvedHenkens: {
-            count: 4,
-            more: true,
-            henkens: [
-              {
-                id: 'received1.id',
-                comment: 'received1.comment',
-                content: {
-                  type: 'Book',
-                  book: {
-                    id: 'received1.book.id',
-                    title: 'received1.book.title',
-                  },
-                },
-                postedBy: {
-                  id: 'received1.postedBy.id',
-                  alias: 'received1.postedBy.alias',
-                  displayName: 'received1.postedBy.displayName',
-                  avatar: 'received1.postedBy.avatar',
-                },
-                answer: {
-                  id: 'received1.answer.id',
-                  comment: 'received1.answer.comment',
-                  type: 'right',
-                },
-              },
-              {
-                id: 'received2.id',
-                comment: 'received2.comment',
-                content: {
-                  type: 'Book',
-                  book: {
-                    id: 'received2.book.id',
-                    title: 'received2.book.title',
-                  },
-                },
-                postedBy: {
-                  id: 'received2.postedBy.id',
-                  alias: 'received2.postedBy.alias',
-                  displayName: 'received2.postedBy.displayName',
-                  avatar: 'received2.postedBy.avatar',
-                },
-                answer: null,
-              },
-              {
-                id: 'received3.id',
-                comment: 'received3.comment',
-                content: {
-                  type: 'BookSeries',
-                  bookSeries: {
-                    id: 'received3.bookSeries.id',
-                    title: 'received3.bookSeries.title',
-                  },
-                },
-                postedBy: {
-                  id: 'received3.postedBy.id',
-                  alias: 'received3.postedBy.alias',
-                  displayName: 'received3.postedBy.displayName',
-                  avatar: 'received3.postedBy.avatar',
-                },
-                answer: {
-                  id: 'received3.answer.id',
-                  comment: 'received3.answer.comment',
-                  type: 'wrong',
-                },
-              },
-            ],
-          },
-        },
-      });
+      expect(actual).toMatchSnapshot();
     });
   });
 });

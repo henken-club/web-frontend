@@ -58,6 +58,7 @@ const UserPageQuery = gql`
                 avatar
               }
               content {
+                __typename
                 ... on Book {
                   id
                   title
@@ -105,6 +106,69 @@ const UserPageQuery = gql`
                 id
                 comment
                 type
+              }
+            }
+          }
+        }
+        activities(first: 20) {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          edges {
+            node {
+              event {
+                __typename
+                ... on Henken {
+                  id
+                  createdAt
+                  comment
+                  postedBy {
+                    id
+                    alias
+                    displayName
+                    avatar
+                  }
+                  content {
+                    __typename
+                    ... on Book {
+                      id
+                      title
+                    }
+                    ... on BookSeries {
+                      id
+                      title
+                    }
+                  }
+                }
+                ... on Answer {
+                  id
+                  createdAt
+                  comment
+                  type
+                  answerTo {
+                    id
+                    createdAt
+                    comment
+                    postedBy {
+                      id
+                      alias
+                      displayName
+                      avatar
+                    }
+                    content {
+                      __typename
+                      ... on Book {
+                        id
+                        title
+                      }
+                      ... on BookSeries {
+                        id
+                        title
+                      }
+                    }
+                  }
+                }
               }
             }
           }
