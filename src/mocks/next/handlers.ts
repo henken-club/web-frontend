@@ -1,21 +1,21 @@
-import {graphql, GraphQLHandler} from 'msw';
-import faker from 'faker';
+import {graphql} from 'msw';
+import * as faker from 'faker';
 
 import {
+  AllUserPagesDocument,
+  AllUserPagesQuery,
+  AllUserPagesQueryVariables,
   AnswerType,
   UserPageDocument,
   UserPageQuery,
   UserPageQueryVariables,
-} from './codegen';
-import {factoryUser, factoryUserEdge} from './factories';
-
-import {
   GetViewerQuery,
   GetViewerQueryVariables,
   GetViewerDocument,
-} from '~/libs/codegen';
+} from './codegen';
+import {factoryUser, factoryUserEdge} from './factories';
 
-const devMocks: GraphQLHandler[] = [
+export const handlers = [
   graphql.query<GetViewerQuery, GetViewerQueryVariables>(
     GetViewerDocument,
     (req, res, ctx) => {
@@ -39,6 +39,20 @@ const devMocks: GraphQLHandler[] = [
           }),
         );
     },
+  ),
+  graphql.query<AllUserPagesQuery, AllUserPagesQueryVariables>(
+    AllUserPagesDocument,
+    (req, res, ctx) =>
+      res.once(
+        ctx.data({
+          __typename: 'Query',
+          manyUsers: [...new Array(1)].map((_, i) => ({
+            __typename: 'User',
+            id: faker.datatype.uuid(),
+            alias: faker.random.alphaNumeric(10),
+          })),
+        }),
+      ),
   ),
   graphql.query<UserPageQuery, UserPageQueryVariables>(
     UserPageDocument,
@@ -189,7 +203,3 @@ const devMocks: GraphQLHandler[] = [
     },
   ),
 ];
-
-export const handlers =
-  // eslint-disable-next-line no-process-env
-  process.env.NODE_ENV === 'development' ? devMocks : [];

@@ -36,7 +36,7 @@ generates:
       baseTypesPath: ./codegen.ts
       extension: .codegen.ts
 
-  ./src/mocks/codegen.ts:
+  ./src/mocks/next/codegen.ts:
     documents:
       - 'src/**/*.{ts,tsx}'
       - '!src/**/codegen.ts'
