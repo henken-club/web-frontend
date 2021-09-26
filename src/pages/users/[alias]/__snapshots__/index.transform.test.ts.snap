@@ -1,0 +1,1159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index.transform transformer findUser.userが存在する場合 0 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": null,
+      "more": false,
+      "nodes": Array [
+        Object {
+          "answer": Object {
+            "answerTo": Object {
+              "comment": "Sunt blanditiis illo voluptas dicta incidunt labore et voluptas.",
+              "content": Object {
+                "book": Object {
+                  "id": "08086a18-4039-44c2-a071-f93f5f0642da",
+                  "title": "aut quos rerum",
+                },
+                "type": "Book",
+              },
+              "createdAt": "2020-02-05T22:40:02.315Z",
+              "id": "aa6f1e67-4bdb-404f-9575-6082d68ea19f",
+              "postedBy": Object {
+                "alias": "vm94dddb",
+                "avatar": "https://cdn.fakercloud.com/avatars/brandonmorreale_128.jpg",
+                "displayName": "Sherry Schinner",
+                "id": "b375ed4f-6fbe-4e41-b333-17fe35b60eb1",
+              },
+            },
+            "comment": "Dolorum in eos qui nesciunt voluptates asperiores illum dicta nesciunt.",
+            "createdAt": "2020-02-05T13:49:32.498Z",
+            "id": "be61e6b7-b95b-4c0a-b3c2-0c4f3789fd87",
+            "type": "right",
+          },
+          "id": "f7fbc7ab-d74d-4d39-80f5-d2cff7c70a45",
+          "type": "Answer",
+        },
+      ],
+    },
+    "alias": "n0dtys5v",
+    "avatar": "https://cdn.fakercloud.com/avatars/runningskull_128.jpg",
+    "displayName": "Tanya Schmidt",
+    "followees": Object {
+      "count": 46147,
+      "more": true,
+      "users": Array [
+        Object {
+          "alias": "wogcmfwp",
+          "avatar": "https://cdn.fakercloud.com/avatars/andysolomon_128.jpg",
+          "id": "ca1ba928-fc81-4674-acb7-39205929396f",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 6022,
+      "more": true,
+      "users": Array [
+        Object {
+          "alias": "m5c3onb4",
+          "avatar": "https://cdn.fakercloud.com/avatars/rehatkathuria_128.jpg",
+          "id": "aaa2352c-5955-4907-aff1-a3a2fa946773",
+        },
+      ],
+    },
+    "id": "89bd9d8d-69a6-474e-8f46-7cc8796ed151",
+    "postsHenkens": Object {
+      "count": 19658,
+      "henkens": Array [
+        Object {
+          "answer": null,
+          "comment": "Esse sint veritatis numquam eligendi error similique et ut molestias.",
+          "content": Object {
+            "bookSeries": Object {
+              "id": "f63c969e-9a3e-4fa7-bdfb-14cd66ae395e",
+              "title": "delectus eligendi officia",
+            },
+            "type": "BookSeries",
+          },
+          "id": "5ad019da-1ffe-478f-897b-0074f15471b5",
+          "postsTo": Object {
+            "alias": "k1nynbf7",
+            "avatar": "https://cdn.fakercloud.com/avatars/jacobbennett_128.jpg",
+            "displayName": "Maurice Boyle",
+            "id": "a88f3a66-9970-474b-a446-9b6e21419598",
+          },
+        },
+      ],
+      "more": true,
+    },
+    "recienvedHenkens": Object {
+      "count": 5058,
+      "henkens": Array [
+        Object {
+          "answer": null,
+          "comment": "Repellendus dolorem et.",
+          "content": Object {
+            "bookSeries": Object {
+              "id": "00674ebf-6928-40d1-ba77-a89ebf737ae4",
+              "title": "eos voluptatem incidunt",
+            },
+            "type": "BookSeries",
+          },
+          "id": "5f0d30c5-fbb2-4587-8532-02c73d5fe9b9",
+          "postedBy": Object {
+            "alias": "7yig0p75",
+            "avatar": "https://cdn.fakercloud.com/avatars/jm_denis_128.jpg",
+            "displayName": "Melanie Oberbrunner",
+            "id": "e5e6a95d-8a0d-4446-8e2a-f7a73cf3be45",
+          },
+        },
+      ],
+      "more": true,
+    },
+  },
+}
+`;
+
+exports[`index.transform transformer findUser.userが存在する場合 1 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": "0ccbed05-4a77-4563-a068-529862f6aa34",
+      "more": true,
+      "nodes": Array [
+        Object {
+          "henken": Object {
+            "comment": "Eos sint ut voluptates totam.",
+            "content": Object {
+              "bookSeries": Object {
+                "id": "a82fc230-8ecb-4045-ad1d-580d9f3dad51",
+                "title": "quae et est",
+              },
+              "type": "BookSeries",
+            },
+            "createdAt": "2020-11-02T03:42:27.434Z",
+            "id": "7c5a1c6b-13f0-424c-9d1b-a92287e573d9",
+            "postedBy": Object {
+              "alias": "wjjezym7",
+              "avatar": "https://cdn.fakercloud.com/avatars/klimmka_128.jpg",
+              "displayName": "Naomi Okuneva",
+              "id": "c96cb09c-fb44-4543-aa5c-c879c0f74f25",
+            },
+          },
+          "id": "053c0eee-ca84-4044-988d-c291b087c091",
+          "type": "Henken",
+        },
+      ],
+    },
+    "alias": "wfgkf5x7",
+    "avatar": "https://cdn.fakercloud.com/avatars/russoedu_128.jpg",
+    "displayName": "Lola Wisoky",
+    "followees": Object {
+      "count": 31342,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "1rmznqaa",
+          "avatar": "https://cdn.fakercloud.com/avatars/jedbridges_128.jpg",
+          "id": "b8eded1d-0420-4ea1-96af-683b452acd60",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 78927,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "83jeyohe",
+          "avatar": "https://cdn.fakercloud.com/avatars/kurafire_128.jpg",
+          "id": "1177e14e-4128-401a-a3e4-47909992f94b",
+        },
+      ],
+    },
+    "id": "6fbe024f-2316-4265-a6e8-d65a837e308a",
+    "postsHenkens": Object {
+      "count": 4995,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Quis ut ab nulla quod labore ullam.",
+            "id": "5021e0e1-c39b-408a-8214-f5943142b23f",
+            "type": "right",
+          },
+          "comment": "Fuga est placeat ex ut voluptas enim ex.",
+          "content": Object {
+            "book": Object {
+              "id": "ec6ef0a7-911c-4f17-99f6-63cec940c925",
+              "title": "culpa non aut",
+            },
+            "type": "Book",
+          },
+          "id": "80a28cf0-9ee8-4272-ac66-82ae559cab2e",
+          "postsTo": Object {
+            "alias": "8ptmdfvr",
+            "avatar": "https://cdn.fakercloud.com/avatars/bartjo_128.jpg",
+            "displayName": "Clifton Keebler",
+            "id": "20601083-1d48-438f-9413-4199f6850dc4",
+          },
+        },
+      ],
+      "more": true,
+    },
+    "recienvedHenkens": Object {
+      "count": 61995,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Esse et ut quis cumque officia optio.",
+            "id": "3ed9823c-9900-4060-a6e9-0dfc64f192d3",
+            "type": "wrong",
+          },
+          "comment": "Quis non et architecto non explicabo facere neque et.",
+          "content": Object {
+            "bookSeries": Object {
+              "id": "e83e0ae6-4729-4087-ace5-69f025212b80",
+              "title": "voluptatem praesentium hic",
+            },
+            "type": "BookSeries",
+          },
+          "id": "de2c0a10-7d9c-4975-8f19-26883bea7421",
+          "postedBy": Object {
+            "alias": "4hylb0yl",
+            "avatar": "https://cdn.fakercloud.com/avatars/elliotnolten_128.jpg",
+            "displayName": "Alfred Schoen PhD",
+            "id": "d5072158-2ec8-454f-99ee-3d0ef7685c94",
+          },
+        },
+      ],
+      "more": true,
+    },
+  },
+}
+`;
+
+exports[`index.transform transformer findUser.userが存在する場合 2 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": null,
+      "more": false,
+      "nodes": Array [
+        Object {
+          "answer": Object {
+            "answerTo": Object {
+              "comment": "Ut praesentium dolores omnis ullam.",
+              "content": Object {
+                "bookSeries": Object {
+                  "id": "37ff4950-abad-4d15-bf97-b93ff3a282ff",
+                  "title": "iste et provident",
+                },
+                "type": "BookSeries",
+              },
+              "createdAt": "2020-07-24T10:37:51.016Z",
+              "id": "db32448c-c4a9-4c9d-8a32-43e60d105739",
+              "postedBy": Object {
+                "alias": "2ms55fxd",
+                "avatar": "https://cdn.fakercloud.com/avatars/motionthinks_128.jpg",
+                "displayName": "Lindsay Kling",
+                "id": "0e82b658-a19d-4328-a755-3a10e5c63f8b",
+              },
+            },
+            "comment": "Corrupti delectus qui explicabo praesentium.",
+            "createdAt": "2020-01-30T21:15:47.883Z",
+            "id": "0fcc6ea3-b11b-4ebd-b6a3-3134eb9d65c3",
+            "type": "right",
+          },
+          "id": "559f7f5d-fb8b-46e0-b4da-a013905026e4",
+          "type": "Answer",
+        },
+      ],
+    },
+    "alias": "9ujheu62",
+    "avatar": "https://cdn.fakercloud.com/avatars/djsherman_128.jpg",
+    "displayName": "Valerie Bergnaum",
+    "followees": Object {
+      "count": 42812,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "5puyii7w",
+          "avatar": "https://cdn.fakercloud.com/avatars/yecidsm_128.jpg",
+          "id": "12279933-1c39-4527-937a-a7c8a69cf912",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 34161,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "isplprh6",
+          "avatar": "https://cdn.fakercloud.com/avatars/vitor376_128.jpg",
+          "id": "946c65c7-84fc-48d1-b5dd-8630b361efff",
+        },
+      ],
+    },
+    "id": "620e8f67-6552-43b9-9474-a9d8a27892bc",
+    "postsHenkens": Object {
+      "count": 29302,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Qui velit doloremque debitis enim et alias dolorum.",
+            "id": "d3bb0a9c-40d3-48b0-900e-569e0d110560",
+            "type": "right",
+          },
+          "comment": "Accusantium commodi distinctio quas iure assumenda dolores repudiandae esse dolorem.",
+          "content": Object {
+            "bookSeries": Object {
+              "id": "b9c18533-ec9c-4584-aee6-f8e90db9e2d9",
+              "title": "sed corrupti quia",
+            },
+            "type": "BookSeries",
+          },
+          "id": "855c0efb-788e-4584-966d-eb06b05c3459",
+          "postsTo": Object {
+            "alias": "u9z51i8c",
+            "avatar": "https://cdn.fakercloud.com/avatars/stalewine_128.jpg",
+            "displayName": "Carlos Erdman",
+            "id": "6b43e271-d430-40a1-8228-1e4c3844708d",
+          },
+        },
+      ],
+      "more": false,
+    },
+    "recienvedHenkens": Object {
+      "count": 58717,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Minus quia aut beatae et.",
+            "id": "0662fc27-b45b-4afa-b3cc-c712d47b2686",
+            "type": "right",
+          },
+          "comment": "Soluta deleniti cum placeat rerum.",
+          "content": Object {
+            "book": Object {
+              "id": "d26fd47b-b702-40df-815a-d40316aea9ce",
+              "title": "odio cumque vero",
+            },
+            "type": "Book",
+          },
+          "id": "ff6753d6-77b8-4c85-8b22-72b0c5c08df3",
+          "postedBy": Object {
+            "alias": "8lm5e6x5",
+            "avatar": "https://cdn.fakercloud.com/avatars/smaczny_128.jpg",
+            "displayName": "Lester Abbott",
+            "id": "492c1d53-cb6c-4c04-9d6f-3cefb2bfc056",
+          },
+        },
+      ],
+      "more": true,
+    },
+  },
+}
+`;
+
+exports[`index.transform transformer findUser.userが存在する場合 3 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": "7ac51389-d0e0-43d4-9e05-20abe6bbc718",
+      "more": true,
+      "nodes": Array [
+        Object {
+          "henken": Object {
+            "comment": "Sunt velit et delectus aut illo.",
+            "content": Object {
+              "bookSeries": Object {
+                "id": "81f8074a-b901-4b69-ab58-8f8589b06896",
+                "title": "aperiam voluptatibus velit",
+              },
+              "type": "BookSeries",
+            },
+            "createdAt": "2020-09-09T04:50:31.359Z",
+            "id": "d1a9c70a-4caf-491f-a999-ab8586d9728b",
+            "postedBy": Object {
+              "alias": "fvmh78br",
+              "avatar": "https://cdn.fakercloud.com/avatars/Skyhartman_128.jpg",
+              "displayName": "Tyler Cummings",
+              "id": "e2e0d153-1b58-4080-bf0c-68ffde9133ed",
+            },
+          },
+          "id": "6e4ce3a3-ceeb-446e-bdf8-0981dc92e882",
+          "type": "Henken",
+        },
+      ],
+    },
+    "alias": "w0rkz9ee",
+    "avatar": "https://cdn.fakercloud.com/avatars/madysondesigns_128.jpg",
+    "displayName": "Tom Pouros",
+    "followees": Object {
+      "count": 44045,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "08bekgq9",
+          "avatar": "https://cdn.fakercloud.com/avatars/martinansty_128.jpg",
+          "id": "278ccd44-3e6b-4e0f-aa5e-cd66616ac8b5",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 29179,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "bduohcjk",
+          "avatar": "https://cdn.fakercloud.com/avatars/sawalazar_128.jpg",
+          "id": "7ada9d4c-4571-43c3-98d1-b7755b8b7bcb",
+        },
+      ],
+    },
+    "id": "81bd4189-e6e0-4203-b017-b0277a345a79",
+    "postsHenkens": Object {
+      "count": 32580,
+      "henkens": Array [
+        Object {
+          "answer": null,
+          "comment": "Omnis fugit amet dicta tenetur nam soluta sit ut.",
+          "content": Object {
+            "book": Object {
+              "id": "5b846edd-9be7-4cd5-bcae-eca45e883d33",
+              "title": "est sed repellendus",
+            },
+            "type": "Book",
+          },
+          "id": "72043cf5-30b7-4a0b-87e9-31e14322f1b2",
+          "postsTo": Object {
+            "alias": "5ogwpcc2",
+            "avatar": "https://cdn.fakercloud.com/avatars/samgrover_128.jpg",
+            "displayName": "Gayle Greenfelder",
+            "id": "34b4ae7d-42af-4f56-8170-21df38ddf2f4",
+          },
+        },
+      ],
+      "more": true,
+    },
+    "recienvedHenkens": Object {
+      "count": 28704,
+      "henkens": Array [
+        Object {
+          "answer": null,
+          "comment": "Facere at nisi ut hic quisquam.",
+          "content": Object {
+            "book": Object {
+              "id": "b6d20003-b54c-4872-bf88-5d41c7e05ee7",
+              "title": "nemo quasi veniam",
+            },
+            "type": "Book",
+          },
+          "id": "dbd01e35-dcdb-4594-b678-a1cdc86c631f",
+          "postedBy": Object {
+            "alias": "9menx09j",
+            "avatar": "https://cdn.fakercloud.com/avatars/VMilescu_128.jpg",
+            "displayName": "Andres Runte V",
+            "id": "40f7421a-4cf9-46bb-a902-7b559c2c3adc",
+          },
+        },
+      ],
+      "more": false,
+    },
+  },
+}
+`;
+
+exports[`index.transform transformer findUser.userが存在する場合 4 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": "a29e366d-3b09-49d7-ad23-971ae1c50ae3",
+      "more": false,
+      "nodes": Array [
+        Object {
+          "answer": Object {
+            "answerTo": Object {
+              "comment": "Aut error et sed sapiente sit voluptatum.",
+              "content": Object {
+                "bookSeries": Object {
+                  "id": "de14facb-0242-4dc3-9270-11f7d03ed6b3",
+                  "title": "aut qui ut",
+                },
+                "type": "BookSeries",
+              },
+              "createdAt": "2020-04-28T09:55:59.187Z",
+              "id": "a1d4db38-795a-408a-b8ce-fdb4c9cdf25c",
+              "postedBy": Object {
+                "alias": "2alwnlpa",
+                "avatar": "https://cdn.fakercloud.com/avatars/vc27_128.jpg",
+                "displayName": "Miss Myron O'Reilly",
+                "id": "aabd5021-73cc-4813-94bc-a7cc02faec4e",
+              },
+            },
+            "comment": "Aut voluptas ipsam tempore eaque.",
+            "createdAt": "2020-04-20T21:07:06.447Z",
+            "id": "c4e752b4-ac5b-4c7b-a7b9-ef7a6a467cfd",
+            "type": "right",
+          },
+          "id": "549e6fe3-d7db-4683-8a36-d8daff3cf19e",
+          "type": "Answer",
+        },
+      ],
+    },
+    "alias": "t0md91ny",
+    "avatar": "https://cdn.fakercloud.com/avatars/aaroni_128.jpg",
+    "displayName": "Thomas White",
+    "followees": Object {
+      "count": 78630,
+      "more": true,
+      "users": Array [
+        Object {
+          "alias": "8ndemm8r",
+          "avatar": "https://cdn.fakercloud.com/avatars/batsirai_128.jpg",
+          "id": "d7271192-2dbd-46e8-9fd8-410238382a56",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 17897,
+      "more": true,
+      "users": Array [
+        Object {
+          "alias": "pwcewbdk",
+          "avatar": "https://cdn.fakercloud.com/avatars/shoaib253_128.jpg",
+          "id": "6587a541-8490-4ee5-bac3-2712aef65de6",
+        },
+      ],
+    },
+    "id": "fe82fdb9-b932-4f30-b4e6-ac039d5f9269",
+    "postsHenkens": Object {
+      "count": 84544,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Est et laboriosam nemo dignissimos repellat consequatur exercitationem voluptas.",
+            "id": "cc58e7bd-8e22-46bc-9fe1-52cb4d113dcc",
+            "type": "wrong",
+          },
+          "comment": "Aut nemo nobis fugiat sint non sunt.",
+          "content": Object {
+            "book": Object {
+              "id": "2dd7ccb8-aeea-4327-9ed2-523f756e9865",
+              "title": "quaerat eos velit",
+            },
+            "type": "Book",
+          },
+          "id": "db9a1190-31b3-4ec8-9911-f82299f55c00",
+          "postsTo": Object {
+            "alias": "gqm0h3xm",
+            "avatar": "https://cdn.fakercloud.com/avatars/idiot_128.jpg",
+            "displayName": "Allan Jaskolski",
+            "id": "f378c0c3-f0f1-40a0-98b0-ea08ea87942f",
+          },
+        },
+      ],
+      "more": true,
+    },
+    "recienvedHenkens": Object {
+      "count": 26426,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Ea suscipit quibusdam deserunt.",
+            "id": "5d26d95a-2241-4b2f-ba15-68e19a08e469",
+            "type": "right",
+          },
+          "comment": "Aut sed explicabo autem ut.",
+          "content": Object {
+            "bookSeries": Object {
+              "id": "2f3004d4-5766-44c1-87d3-99b3082f854f",
+              "title": "sit inventore odit",
+            },
+            "type": "BookSeries",
+          },
+          "id": "6eee9f4c-b1b1-4b87-97e6-aff0253f5e40",
+          "postedBy": Object {
+            "alias": "au4j8e42",
+            "avatar": "https://cdn.fakercloud.com/avatars/abdullindenis_128.jpg",
+            "displayName": "Sam Kling",
+            "id": "198f3e48-ec2f-4ab1-b6fb-7da62168dc9f",
+          },
+        },
+      ],
+      "more": false,
+    },
+  },
+}
+`;
+
+exports[`index.transform transformer findUser.userが存在する場合 5 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": "f0182b7c-f30a-43f6-8e4c-6393ff9aecaf",
+      "more": false,
+      "nodes": Array [
+        Object {
+          "henken": Object {
+            "comment": "Quia autem aspernatur ex cupiditate.",
+            "content": Object {
+              "bookSeries": Object {
+                "id": "f1bc2bef-70c9-4bea-8c4c-6717f185ee73",
+                "title": "necessitatibus placeat omnis",
+              },
+              "type": "BookSeries",
+            },
+            "createdAt": "2020-03-18T04:41:07.219Z",
+            "id": "0d441b08-d7b0-4d62-85ae-b61e4ff03699",
+            "postedBy": Object {
+              "alias": "btilvshm",
+              "avatar": "https://cdn.fakercloud.com/avatars/jodytaggart_128.jpg",
+              "displayName": "Bernice Rogahn",
+              "id": "f38c8aef-165c-42db-ad38-58a547d34dcf",
+            },
+          },
+          "id": "54755c02-0263-41a2-9235-5a1662c17479",
+          "type": "Henken",
+        },
+      ],
+    },
+    "alias": "7e4avmik",
+    "avatar": "https://cdn.fakercloud.com/avatars/IsaryAmairani_128.jpg",
+    "displayName": "Kelli Gleason",
+    "followees": Object {
+      "count": 28468,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "xz09psov",
+          "avatar": "https://cdn.fakercloud.com/avatars/ceekaytweet_128.jpg",
+          "id": "4d5d2e2f-f8f1-43f0-b3ab-dc909950b8da",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 92274,
+      "more": true,
+      "users": Array [
+        Object {
+          "alias": "dmdtax7w",
+          "avatar": "https://cdn.fakercloud.com/avatars/peachananr_128.jpg",
+          "id": "0979f162-d589-4c37-90e1-41740f4a3df9",
+        },
+      ],
+    },
+    "id": "30dd35ef-7196-4c58-b4f3-c1abd732ce14",
+    "postsHenkens": Object {
+      "count": 82481,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Id doloremque eum perspiciatis.",
+            "id": "ddecc9ee-d02f-4995-8bd0-a2f21f9e7bae",
+            "type": "wrong",
+          },
+          "comment": "Aut vel nulla.",
+          "content": Object {
+            "book": Object {
+              "id": "f55176b8-5f05-4205-9115-7bdc877fc807",
+              "title": "sunt illo velit",
+            },
+            "type": "Book",
+          },
+          "id": "1a560983-c20d-43d5-a32c-255af739efef",
+          "postsTo": Object {
+            "alias": "o9a2r8p3",
+            "avatar": "https://cdn.fakercloud.com/avatars/cboller1_128.jpg",
+            "displayName": "Mrs. Alice Dach",
+            "id": "f1c9cfbe-b4c9-4f55-b1a3-53d5ac30678d",
+          },
+        },
+      ],
+      "more": true,
+    },
+    "recienvedHenkens": Object {
+      "count": 57598,
+      "henkens": Array [
+        Object {
+          "answer": null,
+          "comment": "Ut commodi voluptas deleniti omnis.",
+          "content": Object {
+            "book": Object {
+              "id": "81412442-2157-4a59-bf68-d87adb0929a9",
+              "title": "iure ex laudantium",
+            },
+            "type": "Book",
+          },
+          "id": "d7161ab8-3f5c-4f7b-b692-b8c1fb3c6d6b",
+          "postedBy": Object {
+            "alias": "50en07u9",
+            "avatar": "https://cdn.fakercloud.com/avatars/fjaguero_128.jpg",
+            "displayName": "Karla Beier V",
+            "id": "9ae8a2ca-5f0c-4e29-9de6-ebbdc62fca33",
+          },
+        },
+      ],
+      "more": true,
+    },
+  },
+}
+`;
+
+exports[`index.transform transformer findUser.userが存在する場合 6 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": null,
+      "more": true,
+      "nodes": Array [
+        Object {
+          "answer": Object {
+            "answerTo": Object {
+              "comment": "Atque perspiciatis quo.",
+              "content": Object {
+                "book": Object {
+                  "id": "ab5e4fd9-af1b-4b72-ae9b-3265622d0f00",
+                  "title": "cum vitae aliquam",
+                },
+                "type": "Book",
+              },
+              "createdAt": "2020-11-22T17:43:35.905Z",
+              "id": "4bd714c2-4ef1-4bba-95a2-0b1f711e06ae",
+              "postedBy": Object {
+                "alias": "mu3b0pw4",
+                "avatar": "https://cdn.fakercloud.com/avatars/woodydotmx_128.jpg",
+                "displayName": "Felix Raynor",
+                "id": "871229f3-8c31-4a6b-9865-bb321bf778fa",
+              },
+            },
+            "comment": "Inventore veritatis illum illo aut consequatur laudantium placeat.",
+            "createdAt": "2020-05-03T18:45:26.957Z",
+            "id": "9f31a458-1e33-40e6-a059-3b260ff92cf2",
+            "type": "wrong",
+          },
+          "id": "f0083f5d-c477-4165-bd0b-647b2522df34",
+          "type": "Answer",
+        },
+      ],
+    },
+    "alias": "wtheovst",
+    "avatar": "https://cdn.fakercloud.com/avatars/bereto_128.jpg",
+    "displayName": "Neal Raynor",
+    "followees": Object {
+      "count": 80217,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "beqqdqge",
+          "avatar": "https://cdn.fakercloud.com/avatars/nvkznemo_128.jpg",
+          "id": "b9b78911-f363-43db-bf84-cab9bbcee5d4",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 98937,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "jvgzouv6",
+          "avatar": "https://cdn.fakercloud.com/avatars/jonathansimmons_128.jpg",
+          "id": "7e5bb31a-60cd-4c74-8327-c59b33658d89",
+        },
+      ],
+    },
+    "id": "ef53d105-1f91-4896-8579-d7cb68392abf",
+    "postsHenkens": Object {
+      "count": 61841,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Sint accusantium aut aliquam adipisci ut dolorem qui quia hic.",
+            "id": "afc563af-59ff-49f7-b403-983a28563ace",
+            "type": "wrong",
+          },
+          "comment": "Ipsa dolor a adipisci et deleniti excepturi autem.",
+          "content": Object {
+            "bookSeries": Object {
+              "id": "219d4ec3-21cd-49d0-880a-cfac9ce7a04d",
+              "title": "qui perferendis asperiores",
+            },
+            "type": "BookSeries",
+          },
+          "id": "746fbfd8-a827-4b60-a34e-06629a82aa14",
+          "postsTo": Object {
+            "alias": "ep8ui19i",
+            "avatar": "https://cdn.fakercloud.com/avatars/maxlinderman_128.jpg",
+            "displayName": "Tyrone Renner",
+            "id": "49e15149-b754-4006-ac1e-014f442d10cd",
+          },
+        },
+      ],
+      "more": false,
+    },
+    "recienvedHenkens": Object {
+      "count": 70226,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Et voluptatem reprehenderit quidem est rerum error quas mollitia.",
+            "id": "d6a1e816-d3f9-4930-a0a6-47e7aaec3d45",
+            "type": "wrong",
+          },
+          "comment": "Eligendi repudiandae et et molestiae sit quidem libero quia enim.",
+          "content": Object {
+            "book": Object {
+              "id": "f0617631-23bb-4d77-9431-e002afaca596",
+              "title": "repellendus cupiditate qui",
+            },
+            "type": "Book",
+          },
+          "id": "c033aeef-3a04-4407-902c-438b4dd88872",
+          "postedBy": Object {
+            "alias": "k9fm9q2b",
+            "avatar": "https://cdn.fakercloud.com/avatars/GavicoInd_128.jpg",
+            "displayName": "Wendy Lakin",
+            "id": "3dd81348-3d7e-45ae-8cbb-62398dee9a74",
+          },
+        },
+      ],
+      "more": false,
+    },
+  },
+}
+`;
+
+exports[`index.transform transformer findUser.userが存在する場合 7 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": null,
+      "more": false,
+      "nodes": Array [
+        Object {
+          "henken": Object {
+            "comment": "Iusto in accusamus fugiat placeat accusamus aut.",
+            "content": Object {
+              "book": Object {
+                "id": "dbbe1247-7587-4d23-aa45-0c63a761538e",
+                "title": "nobis ipsam fugit",
+              },
+              "type": "Book",
+            },
+            "createdAt": "2020-07-07T11:18:56.259Z",
+            "id": "03f11a8f-1f36-4cef-b7b0-3f0016d8aefd",
+            "postedBy": Object {
+              "alias": "pgyh9a8v",
+              "avatar": "https://cdn.fakercloud.com/avatars/heyimjuani_128.jpg",
+              "displayName": "Alberto Wisozk III",
+              "id": "d8d48b70-e84c-49b7-90df-36c9752cb0cd",
+            },
+          },
+          "id": "32ecd26f-e840-4aeb-9bb4-8e14142d2f0b",
+          "type": "Henken",
+        },
+      ],
+    },
+    "alias": "o7cgxx90",
+    "avatar": "https://cdn.fakercloud.com/avatars/sindresorhus_128.jpg",
+    "displayName": "Marjorie Wiegand",
+    "followees": Object {
+      "count": 23030,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "593gjcbn",
+          "avatar": "https://cdn.fakercloud.com/avatars/diesellaws_128.jpg",
+          "id": "8cef2786-c5a3-4713-b795-f7554d7cf529",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 37035,
+      "more": true,
+      "users": Array [
+        Object {
+          "alias": "qyhoy15b",
+          "avatar": "https://cdn.fakercloud.com/avatars/mirfanqureshi_128.jpg",
+          "id": "76b66fec-25b4-4686-9aa8-4660a17bc8ab",
+        },
+      ],
+    },
+    "id": "13c57fb7-f484-4811-a407-8adc5661a4ae",
+    "postsHenkens": Object {
+      "count": 59259,
+      "henkens": Array [
+        Object {
+          "answer": null,
+          "comment": "Esse quaerat ducimus occaecati est accusamus quibusdam praesentium cupiditate aut.",
+          "content": Object {
+            "book": Object {
+              "id": "7cc7e3ae-c4f3-405e-a437-2c6bd2caa175",
+              "title": "rem vel voluptatum",
+            },
+            "type": "Book",
+          },
+          "id": "3df2f7da-7add-4284-871b-c762a58564c2",
+          "postsTo": Object {
+            "alias": "ul65nety",
+            "avatar": "https://cdn.fakercloud.com/avatars/_yardenoon_128.jpg",
+            "displayName": "Bobby Purdy",
+            "id": "89620cad-7038-48c8-b744-28efe93a7ebf",
+          },
+        },
+      ],
+      "more": true,
+    },
+    "recienvedHenkens": Object {
+      "count": 77033,
+      "henkens": Array [
+        Object {
+          "answer": null,
+          "comment": "Molestias id est nesciunt sunt.",
+          "content": Object {
+            "bookSeries": Object {
+              "id": "08b3f09b-47ad-4b6a-822f-0f4649902f3d",
+              "title": "quisquam quidem ut",
+            },
+            "type": "BookSeries",
+          },
+          "id": "593de0d4-6481-47eb-83a5-1b526b28838a",
+          "postedBy": Object {
+            "alias": "takhabi1",
+            "avatar": "https://cdn.fakercloud.com/avatars/shoaib253_128.jpg",
+            "displayName": "Charlotte Yost",
+            "id": "23c41329-a17e-467a-b014-acdeaa37cc29",
+          },
+        },
+      ],
+      "more": true,
+    },
+  },
+}
+`;
+
+exports[`index.transform transformer findUser.userが存在する場合 8 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": null,
+      "more": true,
+      "nodes": Array [
+        Object {
+          "henken": Object {
+            "comment": "Voluptas odio sed qui fugit.",
+            "content": Object {
+              "book": Object {
+                "id": "c7825f5d-eb19-46e0-8aaf-6955e58b627b",
+                "title": "enim neque debitis",
+              },
+              "type": "Book",
+            },
+            "createdAt": "2020-09-18T20:35:41.051Z",
+            "id": "beff568d-3f53-4222-b460-d481d0cf550b",
+            "postedBy": Object {
+              "alias": "qat04lz2",
+              "avatar": "https://cdn.fakercloud.com/avatars/mvdheuvel_128.jpg",
+              "displayName": "Ruby Schinner",
+              "id": "baf7ade0-8d1d-4f46-91bd-b7ce1d75d2fd",
+            },
+          },
+          "id": "73a016af-82a8-4bc7-ba56-3973eda6135f",
+          "type": "Henken",
+        },
+      ],
+    },
+    "alias": "cahzvc17",
+    "avatar": "https://cdn.fakercloud.com/avatars/nacho_128.jpg",
+    "displayName": "Micheal Wunsch",
+    "followees": Object {
+      "count": 12785,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "2mh2nl4s",
+          "avatar": "https://cdn.fakercloud.com/avatars/nellleo_128.jpg",
+          "id": "5217386f-e85a-4f10-9546-9caf452614ac",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 3200,
+      "more": false,
+      "users": Array [
+        Object {
+          "alias": "qlgnming",
+          "avatar": "https://cdn.fakercloud.com/avatars/jarsen_128.jpg",
+          "id": "7ec3f994-0275-437a-83d2-d8b17b8faf75",
+        },
+      ],
+    },
+    "id": "d0f3d68d-3609-46c6-a8d7-e828bc6bd906",
+    "postsHenkens": Object {
+      "count": 887,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Iste voluptas porro enim vel voluptatum atque est est amet.",
+            "id": "3dc72c1c-65b2-4847-b56e-0e4b8d688fbc",
+            "type": "wrong",
+          },
+          "comment": "Sed rem ullam totam voluptatum vel quos et est fuga.",
+          "content": Object {
+            "bookSeries": Object {
+              "id": "35d6de3a-acfb-4be1-a827-402fbe8379c7",
+              "title": "natus ea est",
+            },
+            "type": "BookSeries",
+          },
+          "id": "10646c2f-819b-4bf4-b67d-19cb081d3b5d",
+          "postsTo": Object {
+            "alias": "1j64kkj6",
+            "avatar": "https://cdn.fakercloud.com/avatars/spedwig_128.jpg",
+            "displayName": "Miguel Kozey",
+            "id": "69ad1169-7862-452a-a5e3-0762eb795630",
+          },
+        },
+      ],
+      "more": false,
+    },
+    "recienvedHenkens": Object {
+      "count": 35053,
+      "henkens": Array [
+        Object {
+          "answer": null,
+          "comment": "Non eos officiis hic nobis aliquid rerum inventore.",
+          "content": Object {
+            "book": Object {
+              "id": "b4e2b508-ec3f-494e-bc21-70274a0b396f",
+              "title": "dolores ipsam corporis",
+            },
+            "type": "Book",
+          },
+          "id": "c346ba64-ffbd-429f-9626-afba10cbe1a6",
+          "postedBy": Object {
+            "alias": "a1vn4r0i",
+            "avatar": "https://cdn.fakercloud.com/avatars/samihah_128.jpg",
+            "displayName": "Rosemary Nikolaus",
+            "id": "e9e7d2aa-ff4a-4b61-ba5b-ba4706cd6795",
+          },
+        },
+      ],
+      "more": false,
+    },
+  },
+}
+`;
+
+exports[`index.transform transformer findUser.userが存在する場合 9 1`] = `
+Object {
+  "user": Object {
+    "activities": Object {
+      "cursor": "1bb0a05e-a514-424f-b8c4-4bbeac82a52c",
+      "more": true,
+      "nodes": Array [
+        Object {
+          "henken": Object {
+            "comment": "Ex velit assumenda nobis nisi dolorem nostrum ipsam aspernatur.",
+            "content": Object {
+              "bookSeries": Object {
+                "id": "ba9fd961-7517-43a8-b8db-f431726652b1",
+                "title": "ut est et",
+              },
+              "type": "BookSeries",
+            },
+            "createdAt": "2020-01-26T13:17:24.630Z",
+            "id": "3d5685bf-90a0-49f5-9598-7b8e7df87d20",
+            "postedBy": Object {
+              "alias": "jwngb0vh",
+              "avatar": "https://cdn.fakercloud.com/avatars/coderdiaz_128.jpg",
+              "displayName": "Marshall Feeney",
+              "id": "401024e9-df29-45a2-a4fb-d959d345f460",
+            },
+          },
+          "id": "e7c023ee-1adf-4e59-8994-9012381b8750",
+          "type": "Henken",
+        },
+      ],
+    },
+    "alias": "4w4oyjjp",
+    "avatar": "https://cdn.fakercloud.com/avatars/lisovsky_128.jpg",
+    "displayName": "Donnie Powlowski",
+    "followees": Object {
+      "count": 82487,
+      "more": true,
+      "users": Array [
+        Object {
+          "alias": "2g5lfhlh",
+          "avatar": "https://cdn.fakercloud.com/avatars/baumannzone_128.jpg",
+          "id": "7cf6cdf1-2181-4f7a-bdef-f2a39dce0c95",
+        },
+      ],
+    },
+    "followers": Object {
+      "count": 43555,
+      "more": true,
+      "users": Array [
+        Object {
+          "alias": "mhvpcs19",
+          "avatar": "https://cdn.fakercloud.com/avatars/renbyrd_128.jpg",
+          "id": "df2eb6b4-e50f-4a0a-a740-60a23c222215",
+        },
+      ],
+    },
+    "id": "05877025-203e-4623-a165-725e5fb0fbb9",
+    "postsHenkens": Object {
+      "count": 90947,
+      "henkens": Array [
+        Object {
+          "answer": Object {
+            "comment": "Laudantium iusto tempore.",
+            "id": "df3ab982-6626-4e51-bc7a-c7ba948dc279",
+            "type": "right",
+          },
+          "comment": "Iste dolores corporis ratione ut illo modi.",
+          "content": Object {
+            "bookSeries": Object {
+              "id": "fe28f2e1-1db8-474c-9b5c-c57ef880ee39",
+              "title": "occaecati perferendis quas",
+            },
+            "type": "BookSeries",
+          },
+          "id": "016e3c50-737b-4653-8303-db8689d7065b",
+          "postsTo": Object {
+            "alias": "aw2paoyu",
+            "avatar": "https://cdn.fakercloud.com/avatars/_shahedk_128.jpg",
+            "displayName": "Emma Gutmann",
+            "id": "dd11dccc-6c0b-4c0a-8e98-7f14f54b2b4b",
+          },
+        },
+      ],
+      "more": false,
+    },
+    "recienvedHenkens": Object {
+      "count": 51631,
+      "henkens": Array [
+        Object {
+          "answer": null,
+          "comment": "Quia aut dignissimos culpa repudiandae dolor fugiat.",
+          "content": Object {
+            "book": Object {
+              "id": "9c05ba32-e07f-47f2-bc0e-5b4a9bfb5ba2",
+              "title": "ipsum nam quibusdam",
+            },
+            "type": "Book",
+          },
+          "id": "ed8e50f2-873b-4358-920b-afab602e64bd",
+          "postedBy": Object {
+            "alias": "4fpxx7dn",
+            "avatar": "https://cdn.fakercloud.com/avatars/AM_Kn2_128.jpg",
+            "displayName": "Lamar Doyle",
+            "id": "20259658-c8b5-436b-8631-cd217414d1dd",
+          },
+        },
+      ],
+      "more": true,
+    },
+  },
+}
+`;

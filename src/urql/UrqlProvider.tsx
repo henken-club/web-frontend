@@ -30,9 +30,5 @@ export const UrqlProvider: React.FC = ({children}) => {
     setupClient();
   }, [token]);
 
-  return client ? (
-    <Provider value={client}>{children}</Provider>
-  ) : (
-    <>{children}</>
-  );
+  return client ? <Provider value={client}>{children}</Provider> : <></>;
 };

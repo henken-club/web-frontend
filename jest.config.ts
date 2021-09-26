@@ -21,5 +21,6 @@ const config: Config.InitialOptions = {
       tsconfig: '<rootDir>/tsconfig.jest.json',
     },
   },
+  collectCoverage: true,
 };
 export default config;

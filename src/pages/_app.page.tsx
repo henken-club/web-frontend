@@ -12,7 +12,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import '~/styles/index.css';
 
 // eslint-disable-next-line no-process-env
-if (process.env.NODE_ENV === 'development') require('../mocks');
+if (process.env.NEXT_PUBLIC_MSW_ENABLED === 'true') require('../mocks/next');
 
 FontAwesomeConfig.autoAddCss = false;
 

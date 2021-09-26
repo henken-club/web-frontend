@@ -1,6 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.NEXT_BUNDLE_ANALYZE === 'true',
+  enabled: process.env.NEXT_BUNDLE_ANALYZE_ENABLED === 'true',
 });
 
 /**
@@ -14,7 +14,9 @@ const nextConfig = {
   },
   images: {
     domains: [
-      ...(process.env.NODE_ENV === 'development' ? ['cdn.fakercloud.com'] : []),
+      ...(process.env.NEXT_PUBLIC_MSW_ENABLED === 'true'
+        ? ['cdn.fakercloud.com']
+        : []),
     ],
   },
   i18n: {
