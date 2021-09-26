@@ -2,9 +2,9 @@
 
 if (typeof window === 'undefined') {
   const {mockServer} = require('./server');
-  mockServer.listen();
+  mockServer.listen({onUnhandledRequest: 'bypass'});
 } else {
   const {mockWorker} = require('./browser');
-  mockWorker.start();
+  mockWorker.start({onUnhandledRequest: 'bypass'});
 }
 export {};

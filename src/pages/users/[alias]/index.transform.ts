@@ -23,53 +23,56 @@ export const transformAnswerType = (type: AnswerTypeEnum): AnswerType => {
 };
 
 type ActivityNode =
-  | {
-      type: 'Henken';
-      henken: {
-        id: string;
-        createdAt: string;
-        comment: string;
-        postedBy: {
-          id: string;
-          alias: string;
-          displayName: string;
-          avatar: string;
-        };
-        content:
-          | {type: 'Book'; book: {id: string; title: string}}
-          | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
-      };
-    }
-  | {
-      type: 'Answer';
-      answer: {
-        id: string;
-        createdAt: string;
-        comment: string;
-        type: AnswerType;
-        answerTo: {
-          id: string;
-          createdAt: string;
-          comment: string;
-          postedBy: {
+  | {id: string} & (
+      | {
+          type: 'Henken';
+          henken: {
             id: string;
-            alias: string;
-            displayName: string;
-            avatar: string;
+            createdAt: string;
+            comment: string;
+            postedBy: {
+              id: string;
+              alias: string;
+              displayName: string;
+              avatar: string;
+            };
+            content:
+              | {type: 'Book'; book: {id: string; title: string}}
+              | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
           };
-          content:
-            | {type: 'Book'; book: {id: string; title: string}}
-            | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
-        };
-      };
-    };
+        }
+      | {
+          type: 'Answer';
+          answer: {
+            id: string;
+            createdAt: string;
+            comment: string;
+            type: AnswerType;
+            answerTo: {
+              id: string;
+              createdAt: string;
+              comment: string;
+              postedBy: {
+                id: string;
+                alias: string;
+                displayName: string;
+                avatar: string;
+              };
+              content:
+                | {type: 'Book'; book: {id: string; title: string}}
+                | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
+            };
+          };
+        }
+    );
 
 export const transformActivitiesEdge = ({
-  node: {event},
+  node: {id, event},
 }: User['activities']['edges'][number]): ActivityNode => {
   switch (event.__typename) {
     case 'Henken':
       return {
+        id,
         type: 'Henken',
         henken: {
           id: event.id,
@@ -81,6 +84,7 @@ export const transformActivitiesEdge = ({
       };
     case 'Answer':
       return {
+        id,
         type: 'Answer',
         answer: {
           id: event.id,

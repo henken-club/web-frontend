@@ -7,6 +7,8 @@ import {
 } from 'next';
 import React from 'react';
 import {Merge} from 'type-fest';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import {getSdk} from './index.page.codegen';
 import {TransformedProps, transformer} from './index.transform';
@@ -141,6 +143,7 @@ const UserPageQuery = gql`
           }
           edges {
             node {
+              id
               event {
                 __typename
                 ... on Henken {
@@ -208,10 +211,14 @@ export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
 }) => {
   if (!params?.alias) return {notFound: true};
 
-  return getSdk(graphqlClient)
-    .UserPage({alias: params.alias})
-    .then(transformer)
-    .then((value) => (value ? {props: value} : {notFound: true}));
+  try {
+    const result = await getSdk(graphqlClient).UserPage({alias: params.alias});
+    const transformed = transformer(result);
+    if (transformed) return {props: transformed, revalidate: 60};
+    else return {notFound: true};
+  } catch (error) {
+    return {notFound: true};
+  }
 };
 
 export type PageProps = Merge<
@@ -221,9 +228,53 @@ export type PageProps = Merge<
 export const Page: NextPage<PageProps> = ({className, user, ...props}) => {
   return (
     <>
+      <Image width={128} height={128} src={user.avatar} />
       <p>{user.id}</p>
       <p>{user.alias}</p>
       <p>{user.displayName}</p>
+      <>
+        <p>Followees</p>
+        {user.followees.users.map(({id, alias, avatar}) => (
+          <Link key={id} href={`/users/${alias}`}>
+            <a>
+              <Image width={24} height={24} src={avatar} />
+            </a>
+          </Link>
+        ))}
+      </>
+      <>
+        <p>Followers</p>
+        {user.followers.users.map(({id, alias, avatar}) => (
+          <Link key={id} href={`/users/${alias}`}>
+            <a>
+              <Image width={24} height={24} src={avatar} />
+            </a>
+          </Link>
+        ))}
+      </>
+      <>
+        <p>Activities</p>
+        {user.activities.nodes.map((node) => (
+          <div key={node.id}>
+            {node.type === 'Henken' && (
+              <>
+                <Link href={`/henkens/${node.henken.id}`}>
+                  <a>Henken</a>
+                </Link>
+                <p>{node.henken.comment}</p>
+              </>
+            )}
+            {node.type === 'Answer' && (
+              <>
+                <Link href={`/answers/${node.answer.id}`}>
+                  <a>Answer</a>
+                </Link>
+                <p>{node.answer.comment}</p>
+              </>
+            )}
+          </div>
+        ))}
+      </>
     </>
   );
 };

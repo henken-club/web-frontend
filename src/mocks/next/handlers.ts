@@ -26,7 +26,7 @@ export const handlers = [
             viewer: {
               __typename: 'User',
               id: faker.datatype.uuid(),
-              alias: faker.hacker.ingverb(),
+              alias: faker.random.alphaNumeric(10),
               displayName: faker.name.firstName(),
             },
           }),
@@ -162,12 +162,13 @@ export const handlers = [
                     null,
                   ]),
                 },
-                edges: [
-                  {
-                    __typename: 'UserActivityEdge',
-                    node: {
-                      __typename: 'UserActivity',
-                      event: {
+                edges: [...new Array(10)].map((_, i) => ({
+                  __typename: 'UserActivityEdge',
+                  node: {
+                    __typename: 'UserActivity',
+                    id: faker.datatype.uuid(),
+                    event: faker.random.arrayElement([
+                      {
                         __typename: 'Henken',
                         id: faker.datatype.uuid(),
                         createdAt: faker.date.past().toISOString(),
@@ -192,9 +193,44 @@ export const handlers = [
                           avatar: faker.image.avatar(),
                         },
                       },
-                    },
+                      {
+                        __typename: 'Answer',
+                        id: faker.datatype.uuid(),
+                        createdAt: faker.date.past().toISOString(),
+                        comment: faker.lorem.sentence(),
+                        type: faker.random.arrayElement([
+                          AnswerType.Right,
+                          AnswerType.Wrong,
+                        ]),
+                        answerTo: {
+                          __typename: 'Henken',
+                          id: faker.datatype.uuid(),
+                          createdAt: faker.date.past().toISOString(),
+                          comment: faker.lorem.sentence(),
+                          content: faker.random.arrayElement([
+                            {
+                              __typename: 'Book' as const,
+                              id: faker.datatype.uuid(),
+                              title: faker.lorem.words(),
+                            },
+                            {
+                              __typename: 'BookSeries' as const,
+                              id: faker.datatype.uuid(),
+                              title: faker.lorem.words(),
+                            },
+                          ]),
+                          postedBy: {
+                            __typename: 'User' as const,
+                            id: faker.datatype.uuid(),
+                            alias: faker.random.alphaNumeric(8),
+                            displayName: faker.name.findName(),
+                            avatar: faker.image.avatar(),
+                          },
+                        },
+                      },
+                    ]),
                   },
-                ],
+                })),
               },
             },
           },
