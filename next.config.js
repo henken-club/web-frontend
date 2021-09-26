@@ -1,6 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.NEXT_BUNDLE_ANALYZE === 'true',
+  enabled: process.env.NEXT_BUNDLE_ANALYZE_ENABLED === 'true',
 });
 
 /**
