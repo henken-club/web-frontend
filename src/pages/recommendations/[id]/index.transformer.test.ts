@@ -3,7 +3,7 @@ import faker from 'faker';
 import {RecommendationPageQuery} from './index.page.codegen';
 import {transformContent, transformer} from './index.transform';
 
-describe('Recommendation Index Page transformer', () => {
+describe('Recommendation Page transformer', () => {
   describe('transformContent', () => {
     it('Book if cover exists', () => {
       const actual = transformContent({
