@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type HttpErrorObject = {
   name: string;
   message: string;
@@ -33,8 +35,8 @@ export class HttpError extends Error {
 
 export const ErrorCp = () => {
   return (
-    <div>
+    <>
       <h1>Error</h1>
-    </div>
+    </>
   );
 };
