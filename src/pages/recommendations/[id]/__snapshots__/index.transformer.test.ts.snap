@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 0 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "bookSeries": Object {
+        "id": "a9467739-251a-4a52-83f5-ad019da1ffe7",
+        "title": "molestias reiciendis illo",
+      },
+      "type": "BookSeries",
+    },
+    "id": "89bd9d8d-69a6-474e-8f46-7cc8796ed151",
+    "recommendsTo": Object {
+      "alias": "g7k40bm5",
+      "avatar": "https://cdn.fakercloud.com/avatars/unterdreht_128.jpg",
+      "displayName": "Luther Howe",
+      "id": "5dfc2ddf-7cc7-48ca-9ba9-28fc816742cb",
+    },
+    "score": 64817,
+    "updatedAt": "2020-01-08T09:06:47.434Z",
+  },
+}
+`;
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 1 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "bookSeries": Object {
+        "id": "992f94b3-186f-4b76-80c8-0a28cf09ee82",
+        "title": "ducimus eos saepe",
+      },
+      "type": "BookSeries",
+    },
+    "id": "6fbe024f-2316-4265-a6e8-d65a837e308a",
+    "recommendsTo": Object {
+      "alias": "yej7oab5",
+      "avatar": "https://cdn.fakercloud.com/avatars/RussellBishop_128.jpg",
+      "displayName": "Dianna Jerde",
+      "id": "7862f3cc-bfc5-41b8-aded-1d0420ea196a",
+    },
+    "score": 91396,
+    "updatedAt": "2020-06-01T07:35:24.309Z",
+  },
+}
+`;
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 2 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "book": Object {
+        "cover": "http://placeimg.com/640/480/abstract",
+        "id": "2bdf883e-f559-446c-a5c7-84fc8d1f5dd8",
+        "title": "voluptate modi accusantium",
+      },
+      "type": "Book",
+    },
+    "id": "620e8f67-6552-43b9-9474-a9d8a27892bc",
+    "recommendsTo": Object {
+      "alias": "nnhsindm",
+      "avatar": "https://cdn.fakercloud.com/avatars/bobwassermann_128.jpg",
+      "displayName": "Toni Carter",
+      "id": "876d21f8-4146-4112-a799-331c39527537",
+    },
+    "score": 25849,
+    "updatedAt": "2020-11-07T16:49:24.774Z",
+  },
+}
+`;
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 3 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "book": Object {
+        "cover": null,
+        "id": "035697b4-9437-4ada-9d4c-45713c318d1b",
+        "title": "atque ducimus commodi",
+      },
+      "type": "Book",
+    },
+    "id": "81bd4189-e6e0-4203-b017-b0277a345a79",
+    "recommendsTo": Object {
+      "alias": "wtuedf3e",
+      "avatar": "https://cdn.fakercloud.com/avatars/gipsy_raf_128.jpg",
+      "displayName": "Dianne Ratke",
+      "id": "c8f46684-4b97-4427-8ccd-443e6be0f2a5",
+    },
+    "score": 91330,
+    "updatedAt": "2020-01-09T18:04:52.668Z",
+  },
+}
+`;
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 4 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "bookSeries": Object {
+        "id": "ef65de6b-e56e-4569-9dbd-b9a119031b3e",
+        "title": "aut sint aspernatur",
+      },
+      "type": "BookSeries",
+    },
+    "id": "fe82fdb9-b932-4f30-b4e6-ac039d5f9269",
+    "recommendsTo": Object {
+      "alias": "i93158j7",
+      "avatar": "https://cdn.fakercloud.com/avatars/hota_v_128.jpg",
+      "displayName": "Oliver Halvorson",
+      "id": "9640afc6-0f0c-4fd7-a711-922dbd6e8dfd",
+    },
+    "score": 81194,
+    "updatedAt": "2020-01-04T06:43:05.476Z",
+  },
+}
+`;
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 5 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "book": Object {
+        "cover": "http://placeimg.com/640/480/abstract",
+        "id": "f04bcad3-eb09-479f-962d-589c3710e141",
+        "title": "voluptatum magnam veritatis",
+      },
+      "type": "Book",
+    },
+    "id": "30dd35ef-7196-4c58-b4f3-c1abd732ce14",
+    "recommendsTo": Object {
+      "alias": "pusm0kkd",
+      "avatar": "https://cdn.fakercloud.com/avatars/tjrus_128.jpg",
+      "displayName": "Miss Myrtle Schumm",
+      "id": "14ea8979-b404-414d-9d2e-2ff8f13f073a",
+    },
+    "score": 20415,
+    "updatedAt": "2020-05-31T04:41:55.747Z",
+  },
+}
+`;
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 6 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "book": Object {
+        "cover": null,
+        "id": "46bb6b76-bf57-4e5b-b31a-60cdc748327c",
+        "title": "suscipit laborum minus",
+      },
+      "type": "Book",
+    },
+    "id": "ef53d105-1f91-4896-8579-d7cb68392abf",
+    "recommendsTo": Object {
+      "alias": "9soqlpps",
+      "avatar": "https://cdn.fakercloud.com/avatars/danvierich_128.jpg",
+      "displayName": "June Schuster",
+      "id": "76aecd70-ab2c-45b9-b789-11f3633db7f8",
+    },
+    "score": 91419,
+    "updatedAt": "2020-10-26T05:57:28.097Z",
+  },
+}
+`;
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 7 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "book": Object {
+        "cover": "http://placeimg.com/640/480/abstract",
+        "id": "2417854a-45e7-46b6-afec-25b46869aa84",
+        "title": "esse ea alias",
+      },
+      "type": "Book",
+    },
+    "id": "13c57fb7-f484-4811-a407-8adc5661a4ae",
+    "recommendsTo": Object {
+      "alias": "dyhcd9ug",
+      "avatar": "https://cdn.fakercloud.com/avatars/lososina_128.jpg",
+      "displayName": "Darlene Daugherty",
+      "id": "57ee40c9-4fd3-428c-af27-86c5a3713779",
+    },
+    "score": 69403,
+    "updatedAt": "2020-03-18T21:15:20.517Z",
+  },
+}
+`;
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 8 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "book": Object {
+        "cover": null,
+        "id": "1a71a92c-a007-4ec3-b994-027537a43d2d",
+        "title": "sed quisquam aspernatur",
+      },
+      "type": "Book",
+    },
+    "id": "d0f3d68d-3609-46c6-a8d7-e828bc6bd906",
+    "recommendsTo": Object {
+      "alias": "dkrnxab5",
+      "avatar": "https://cdn.fakercloud.com/avatars/runningskull_128.jpg",
+      "displayName": "Eddie O'Reilly",
+      "id": "7fd50341-4fa2-4452-9738-6fe85af10554",
+    },
+    "score": 35281,
+    "updatedAt": "2020-04-15T12:17:50.110Z",
+  },
+}
+`;
+
+exports[`Recommendation Index Page transformer transform recommendationが存在する場合 9 1`] = `
+Object {
+  "recommendation": Object {
+    "content": Object {
+      "book": Object {
+        "cover": null,
+        "id": "17296797-26ed-4f2e-b6b4-e50fa0a27406",
+        "title": "eaque tempore ipsum",
+      },
+      "type": "Book",
+    },
+    "id": "05877025-203e-4623-a165-725e5fb0fbb9",
+    "recommendsTo": Object {
+      "alias": "yz6o8kvs",
+      "avatar": "https://cdn.fakercloud.com/avatars/fronx_128.jpg",
+      "displayName": "Earnest McClure",
+      "id": "2af88bf6-ab9d-4a7c-b6cd-f12181f7a3de",
+    },
+    "score": 13542,
+    "updatedAt": "2020-11-23T18:32:32.654Z",
+  },
+}
+`;
