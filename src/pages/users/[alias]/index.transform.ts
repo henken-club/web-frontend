@@ -149,7 +149,7 @@ export type TransformedProps = {
         } | null;
       }[];
     };
-    recienvedHenkens: {
+    receivedHenkens: {
       count: number;
       more: boolean;
       henkens: {
@@ -232,7 +232,7 @@ export const transformer = ({
                 : null,
             })),
           },
-          recienvedHenkens: {
+          receivedHenkens: {
             count: user.receivedHenkens.totalCount,
             more: user.receivedHenkens.pageInfo.hasNextPage,
             henkens: user.receivedHenkens.edges.map(({node}) => ({

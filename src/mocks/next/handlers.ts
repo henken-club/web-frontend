@@ -108,7 +108,7 @@ export const handlers = [
                       postsTo: {
                         __typename: 'User',
                         id: faker.datatype.uuid(),
-                        alias: faker.hacker.ingverb(),
+                        alias: faker.random.alphaNumeric(10),
                         displayName: faker.name.firstName(),
                         avatar: faker.image.avatar(),
                       },
