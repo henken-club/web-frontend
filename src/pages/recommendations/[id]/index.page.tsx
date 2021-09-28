@@ -12,7 +12,13 @@ import {getSdk} from './index.page.codegen';
 import {TransformedProps, transformer} from './index.transform';
 
 import {graphqlClient} from '~/libs/graphql-request';
-import {ErrorCp} from '~/components/common/Error';
+import {Error} from '~/components/common/Error';
+import {
+  BadRequestError,
+  ErrorHandling,
+  ServerSideError,
+  TransformError,
+} from '~/components/common/error';
 
 const AllRecommendationsPagesQuery = gql`
   query AllRecommendationsPages {
@@ -63,25 +69,30 @@ const RecommendationPageQuery = gql`
   }
 `;
 
-export type StaticProps = TransformedProps | {error: {status: 401 | 404 | 500}};
+export type StaticProps = ErrorHandling<TransformedProps>;
 export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
-  if (!params?.id) return {props: {error: {status: 401}}};
   try {
+    if (!params?.id) throw new BadRequestError();
+
     const result = await getSdk(graphqlClient)
       .RecommendationPage({id: params.id})
       .catch((error) => {
-        throw error;
+        throw new ServerSideError();
       });
     const transformed = transformer(result);
-    if (!transformed) return {props: {error: {status: 404}}};
-    return {
-      props: transformed,
-      revalidate: 60,
-    };
+    if (!transformed) throw new TransformError();
+
+    return {props: transformed, revalidate: 60};
   } catch (error) {
-    return {props: {error: {status: 500}}};
+    if (error instanceof BadRequestError)
+      return {props: {error: error.serialize()}};
+    if (error instanceof ServerSideError)
+      return {props: {error: error.serialize()}};
+    if (error instanceof TransformError)
+      return {props: {error: error.serialize()}};
+    throw error;
   }
 };
 
@@ -90,7 +101,7 @@ export type PageProps = Merge<
   InferGetStaticPropsType<typeof getStaticProps>
 >;
 export const Page: NextPage<PageProps> = ({className, ...props}) => {
-  if ('error' in props) return <ErrorCp />;
+  if ('error' in props) return <Error />;
   else return <>{props.recommendation.id}</>;
 };
 export default Page;
