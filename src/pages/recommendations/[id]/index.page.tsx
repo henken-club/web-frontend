@@ -12,12 +12,6 @@ import {getSdk} from './index.page.codegen';
 import {TransformedProps, transformer} from './index.transform';
 
 import {graphqlClient} from '~/libs/graphql-request';
-import {
-  ErrorTemplate,
-  BadRequestError,
-  ThrowableStaticProps,
-  ServerSideError,
-} from '~/components/Error';
 
 const AllRecommendationsPagesQuery = gql`
   query AllRecommendationsPages {
@@ -68,36 +62,24 @@ const RecommendationPageQuery = gql`
   }
 `;
 
-export type StaticProps = ThrowableStaticProps<TransformedProps>;
+export type StaticProps = TransformedProps;
 export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
-  try {
-    if (!params?.id) throw new BadRequestError();
-
-    const result = await getSdk(graphqlClient)
-      .RecommendationPage({id: params.id})
-      .catch((error) => {
-        throw new ServerSideError();
-      });
-    const transformed = transformer(result);
-    if (transformed === null) return {notFound: true};
-    return {props: transformed, revalidate: 60};
-  } catch (error) {
-    if (error instanceof BadRequestError)
-      return {props: {error: error.serialize()}};
-    if (error instanceof ServerSideError)
-      return {props: {error: error.serialize()}};
-    throw error;
-  }
+  if (!params?.id) return {redirect: {destination: '/', permanent: true}};
+  const result = await getSdk(graphqlClient).RecommendationPage({
+    id: params.id,
+  });
+  const transformed = transformer(result);
+  if (transformed === null) return {notFound: true};
+  return {props: transformed, revalidate: 60};
 };
 
 export type PageProps = Merge<
   {className?: string},
   InferGetStaticPropsType<typeof getStaticProps>
 >;
-export const Page: NextPage<PageProps> = ({className, ...props}) => {
-  if ('error' in props) return <ErrorTemplate error={props.error} />;
-  else return <>{props.recommendation.id}</>;
+export const Page: NextPage<PageProps> = ({className, recommendation}) => {
+  return <>{recommendation.id}</>;
 };
 export default Page;
