@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 0 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 0 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
@@ -23,7 +23,7 @@ Object {
 }
 `;
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 1 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 1 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
@@ -46,7 +46,7 @@ Object {
 }
 `;
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 2 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 2 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
@@ -70,7 +70,7 @@ Object {
 }
 `;
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 3 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 3 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
@@ -94,7 +94,7 @@ Object {
 }
 `;
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 4 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 4 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
@@ -117,7 +117,7 @@ Object {
 }
 `;
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 5 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 5 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
@@ -141,7 +141,7 @@ Object {
 }
 `;
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 6 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 6 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
@@ -165,7 +165,7 @@ Object {
 }
 `;
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 7 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 7 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
@@ -189,7 +189,7 @@ Object {
 }
 `;
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 8 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 8 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
@@ -213,7 +213,7 @@ Object {
 }
 `;
 
-exports[`Recommendation Index Page transformer transform recommendationが存在する場合 9 1`] = `
+exports[`Recommendation Page transformer transform recommendationが存在する場合 9 1`] = `
 Object {
   "recommendation": Object {
     "content": Object {
