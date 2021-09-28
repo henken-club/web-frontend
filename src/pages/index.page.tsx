@@ -22,6 +22,9 @@ export const Page: NextPage<PageProps> = ({...props}) => {
           <p>{viewer.displayName}</p>
         </>
       )}
+      <Link href="/recommendations/1">
+        <a>link</a>
+      </Link>
     </>
   );
 };
