@@ -12,13 +12,12 @@ import {getSdk} from './index.page.codegen';
 import {TransformedProps, transformer} from './index.transform';
 
 import {graphqlClient} from '~/libs/graphql-request';
-import {Error} from '~/components/common/Error';
 import {
+  ErrorTemplate,
   BadRequestError,
-  ErrorHandling,
+  ThrowableStaticProps,
   ServerSideError,
-  TransformError,
-} from '~/components/common/error';
+} from '~/components/Error';
 
 const AllRecommendationsPagesQuery = gql`
   query AllRecommendationsPages {
@@ -69,7 +68,7 @@ const RecommendationPageQuery = gql`
   }
 `;
 
-export type StaticProps = ErrorHandling<TransformedProps>;
+export type StaticProps = ThrowableStaticProps<TransformedProps>;
 export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
@@ -82,15 +81,12 @@ export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
         throw new ServerSideError();
       });
     const transformed = transformer(result);
-    if (!transformed) throw new TransformError();
-
+    if (transformed === null) return {notFound: true};
     return {props: transformed, revalidate: 60};
   } catch (error) {
     if (error instanceof BadRequestError)
       return {props: {error: error.serialize()}};
     if (error instanceof ServerSideError)
-      return {props: {error: error.serialize()}};
-    if (error instanceof TransformError)
       return {props: {error: error.serialize()}};
     throw error;
   }
@@ -101,7 +97,7 @@ export type PageProps = Merge<
   InferGetStaticPropsType<typeof getStaticProps>
 >;
 export const Page: NextPage<PageProps> = ({className, ...props}) => {
-  if ('error' in props) return <Error />;
+  if ('error' in props) return <ErrorTemplate error={props.error} />;
   else return <>{props.recommendation.id}</>;
 };
 export default Page;
