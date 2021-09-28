@@ -7,9 +7,11 @@ import {
 } from 'next';
 import React from 'react';
 import {Merge} from 'type-fest';
+import Link from 'next/link';
+import Image from 'next/image';
 
 import {getSdk} from './index.page.codegen';
-import {TransformedProps, transformer} from './index.transform';
+import {SerializedProps, serializer} from './index.serializer';
 
 import {graphqlClient} from '~/libs/graphql-request';
 
@@ -36,26 +38,60 @@ const HenkenPageQuery = gql`
     findHenken(id: $id) {
       henken {
         id
+        comment
+        postedBy {
+          id
+          alias
+          displayName
+          avatar
+        }
+        postsTo {
+          id
+          alias
+          displayName
+          avatar
+        }
+        content {
+          __typename
+          ... on Book {
+            id
+            title
+            cover
+          }
+          ... on BookSeries {
+            id
+            title
+          }
+        }
       }
     }
   }
 `;
 
-export type StaticProps = TransformedProps;
+export type StaticProps = SerializedProps;
 export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
   if (!params?.id) return {notFound: true};
-
-  try {
-    const result = await getSdk(graphqlClient).HenkenPage({id: params.id});
-    const transformed = transformer(result);
-    if (transformed) return {props: transformed, revalidate: 60};
-    else return {notFound: true};
-  } catch (error) {
-    return {notFound: true};
-  }
+  const result = await getSdk(graphqlClient).HenkenPage({id: params.id});
+  const transformed = serializer(result);
+  if (transformed === null) return {notFound: true};
+  return {props: transformed, revalidate: 60};
 };
+
+export const User: React.VFC<{
+  user: {id: string; avatar: string; alias: string; displayName: string};
+}> = ({user: {id, alias, avatar, displayName}}) => (
+  <>
+    <Link href={`/users/${alias}`}>
+      <a>
+        <Image width={24} height={24} src={avatar} />
+      </a>
+    </Link>
+    <span>{displayName}</span>
+    <span>{alias}</span>
+  </>
+);
 
 export type PageProps = Merge<
   {className?: string},
@@ -65,6 +101,25 @@ export const Page: NextPage<PageProps> = ({className, henken, ...props}) => {
   return (
     <>
       <h1>{henken.id}</h1>
+      <p>{henken.comment}</p>
+      <p>From</p>
+      <User user={henken.postedBy} />
+      <p>To</p>
+      <User user={henken.postsTo} />
+      <p>Content</p>
+      {henken.content.type === 'Book' && (
+        <>
+          {henken.content.book.cover && (
+            <Image width={320} height={320} src={henken.content.book.cover} />
+          )}
+          <span>{henken.content.book.title}</span>
+        </>
+      )}
+      {henken.content.type === 'BookSeries' && (
+        <>
+          <span>{henken.content.bookSeries.title}</span>
+        </>
+      )}
     </>
   );
 };

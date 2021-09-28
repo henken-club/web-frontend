@@ -289,8 +289,29 @@ export const handlers = [
         ctx.data({
           __typename: 'Query',
           findHenken: {
+            __typename: 'FindHenkenPayload',
             henken: {
+              __typename: 'Henken',
               id: faker.datatype.uuid(),
+              comment: faker.lorem.words(),
+              postsTo: factoryUser(),
+              postedBy: factoryUser(),
+              content: faker.random.arrayElement([
+                {
+                  __typename: 'Book',
+                  id: faker.datatype.uuid(),
+                  title: faker.lorem.words(),
+                  cover: faker.random.arrayElement([
+                    null,
+                    faker.image.abstract(),
+                  ]),
+                },
+                {
+                  __typename: 'BookSeries',
+                  id: faker.datatype.uuid(),
+                  title: faker.lorem.words(),
+                },
+              ]),
             },
           },
         }),

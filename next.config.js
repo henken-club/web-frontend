@@ -15,7 +15,7 @@ const nextConfig = {
   images: {
     domains: [
       ...(process.env.NEXT_PUBLIC_MSW_ENABLED === 'true'
-        ? ['cdn.fakercloud.com']
+        ? ['cdn.fakercloud.com', 'placeimg.com']
         : []),
     ],
   },
