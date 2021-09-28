@@ -1,3 +1,5 @@
+import crypto from 'crypto';
+
 import {graphql} from 'msw';
 import * as faker from 'faker';
 
@@ -18,10 +20,21 @@ import {
 } from './codegen';
 import {factoryUser, factoryUserEdge} from './factories';
 
+const generateSeed = (variables: Record<string, unknown>) =>
+  Number.parseInt(
+    crypto
+      .createHash('md5')
+      .update(JSON.stringify(variables))
+      .digest('hex')
+      .substr(0, 8),
+    16,
+  );
+
 export const handlers = [
   graphql.query<GetViewerQuery, GetViewerQueryVariables>(
     GetViewerDocument,
     (req, res, ctx) => {
+      faker.seed(0);
       if (req.headers.get('Authorization'))
         return res(
           ctx.data({
@@ -45,8 +58,9 @@ export const handlers = [
   ),
   graphql.query<AllUserPagesQuery, AllUserPagesQueryVariables>(
     AllUserPagesDocument,
-    (req, res, ctx) =>
-      res.once(
+    (req, res, ctx) => {
+      faker.seed(generateSeed(req.variables));
+      return res(
         ctx.data({
           __typename: 'Query',
           manyUsers: [...new Array(1)].map((_, i) => ({
@@ -55,12 +69,14 @@ export const handlers = [
             alias: faker.random.alphaNumeric(10),
           })),
         }),
-      ),
+      );
+    },
   ),
   graphql.query<UserPageQuery, UserPageQueryVariables>(
     UserPageDocument,
     (req, res, ctx) => {
-      return res.once(
+      faker.seed(generateSeed(req.variables));
+      return res(
         ctx.data({
           __typename: 'Query',
           findUser: {
