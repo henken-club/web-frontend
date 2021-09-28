@@ -17,6 +17,9 @@ import {
   RecommendationPageQuery,
   RecommendationPageQueryVariables,
   RecommendationPageDocument,
+  AllRecommendationsPagesDocument,
+  AllRecommendationsPagesQuery,
+  AllRecommendationsPagesQueryVariables,
 } from './codegen';
 import {factoryUser, factoryUserEdge} from './factories';
 
@@ -257,10 +260,26 @@ export const handlers = [
       );
     },
   ),
+  graphql.query<
+    AllRecommendationsPagesQuery,
+    AllRecommendationsPagesQueryVariables
+  >(AllRecommendationsPagesDocument, (req, res, ctx) => {
+    faker.seed(generateSeed(req.variables));
+    return res(
+      ctx.data({
+        __typename: 'Query',
+        manyRecommendations: [...new Array(1)].map((_, i) => ({
+          __typename: 'Recommendation',
+          id: faker.datatype.uuid(),
+        })),
+      }),
+    );
+  }),
   graphql.query<RecommendationPageQuery, RecommendationPageQueryVariables>(
     RecommendationPageDocument,
-    (req, res, ctx) =>
-      res.once(
+    (req, res, ctx) => {
+      faker.seed(generateSeed(req.variables));
+      return res(
         ctx.data({
           __typename: 'Query',
           findRecommendation: {
@@ -298,6 +317,7 @@ export const handlers = [
             },
           },
         }),
-      ),
+      );
+    },
   ),
 ];
