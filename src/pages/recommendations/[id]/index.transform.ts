@@ -1,6 +1,6 @@
 import {RecommendationPageQuery as PageResult} from './index.page.codegen';
 
-import {serializeUser} from '~/libs/serializers';
+import {serializeUser} from '~/libs/serializer';
 
 type ResultRecommendation = Exclude<
   PageResult['findRecommendation']['recommendation'],

@@ -4,7 +4,7 @@ import {
   serializeUser,
   SerializeContent,
   serializeHenken,
-} from '~/libs/serializers';
+} from '~/libs/serializer';
 
 type ResultHenken = Exclude<
   PageQueryResult['findHenken']['henken'],
