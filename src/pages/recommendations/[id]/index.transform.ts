@@ -1,6 +1,6 @@
 import {RecommendationPageQuery as PageResult} from './index.page.codegen';
 
-import {transformUser} from '~/libs/transformUser';
+import {serializeUser} from '~/libs/serializer';
 
 type ResultRecommendation = Exclude<
   PageResult['findRecommendation']['recommendation'],
@@ -67,7 +67,7 @@ export const transformer = ({
           id: recommendation.id,
           score: recommendation.score,
           updatedAt: recommendation.updatedAt,
-          recommendsTo: transformUser(recommendation.recommendsTo),
+          recommendsTo: serializeUser(recommendation.recommendsTo),
           content: transformContent(recommendation.content),
         },
       }
