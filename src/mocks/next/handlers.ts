@@ -14,6 +14,12 @@ import {
   GetViewerQuery,
   GetViewerQueryVariables,
   GetViewerDocument,
+  AllHenkenPagesQuery,
+  AllHenkenPagesQueryVariables,
+  AllHenkenPagesDocument,
+  HenkenPageDocument,
+  HenkenPageQuery,
+  HenkenPageQueryVariables,
 } from './codegen';
 import {factoryUser, factoryUserEdge} from './factories';
 
@@ -248,6 +254,37 @@ export const handlers = [
                   },
                 })),
               },
+            },
+          },
+        }),
+      );
+    },
+  ),
+  graphql.query<AllHenkenPagesQuery, AllHenkenPagesQueryVariables>(
+    AllHenkenPagesDocument,
+    (req, res, ctx) => {
+      faker.seed(generateSeed(req.variables));
+      return res(
+        ctx.data({
+          __typename: 'Query',
+          manyHenkens: [...new Array(1)].map((_, i) => ({
+            __typename: 'Henken',
+            id: faker.datatype.uuid(),
+          })),
+        }),
+      );
+    },
+  ),
+  graphql.query<HenkenPageQuery, HenkenPageQueryVariables>(
+    HenkenPageDocument,
+    (req, res, ctx) => {
+      faker.seed(generateSeed(req.variables));
+      return res(
+        ctx.data({
+          __typename: 'Query',
+          findHenken: {
+            henken: {
+              id: faker.datatype.uuid(),
             },
           },
         }),

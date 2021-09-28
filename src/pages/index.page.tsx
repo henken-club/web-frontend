@@ -1,15 +1,13 @@
 import {NextPage} from 'next';
 import React from 'react';
+import Link from 'next/link';
 
-import {useTranslation} from '~/i18n/useTranslation';
 import {useViewer} from '~/libs/useViewer';
 
 export type UrlQuery = Record<string, never>;
 export type PageProps = Record<string, never>;
 
 export const Page: NextPage<PageProps> = ({...props}) => {
-  const {LL} = useTranslation();
-
   const {viewer} = useViewer();
 
   return (
@@ -18,7 +16,9 @@ export const Page: NextPage<PageProps> = ({...props}) => {
       {viewer && (
         <>
           <p>{viewer.id}</p>
-          <p>{viewer.alias}</p>
+          <Link href={`/users/${viewer.alias}`}>
+            <a>{viewer.alias}</a>
+          </Link>
           <p>{viewer.displayName}</p>
         </>
       )}
