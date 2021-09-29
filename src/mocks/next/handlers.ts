@@ -26,8 +26,18 @@ import {
   AllRecommendationsPagesDocument,
   AllRecommendationsPagesQuery,
   AllRecommendationsPagesQueryVariables,
+  AnswerPageQuery,
+  AnswerPageQueryVariables,
+  AnswerPageDocument,
+  AllAnswerPagesQuery,
+  AllAnswerPagesQueryVariables,
+  AllAnswerPagesDocument,
 } from './codegen';
 import {factoryUser, factoryUserEdge} from './factories';
+import {
+  factoryAllAnswerPagesQuery,
+  factoryAnswerPageQuery,
+} from './factories/AnswerPage';
 
 const generateSeed = (variables: Record<string, unknown>) =>
   Number.parseInt(
@@ -376,6 +386,20 @@ export const handlers = [
           },
         }),
       );
+    },
+  ),
+  graphql.query<AllAnswerPagesQuery, AllAnswerPagesQueryVariables>(
+    AllAnswerPagesDocument,
+    (req, res, ctx) => {
+      faker.seed(generateSeed(req.variables));
+      return res(ctx.data(factoryAllAnswerPagesQuery(req.variables)));
+    },
+  ),
+  graphql.query<AnswerPageQuery, AnswerPageQueryVariables>(
+    AnswerPageDocument,
+    (req, res, ctx) => {
+      faker.seed(generateSeed(req.variables));
+      return res(ctx.data(factoryAnswerPageQuery()));
     },
   ),
 ];

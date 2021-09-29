@@ -23,3 +23,8 @@ export const serializeHenken = <T extends Record<string, unknown>>({
   __typename,
   ...props
 }: {__typename: 'Henken'} & T) => ({...props});
+
+export const serializeAnswer = <T extends Record<string, unknown>>({
+  __typename,
+  ...props
+}: {__typename: 'Answer'} & T) => ({...props});
