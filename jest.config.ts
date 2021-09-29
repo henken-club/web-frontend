@@ -22,5 +22,6 @@ const config: Config.InitialOptions = {
     },
   },
   collectCoverage: true,
+  coveragePathIgnorePatterns: ['<rootDir>/src/mocks'],
 };
 export default config;

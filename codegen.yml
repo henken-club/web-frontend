@@ -36,6 +36,20 @@ generates:
       baseTypesPath: ./codegen.ts
       extension: .codegen.ts
 
+  ./src/mocks/codegen.ts:
+    documents:
+      - 'src/**/*.{ts,tsx}'
+      - '!src/**/codegen.ts'
+      - '!src/**/*.codegen.ts'
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node
+    config:
+      nonOptionalTypename: true
+      scalars:
+        DateTime: string
+
   ./src/mocks/next/codegen.ts:
     documents:
       - 'src/**/*.{ts,tsx}'

@@ -4,6 +4,10 @@ import {graphql} from 'msw';
 import * as faker from 'faker';
 
 import {
+  factoryAllAnswerPagesQuery,
+  factoryAnswerPageQuery,
+} from '../factories/AnswerPage';
+import {
   AllUserPagesDocument,
   AllUserPagesQuery,
   AllUserPagesQueryVariables,
@@ -32,12 +36,9 @@ import {
   AllAnswerPagesQuery,
   AllAnswerPagesQueryVariables,
   AllAnswerPagesDocument,
-} from './codegen';
+} from '../codegen';
+
 import {factoryUser, factoryUserEdge} from './factories';
-import {
-  factoryAllAnswerPagesQuery,
-  factoryAnswerPageQuery,
-} from './factories/AnswerPage';
 
 const generateSeed = (variables: Record<string, unknown>) =>
   Number.parseInt(

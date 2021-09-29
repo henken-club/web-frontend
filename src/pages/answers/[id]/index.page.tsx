@@ -36,6 +36,37 @@ const AnswerPageQuery = gql`
     findAnswer(id: $id) {
       answer {
         id
+        comment
+        createdAt
+        type
+        answerTo {
+          id
+          comment
+          postedBy {
+            id
+            alias
+            displayName
+            avatar
+          }
+          postsTo {
+            id
+            alias
+            displayName
+            avatar
+          }
+          content {
+            __typename
+            ... on Book {
+              id
+              title
+              cover
+            }
+            ... on BookSeries {
+              id
+              title
+            }
+          }
+        }
       }
     }
   }
@@ -60,6 +91,7 @@ export const Page: NextPage<PageProps> = ({className, answer, ...props}) => {
   return (
     <>
       <h1>{answer.id}</h1>
+      {JSON.stringify(answer)}
     </>
   );
 };

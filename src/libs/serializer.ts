@@ -1,3 +1,5 @@
+import {AnswerType as AnswerTypeEnum} from './codegen';
+
 export type ContentBook<T extends {id: string}> = {
   type: 'Book';
   book: T;
@@ -28,3 +30,13 @@ export const serializeAnswer = <T extends Record<string, unknown>>({
   __typename,
   ...props
 }: {__typename: 'Answer'} & T) => ({...props});
+
+export type AnswerType = 'right' | 'wrong';
+export const serializeAnswerType = (type: AnswerTypeEnum): AnswerType => {
+  switch (type) {
+    case AnswerTypeEnum.Right:
+      return 'right';
+    case AnswerTypeEnum.Wrong:
+      return 'wrong';
+  }
+};
