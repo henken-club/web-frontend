@@ -24,7 +24,7 @@ const AllRecommendationsPagesQuery = gql`
 export type UrlQuery = {id: string};
 export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
   return getSdk(graphqlClient)
-    .AllRecommendationsPages()
+    .AllRecommendationsPages({limit: 100})
     .then(({manyRecommendations}) => ({
       fallback: 'blocking',
       paths: manyRecommendations.map(({id}) => ({params: {id}})),

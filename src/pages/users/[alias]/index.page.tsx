@@ -27,7 +27,7 @@ const AllUserPagesQuery = gql`
 export type UrlQuery = {alias: string};
 export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
   return getSdk(graphqlClient)
-    .AllUserPages()
+    .AllUserPages({limit: 100})
     .then(({manyUsers}) => ({
       fallback: 'blocking',
       paths: manyUsers.map(({alias}) => ({params: {alias}})),
