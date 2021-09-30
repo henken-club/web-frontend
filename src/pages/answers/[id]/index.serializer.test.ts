@@ -2,7 +2,7 @@ import faker from 'faker';
 
 import {serializer} from './index.serializer';
 
-import {factoryAnswerPageQuery} from '~/mocks/factories/AnswerPage';
+import {factoryAnswerPage} from '~/mocks/factories/AnswerPage';
 
 describe('AnswerPage serializer', () => {
   describe('serializer()', () => {
@@ -17,7 +17,7 @@ describe('AnswerPage serializer', () => {
     it.each(
       [...new Array(10)].map((_, i) => {
         faker.seed(i);
-        return [factoryAnswerPageQuery()];
+        return [factoryAnswerPage()];
       }),
     )('findAnswer.answerが存在する場合 %#', (payload) => {
       const actual = serializer(payload);

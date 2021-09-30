@@ -18,7 +18,7 @@ import {
   repeat,
 } from './common';
 
-export const factoryAllRecommendationsPage = (
+export const factoryAllRecommendationsPages = (
   variables: AllRecommendationsPagesQueryVariables,
 ): AllRecommendationsPagesQuery => ({
   __typename: 'Query',

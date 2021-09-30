@@ -4,8 +4,8 @@ import {graphql} from 'msw';
 import * as faker from 'faker';
 
 import {
-  factoryAllAnswerPagesQuery,
-  factoryAnswerPageQuery,
+  factoryAllAnswerPages,
+  factoryAnswerPage,
 } from '../factories/AnswerPage';
 import {
   AllUserPagesDocument,
@@ -37,7 +37,7 @@ import {
   AllAnswerPagesDocument,
 } from '../codegen';
 import {
-  factoryAllRecommendationsPage,
+  factoryAllRecommendationsPages,
   factoryRecommendationPage,
 } from '../factories/RecommendationPage';
 import {
@@ -103,7 +103,7 @@ export const handlers = [
     AllRecommendationsPagesQueryVariables
   >(AllRecommendationsPagesDocument, (req, res, ctx) => {
     faker.seed(generateSeed(req.variables));
-    return res(ctx.data(factoryAllRecommendationsPage(req.variables)));
+    return res(ctx.data(factoryAllRecommendationsPages(req.variables)));
   }),
   graphql.query<RecommendationPageQuery, RecommendationPageQueryVariables>(
     RecommendationPageDocument,
@@ -116,14 +116,14 @@ export const handlers = [
     AllAnswerPagesDocument,
     (req, res, ctx) => {
       faker.seed(generateSeed(req.variables));
-      return res(ctx.data(factoryAllAnswerPagesQuery(req.variables)));
+      return res(ctx.data(factoryAllAnswerPages(req.variables)));
     },
   ),
   graphql.query<AnswerPageQuery, AnswerPageQueryVariables>(
     AnswerPageDocument,
     (req, res, ctx) => {
       faker.seed(generateSeed(req.variables));
-      return res(ctx.data(factoryAnswerPageQuery()));
+      return res(ctx.data(factoryAnswerPage()));
     },
   ),
 ];
