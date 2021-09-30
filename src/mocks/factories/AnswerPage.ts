@@ -2,6 +2,7 @@ import {
   AllAnswerPagesQuery,
   AllAnswerPagesQueryVariables,
   AnswerPageQuery,
+  AnswerPageQueryVariables,
 } from '../codegen';
 
 import {
@@ -28,7 +29,9 @@ export const factoryAllAnswerPages = ({
   })),
 });
 
-export const factoryAnswerPage = (): AnswerPageQuery => ({
+export const factoryAnswerPage = (
+  variables: AnswerPageQueryVariables,
+): AnswerPageQuery => ({
   __typename: 'Query',
   findAnswer: {
     __typename: 'FindAnswerPayload',

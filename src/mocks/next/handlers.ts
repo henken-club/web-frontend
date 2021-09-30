@@ -123,7 +123,7 @@ export const handlers = [
     AnswerPageDocument,
     (req, res, ctx) => {
       faker.seed(generateSeed(req.variables));
-      return res(ctx.data(factoryAnswerPage()));
+      return res(ctx.data(factoryAnswerPage(req.variables)));
     },
   ),
 ];
