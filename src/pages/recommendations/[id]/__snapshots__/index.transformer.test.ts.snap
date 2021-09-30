@@ -5,16 +5,16 @@ Object {
   "recommendation": Object {
     "content": Object {
       "bookSeries": Object {
-        "id": "a9467739-251a-4a52-83f5-ad019da1ffe7",
-        "title": "molestias reiciendis illo",
+        "id": "7aff1a3a-2fa9-4467-b392-51aa52c3f5ad",
+        "title": "perferendis aspernatur fuga",
       },
       "type": "BookSeries",
     },
     "id": "89bd9d8d-69a6-474e-8f46-7cc8796ed151",
     "recommendsTo": Object {
-      "alias": "g7k40bm5",
-      "avatar": "https://cdn.fakercloud.com/avatars/unterdreht_128.jpg",
-      "displayName": "Luther Howe",
+      "alias": "blanditiis",
+      "avatar": "https://cdn.fakercloud.com/avatars/logorado_128.jpg",
+      "displayName": "Curt",
       "id": "5dfc2ddf-7cc7-48ca-9ba9-28fc816742cb",
     },
     "score": 64817,
@@ -28,16 +28,16 @@ Object {
   "recommendation": Object {
     "content": Object {
       "bookSeries": Object {
-        "id": "992f94b3-186f-4b76-80c8-0a28cf09ee82",
-        "title": "ducimus eos saepe",
+        "id": "ae3e4479-0999-42f9-8b31-86fb7680c80a",
+        "title": "eos sint autem",
       },
       "type": "BookSeries",
     },
     "id": "6fbe024f-2316-4265-a6e8-d65a837e308a",
     "recommendsTo": Object {
-      "alias": "yej7oab5",
-      "avatar": "https://cdn.fakercloud.com/avatars/RussellBishop_128.jpg",
-      "displayName": "Dianna Jerde",
+      "alias": "a",
+      "avatar": "https://cdn.fakercloud.com/avatars/koridhandy_128.jpg",
+      "displayName": "Hannah",
       "id": "7862f3cc-bfc5-41b8-aded-1d0420ea196a",
     },
     "score": 91396,
@@ -50,18 +50,17 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "book": Object {
-        "cover": "http://placeimg.com/640/480/abstract",
-        "id": "2bdf883e-f559-446c-a5c7-84fc8d1f5dd8",
-        "title": "voluptate modi accusantium",
+      "bookSeries": Object {
+        "id": "1f5dd863-0b36-41ef-bf8c-b9bc72f46855",
+        "title": "omnis quae recusandae",
       },
-      "type": "Book",
+      "type": "BookSeries",
     },
     "id": "620e8f67-6552-43b9-9474-a9d8a27892bc",
     "recommendsTo": Object {
-      "alias": "nnhsindm",
-      "avatar": "https://cdn.fakercloud.com/avatars/bobwassermann_128.jpg",
-      "displayName": "Toni Carter",
+      "alias": "rerum",
+      "avatar": "https://cdn.fakercloud.com/avatars/joreira_128.jpg",
+      "displayName": "Madeline",
       "id": "876d21f8-4146-4112-a799-331c39527537",
     },
     "score": 25849,
@@ -74,18 +73,17 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "book": Object {
-        "cover": null,
-        "id": "035697b4-9437-4ada-9d4c-45713c318d1b",
-        "title": "atque ducimus commodi",
+      "bookSeries": Object {
+        "id": "318d1b77-55b8-4b7b-8b55-da7589d58720",
+        "title": "corporis et aut",
       },
-      "type": "Book",
+      "type": "BookSeries",
     },
     "id": "81bd4189-e6e0-4203-b017-b0277a345a79",
     "recommendsTo": Object {
-      "alias": "wtuedf3e",
-      "avatar": "https://cdn.fakercloud.com/avatars/gipsy_raf_128.jpg",
-      "displayName": "Dianne Ratke",
+      "alias": "ut",
+      "avatar": "https://cdn.fakercloud.com/avatars/shinze_128.jpg",
+      "displayName": "Rahul",
       "id": "c8f46684-4b97-4427-8ccd-443e6be0f2a5",
     },
     "score": 91330,
@@ -99,16 +97,16 @@ Object {
   "recommendation": Object {
     "content": Object {
       "bookSeries": Object {
-        "id": "ef65de6b-e56e-4569-9dbd-b9a119031b3e",
-        "title": "aut sint aspernatur",
+        "id": "53ac3271-2aef-465d-a6be-56e569ddbdb9",
+        "title": "libero dicta beatae",
       },
       "type": "BookSeries",
     },
     "id": "fe82fdb9-b932-4f30-b4e6-ac039d5f9269",
     "recommendsTo": Object {
-      "alias": "i93158j7",
-      "avatar": "https://cdn.fakercloud.com/avatars/hota_v_128.jpg",
-      "displayName": "Oliver Halvorson",
+      "alias": "occaecati",
+      "avatar": "https://cdn.fakercloud.com/avatars/antonyryndya_128.jpg",
+      "displayName": "Devin",
       "id": "9640afc6-0f0c-4fd7-a711-922dbd6e8dfd",
     },
     "score": 81194,
@@ -121,18 +119,17 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "book": Object {
-        "cover": "http://placeimg.com/640/480/abstract",
-        "id": "f04bcad3-eb09-479f-962d-589c3710e141",
-        "title": "voluptatum magnam veritatis",
+      "bookSeries": Object {
+        "id": "710e1417-40f4-4a3d-b96a-6c4e3ebde1a5",
+        "title": "nihil aperiam similique",
       },
-      "type": "Book",
+      "type": "BookSeries",
     },
     "id": "30dd35ef-7196-4c58-b4f3-c1abd732ce14",
     "recommendsTo": Object {
-      "alias": "pusm0kkd",
-      "avatar": "https://cdn.fakercloud.com/avatars/tjrus_128.jpg",
-      "displayName": "Miss Myrtle Schumm",
+      "alias": "cumque",
+      "avatar": "https://cdn.fakercloud.com/avatars/renbyrd_128.jpg",
+      "displayName": "Rosalee",
       "id": "14ea8979-b404-414d-9d2e-2ff8f13f073a",
     },
     "score": 20415,
@@ -145,18 +142,17 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "book": Object {
-        "cover": null,
-        "id": "46bb6b76-bf57-4e5b-b31a-60cdc748327c",
-        "title": "suscipit laborum minus",
+      "bookSeries": Object {
+        "id": "48327c59-b336-458d-898e-7fade2796746",
+        "title": "rerum quod voluptatibus",
       },
-      "type": "Book",
+      "type": "BookSeries",
     },
     "id": "ef53d105-1f91-4896-8579-d7cb68392abf",
     "recommendsTo": Object {
-      "alias": "9soqlpps",
-      "avatar": "https://cdn.fakercloud.com/avatars/danvierich_128.jpg",
-      "displayName": "June Schuster",
+      "alias": "aliquam",
+      "avatar": "https://cdn.fakercloud.com/avatars/myastro_128.jpg",
+      "displayName": "Paris",
       "id": "76aecd70-ab2c-45b9-b789-11f3633db7f8",
     },
     "score": 91419,
@@ -169,18 +165,17 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "book": Object {
-        "cover": "http://placeimg.com/640/480/abstract",
-        "id": "2417854a-45e7-46b6-afec-25b46869aa84",
-        "title": "esse ea alias",
+      "bookSeries": Object {
+        "id": "69aa8466-0a17-4bc8-abbf-7af024a983df",
+        "title": "qui rerum ducimus",
       },
-      "type": "Book",
+      "type": "BookSeries",
     },
     "id": "13c57fb7-f484-4811-a407-8adc5661a4ae",
     "recommendsTo": Object {
-      "alias": "dyhcd9ug",
-      "avatar": "https://cdn.fakercloud.com/avatars/lososina_128.jpg",
-      "displayName": "Darlene Daugherty",
+      "alias": "quis",
+      "avatar": "https://cdn.fakercloud.com/avatars/johnsmithagency_128.jpg",
+      "displayName": "Vallie",
       "id": "57ee40c9-4fd3-428c-af27-86c5a3713779",
     },
     "score": 69403,
@@ -195,16 +190,16 @@ Object {
     "content": Object {
       "book": Object {
         "cover": null,
-        "id": "1a71a92c-a007-4ec3-b994-027537a43d2d",
-        "title": "sed quisquam aspernatur",
+        "id": "af452614-ac1a-471a-92ca-007ec3f99402",
+        "title": "ducimus autem amet",
       },
       "type": "Book",
     },
     "id": "d0f3d68d-3609-46c6-a8d7-e828bc6bd906",
     "recommendsTo": Object {
-      "alias": "dkrnxab5",
-      "avatar": "https://cdn.fakercloud.com/avatars/runningskull_128.jpg",
-      "displayName": "Eddie O'Reilly",
+      "alias": "vel",
+      "avatar": "https://cdn.fakercloud.com/avatars/quailandquasar_128.jpg",
+      "displayName": "Keyon",
       "id": "7fd50341-4fa2-4452-9738-6fe85af10554",
     },
     "score": 35281,
@@ -219,16 +214,16 @@ Object {
     "content": Object {
       "book": Object {
         "cover": null,
-        "id": "17296797-26ed-4f2e-b6b4-e50fa0a27406",
-        "title": "eaque tempore ipsum",
+        "id": "a39dce0c-9517-4296-b972-6edf2eb6b4e5",
+        "title": "eaque maiores est",
       },
       "type": "Book",
     },
     "id": "05877025-203e-4623-a165-725e5fb0fbb9",
     "recommendsTo": Object {
-      "alias": "yz6o8kvs",
-      "avatar": "https://cdn.fakercloud.com/avatars/fronx_128.jpg",
-      "displayName": "Earnest McClure",
+      "alias": "ut",
+      "avatar": "https://cdn.fakercloud.com/avatars/calebogden_128.jpg",
+      "displayName": "Will",
       "id": "2af88bf6-ab9d-4a7c-b6cd-f12181f7a3de",
     },
     "score": 13542,

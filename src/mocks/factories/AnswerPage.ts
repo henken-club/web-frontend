@@ -2,6 +2,7 @@ import {
   AllAnswerPagesQuery,
   AllAnswerPagesQueryVariables,
   AnswerPageQuery,
+  AnswerPageQueryVariables,
 } from '../codegen';
 
 import {
@@ -18,7 +19,7 @@ import {
   which,
 } from './common';
 
-export const factoryAllAnswerPagesQuery = ({
+export const factoryAllAnswerPages = ({
   limit,
 }: AllAnswerPagesQueryVariables): AllAnswerPagesQuery => ({
   __typename: 'Query',
@@ -28,7 +29,9 @@ export const factoryAllAnswerPagesQuery = ({
   })),
 });
 
-export const factoryAnswerPageQuery = (): AnswerPageQuery => ({
+export const factoryAnswerPage = (
+  variables: AnswerPageQueryVariables,
+): AnswerPageQuery => ({
   __typename: 'Query',
   findAnswer: {
     __typename: 'FindAnswerPayload',

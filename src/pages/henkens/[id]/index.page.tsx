@@ -16,8 +16,8 @@ import {SerializedProps, serializer} from './index.serializer';
 import {graphqlClient} from '~/libs/graphql-request';
 
 const AllHenkenPagesQuery = gql`
-  query AllHenkenPages {
-    manyHenkens(limit: 100) {
+  query AllHenkenPages($limit: Int!) {
+    manyHenkens(limit: $limit) {
       id
     }
   }
@@ -26,7 +26,7 @@ const AllHenkenPagesQuery = gql`
 export type UrlQuery = {id: string};
 export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
   return getSdk(graphqlClient)
-    .AllHenkenPages()
+    .AllHenkenPages({limit: 100})
     .then(({manyHenkens}) => ({
       fallback: 'blocking',
       paths: manyHenkens.map(({id}) => ({params: {id}})),

@@ -3,6 +3,9 @@ import faker from 'faker';
 import {RecommendationPageQuery} from './index.page.codegen';
 import {transformContent, transformer} from './index.transform';
 
+import {id} from '~/mocks/factories/common';
+import {factoryRecommendationPage} from '~/mocks/factories/RecommendationPage';
+
 describe('Recommendation Page transformer', () => {
   describe('transformContent', () => {
     it('Book if cover exists', () => {
@@ -73,45 +76,7 @@ describe('Recommendation Page transformer', () => {
     it.each(
       [...new Array(10)].map((_, i): [RecommendationPageQuery] => {
         faker.seed(i);
-        return [
-          {
-            __typename: 'Query',
-            findRecommendation: {
-              __typename: 'FindRecommendationPayload',
-              recommendation: {
-                __typename: 'Recommendation',
-                id: faker.datatype.uuid(),
-                score: faker.datatype.number(),
-                updatedAt: faker.date
-                  .between('2020-01-01', '2020-12-31')
-                  .toISOString(),
-                recommendsTo: {
-                  __typename: 'User',
-                  id: faker.datatype.uuid(),
-                  alias: faker.random.alphaNumeric(8),
-                  displayName: faker.name.findName(),
-                  avatar: faker.image.avatar(),
-                },
-                content: faker.random.arrayElement([
-                  {
-                    __typename: 'Book',
-                    id: faker.datatype.uuid(),
-                    title: faker.lorem.words(),
-                    cover: faker.random.arrayElement([
-                      null,
-                      faker.image.abstract(),
-                    ]),
-                  },
-                  {
-                    __typename: 'BookSeries',
-                    id: faker.datatype.uuid(),
-                    title: faker.lorem.words(),
-                  },
-                ]),
-              },
-            },
-          },
-        ];
+        return [factoryRecommendationPage({id: id()})];
       }),
     )('recommendationが存在する場合 %#', (payload) => {
       const actual = transformer(payload);

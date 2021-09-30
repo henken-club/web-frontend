@@ -14,8 +14,8 @@ import {TransformedProps, transformer} from './index.transform';
 import {graphqlClient} from '~/libs/graphql-request';
 
 const AllRecommendationsPagesQuery = gql`
-  query AllRecommendationsPages {
-    manyRecommendations(limit: 100) {
+  query AllRecommendationsPages($limit: Int!) {
+    manyRecommendations(limit: $limit) {
       id
     }
   }
@@ -24,7 +24,7 @@ const AllRecommendationsPagesQuery = gql`
 export type UrlQuery = {id: string};
 export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
   return getSdk(graphqlClient)
-    .AllRecommendationsPages()
+    .AllRecommendationsPages({limit: 100})
     .then(({manyRecommendations}) => ({
       fallback: 'blocking',
       paths: manyRecommendations.map(({id}) => ({params: {id}})),
