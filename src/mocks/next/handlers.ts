@@ -4,6 +4,10 @@ import {graphql} from 'msw';
 import * as faker from 'faker';
 
 import {
+  factoryAllAnswerPagesQuery,
+  factoryAnswerPageQuery,
+} from '../factories/AnswerPage';
+import {
   AllUserPagesDocument,
   AllUserPagesQuery,
   AllUserPagesQueryVariables,
@@ -26,7 +30,14 @@ import {
   AllRecommendationsPagesDocument,
   AllRecommendationsPagesQuery,
   AllRecommendationsPagesQueryVariables,
-} from './codegen';
+  AnswerPageQuery,
+  AnswerPageQueryVariables,
+  AnswerPageDocument,
+  AllAnswerPagesQuery,
+  AllAnswerPagesQueryVariables,
+  AllAnswerPagesDocument,
+} from '../codegen';
+
 import {factoryUser, factoryUserEdge} from './factories';
 
 const generateSeed = (variables: Record<string, unknown>) =>
@@ -376,6 +387,20 @@ export const handlers = [
           },
         }),
       );
+    },
+  ),
+  graphql.query<AllAnswerPagesQuery, AllAnswerPagesQueryVariables>(
+    AllAnswerPagesDocument,
+    (req, res, ctx) => {
+      faker.seed(generateSeed(req.variables));
+      return res(ctx.data(factoryAllAnswerPagesQuery(req.variables)));
+    },
+  ),
+  graphql.query<AnswerPageQuery, AnswerPageQueryVariables>(
+    AnswerPageDocument,
+    (req, res, ctx) => {
+      faker.seed(generateSeed(req.variables));
+      return res(ctx.data(factoryAnswerPageQuery()));
     },
   ),
 ];

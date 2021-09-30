@@ -22,5 +22,11 @@ const config: Config.InitialOptions = {
     },
   },
   collectCoverage: true,
+  coveragePathIgnorePatterns: [
+    '/tests/',
+    '/mocks/',
+    'codegen\\.ts',
+    '.*\\.codegen\\.ts',
+  ],
 };
 export default config;
