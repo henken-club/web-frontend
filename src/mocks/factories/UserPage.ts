@@ -169,18 +169,18 @@ export const factoryUserPage = (
                 comment: comment(),
                 content: which([
                   {
-                    __typename: 'Book' as const,
+                    __typename: 'Book',
                     id: id(),
                     title: title(),
                   },
                   {
-                    __typename: 'BookSeries' as const,
+                    __typename: 'BookSeries',
                     id: id(),
                     title: title(),
                   },
                 ]),
                 postedBy: {
-                  __typename: 'User' as const,
+                  __typename: 'User',
                   id: id(),
                   alias: alias(),
                   displayName: displayName(),
@@ -200,18 +200,18 @@ export const factoryUserPage = (
                   comment: comment(),
                   content: which([
                     {
-                      __typename: 'Book' as const,
+                      __typename: 'Book',
                       id: id(),
                       title: title(),
                     },
                     {
-                      __typename: 'BookSeries' as const,
+                      __typename: 'BookSeries',
                       id: id(),
                       title: title(),
                     },
                   ]),
                   postedBy: {
-                    __typename: 'User' as const,
+                    __typename: 'User',
                     id: id(),
                     alias: alias(),
                     displayName: displayName(),

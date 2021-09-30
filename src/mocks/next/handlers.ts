@@ -45,8 +45,10 @@ import {
   factoryAuthorizedViewer,
 } from '../factories/Viewer';
 import {factoryUserPage, factoryAllUserPages} from '../factories/UserPage';
-
-import {factoryUser} from './factories';
+import {
+  factoryAllHenkenPages,
+  factoryHenkenPage,
+} from '../factories/HenkenPage';
 
 const generateSeed = (variables: Record<string, unknown>) =>
   Number.parseInt(
@@ -86,52 +88,14 @@ export const handlers = [
     AllHenkenPagesDocument,
     (req, res, ctx) => {
       faker.seed(generateSeed(req.variables));
-      return res(
-        ctx.data({
-          __typename: 'Query',
-          manyHenkens: [...new Array(1)].map((_, i) => ({
-            __typename: 'Henken',
-            id: faker.datatype.uuid(),
-          })),
-        }),
-      );
+      return res(ctx.data(factoryAllHenkenPages(req.variables)));
     },
   ),
   graphql.query<HenkenPageQuery, HenkenPageQueryVariables>(
     HenkenPageDocument,
     (req, res, ctx) => {
       faker.seed(generateSeed(req.variables));
-      return res(
-        ctx.data({
-          __typename: 'Query',
-          findHenken: {
-            __typename: 'FindHenkenPayload',
-            henken: {
-              __typename: 'Henken',
-              id: faker.datatype.uuid(),
-              comment: faker.lorem.words(),
-              postsTo: factoryUser(),
-              postedBy: factoryUser(),
-              content: faker.random.arrayElement([
-                {
-                  __typename: 'Book',
-                  id: faker.datatype.uuid(),
-                  title: faker.lorem.words(),
-                  cover: faker.random.arrayElement([
-                    null,
-                    faker.image.abstract(),
-                  ]),
-                },
-                {
-                  __typename: 'BookSeries',
-                  id: faker.datatype.uuid(),
-                  title: faker.lorem.words(),
-                },
-              ]),
-            },
-          },
-        }),
-      );
+      return res(ctx.data(factoryHenkenPage(req.variables)));
     },
   ),
   graphql.query<
