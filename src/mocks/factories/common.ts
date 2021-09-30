@@ -8,6 +8,9 @@ export const createdAt = () =>
   faker.date.between('2020-01-01', '2020-12-31').toISOString();
 export const updatedAt = createdAt;
 
+export const totalCount = faker.datatype.number;
+export const hasNextPage = faker.datatype.boolean;
+
 // Util
 export const which = faker.random.arrayElement;
 export const repeat = <T>(count: number, generator: () => T): T[] =>

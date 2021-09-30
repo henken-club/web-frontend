@@ -16,8 +16,8 @@ import {TransformedProps, transformer} from './index.transform';
 import {graphqlClient} from '~/libs/graphql-request';
 
 const AllUserPagesQuery = gql`
-  query AllUserPages {
-    manyUsers(limit: 100) {
+  query AllUserPages($limit: Int!) {
+    manyUsers(limit: $limit) {
       id
       alias
     }
