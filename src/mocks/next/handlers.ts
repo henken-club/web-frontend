@@ -41,6 +41,10 @@ import {
   factoryAllRecommendationsPage,
   factoryRecommendationPage,
 } from '../factories/RecommendationPage';
+import {
+  factoryUnauthorizedViewer,
+  factoryAuthorizedViewer,
+} from '../factories/Viewer';
 
 import {factoryUser, factoryUserEdge} from './factories';
 
@@ -60,24 +64,8 @@ export const handlers = [
     (req, res, ctx) => {
       faker.seed(0);
       if (req.headers.get('Authorization'))
-        return res(
-          ctx.data({
-            __typename: 'Query',
-            viewer: {
-              __typename: 'User',
-              id: faker.datatype.uuid(),
-              alias: faker.random.alphaNumeric(10),
-              displayName: faker.name.firstName(),
-            },
-          }),
-        );
-      else
-        return res(
-          ctx.data({
-            __typename: 'Query',
-            viewer: null,
-          }),
-        );
+        return res(ctx.data(factoryAuthorizedViewer()));
+      else return res(ctx.data(factoryUnauthorizedViewer()));
     },
   ),
   graphql.query<AllUserPagesQuery, AllUserPagesQueryVariables>(
