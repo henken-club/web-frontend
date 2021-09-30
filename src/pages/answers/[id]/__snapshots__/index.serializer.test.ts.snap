@@ -4,32 +4,31 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "dolores sit quia",
+      "comment": "commodi quia similique",
       "content": Object {
-        "book": Object {
-          "cover": "http://placeimg.com/640/480/abstract",
-          "id": "1ffe78f0-97b0-4074-b154-71b5e6e13b99",
-          "title": "et ut molestias",
+        "bookSeries": Object {
+          "id": "b4f63c96-9e9a-43ef-a77d-fb14cd66ae39",
+          "title": "enim aut delectus",
         },
-        "type": "Book",
+        "type": "BookSeries",
       },
-      "id": "c2ddf7cc-78ca-41ba-928f-c816742cb739",
+      "id": "20592939-6fea-4759-aeb1-0faaa2352c59",
       "postedBy": Object {
-        "alias": "fuga",
-        "avatar": "https://cdn.fakercloud.com/avatars/n1ght_coder_128.jpg",
-        "displayName": "Rodrick",
-        "id": "ff1a3a2f-a946-4773-9251-aa52c3f5ad01",
+        "alias": "eligendi",
+        "avatar": "https://cdn.fakercloud.com/avatars/lmjabreu_128.jpg",
+        "displayName": "Kenna",
+        "id": "9da1ffe7-8f09-47b0-874f-15471b5e6e13",
       },
       "postsTo": Object {
-        "alias": "eaque",
-        "avatar": "https://cdn.fakercloud.com/avatars/mhaligowski_128.jpg",
-        "displayName": "Ian",
-        "id": "929396fe-a759-46eb-90fa-aa2352c59559",
+        "alias": "qui",
+        "avatar": "https://cdn.fakercloud.com/avatars/andrewcohen_128.jpg",
+        "displayName": "Adrain",
+        "id": "07aff1a3-a2fa-4946-b739-251aa52c3f5a",
       },
     },
-    "comment": "est voluptatem consequatur",
-    "createdAt": "2020-10-30T21:44:59.364Z",
-    "id": "89bd9d8d-69a6-474e-8f46-7cc8796ed151",
+    "comment": "est id blanditiis",
+    "createdAt": "2020-03-20T00:58:52.049Z",
+    "id": "a05dfc2d-df7c-4c78-8a1b-a928fc816742",
     "type": "wrong",
   },
 }
@@ -39,33 +38,33 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "velit eligendi nostrum",
+      "comment": "magni cupiditate sit",
       "content": Object {
         "book": Object {
           "cover": null,
-          "id": "9ee8272e-c668-42ae-959c-ab2eb9ac55c4",
-          "title": "ex eveniet facere",
+          "id": "5ec6ef0a-7911-4cf1-b59f-663cec940c92",
+          "title": "voluptas culpa non",
         },
         "type": "Book",
       },
-      "id": "2f3ccbfc-51b8-4ede-91d0-420ea196af68",
+      "id": "3b452acd-600c-49fa-b447-c31177e14e41",
       "postedBy": Object {
-        "alias": "autem",
-        "avatar": "https://cdn.fakercloud.com/avatars/_pedropinho_128.jpg",
-        "displayName": "Tyrel",
-        "id": "3e447909-992f-494b-b186-fb7680c80a28",
+        "alias": "ut",
+        "avatar": "https://cdn.fakercloud.com/avatars/derekebradley_128.jpg",
+        "displayName": "Norberto",
+        "id": "cf09ee82-72ec-4668-aae5-59cab2eb9ac5",
       },
       "postsTo": Object {
-        "alias": "vitae",
-        "avatar": "https://cdn.fakercloud.com/avatars/thibaut_re_128.jpg",
-        "displayName": "Mariela",
-        "id": "52acd600-c9fa-4b44-bc31-177e14e41280",
+        "alias": "nam",
+        "avatar": "https://cdn.fakercloud.com/avatars/kerihenare_128.jpg",
+        "displayName": "Brook",
+        "id": "1ae3e447-9099-492f-94b3-186fb7680c80",
       },
     },
-    "comment": "repudiandae esse blanditiis",
-    "createdAt": "2020-07-22T22:07:22.395Z",
-    "id": "6fbe024f-2316-4265-a6e8-d65a837e308a",
-    "type": "right",
+    "comment": "quam tempore a",
+    "createdAt": "2020-05-30T07:15:42.551Z",
+    "id": "e67862f3-ccbf-4c51-b8ed-ed1d0420ea19",
+    "type": "wrong",
   },
 }
 `;
@@ -74,31 +73,32 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "autem quas nam",
+      "comment": "tenetur quibusdam perspiciatis",
       "content": Object {
-        "bookSeries": Object {
-          "id": "68af5165-f0ab-4fac-b36e-a9ac28efc927",
-          "title": "accusamus quam placeat",
+        "book": Object {
+          "cover": null,
+          "id": "e6d568af-5165-4f0a-bfac-336ea9ac28ef",
+          "title": "omnis in dolores",
         },
-        "type": "BookSeries",
+        "type": "Book",
       },
-      "id": "d21f8414-6112-4279-9331-c39527537aa7",
+      "id": "c8a69cf9-122b-4df8-83ef-55946c65c784",
       "postedBy": Object {
-        "alias": "recusandae",
-        "avatar": "https://cdn.fakercloud.com/avatars/nyancecom_128.jpg",
-        "displayName": "Wilma",
-        "id": "5dd8630b-361e-4fff-8cb9-bc72f46855c0",
+        "alias": "iure",
+        "avatar": "https://cdn.fakercloud.com/avatars/justinrgraham_128.jpg",
+        "displayName": "Oceane",
+        "id": "efb788e5-8496-46de-b06b-05c3459e05a8",
       },
       "postsTo": Object {
-        "alias": "vel",
-        "avatar": "https://cdn.fakercloud.com/avatars/vaughanmoffitt_128.jpg",
-        "displayName": "Arne",
-        "id": "69cf9122-bdf8-483e-b559-46c65c784fc8",
+        "alias": "ex",
+        "avatar": "https://cdn.fakercloud.com/avatars/adamawesomeface_128.jpg",
+        "displayName": "Nolan",
+        "id": "d1f5dd86-30b3-461e-bff8-cb9bc72f4685",
       },
     },
-    "comment": "quaerat at unde",
-    "createdAt": "2020-06-29T09:30:52.999Z",
-    "id": "620e8f67-6552-43b9-9474-a9d8a27892bc",
+    "comment": "sed totam rerum",
+    "createdAt": "2020-08-26T19:22:18.319Z",
+    "id": "4d876d21-f841-4461-9227-99331c395275",
     "type": "right",
   },
 }
@@ -108,31 +108,32 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "in vel nihil",
+      "comment": "blanditiis architecto quia",
       "content": Object {
-        "bookSeries": Object {
-          "id": "846edd9b-e7cd-45bc-aeec-a45e883d33b3",
-          "title": "repellendus a aut",
+        "book": Object {
+          "cover": null,
+          "id": "585b846e-dd9b-4e7c-95bc-aeeca45e883d",
+          "title": "consectetur ut est",
         },
-        "type": "BookSeries",
+        "type": "Book",
       },
-      "id": "466844b9-7427-48cc-9443-e6be0f2a5ecd",
+      "id": "66616ac8-b503-4569-bb49-437ada9d4c45",
       "postedBy": Object {
-        "alias": "aut",
-        "avatar": "https://cdn.fakercloud.com/avatars/emsgulam_128.jpg",
-        "displayName": "Walton",
-        "id": "8d1b7755-b8b7-4bcb-95da-7589d5872043",
+        "alias": "tenetur",
+        "avatar": "https://cdn.fakercloud.com/avatars/nathalie_fs_128.jpg",
+        "displayName": "Malvina",
+        "id": "cf530b7a-0b87-4e93-9e14-322f1b2c8131",
       },
       "postsTo": Object {
-        "alias": "omnis",
-        "avatar": "https://cdn.fakercloud.com/avatars/airskylar_128.jpg",
-        "displayName": "Colleen",
-        "id": "16ac8b50-3569-47b4-9437-ada9d4c45713",
+        "alias": "veritatis",
+        "avatar": "https://cdn.fakercloud.com/avatars/d_nny_m_cher_128.jpg",
+        "displayName": "Eliza",
+        "id": "c318d1b7-755b-48b7-bcb5-5da7589d5872",
       },
     },
-    "comment": "repudiandae voluptatem voluptas",
-    "createdAt": "2020-07-22T23:33:42.430Z",
-    "id": "81bd4189-e6e0-4203-b017-b0277a345a79",
+    "comment": "tempore voluptas ut",
+    "createdAt": "2020-10-22T06:13:11.238Z",
+    "id": "e0c8f466-844b-4974-a78c-cd443e6be0f2",
     "type": "wrong",
   },
 }
@@ -142,32 +143,31 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "aperiam nesciunt tempora",
+      "comment": "fuga quae saepe",
       "content": Object {
-        "book": Object {
-          "cover": null,
-          "id": "31b3ec81-911f-4822-99f5-5c00814ad8e9",
-          "title": "magni nulla eum",
+        "bookSeries": Object {
+          "id": "61e3f09e-1eb8-4abd-b500-79214cccc6ef",
+          "title": "non quia sunt",
         },
-        "type": "Book",
+        "type": "BookSeries",
       },
-      "id": "0afc60f0-cfd7-4271-9922-dbd6e8dfd841",
+      "id": "0238382a-563a-466a-93c2-296587a54184",
       "postedBy": Object {
-        "alias": "beatae",
-        "avatar": "https://cdn.fakercloud.com/avatars/abotap_128.jpg",
-        "displayName": "Lavada",
-        "id": "ac32712a-ef65-4de6-be56-e569ddbdb9a1",
+        "alias": "sint",
+        "avatar": "https://cdn.fakercloud.com/avatars/looneydoodle_128.jpg",
+        "displayName": "Tobin",
+        "id": "19031b3e-c819-411f-8229-9f55c00814ad",
       },
       "postsTo": Object {
-        "alias": "non",
-        "avatar": "https://cdn.fakercloud.com/avatars/curiousoffice_128.jpg",
-        "displayName": "Francisco",
-        "id": "8382a563-a66a-493c-a296-587a5418490e",
+        "alias": "mollitia",
+        "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+        "displayName": "Marcellus",
+        "id": "e53ac327-12ae-4f65-9e6b-e56e569ddbdb",
       },
     },
-    "comment": "vel aut laborum",
-    "createdAt": "2020-05-21T02:21:51.951Z",
-    "id": "fe82fdb9-b932-4f30-b4e6-ac039d5f9269",
+    "comment": "itaque fugiat occaecati",
+    "createdAt": "2020-04-05T06:06:55.480Z",
+    "id": "c09640af-c60f-40cf-9727-11922dbd6e8d",
     "type": "right",
   },
 }
@@ -177,31 +177,31 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "et voluptatem error",
+      "comment": "unde est assumenda",
       "content": Object {
         "bookSeries": Object {
-          "id": "5f05205d-1157-4bdc-877f-c8079063fcca",
-          "title": "illo placeat consectetur",
+          "id": "0b3f79b8-5359-4ecf-963e-d521c8eabe2f",
+          "title": "quia assumenda id",
         },
         "type": "BookSeries",
       },
-      "id": "a8979b40-414d-45d2-a2ff-8f13f073abdc",
+      "id": "909950b8-daef-404b-8ad3-eb0979f162d5",
       "postedBy": Object {
-        "alias": "similique",
-        "avatar": "https://cdn.fakercloud.com/avatars/chrisstumph_128.jpg",
-        "displayName": "Karolann",
-        "id": "0e141740-f4a3-4df9-aa6c-4e3ebde1a560",
+        "alias": "ut",
+        "avatar": "https://cdn.fakercloud.com/avatars/angelceballos_128.jpg",
+        "displayName": "Fermin",
+        "id": "983c20d3-d5a3-42c2-95af-739efef11cdf",
       },
       "postsTo": Object {
-        "alias": "adipisci",
-        "avatar": "https://cdn.fakercloud.com/avatars/arthurholcombe1_128.jpg",
-        "displayName": "Jazmyn",
-        "id": "950b8dae-f04b-4cad-beb0-979f162d589c",
+        "alias": "ea",
+        "avatar": "https://cdn.fakercloud.com/avatars/_yardenoon_128.jpg",
+        "displayName": "Henry",
+        "id": "3710e141-740f-44a3-9f96-a6c4e3ebde1a",
       },
     },
-    "comment": "sed esse sed",
-    "createdAt": "2020-04-18T01:39:36.772Z",
-    "id": "30dd35ef-7196-4c58-b4f3-c1abd732ce14",
+    "comment": "sed nobis cumque",
+    "createdAt": "2020-11-03T19:58:02.295Z",
+    "id": "3614ea89-79b4-4041-8d5d-2e2ff8f13f07",
     "type": "wrong",
   },
 }
@@ -211,31 +211,31 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "quod animi quisquam",
+      "comment": "assumenda vero voluptas",
       "content": Object {
         "bookSeries": Object {
-          "id": "5da94971-2be3-4f71-8c55-d68a8550db4c",
-          "title": "consequuntur quia error",
+          "id": "219d4ec3-21cd-49d0-880a-cfac9ce7a04d",
+          "title": "qui perferendis asperiores",
         },
         "type": "BookSeries",
       },
-      "id": "ecd70ab2-c5b9-4b78-911f-3633db7f84ca",
+      "id": "b9bbcee5-d446-4bb6-b76b-f57e5bb31a60",
       "postedBy": Object {
-        "alias": "voluptatibus",
-        "avatar": "https://cdn.fakercloud.com/avatars/layerssss_128.jpg",
-        "displayName": "Rey",
-        "id": "327c59b3-3658-4d89-8e7f-ade2796746fb",
+        "alias": "et",
+        "avatar": "https://cdn.fakercloud.com/avatars/kennyadr_128.jpg",
+        "displayName": "Jaydon",
+        "id": "fd8a827b-6063-44e0-a629-a82aa14a0cf3",
       },
       "postsTo": Object {
-        "alias": "quos",
-        "avatar": "https://cdn.fakercloud.com/avatars/konus_128.jpg",
-        "displayName": "Ed",
-        "id": "bcee5d44-6bb6-4b76-bf57-e5bb31a60cdc",
+        "alias": "ea",
+        "avatar": "https://cdn.fakercloud.com/avatars/petebernardo_128.jpg",
+        "displayName": "Tyson",
+        "id": "748327c5-9b33-4658-9898-e7fade279674",
       },
     },
-    "comment": "repudiandae qui rem",
-    "createdAt": "2020-05-30T19:38:24.682Z",
-    "id": "ef53d105-1f91-4896-8579-d7cb68392abf",
+    "comment": "asperiores perspiciatis aliquam",
+    "createdAt": "2020-10-14T11:27:41.339Z",
+    "id": "ed76aecd-70ab-42c5-b9b7-8911f3633db7",
     "type": "wrong",
   },
 }
@@ -245,32 +245,33 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "ut consequatur ad",
+      "comment": "quod ullam nihil",
       "content": Object {
-        "bookSeries": Object {
-          "id": "cc7e3aec-4f30-45e6-8372-c6bd2caa1757",
-          "title": "vel voluptatum molestiae",
+        "book": Object {
+          "cover": null,
+          "id": "7817cc7e-3aec-44f3-85e6-4372c6bd2caa",
+          "title": "quasi dolores ex",
         },
-        "type": "BookSeries",
+        "type": "Book",
       },
-      "id": "e40c94fd-328c-4ef2-b86c-5a37137795f7",
+      "id": "554d7cf5-2924-4178-94a4-5e76b66fec25",
       "postedBy": Object {
-        "alias": "ducimus",
-        "avatar": "https://cdn.fakercloud.com/avatars/mrjamesnoble_128.jpg",
-        "displayName": "Rosetta",
-        "id": "aa84660a-17bc-48ab-bf7a-f024a983df2f",
+        "alias": "est",
+        "avatar": "https://cdn.fakercloud.com/avatars/rpatey_128.jpg",
+        "displayName": "Sanford",
+        "id": "7da7add2-8407-41bc-b62a-58564c2f6478",
       },
       "postsTo": Object {
-        "alias": "quas",
-        "avatar": "https://cdn.fakercloud.com/avatars/maz_128.jpg",
-        "displayName": "Hershel",
-        "id": "d7cf5292-4178-454a-85e7-6b66fec25b46",
+        "alias": "delectus",
+        "avatar": "https://cdn.fakercloud.com/avatars/uxalex_128.jpg",
+        "displayName": "Bud",
+        "id": "869aa846-60a1-47bc-8abb-f7af024a983d",
       },
     },
-    "comment": "eligendi numquam ut",
-    "createdAt": "2020-06-14T00:36:21.078Z",
-    "id": "13c57fb7-f484-4811-a407-8adc5661a4ae",
-    "type": "wrong",
+    "comment": "quos laborum quis",
+    "createdAt": "2020-12-13T04:56:07.866Z",
+    "id": "b357ee40-c94f-4d32-8cef-2786c5a37137",
+    "type": "right",
   },
 }
 `;
@@ -279,32 +280,32 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "distinctio itaque veniam",
+      "comment": "ducimus autem amet",
       "content": Object {
         "book": Object {
-          "cover": "http://placeimg.com/640/480/abstract",
-          "id": "819bbf4b-67d1-49cb-881d-3b5de37477d7",
-          "title": "et est fuga",
+          "cover": null,
+          "id": "399d889f-4b62-4896-84ce-c6432ea602c1",
+          "title": "quas et repellat",
         },
         "type": "Book",
       },
-      "id": "503414fa-2452-4173-86fe-85af1055469c",
+      "id": "af452614-ac1a-471a-92ca-007ec3f99402",
       "postedBy": Object {
-        "alias": "repellendus",
-        "avatar": "https://cdn.fakercloud.com/avatars/umurgdk_128.jpg",
-        "displayName": "Christopher",
-        "id": "3d2d8b17-b8fa-4f75-b97a-98a770010646",
+        "alias": "voluptatum",
+        "avatar": "https://cdn.fakercloud.com/avatars/juangomezw_128.jpg",
+        "displayName": "Rashawn",
+        "id": "c2f819bb-f4b6-47d1-9cb0-81d3b5de3747",
       },
       "postsTo": Object {
-        "alias": "voluptatum",
-        "avatar": "https://cdn.fakercloud.com/avatars/danro_128.jpg",
-        "displayName": "Litzy",
-        "id": "52614ac1-a71a-492c-a007-ec3f99402753",
+        "alias": "iusto",
+        "avatar": "https://cdn.fakercloud.com/avatars/j04ntoh_128.jpg",
+        "displayName": "Donavon",
+        "id": "7a43d2d8-b17b-48fa-b75b-97a98a770010",
       },
     },
-    "comment": "aliquid quis atque",
-    "createdAt": "2020-12-21T10:58:18.836Z",
-    "id": "d0f3d68d-3609-46c6-a8d7-e828bc6bd906",
+    "comment": "aliquid ad vel",
+    "createdAt": "2020-07-27T04:13:16.143Z",
+    "id": "547fd503-414f-4a24-9217-386fe85af105",
     "type": "wrong",
   },
 }
@@ -314,32 +315,32 @@ exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場�
 Object {
   "answer": Object {
     "answerTo": Object {
-      "comment": "libero et culpa",
+      "comment": "eaque maiores est",
       "content": Object {
         "bookSeries": Object {
-          "id": "b792c1f8-0441-4b72-ac00-8d15c9c04c1f",
-          "title": "sint nesciunt sint",
+          "id": "e28f2e11-db87-44c9-b5cc-57ef880ee398",
+          "title": "perferendis quas sunt",
         },
         "type": "BookSeries",
       },
-      "id": "88bf6ab9-da7c-4f6c-9f12-181f7a3deff2",
+      "id": "a39dce0c-9517-4296-b972-6edf2eb6b4e5",
       "postedBy": Object {
-        "alias": "aut",
-        "avatar": "https://cdn.fakercloud.com/avatars/9lessons_128.jpg",
-        "displayName": "Evelyn",
-        "id": "74060a23-c222-4215-a7db-5c04ce7016e3",
+        "alias": "ut",
+        "avatar": "https://cdn.fakercloud.com/avatars/colgruv_128.jpg",
+        "displayName": "Amos",
+        "id": "c50737b6-5383-403d-b868-9d7065b98242",
       },
       "postsTo": Object {
-        "alias": "ipsa",
-        "avatar": "https://cdn.fakercloud.com/avatars/brandonburke_128.jpg",
-        "displayName": "Lowell",
-        "id": "dce0c951-7296-4797-a6ed-f2eb6b4e50fa",
+        "alias": "autem",
+        "avatar": "https://cdn.fakercloud.com/avatars/ceekaytweet_128.jpg",
+        "displayName": "Stewart",
+        "id": "0a274060-a23c-4222-a15a-7db5c04ce701",
       },
     },
-    "comment": "dolores eveniet dolores",
-    "createdAt": "2020-08-31T10:02:05.875Z",
-    "id": "05877025-203e-4623-a165-725e5fb0fbb9",
-    "type": "wrong",
+    "comment": "eos molestiae ut",
+    "createdAt": "2020-12-23T22:08:54.317Z",
+    "id": "2e2af88b-f6ab-49da-bcf6-cdf12181f7a3",
+    "type": "right",
   },
 }
 `;
