@@ -22,6 +22,11 @@ const config: Config.InitialOptions = {
     },
   },
   collectCoverage: true,
-  coveragePathIgnorePatterns: ['<rootDir>/src/mocks'],
+  coveragePathIgnorePatterns: [
+    '/tests/',
+    '/mocks/',
+    'codegen\\.ts',
+    '.*\\.codegen\\.ts',
+  ],
 };
 export default config;
