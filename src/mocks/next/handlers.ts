@@ -37,6 +37,10 @@ import {
   AllAnswerPagesQueryVariables,
   AllAnswerPagesDocument,
 } from '../codegen';
+import {
+  factoryAllRecommendationsPage,
+  factoryRecommendationPage,
+} from '../factories/RecommendationPage';
 
 import {factoryUser, factoryUserEdge} from './factories';
 
@@ -334,59 +338,13 @@ export const handlers = [
     AllRecommendationsPagesQueryVariables
   >(AllRecommendationsPagesDocument, (req, res, ctx) => {
     faker.seed(generateSeed(req.variables));
-    return res(
-      ctx.data({
-        __typename: 'Query',
-        manyRecommendations: [...new Array(1)].map((_, i) => ({
-          __typename: 'Recommendation',
-          id: faker.datatype.uuid(),
-        })),
-      }),
-    );
+    return res(ctx.data(factoryAllRecommendationsPage(req.variables)));
   }),
   graphql.query<RecommendationPageQuery, RecommendationPageQueryVariables>(
     RecommendationPageDocument,
     (req, res, ctx) => {
       faker.seed(generateSeed(req.variables));
-      return res(
-        ctx.data({
-          __typename: 'Query',
-          findRecommendation: {
-            __typename: 'FindRecommendationPayload',
-            recommendation: {
-              __typename: 'Recommendation',
-              id: faker.datatype.uuid(),
-              score: faker.datatype.number(),
-              updatedAt: faker.date
-                .between('2020-01-01', '2020-12-31')
-                .toISOString(),
-              recommendsTo: {
-                __typename: 'User',
-                id: faker.datatype.uuid(),
-                alias: faker.random.alphaNumeric(8),
-                displayName: faker.name.findName(),
-                avatar: faker.image.avatar(),
-              },
-              content: faker.random.arrayElement([
-                {
-                  __typename: 'Book',
-                  id: faker.datatype.uuid(),
-                  title: faker.lorem.words(),
-                  cover: faker.random.arrayElement([
-                    null,
-                    faker.image.abstract(),
-                  ]),
-                },
-                {
-                  __typename: 'BookSeries',
-                  id: faker.datatype.uuid(),
-                  title: faker.lorem.words(),
-                },
-              ]),
-            },
-          },
-        }),
-      );
+      return res(ctx.data(factoryRecommendationPage(req.variables)));
     },
   ),
   graphql.query<AllAnswerPagesQuery, AllAnswerPagesQueryVariables>(
