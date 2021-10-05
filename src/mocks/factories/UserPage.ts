@@ -18,15 +18,21 @@ import {
   totalCount,
 } from './common';
 
-export const factoryAllUserPages = (
-  variables: AllUserPagesQueryVariables,
-): AllUserPagesQuery => ({
+export const factoryAllUserPages = ({
+  limit,
+}: AllUserPagesQueryVariables): AllUserPagesQuery => ({
   __typename: 'Query',
-  manyUsers: repeat(variables.limit, () => ({
-    __typename: 'User',
-    id: id(),
-    alias: alias(),
-  })),
+  manyUsers: {
+    __typename: 'UserConnection',
+    edges: repeat(limit, () => ({
+      __typename: 'UserEdge',
+      node: {
+        __typename: 'User',
+        id: id(),
+        alias: alias(),
+      },
+    })),
+  },
 });
 
 export const factoryUserPage = (

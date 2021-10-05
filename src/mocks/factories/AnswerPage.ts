@@ -23,10 +23,16 @@ export const factoryAllAnswerPages = ({
   limit,
 }: AllAnswerPagesQueryVariables): AllAnswerPagesQuery => ({
   __typename: 'Query',
-  manyAnswers: repeat(limit, () => ({
-    __typename: 'Answer',
-    id: id(),
-  })),
+  manyAnswers: {
+    __typename: 'AnswerConnection',
+    edges: repeat(limit, () => ({
+      __typename: 'AnswerEdge',
+      node: {
+        __typename: 'Answer',
+        id: id(),
+      },
+    })),
+  },
 });
 
 export const factoryAnswerPage = (

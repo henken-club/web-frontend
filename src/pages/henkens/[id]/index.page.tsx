@@ -17,8 +17,12 @@ import {graphqlClient} from '~/libs/graphql-request';
 
 const AllHenkenPagesQuery = gql`
   query AllHenkenPages($limit: Int!) {
-    manyHenkens(limit: $limit) {
-      id
+    manyHenkens(first: $limit, orderBy: {direction: DESC, field: CREATED_AT}) {
+      edges {
+        node {
+          id
+        }
+      }
     }
   }
 `;
@@ -29,7 +33,7 @@ export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
     .AllHenkenPages({limit: 100})
     .then(({manyHenkens}) => ({
       fallback: 'blocking',
-      paths: manyHenkens.map(({id}) => ({params: {id}})),
+      paths: manyHenkens.edges.map(({node: {id}}) => ({params: {id}})),
     }));
 };
 

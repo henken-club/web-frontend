@@ -15,8 +15,12 @@ import {graphqlClient} from '~/libs/graphql-request';
 
 const AllRecommendationsPagesQuery = gql`
   query AllRecommendationsPages($limit: Int!) {
-    manyRecommendations(limit: $limit) {
-      id
+    manyRecommendations(first: $limit, orderBy: {field: SCORE, order: DESC}) {
+      edges {
+        node {
+          id
+        }
+      }
     }
   }
 `;
@@ -27,7 +31,7 @@ export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
     .AllRecommendationsPages({limit: 100})
     .then(({manyRecommendations}) => ({
       fallback: 'blocking',
-      paths: manyRecommendations.map(({id}) => ({params: {id}})),
+      paths: manyRecommendations.edges.map(({node: {id}}) => ({params: {id}})),
     }));
 };
 

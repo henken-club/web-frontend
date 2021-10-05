@@ -15,8 +15,12 @@ import {graphqlClient} from '~/libs/graphql-request';
 
 const AllAnswerPagesQuery = gql`
   query AllAnswerPages($limit: Int!) {
-    manyAnswers(limit: $limit) {
-      id
+    manyAnswers(first: $limit, orderBy: {direction: DESC, field: CREATED_AT}) {
+      edges {
+        node {
+          id
+        }
+      }
     }
   }
 `;
@@ -27,7 +31,7 @@ export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
     .AllAnswerPages({limit: 10})
     .then(({manyAnswers}) => ({
       fallback: 'blocking',
-      paths: manyAnswers.map(({id}) => ({params: {id}})),
+      paths: manyAnswers.edges.map(({node: {id}}) => ({params: {id}})),
     }));
 };
 

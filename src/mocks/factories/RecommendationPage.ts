@@ -18,14 +18,20 @@ import {
   repeat,
 } from './common';
 
-export const factoryAllRecommendationsPages = (
-  variables: AllRecommendationsPagesQueryVariables,
-): AllRecommendationsPagesQuery => ({
+export const factoryAllRecommendationsPages = ({
+  limit,
+}: AllRecommendationsPagesQueryVariables): AllRecommendationsPagesQuery => ({
   __typename: 'Query',
-  manyRecommendations: repeat(variables.limit, () => ({
-    __typename: 'Recommendation',
-    id: id(),
-  })),
+  manyRecommendations: {
+    __typename: 'RecommendationConnection',
+    edges: repeat(limit, () => ({
+      __typename: 'RecommendationEdge',
+      node: {
+        __typename: 'Recommendation',
+        id: id(),
+      },
+    })),
+  },
 });
 
 export const factoryRecommendationPage = (

@@ -17,9 +17,13 @@ import {graphqlClient} from '~/libs/graphql-request';
 
 const AllUserPagesQuery = gql`
   query AllUserPages($limit: Int!) {
-    manyUsers(limit: $limit) {
-      id
-      alias
+    manyUsers(first: $limit, orderBy: {field: CREATED_AT, order: DESC}) {
+      edges {
+        node {
+          id
+          alias
+        }
+      }
     }
   }
 `;
@@ -30,7 +34,7 @@ export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
     .AllUserPages({limit: 100})
     .then(({manyUsers}) => ({
       fallback: 'blocking',
-      paths: manyUsers.map(({alias}) => ({params: {alias}})),
+      paths: manyUsers.edges.map(({node: {alias}}) => ({params: {alias}})),
     }));
 };
 
