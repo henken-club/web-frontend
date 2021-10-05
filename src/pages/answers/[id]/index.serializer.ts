@@ -17,7 +17,7 @@ type ResultAnswer = Exclude<
 >;
 
 export const serializeContent: SerializeContent<
-  ResultAnswer['answerTo']['content'],
+  ResultAnswer['henken']['content'],
   {id: string; title: string; cover: string | null},
   {id: string; title: string}
 > = (content) => {
@@ -48,7 +48,7 @@ export type SerializedProps = {
     comment: string;
     createdAt: string;
     type: AnswerType;
-    answerTo: {
+    henken: {
       id: string;
       comment: string;
       postedBy: {
@@ -78,11 +78,11 @@ export const serializer = ({
         answer: serializeAnswer({
           ...answer,
           type: serializeAnswerType(answer.type),
-          answerTo: serializeHenken({
-            ...answer.answerTo,
-            postsTo: serializeUser({...answer.answerTo.postsTo}),
-            postedBy: serializeUser({...answer.answerTo.postedBy}),
-            content: serializeContent({...answer.answerTo.content}),
+          henken: serializeHenken({
+            ...answer.henken,
+            postsTo: serializeUser({...answer.henken.postsTo}),
+            postedBy: serializeUser({...answer.henken.postedBy}),
+            content: serializeContent({...answer.henken.content}),
           }),
         }),
       }

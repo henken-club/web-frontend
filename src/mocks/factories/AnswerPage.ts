@@ -41,7 +41,7 @@ export const factoryAnswerPage = (
       comment: comment(),
       createdAt: createdAt(),
       type: answerType(),
-      answerTo: {
+      henken: {
         __typename: 'Henken',
         id: id(),
         comment: comment(),

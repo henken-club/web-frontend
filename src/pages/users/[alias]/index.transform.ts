@@ -66,43 +66,6 @@ type ActivityNode =
         }
     );
 
-export const transformActivitiesEdge = ({
-  node: {id, event},
-}: User['activities']['edges'][number]): ActivityNode => {
-  switch (event.__typename) {
-    case 'Henken':
-      return {
-        id,
-        type: 'Henken',
-        henken: {
-          id: event.id,
-          createdAt: event.createdAt,
-          comment: event.comment,
-          postedBy: transformUser(event.postedBy),
-          content: transformHenkenContent(event.content),
-        },
-      };
-    case 'Answer':
-      return {
-        id,
-        type: 'Answer',
-        answer: {
-          id: event.id,
-          createdAt: event.createdAt,
-          comment: event.comment,
-          type: transformAnswerType(event.type),
-          answerTo: {
-            id: event.answerTo.id,
-            createdAt: event.answerTo.createdAt,
-            comment: event.answerTo.comment,
-            postedBy: transformUser(event.answerTo.postedBy),
-            content: transformHenkenContent(event.answerTo.content),
-          },
-        },
-      };
-  }
-};
-
 export type TransformedProps = {
   user: {
     id: string;
@@ -171,11 +134,6 @@ export type TransformedProps = {
         } | null;
       }[];
     };
-    activities: {
-      more: boolean;
-      cursor: string | null;
-      nodes: ActivityNode[];
-    };
   };
 };
 
@@ -208,12 +166,16 @@ export const transformer = ({
           followees: {
             count: user.followees.totalCount,
             more: user.followees.pageInfo.hasNextPage,
-            users: user.followees.edges.map(({node}) => transformUser(node)),
+            users: user.followees.edges.map(({node: {user}}) =>
+              transformUser(user),
+            ),
           },
           followers: {
             count: user.followers.totalCount,
             more: user.followers.pageInfo.hasNextPage,
-            users: user.followers.edges.map(({node}) => transformUser(node)),
+            users: user.followers.edges.map(({node: {user}}) =>
+              transformUser(user),
+            ),
           },
           postsHenkens: {
             count: user.postsHenkens.totalCount,
@@ -248,13 +210,6 @@ export const transformer = ({
                   }
                 : null,
             })),
-          },
-          activities: {
-            cursor: user.activities.pageInfo.endCursor || null,
-            more: user.activities.pageInfo.hasNextPage,
-            nodes: user.activities.edges.map((edge) =>
-              transformActivitiesEdge(edge),
-            ),
           },
         },
       }

@@ -39,7 +39,7 @@ const AnswerPageQuery = gql`
         comment
         createdAt
         type
-        answerTo {
+        henken {
           id
           comment
           postedBy {

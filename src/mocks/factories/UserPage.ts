@@ -10,14 +10,12 @@ import {
   answerType,
   avatar,
   comment,
-  createdAt,
   displayName,
   hasNextPage,
   id,
   repeat,
   title,
   totalCount,
-  which,
 } from './common';
 
 export const factoryAllUserPages = (
@@ -44,36 +42,42 @@ export const factoryUserPage = (
       displayName: displayName(),
       avatar: avatar(),
       followees: {
-        __typename: 'UserConnection',
+        __typename: 'FollowingConnection',
         totalCount: totalCount(),
         pageInfo: {
           __typename: 'PageInfo',
           hasNextPage: hasNextPage(),
         },
         edges: repeat(10, () => ({
-          __typename: 'UserEdge',
+          __typename: 'FollowingEdge',
           node: {
-            __typename: 'User',
-            id: id(),
-            alias: alias(),
-            avatar: avatar(),
+            __typename: 'Following',
+            user: {
+              __typename: 'User',
+              id: id(),
+              alias: alias(),
+              avatar: avatar(),
+            },
           },
         })),
       },
       followers: {
-        __typename: 'UserConnection',
+        __typename: 'FollowingConnection',
         totalCount: totalCount(),
         pageInfo: {
           __typename: 'PageInfo',
           hasNextPage: hasNextPage(),
         },
         edges: repeat(10, () => ({
-          __typename: 'UserEdge',
+          __typename: 'FollowingEdge',
           node: {
-            __typename: 'User',
-            id: id(),
-            alias: alias(),
-            avatar: avatar(),
+            __typename: 'Following',
+            user: {
+              __typename: 'User',
+              id: id(),
+              alias: alias(),
+              avatar: avatar(),
+            },
           },
         })),
       },
@@ -148,80 +152,6 @@ export const factoryUserPage = (
             },
           },
         ],
-      },
-      activities: {
-        __typename: 'UserActivityConnection',
-        pageInfo: {
-          __typename: 'PageInfo',
-          hasNextPage: hasNextPage(),
-          endCursor: which([id(), null]),
-        },
-        edges: [...new Array(10)].map((_, i) => ({
-          __typename: 'UserActivityEdge',
-          node: {
-            __typename: 'UserActivity',
-            id: id(),
-            event: which([
-              {
-                __typename: 'Henken',
-                id: id(),
-                createdAt: createdAt(),
-                comment: comment(),
-                content: which([
-                  {
-                    __typename: 'Book',
-                    id: id(),
-                    title: title(),
-                  },
-                  {
-                    __typename: 'BookSeries',
-                    id: id(),
-                    title: title(),
-                  },
-                ]),
-                postedBy: {
-                  __typename: 'User',
-                  id: id(),
-                  alias: alias(),
-                  displayName: displayName(),
-                  avatar: avatar(),
-                },
-              },
-              {
-                __typename: 'Answer',
-                id: id(),
-                createdAt: createdAt(),
-                comment: comment(),
-                type: answerType(),
-                answerTo: {
-                  __typename: 'Henken',
-                  id: id(),
-                  createdAt: createdAt(),
-                  comment: comment(),
-                  content: which([
-                    {
-                      __typename: 'Book',
-                      id: id(),
-                      title: title(),
-                    },
-                    {
-                      __typename: 'BookSeries',
-                      id: id(),
-                      title: title(),
-                    },
-                  ]),
-                  postedBy: {
-                    __typename: 'User',
-                    id: id(),
-                    alias: alias(),
-                    displayName: displayName(),
-                    avatar: avatar(),
-                  },
-                },
-              },
-            ]),
-          },
-        })),
       },
     },
   },
