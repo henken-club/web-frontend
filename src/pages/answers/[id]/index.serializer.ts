@@ -4,6 +4,7 @@ import {
   AnswerType,
   serializeAnswer,
   serializeAnswerType,
+  SerializeContent,
   serializeHenken,
   serializeUser,
 } from '~/libs/serializer';
@@ -13,12 +14,14 @@ type ResultAnswer = Exclude<
   null | undefined
 >;
 
-export const serializeContent = (
-  content: ResultAnswer['henken']['content'],
-):
-  | {type: 'Book'; book: {id: string; title: string; cover: string | null}}
-  | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
-  | {type: 'Author'; author: {id: string; name: string}} => {
+export const serializeContent: SerializeContent<
+  ResultAnswer['henken']['content'],
+  {
+    book: {title: string; cover: string | null};
+    bookSeries: {title: string};
+    author: {name: string};
+  }
+> = (content) => {
   switch (content.__typename) {
     case 'Book':
       return {
