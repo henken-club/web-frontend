@@ -23,10 +23,16 @@ export const factoryAllAnswerPages = ({
   limit,
 }: AllAnswerPagesQueryVariables): AllAnswerPagesQuery => ({
   __typename: 'Query',
-  manyAnswers: repeat(limit, () => ({
-    __typename: 'Answer',
-    id: id(),
-  })),
+  manyAnswers: {
+    __typename: 'AnswerConnection',
+    edges: repeat(limit, () => ({
+      __typename: 'AnswerEdge',
+      node: {
+        __typename: 'Answer',
+        id: id(),
+      },
+    })),
+  },
 });
 
 export const factoryAnswerPage = (
@@ -41,7 +47,7 @@ export const factoryAnswerPage = (
       comment: comment(),
       createdAt: createdAt(),
       type: answerType(),
-      answerTo: {
+      henken: {
         __typename: 'Henken',
         id: id(),
         comment: comment(),

@@ -17,9 +17,13 @@ import {graphqlClient} from '~/libs/graphql-request';
 
 const AllUserPagesQuery = gql`
   query AllUserPages($limit: Int!) {
-    manyUsers(limit: $limit) {
-      id
-      alias
+    manyUsers(first: $limit, orderBy: {field: CREATED_AT, direction: DESC}) {
+      edges {
+        node {
+          id
+          alias
+        }
+      }
     }
   }
 `;
@@ -30,7 +34,7 @@ export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
     .AllUserPages({limit: 100})
     .then(({manyUsers}) => ({
       fallback: 'blocking',
-      paths: manyUsers.map(({alias}) => ({params: {alias}})),
+      paths: manyUsers.edges.map(({node: {alias}}) => ({params: {alias}})),
     }));
 };
 
@@ -42,33 +46,40 @@ const UserPageQuery = gql`
         alias
         displayName
         avatar
-        followees(first: 12) {
+        followees(first: 12, orderBy: {field: CREATED_AT, direction: DESC}) {
           totalCount
           pageInfo {
             hasNextPage
           }
           edges {
             node {
-              id
-              alias
-              avatar
+              user: to {
+                id
+                alias
+                avatar
+              }
             }
           }
         }
-        followers(first: 12) {
+        followers(first: 12, orderBy: {field: CREATED_AT, direction: DESC}) {
           totalCount
           pageInfo {
             hasNextPage
           }
           edges {
             node {
-              id
-              alias
-              avatar
+              user: from {
+                id
+                alias
+                avatar
+              }
             }
           }
         }
-        receivedHenkens(first: 3) {
+        receivedHenkens(
+          first: 3
+          orderBy: {field: CREATED_AT, direction: DESC}
+        ) {
           totalCount
           pageInfo {
             hasNextPage
@@ -93,6 +104,10 @@ const UserPageQuery = gql`
                   id
                   title
                 }
+                ... on Author {
+                  id
+                  name
+                }
               }
               answer {
                 id
@@ -102,7 +117,7 @@ const UserPageQuery = gql`
             }
           }
         }
-        postsHenkens(first: 3) {
+        postsHenkens(first: 3, orderBy: {field: CREATED_AT, direction: DESC}) {
           totalCount
           pageInfo {
             hasNextPage
@@ -127,75 +142,15 @@ const UserPageQuery = gql`
                   id
                   title
                 }
+                ... on Author {
+                  id
+                  name
+                }
               }
               answer {
                 id
                 comment
                 type
-              }
-            }
-          }
-        }
-        activities(first: 20) {
-          pageInfo {
-            hasNextPage
-            endCursor
-          }
-          edges {
-            node {
-              id
-              event {
-                __typename
-                ... on Henken {
-                  id
-                  createdAt
-                  comment
-                  postedBy {
-                    id
-                    alias
-                    displayName
-                    avatar
-                  }
-                  content {
-                    __typename
-                    ... on Book {
-                      id
-                      title
-                    }
-                    ... on BookSeries {
-                      id
-                      title
-                    }
-                  }
-                }
-                ... on Answer {
-                  id
-                  createdAt
-                  comment
-                  type
-                  answerTo {
-                    id
-                    createdAt
-                    comment
-                    postedBy {
-                      id
-                      alias
-                      displayName
-                      avatar
-                    }
-                    content {
-                      __typename
-                      ... on Book {
-                        id
-                        title
-                      }
-                      ... on BookSeries {
-                        id
-                        title
-                      }
-                    }
-                  }
-                }
               }
             }
           }
@@ -250,29 +205,6 @@ export const Page: NextPage<PageProps> = ({className, user, ...props}) => {
               <Image width={24} height={24} src={avatar} />
             </a>
           </Link>
-        ))}
-      </>
-      <>
-        <p>Activities</p>
-        {user.activities.nodes.map((node) => (
-          <div key={node.id}>
-            {node.type === 'Henken' && (
-              <>
-                <Link href={`/henkens/${node.henken.id}`}>
-                  <a>Henken</a>
-                </Link>
-                <p>{node.henken.comment}</p>
-              </>
-            )}
-            {node.type === 'Answer' && (
-              <>
-                <Link href={`/answers/${node.answer.id}`}>
-                  <a>Answer</a>
-                </Link>
-                <p>{node.answer.comment}</p>
-              </>
-            )}
-          </div>
         ))}
       </>
     </>

@@ -2,8 +2,6 @@ import {AnswerPageQuery as PageQueryResult} from './index.page.codegen';
 
 import {
   AnswerType,
-  ContentBook,
-  ContentBookSeries,
   serializeAnswer,
   serializeAnswerType,
   SerializeContent,
@@ -17,14 +15,17 @@ type ResultAnswer = Exclude<
 >;
 
 export const serializeContent: SerializeContent<
-  ResultAnswer['answerTo']['content'],
-  {id: string; title: string; cover: string | null},
-  {id: string; title: string}
+  ResultAnswer['henken']['content'],
+  {
+    book: {title: string; cover: string | null};
+    bookSeries: {title: string};
+    author: {name: string};
+  }
 > = (content) => {
   switch (content.__typename) {
     case 'Book':
       return {
-        type: 'Book',
+        type: 'Book' as const,
         book: {
           id: content.id,
           title: content.title,
@@ -39,6 +40,14 @@ export const serializeContent: SerializeContent<
           title: content.title,
         },
       };
+    case 'Author':
+      return {
+        type: 'Author',
+        author: {
+          id: content.id,
+          name: content.name,
+        },
+      };
   }
 };
 
@@ -48,7 +57,7 @@ export type SerializedProps = {
     comment: string;
     createdAt: string;
     type: AnswerType;
-    answerTo: {
+    henken: {
       id: string;
       comment: string;
       postedBy: {
@@ -63,9 +72,7 @@ export type SerializedProps = {
         displayName: string;
         avatar: string;
       };
-      content:
-        | ContentBook<{id: string; title: string}>
-        | ContentBookSeries<{id: string; title: string}>;
+      content: ReturnType<typeof serializeContent>;
     };
   };
 };
@@ -78,11 +85,11 @@ export const serializer = ({
         answer: serializeAnswer({
           ...answer,
           type: serializeAnswerType(answer.type),
-          answerTo: serializeHenken({
-            ...answer.answerTo,
-            postsTo: serializeUser({...answer.answerTo.postsTo}),
-            postedBy: serializeUser({...answer.answerTo.postedBy}),
-            content: serializeContent({...answer.answerTo.content}),
+          henken: serializeHenken({
+            ...answer.henken,
+            postsTo: serializeUser({...answer.henken.postsTo}),
+            postedBy: serializeUser({...answer.henken.postedBy}),
+            content: serializeContent({...answer.henken.content}),
           }),
         }),
       }

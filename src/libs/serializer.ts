@@ -10,11 +10,23 @@ export type ContentBookSeries<T extends {id: string}> = {
   bookSeries: T;
 };
 
+export type ContentAuthor<T extends {id: string}> = {
+  type: 'Author';
+  author: T;
+};
+
 export type SerializeContent<
   TInput,
-  TBook extends {id: string},
-  TBookSeries extends {id: string},
-> = (input: TInput) => ContentBook<TBook> | ContentBookSeries<TBookSeries>;
+  TContentType extends Record<
+    'book' | 'bookSeries' | 'author',
+    Record<string, unknown>
+  >,
+> = (
+  input: TInput,
+) =>
+  | ContentBook<{id: string} & TContentType['book']>
+  | ContentBookSeries<{id: string} & TContentType['bookSeries']>
+  | ContentAuthor<{id: string} & TContentType['author']>;
 
 export const serializeUser = <T extends Record<string, unknown>>({
   __typename,

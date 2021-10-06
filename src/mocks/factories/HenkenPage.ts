@@ -7,6 +7,7 @@ import {
 
 import {
   alias,
+  authorName,
   avatar,
   bookCover,
   comment,
@@ -21,10 +22,16 @@ export const factoryAllHenkenPages = ({
   limit,
 }: AllHenkenPagesQueryVariables): AllHenkenPagesQuery => ({
   __typename: 'Query',
-  manyHenkens: repeat(limit, () => ({
-    __typename: 'Henken',
-    id: id(),
-  })),
+  manyHenkens: {
+    __typename: 'HenkenConnection',
+    edges: repeat(limit, () => ({
+      __typename: 'HenkenEdge',
+      node: {
+        __typename: 'Henken',
+        id: id(),
+      },
+    })),
+  },
 });
 
 export const factoryHenkenPage = (
@@ -62,6 +69,11 @@ export const factoryHenkenPage = (
           __typename: 'BookSeries',
           id: id(),
           title: title(),
+        },
+        {
+          __typename: 'Author',
+          id: id(),
+          name: authorName(),
         },
       ]),
     },
