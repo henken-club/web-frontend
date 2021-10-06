@@ -17,7 +17,7 @@ import {graphqlClient} from '~/libs/graphql-request';
 
 const AllUserPagesQuery = gql`
   query AllUserPages($limit: Int!) {
-    manyUsers(first: $limit, orderBy: {field: CREATED_AT, order: DESC}) {
+    manyUsers(first: $limit, orderBy: {field: CREATED_AT, direction: DESC}) {
       edges {
         node {
           id
