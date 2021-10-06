@@ -1,6 +1,7 @@
 import {NextPage} from 'next';
 import React from 'react';
 import Link from 'next/link';
+import {useAuth0} from '@auth0/auth0-react';
 
 import {useViewer} from '~/libs/useViewer';
 
@@ -9,6 +10,7 @@ export type PageProps = Record<string, never>;
 
 export const Page: NextPage<PageProps> = ({...props}) => {
   const {viewer} = useViewer();
+  const {loginWithRedirect} = useAuth0();
 
   return (
     <>
@@ -22,9 +24,7 @@ export const Page: NextPage<PageProps> = ({...props}) => {
           <p>{viewer.displayName}</p>
         </>
       )}
-      <Link href="/recommendations/1">
-        <a>link</a>
-      </Link>
+      {!viewer && <button onClick={() => loginWithRedirect()}>Log In</button>}
     </>
   );
 };

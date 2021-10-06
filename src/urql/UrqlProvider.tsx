@@ -1,7 +1,7 @@
 import {createClient, Client, Provider, ClientOptions} from 'urql';
 import React, {useEffect, useState} from 'react';
 
-import {useAccessToken} from '~/libs/useAccessToken';
+import {useAccessToken} from '~/urql/useAccessToken';
 
 export const createUrqlClient = (options?: Omit<ClientOptions, 'url'>) =>
   createClient({
