@@ -3,7 +3,9 @@
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 0 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "est id blanditiis",
+    "createdAt": "2020-03-20T00:58:52.049Z",
+    "henken": Object {
       "comment": "commodi quia similique",
       "content": Object {
         "bookSeries": Object {
@@ -26,8 +28,6 @@ Object {
         "id": "07aff1a3-a2fa-4946-b739-251aa52c3f5a",
       },
     },
-    "comment": "est id blanditiis",
-    "createdAt": "2020-03-20T00:58:52.049Z",
     "id": "a05dfc2d-df7c-4c78-8a1b-a928fc816742",
     "type": "wrong",
   },
@@ -37,7 +37,9 @@ Object {
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 1 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "quam tempore a",
+    "createdAt": "2020-05-30T07:15:42.551Z",
+    "henken": Object {
       "comment": "magni cupiditate sit",
       "content": Object {
         "book": Object {
@@ -61,8 +63,6 @@ Object {
         "id": "1ae3e447-9099-492f-94b3-186fb7680c80",
       },
     },
-    "comment": "quam tempore a",
-    "createdAt": "2020-05-30T07:15:42.551Z",
     "id": "e67862f3-ccbf-4c51-b8ed-ed1d0420ea19",
     "type": "wrong",
   },
@@ -72,7 +72,9 @@ Object {
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 2 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "sed totam rerum",
+    "createdAt": "2020-08-26T19:22:18.319Z",
+    "henken": Object {
       "comment": "tenetur quibusdam perspiciatis",
       "content": Object {
         "book": Object {
@@ -96,8 +98,6 @@ Object {
         "id": "d1f5dd86-30b3-461e-bff8-cb9bc72f4685",
       },
     },
-    "comment": "sed totam rerum",
-    "createdAt": "2020-08-26T19:22:18.319Z",
     "id": "4d876d21-f841-4461-9227-99331c395275",
     "type": "right",
   },
@@ -107,7 +107,9 @@ Object {
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 3 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "tempore voluptas ut",
+    "createdAt": "2020-10-22T06:13:11.238Z",
+    "henken": Object {
       "comment": "blanditiis architecto quia",
       "content": Object {
         "book": Object {
@@ -131,8 +133,6 @@ Object {
         "id": "c318d1b7-755b-48b7-bcb5-5da7589d5872",
       },
     },
-    "comment": "tempore voluptas ut",
-    "createdAt": "2020-10-22T06:13:11.238Z",
     "id": "e0c8f466-844b-4974-a78c-cd443e6be0f2",
     "type": "wrong",
   },
@@ -142,7 +142,9 @@ Object {
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 4 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "itaque fugiat occaecati",
+    "createdAt": "2020-04-05T06:06:55.480Z",
+    "henken": Object {
       "comment": "fuga quae saepe",
       "content": Object {
         "bookSeries": Object {
@@ -165,8 +167,6 @@ Object {
         "id": "e53ac327-12ae-4f65-9e6b-e56e569ddbdb",
       },
     },
-    "comment": "itaque fugiat occaecati",
-    "createdAt": "2020-04-05T06:06:55.480Z",
     "id": "c09640af-c60f-40cf-9727-11922dbd6e8d",
     "type": "right",
   },
@@ -176,7 +176,9 @@ Object {
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 5 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "sed nobis cumque",
+    "createdAt": "2020-11-03T19:58:02.295Z",
+    "henken": Object {
       "comment": "unde est assumenda",
       "content": Object {
         "bookSeries": Object {
@@ -199,8 +201,6 @@ Object {
         "id": "3710e141-740f-44a3-9f96-a6c4e3ebde1a",
       },
     },
-    "comment": "sed nobis cumque",
-    "createdAt": "2020-11-03T19:58:02.295Z",
     "id": "3614ea89-79b4-4041-8d5d-2e2ff8f13f07",
     "type": "wrong",
   },
@@ -210,7 +210,9 @@ Object {
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 6 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "asperiores perspiciatis aliquam",
+    "createdAt": "2020-10-14T11:27:41.339Z",
+    "henken": Object {
       "comment": "assumenda vero voluptas",
       "content": Object {
         "bookSeries": Object {
@@ -233,8 +235,6 @@ Object {
         "id": "748327c5-9b33-4658-9898-e7fade279674",
       },
     },
-    "comment": "asperiores perspiciatis aliquam",
-    "createdAt": "2020-10-14T11:27:41.339Z",
     "id": "ed76aecd-70ab-42c5-b9b7-8911f3633db7",
     "type": "wrong",
   },
@@ -244,7 +244,9 @@ Object {
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 7 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "quos laborum quis",
+    "createdAt": "2020-12-13T04:56:07.866Z",
+    "henken": Object {
       "comment": "quod ullam nihil",
       "content": Object {
         "book": Object {
@@ -268,8 +270,6 @@ Object {
         "id": "869aa846-60a1-47bc-8abb-f7af024a983d",
       },
     },
-    "comment": "quos laborum quis",
-    "createdAt": "2020-12-13T04:56:07.866Z",
     "id": "b357ee40-c94f-4d32-8cef-2786c5a37137",
     "type": "right",
   },
@@ -279,7 +279,9 @@ Object {
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 8 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "aliquid ad vel",
+    "createdAt": "2020-07-27T04:13:16.143Z",
+    "henken": Object {
       "comment": "ducimus autem amet",
       "content": Object {
         "book": Object {
@@ -303,8 +305,6 @@ Object {
         "id": "7a43d2d8-b17b-48fa-b75b-97a98a770010",
       },
     },
-    "comment": "aliquid ad vel",
-    "createdAt": "2020-07-27T04:13:16.143Z",
     "id": "547fd503-414f-4a24-9217-386fe85af105",
     "type": "wrong",
   },
@@ -314,7 +314,9 @@ Object {
 exports[`AnswerPage serializer serializer() findAnswer.answerが存在する場合 9 1`] = `
 Object {
   "answer": Object {
-    "answerTo": Object {
+    "comment": "eos molestiae ut",
+    "createdAt": "2020-12-23T22:08:54.317Z",
+    "henken": Object {
       "comment": "eaque maiores est",
       "content": Object {
         "bookSeries": Object {
@@ -337,8 +339,6 @@ Object {
         "id": "0a274060-a23c-4222-a15a-7db5c04ce701",
       },
     },
-    "comment": "eos molestiae ut",
-    "createdAt": "2020-12-23T22:08:54.317Z",
     "id": "2e2af88b-f6ab-49da-bcf6-cdf12181f7a3",
     "type": "right",
   },
