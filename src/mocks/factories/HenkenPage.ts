@@ -7,6 +7,7 @@ import {
 
 import {
   alias,
+  authorName,
   avatar,
   bookCover,
   comment,
@@ -68,6 +69,11 @@ export const factoryHenkenPage = (
           __typename: 'BookSeries',
           id: id(),
           title: title(),
+        },
+        {
+          __typename: 'Author',
+          id: id(),
+          name: authorName(),
         },
       ]),
     },

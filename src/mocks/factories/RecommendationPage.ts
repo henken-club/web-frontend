@@ -16,6 +16,7 @@ import {
   updatedAt,
   which,
   repeat,
+  authorName,
 } from './common';
 
 export const factoryAllRecommendationsPages = ({
@@ -55,6 +56,7 @@ export const factoryRecommendationPage = (
       content: which([
         {__typename: 'Book', id: id(), title: title(), cover: bookCover()},
         {__typename: 'BookSeries', id: id(), title: title()},
+        {__typename: 'Author', id: id(), name: authorName()},
       ]),
     },
   },

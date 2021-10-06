@@ -98,7 +98,8 @@ export type TransformedProps = {
         comment: string;
         content:
           | {type: 'Book'; book: {id: string; title: string}}
-          | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
+          | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
+          | {type: 'Author'; author: {id: string; name: string}};
         postsTo: {
           id: string;
           alias: string;
@@ -120,7 +121,8 @@ export type TransformedProps = {
         comment: string;
         content:
           | {type: 'Book'; book: {id: string; title: string}}
-          | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
+          | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
+          | {type: 'Author'; author: {id: string; name: string}};
         postedBy: {
           id: string;
           alias: string;
@@ -137,19 +139,31 @@ export type TransformedProps = {
   };
 };
 
-export const transformHenkenContent = ({
-  __typename,
-  ...props
-}:
-  | {__typename: 'Book'; id: string; title: string}
-  | {__typename: 'BookSeries'; id: string; title: string}):
+export const transformHenkenContent = (
+  props:
+    | {__typename: 'Book'; id: string; title: string}
+    | {__typename: 'BookSeries'; id: string; title: string}
+    | {__typename: 'Author'; id: string; name: string},
+):
   | {type: 'Book'; book: {id: string; title: string}}
-  | {type: 'BookSeries'; bookSeries: {id: string; title: string}} => {
-  switch (__typename) {
+  | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
+  | {type: 'Author'; author: {id: string; name: string}} => {
+  switch (props.__typename) {
     case 'Book':
-      return {type: 'Book' as const, book: props};
+      return {
+        type: 'Book' as const,
+        book: {id: props.id, title: props.title},
+      };
     case 'BookSeries':
-      return {type: 'BookSeries' as const, bookSeries: props};
+      return {
+        type: 'BookSeries' as const,
+        bookSeries: {id: props.id, title: props.title},
+      };
+    case 'Author':
+      return {
+        type: 'Author' as const,
+        author: {id: props.id, name: props.name},
+      };
   }
 };
 

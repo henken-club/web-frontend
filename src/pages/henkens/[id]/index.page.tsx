@@ -10,8 +10,8 @@ import {Merge} from 'type-fest';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import {getSdk} from './index.page.codegen';
 import {SerializedProps, serializer} from './index.serializer';
+import {getSdk} from './index.page.codegen';
 
 import {graphqlClient} from '~/libs/graphql-request';
 
@@ -65,6 +65,10 @@ const HenkenPageQuery = gql`
           ... on BookSeries {
             id
             title
+          }
+          ... on Author {
+            id
+            name
           }
         }
       }

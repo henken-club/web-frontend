@@ -1,21 +1,18 @@
 import {HenkenPageQuery as PageQueryResult} from './index.page.codegen';
 
-import {
-  serializeUser,
-  SerializeContent,
-  serializeHenken,
-} from '~/libs/serializer';
+import {serializeUser, serializeHenken} from '~/libs/serializer';
 
 type ResultHenken = Exclude<
   PageQueryResult['findHenken']['henken'],
   null | undefined
 >;
 
-export const serializeContent: SerializeContent<
-  ResultHenken['content'],
-  {id: string; title: string; cover: string | null},
-  {id: string; title: string}
-> = (content) => {
+export const serializeContent = (
+  content: ResultHenken['content'],
+):
+  | {type: 'Book'; book: {id: string; title: string; cover: string | null}}
+  | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
+  | {type: 'Author'; author: {id: string; name: string}} => {
   switch (content.__typename) {
     case 'Book':
       return {
@@ -32,6 +29,14 @@ export const serializeContent: SerializeContent<
         bookSeries: {
           id: content.id,
           title: content.title,
+        },
+      };
+    case 'Author':
+      return {
+        type: 'Author',
+        author: {
+          id: content.id,
+          name: content.name,
         },
       };
   }

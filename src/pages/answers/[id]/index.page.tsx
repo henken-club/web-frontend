@@ -69,6 +69,10 @@ const AnswerPageQuery = gql`
               id
               title
             }
+            ... on Author {
+              id
+              name
+            }
           }
         }
       }

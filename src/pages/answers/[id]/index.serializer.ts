@@ -2,11 +2,8 @@ import {AnswerPageQuery as PageQueryResult} from './index.page.codegen';
 
 import {
   AnswerType,
-  ContentBook,
-  ContentBookSeries,
   serializeAnswer,
   serializeAnswerType,
-  SerializeContent,
   serializeHenken,
   serializeUser,
 } from '~/libs/serializer';
@@ -16,15 +13,16 @@ type ResultAnswer = Exclude<
   null | undefined
 >;
 
-export const serializeContent: SerializeContent<
-  ResultAnswer['henken']['content'],
-  {id: string; title: string; cover: string | null},
-  {id: string; title: string}
-> = (content) => {
+export const serializeContent = (
+  content: ResultAnswer['henken']['content'],
+):
+  | {type: 'Book'; book: {id: string; title: string; cover: string | null}}
+  | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
+  | {type: 'Author'; author: {id: string; name: string}} => {
   switch (content.__typename) {
     case 'Book':
       return {
-        type: 'Book',
+        type: 'Book' as const,
         book: {
           id: content.id,
           title: content.title,
@@ -37,6 +35,14 @@ export const serializeContent: SerializeContent<
         bookSeries: {
           id: content.id,
           title: content.title,
+        },
+      };
+    case 'Author':
+      return {
+        type: 'Author',
+        author: {
+          id: content.id,
+          name: content.name,
         },
       };
   }
@@ -63,9 +69,7 @@ export type SerializedProps = {
         displayName: string;
         avatar: string;
       };
-      content:
-        | ContentBook<{id: string; title: string}>
-        | ContentBookSeries<{id: string; title: string}>;
+      content: ReturnType<typeof serializeContent>;
     };
   };
 };

@@ -33,3 +33,6 @@ export const score = faker.datatype.number;
 
 // Book
 export const bookCover = () => which([null, faker.image.abstract()]);
+
+// Author
+export const authorName = () => faker.name.findName();

@@ -60,6 +60,10 @@ const RecommendationPageQuery = gql`
             id
             title
           }
+          ... on Author {
+            id
+            name
+          }
         }
       }
     }

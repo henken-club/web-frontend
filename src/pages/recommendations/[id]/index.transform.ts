@@ -14,6 +14,11 @@ type RecommendsTo = {
   avatar: string;
 };
 
+type ContentAuthor = {
+  type: 'Author';
+  author: {name: string};
+};
+
 type ContentBook = {
   type: 'Book';
   book: {id: string; title: string; cover: string | null};
@@ -30,13 +35,13 @@ export type TransformedProps = {
     score: number;
     updatedAt: string;
     recommendsTo: RecommendsTo;
-    content: ContentBook | ContentBookSeries;
+    content: ContentBook | ContentBookSeries | ContentAuthor;
   };
 };
 
 export const transformContent = (
   content: ResultRecommendation['content'],
-): ContentBook | ContentBookSeries => {
+): ContentBook | ContentBookSeries | ContentAuthor => {
   switch (content.__typename) {
     case 'Book':
       return {
@@ -53,6 +58,13 @@ export const transformContent = (
         bookSeries: {
           id: content.id,
           title: content.title,
+        },
+      };
+    case 'Author':
+      return {
+        type: 'Author',
+        author: {
+          name: content.name,
         },
       };
   }

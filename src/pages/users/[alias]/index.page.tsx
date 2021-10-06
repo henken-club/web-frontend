@@ -104,6 +104,10 @@ const UserPageQuery = gql`
                   id
                   title
                 }
+                ... on Author {
+                  id
+                  name
+                }
               }
               answer {
                 id
@@ -137,6 +141,10 @@ const UserPageQuery = gql`
                 ... on BookSeries {
                   id
                   title
+                }
+                ... on Author {
+                  id
+                  name
                 }
               }
               answer {
