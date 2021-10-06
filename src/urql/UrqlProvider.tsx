@@ -19,6 +19,7 @@ export const UrqlProvider: React.FC = ({children}) => {
       setClient(
         createUrqlClient({
           fetchOptions: {
+            credentials: 'same-origin',
             headers: {
               authorization: token ? `Bearer ${token}` : '',
             },

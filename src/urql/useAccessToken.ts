@@ -9,12 +9,8 @@ export const useAccessToken = (): {token: string | null} => {
   useEffect(() => {
     const getToken = async () => {
       if (isAuthenticated) {
-        try {
-          const accessToken = await getAccessTokenSilently();
-          setToken(accessToken);
-        } catch (error) {
-          console.error(error);
-        }
+        const accessToken = await getAccessTokenSilently();
+        setToken(accessToken);
       }
     };
     getToken();
