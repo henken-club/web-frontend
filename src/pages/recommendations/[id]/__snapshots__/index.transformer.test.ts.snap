@@ -27,11 +27,10 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "bookSeries": Object {
-        "id": "ae3e4479-0999-42f9-8b31-86fb7680c80a",
-        "title": "eos sint autem",
+      "author": Object {
+        "name": "Dan Tremblay",
       },
-      "type": "BookSeries",
+      "type": "Author",
     },
     "id": "6fbe024f-2316-4265-a6e8-d65a837e308a",
     "recommendsTo": Object {
@@ -50,11 +49,10 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "bookSeries": Object {
-        "id": "1f5dd863-0b36-41ef-bf8c-b9bc72f46855",
-        "title": "omnis quae recusandae",
+      "author": Object {
+        "name": "Noah Johns",
       },
-      "type": "BookSeries",
+      "type": "Author",
     },
     "id": "620e8f67-6552-43b9-9474-a9d8a27892bc",
     "recommendsTo": Object {
@@ -96,11 +94,10 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "bookSeries": Object {
-        "id": "53ac3271-2aef-465d-a6be-56e569ddbdb9",
-        "title": "libero dicta beatae",
+      "author": Object {
+        "name": "Rose Sporer",
       },
-      "type": "BookSeries",
+      "type": "Author",
     },
     "id": "fe82fdb9-b932-4f30-b4e6-ac039d5f9269",
     "recommendsTo": Object {
@@ -119,11 +116,10 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "bookSeries": Object {
-        "id": "710e1417-40f4-4a3d-b96a-6c4e3ebde1a5",
-        "title": "nihil aperiam similique",
+      "author": Object {
+        "name": "Darren Hoppe",
       },
-      "type": "BookSeries",
+      "type": "Author",
     },
     "id": "30dd35ef-7196-4c58-b4f3-c1abd732ce14",
     "recommendsTo": Object {
@@ -142,11 +138,12 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "bookSeries": Object {
-        "id": "48327c59-b336-458d-898e-7fade2796746",
-        "title": "rerum quod voluptatibus",
+      "book": Object {
+        "cover": null,
+        "id": "b9bbcee5-d446-4bb6-b76b-f57e5bb31a60",
+        "title": "assumenda vero voluptas",
       },
-      "type": "BookSeries",
+      "type": "Book",
     },
     "id": "ef53d105-1f91-4896-8579-d7cb68392abf",
     "recommendsTo": Object {
@@ -165,11 +162,12 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "bookSeries": Object {
-        "id": "69aa8466-0a17-4bc8-abbf-7af024a983df",
-        "title": "qui rerum ducimus",
+      "book": Object {
+        "cover": "http://placeimg.com/640/480/abstract",
+        "id": "554d7cf5-2924-4178-94a4-5e76b66fec25",
+        "title": "quod ullam nihil",
       },
-      "type": "BookSeries",
+      "type": "Book",
     },
     "id": "13c57fb7-f484-4811-a407-8adc5661a4ae",
     "recommendsTo": Object {
@@ -188,12 +186,11 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "book": Object {
-        "cover": null,
-        "id": "af452614-ac1a-471a-92ca-007ec3f99402",
-        "title": "ducimus autem amet",
+      "bookSeries": Object {
+        "id": "a43d2d8b-17b8-4faf-b5b9-7a98a7700106",
+        "title": "enim et repellendus",
       },
-      "type": "Book",
+      "type": "BookSeries",
     },
     "id": "d0f3d68d-3609-46c6-a8d7-e828bc6bd906",
     "recommendsTo": Object {
@@ -212,12 +209,11 @@ exports[`Recommendation Page transformer transform recommendationが存在する
 Object {
   "recommendation": Object {
     "content": Object {
-      "book": Object {
-        "cover": null,
-        "id": "a39dce0c-9517-4296-b972-6edf2eb6b4e5",
-        "title": "eaque maiores est",
+      "bookSeries": Object {
+        "id": "a274060a-23c2-4222-95a7-db5c04ce7016",
+        "title": "ut velit aut",
       },
-      "type": "Book",
+      "type": "BookSeries",
     },
     "id": "05877025-203e-4623-a165-725e5fb0fbb9",
     "recommendsTo": Object {
