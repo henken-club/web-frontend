@@ -8,7 +8,7 @@ import {Auth0Provider} from '@auth0/auth0-react';
 import {localeDetector} from '~/i18n/detector';
 import TypesafeI18n from '~/i18n/i18n-react';
 import {UrqlProvider} from '~/urql/UrqlProvider';
-import {Viewer} from '~/libs/Viewer';
+import {AuthManager} from '~/libs/AuthManager';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import '~/styles/index.css';
@@ -33,8 +33,8 @@ const App = ({
     >
       <RecoilRoot>
         <UrqlProvider>
-          <Viewer />
           <TypesafeI18n initialLocale={detectedLocales}>
+            <AuthManager />
             <Component {...pageProps} />
           </TypesafeI18n>
         </UrqlProvider>

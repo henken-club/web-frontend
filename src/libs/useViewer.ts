@@ -1,9 +1,10 @@
-import {atom, useRecoilValue, useSetRecoilState} from 'recoil';
+import {atom, useRecoilValue} from 'recoil';
 
 export type Viewer = {
   id: string;
   alias: string;
   displayName: string;
+  avatar: string;
 };
 
 export const viewerState = atom<undefined | null | Viewer>({
@@ -11,14 +12,7 @@ export const viewerState = atom<undefined | null | Viewer>({
   default: undefined,
 });
 
-export const useViewer = (): {
-  viewer: Viewer | null | undefined;
-  setter: (value: Viewer | null) => void;
-} => {
+export const useViewer = (): Viewer | null | undefined => {
   const viewer = useRecoilValue(viewerState);
-
-  const recoilSetter = useSetRecoilState(viewerState);
-  const setter = (value: Viewer | null) => recoilSetter(value);
-
-  return {viewer, setter};
+  return viewer;
 };
