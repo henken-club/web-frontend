@@ -13,6 +13,14 @@ generates:
       scalars:
         DateTime: string
 
+  ./src/libs/codegen.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+    config:
+      scalars:
+        DateTime: string
+
   ./src/pages/codegen.ts:
     plugins:
       - typescript
