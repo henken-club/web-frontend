@@ -3,12 +3,13 @@ import gql from 'graphql-tag';
 import React, {useEffect} from 'react';
 import {useRecoilValue, useSetRecoilState} from 'recoil';
 
-import {useGetViewerQuery} from './codegen';
-import {RegisterForm} from './RegisterForm';
+import {RegisterForm} from '../components/RegisterForm';
+
+import {useFetchViewerQuery} from './codegen';
 import {viewerState} from './useViewer';
 
-const GetViewerQuery = gql`
-  query GetViewer {
+const FetchViewerQuery = gql`
+  query FetchViewer {
     viewer {
       id
       alias
@@ -20,7 +21,7 @@ const GetViewerQuery = gql`
 
 export const ViewerFetcher: React.VFC = () => {
   const recoilSetter = useSetRecoilState(viewerState);
-  const [result] = useGetViewerQuery();
+  const [result] = useFetchViewerQuery();
 
   const {data} = result;
 

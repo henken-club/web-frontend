@@ -5,9 +5,9 @@ export const RegisterForm: React.VFC = () => {
   const {user} = useAuth0();
 
   return (
-    <div>
+    <>
       <p>input!</p>
       <p>{JSON.stringify(user)}</p>
-    </div>
+    </>
   );
 };
