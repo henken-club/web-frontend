@@ -3,7 +3,7 @@ import React from 'react';
 import {useAuth0} from '@auth0/auth0-react';
 import Link from 'next/link';
 
-import {useViewer} from '~/libs/useViewer';
+import {useViewer} from '~/auth/useViewer';
 
 export type UrlQuery = Record<string, never>;
 export type PageProps = Record<string, never>;

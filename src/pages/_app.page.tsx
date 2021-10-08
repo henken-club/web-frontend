@@ -8,7 +8,7 @@ import {Auth0Provider} from '@auth0/auth0-react';
 import {localeDetector} from '~/i18n/detector';
 import TypesafeI18n from '~/i18n/i18n-react';
 import {UrqlProvider} from '~/urql/UrqlProvider';
-import {AuthManager} from '~/libs/AuthManager';
+import {AuthManager} from '~/auth/AuthManager';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import '~/styles/index.css';

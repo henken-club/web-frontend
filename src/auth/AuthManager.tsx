@@ -3,10 +3,10 @@ import gql from 'graphql-tag';
 import React, {useEffect} from 'react';
 import {useRecoilValue, useSetRecoilState} from 'recoil';
 
-import {RegisterForm} from '../components/RegisterForm';
-
 import {useFetchViewerQuery} from './codegen';
 import {viewerState} from './useViewer';
+
+import {RegisterForm} from '~/components/RegisterForm';
 
 const FetchViewerQuery = gql`
   query FetchViewer {
