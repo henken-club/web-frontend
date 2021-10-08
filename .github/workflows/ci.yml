@@ -51,7 +51,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
-          cache: npm
+          cache: yarn
       - uses: bahmutov/npm-install@v1
       - run: yarn run generate:codegen
       - run: test -z "$(git diff --name-only | grep schema.graphql)" ; exit $?
