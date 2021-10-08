@@ -4,7 +4,7 @@ import React from 'react';
 import {Accordion, AccordionProps} from './Accordion';
 
 export default {
-  title: 'HeaderNav/Viewer/Accordion',
+  title: 'HeaderNav/Personal/Viewer/Accordion',
   component: Accordion,
 } as Meta;
 

@@ -4,7 +4,7 @@ import React from 'react';
 import {Viewer, ViewerProps} from '.';
 
 export default {
-  title: 'HeaderNav/Viewer',
+  title: 'HeaderNav/Personal/Viewer',
   component: Viewer,
   decorators: [
     (Story) => (

@@ -26,5 +26,6 @@ export const parameters = {
   },
   argTypes: {
     className: {table: {disable: true}},
+    contextValue: {table: {disable: true}},
   },
 };

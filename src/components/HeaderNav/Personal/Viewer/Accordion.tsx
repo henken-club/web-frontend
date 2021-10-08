@@ -93,37 +93,37 @@ export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
         <LinkUserPostsHenkens alias={viewer.alias}>
           <AccordionItem
             icon={IconPostHenkens}
-            text={LL.HeaderNav.PostsHenkens()}
+            text={LL.HeaderNav.Accordion.PostsHenkens()}
           />
         </LinkUserPostsHenkens>
         <LinkUserReceivedHenkens alias={viewer.alias}>
           <AccordionItem
             icon={IconReceivedHenkens}
-            text={LL.HeaderNav.ReceivedHenkens()}
+            text={LL.HeaderNav.Accordion.ReceivedHenkens()}
           />
         </LinkUserReceivedHenkens>
         <LinkUserPostsAnswers alias={viewer.alias}>
           <AccordionItem
             icon={IconPostAnswers}
-            text={LL.HeaderNav.PostsAnswers()}
+            text={LL.HeaderNav.Accordion.PostsAnswers()}
           />
         </LinkUserPostsAnswers>
         <LinkUserReceivedAnswers alias={viewer.alias}>
           <AccordionItem
             icon={IconReceivedAnswers}
-            text={LL.HeaderNav.ReceivedAnswers()}
+            text={LL.HeaderNav.Accordion.ReceivedAnswers()}
           />
         </LinkUserReceivedAnswers>
       </div>
       <AccordionItem
         className={clsx(['border-t', ['border-gray-200']])}
         icon={IconSettings}
-        text={LL.HeaderNav.Settings()}
+        text={LL.HeaderNav.Accordion.Settings()}
       />
       <AccordionItem
         className={clsx(['border-t', ['border-gray-200']])}
         icon={IconSignOut}
-        text={LL.HeaderNav.SignOut()}
+        text={LL.HeaderNav.Accordion.SignOut()}
       />
     </div>
   );
