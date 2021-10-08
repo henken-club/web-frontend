@@ -1,7 +1,6 @@
 /* eslint-disable no-process-env */
 import React from 'react';
 import {AppProps} from 'next/app';
-import {config as FontAwesomeConfig} from '@fortawesome/fontawesome-svg-core';
 import {RecoilRoot} from 'recoil';
 import {Auth0Provider} from '@auth0/auth0-react';
 
@@ -9,13 +8,11 @@ import {localeDetector} from '~/i18n/detector';
 import TypesafeI18n from '~/i18n/i18n-react';
 import {UrqlProvider} from '~/urql/UrqlProvider';
 import {AuthManager} from '~/auth/AuthManager';
+import {DefaultLayout} from '~/components/Layout';
 
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import '~/styles/index.css';
 
 if (process.env.NEXT_PUBLIC_MSW_ENABLED === 'true') require('../mocks/next');
-
-FontAwesomeConfig.autoAddCss = false;
 
 const App = ({
   Component,
@@ -23,6 +20,8 @@ const App = ({
   router,
 }: AppProps) => {
   const detectedLocales = localeDetector(router);
+
+  const PageLayout = DefaultLayout;
 
   return (
     <Auth0Provider
@@ -35,7 +34,9 @@ const App = ({
         <UrqlProvider>
           <TypesafeI18n initialLocale={detectedLocales}>
             <AuthManager />
-            <Component {...pageProps} />
+            <PageLayout>
+              <Component {...pageProps} />
+            </PageLayout>
           </TypesafeI18n>
         </UrqlProvider>
       </RecoilRoot>
