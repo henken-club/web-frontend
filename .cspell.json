@@ -12,5 +12,5 @@
     "typesafe",
     "codegen"
   ],
-  "ignoreWords": ["fontawesome", "fortawesome", "urql"]
+  "ignoreWords": ["fontawesome", "fortawesome", "urql", "nextjs"]
 }

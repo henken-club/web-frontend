@@ -6,5 +6,10 @@ declare namespace NodeJS {
 
     readonly NEXT_PUBLIC_GRAPHQL_API_ENDPOINT: string;
     readonly NEXT_PUBLIC_MSW_ENABLED?: 'true';
+
+    readonly NEXT_PUBLIC_AUTH0_DOMAIN: string;
+    readonly NEXT_PUBLIC_AUTH0_CLIENT_ID: string;
+    readonly NEXT_PUBLIC_AUTH0_AUDIENCE: string;
+    readonly NEXT_PUBLIC_AUTH0_REDIRECT_URI: string;
   }
 }

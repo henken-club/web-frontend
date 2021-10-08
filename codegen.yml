@@ -1,14 +1,22 @@
 schema: .graphql/schema.graphql
 
 generates:
-  ./src/libs/codegen.ts:
+  ./src/auth/codegen.ts:
     documents:
-      - 'src/libs/**/*.{ts,tsx}'
-      - '!src/libs/**/*.codegen.ts'
+      - 'src/auth/**/*.{ts,tsx}'
+      - '!src/auth/**/*.codegen.ts'
     plugins:
       - typescript
       - typescript-operations
       - typescript-urql
+    config:
+      scalars:
+        DateTime: string
+
+  ./src/libs/codegen.ts:
+    plugins:
+      - typescript
+      - typescript-operations
     config:
       scalars:
         DateTime: string

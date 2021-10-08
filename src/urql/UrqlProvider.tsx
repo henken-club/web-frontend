@@ -1,7 +1,7 @@
 import {createClient, Client, Provider, ClientOptions} from 'urql';
 import React, {useEffect, useState} from 'react';
 
-import {useAccessToken} from '~/libs/useAccessToken';
+import {useAccessToken} from '~/urql/useAccessToken';
 
 export const createUrqlClient = (options?: Omit<ClientOptions, 'url'>) =>
   createClient({
@@ -19,6 +19,7 @@ export const UrqlProvider: React.FC = ({children}) => {
       setClient(
         createUrqlClient({
           fetchOptions: {
+            credentials: 'same-origin',
             headers: {
               authorization: token ? `Bearer ${token}` : '',
             },
