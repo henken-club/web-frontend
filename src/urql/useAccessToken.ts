@@ -1,8 +1,9 @@
-import {useAuth0} from '@auth0/auth0-react';
 import {useEffect, useState} from 'react';
 
+import {useAuth} from '~/auth/useAuth';
+
 export const useAccessToken = (): {token: string | null} => {
-  const {isAuthenticated, getAccessTokenSilently} = useAuth0();
+  const {isAuthenticated, getAccessTokenSilently} = useAuth();
 
   const [token, setToken] = useState<string | null>(null);
 

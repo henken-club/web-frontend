@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import React, {useMemo} from 'react';
-import {useAuth0} from '@auth0/auth0-react';
 
 import {Personal} from './Personal';
 import {HeaderNavContext} from './context';
@@ -8,6 +7,7 @@ import {HeaderNavContext} from './context';
 import {LinkIndex} from '~/components/Link';
 import {useTranslation} from '~/i18n/useTranslation';
 import {useViewer} from '~/auth/useViewer';
+import {useAuth} from '~/auth/useAuth';
 
 export type ComponentProps = {className?: string};
 export const Component: React.VFC<ComponentProps> = ({className}) => {
@@ -38,7 +38,7 @@ export const Component: React.VFC<ComponentProps> = ({className}) => {
 };
 
 export const HeaderNav: React.VFC<{className?: string}> = ({className}) => {
-  const {loginWithRedirect, isAuthenticated} = useAuth0();
+  const {loginWithRedirect, isAuthenticated} = useAuth();
   const viewer = useViewer();
 
   const value = useMemo<React.ContextType<typeof HeaderNavContext>>(() => {

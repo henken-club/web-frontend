@@ -1,8 +1,9 @@
-import {useAuth0} from '@auth0/auth0-react';
 import React from 'react';
 
+import {useAuth} from '~/auth/useAuth';
+
 export const RegisterForm: React.VFC = () => {
-  const {user} = useAuth0();
+  const {user} = useAuth();
 
   return (
     <>

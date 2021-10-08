@@ -1,4 +1,3 @@
-import {useAuth0} from '@auth0/auth0-react';
 import gql from 'graphql-tag';
 import React, {useEffect} from 'react';
 import {useRecoilValue, useSetRecoilState} from 'recoil';
@@ -6,6 +5,7 @@ import {useRecoilValue, useSetRecoilState} from 'recoil';
 import {useFetchViewerQuery} from './codegen';
 import {viewerState} from './useViewer';
 
+import {useAuth} from '~/auth/useAuth';
 import {RegisterForm} from '~/components/RegisterForm';
 
 const FetchViewerQuery = gql`
@@ -36,7 +36,7 @@ export const ViewerFetcher: React.VFC = () => {
 };
 
 export const AuthManager: React.VFC = () => {
-  const {isAuthenticated} = useAuth0();
+  const {isAuthenticated} = useAuth();
   const viewer = useRecoilValue(viewerState);
 
   if (isAuthenticated && viewer) return <></>;
