@@ -21,8 +21,8 @@ coverage/
 # msw
 public/mockServiceWorker.js
 
-# submodules
-.graphql/
+# schema
+schema.graphql
 
 # generated
 src/**/codegen.ts

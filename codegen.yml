@@ -1,6 +1,14 @@
-schema: .graphql/schema.graphql
+schema:
+  - ${GRAPHQL_API_SCHEMA:./schema.graphql}
+  - .graphql/*.graphql
 
 generates:
+  ./schema.graphql:
+    plugins:
+      - schema-ast
+    config:
+      sort: true
+
   ./src/auth/codegen.ts:
     documents:
       - 'src/auth/**/*.{ts,tsx}'
