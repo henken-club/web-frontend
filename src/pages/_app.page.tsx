@@ -9,6 +9,7 @@ import {localeDetector} from '~/i18n/detector';
 import TypesafeI18n from '~/i18n/i18n-react';
 import {UrqlProvider} from '~/urql/UrqlProvider';
 import {AuthManager} from '~/auth/AuthManager';
+import {DefaultLayout} from '~/components/Layout';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import '~/styles/index.css';
@@ -24,6 +25,8 @@ const App = ({
 }: AppProps) => {
   const detectedLocales = localeDetector(router);
 
+  const PageLayout = DefaultLayout;
+
   return (
     <Auth0Provider
       domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
@@ -35,7 +38,9 @@ const App = ({
         <UrqlProvider>
           <TypesafeI18n initialLocale={detectedLocales}>
             <AuthManager />
-            <Component {...pageProps} />
+            <PageLayout>
+              <Component {...pageProps} />
+            </PageLayout>
           </TypesafeI18n>
         </UrqlProvider>
       </RecoilRoot>
