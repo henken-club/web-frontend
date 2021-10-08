@@ -48,7 +48,7 @@ export type AccordionProps = {
 export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
   const {LL} = useTranslation();
   return (
-    <nav
+    <div
       className={clsx(
         className,
         ['w-64'],
@@ -125,6 +125,6 @@ export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
         icon={IconSignOut}
         text={LL.HeaderNav.SignOut()}
       />
-    </nav>
+    </div>
   );
 };
