@@ -1,7 +1,6 @@
 /* eslint-disable no-process-env */
 import React from 'react';
 import {AppProps} from 'next/app';
-import {config as FontAwesomeConfig} from '@fortawesome/fontawesome-svg-core';
 import {RecoilRoot} from 'recoil';
 import {Auth0Provider} from '@auth0/auth0-react';
 
@@ -14,8 +13,6 @@ import {DefaultLayout} from '~/components/Layout';
 import '~/styles/index.css';
 
 if (process.env.NEXT_PUBLIC_MSW_ENABLED === 'true') require('../mocks/next');
-
-FontAwesomeConfig.autoAddCss = false;
 
 const App = ({
   Component,
