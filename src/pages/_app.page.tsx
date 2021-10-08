@@ -11,7 +11,6 @@ import {UrqlProvider} from '~/urql/UrqlProvider';
 import {AuthManager} from '~/auth/AuthManager';
 import {DefaultLayout} from '~/components/Layout';
 
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import '~/styles/index.css';
 
 if (process.env.NEXT_PUBLIC_MSW_ENABLED === 'true') require('../mocks/next');
