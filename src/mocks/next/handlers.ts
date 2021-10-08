@@ -1,54 +1,54 @@
 import crypto from 'crypto';
 
-import {graphql} from 'msw';
 import * as faker from 'faker';
+import {graphql} from 'msw';
 
+import {
+  AllAnswerPagesDocument,
+  AllAnswerPagesQuery,
+  AllAnswerPagesQueryVariables,
+  AllHenkenPagesDocument,
+  AllHenkenPagesQuery,
+  AllHenkenPagesQueryVariables,
+  AllRecommendationsPagesDocument,
+  AllRecommendationsPagesQuery,
+  AllRecommendationsPagesQueryVariables,
+  AllUserPagesDocument,
+  AllUserPagesQuery,
+  AllUserPagesQueryVariables,
+  AnswerPageDocument,
+  AnswerPageQuery,
+  AnswerPageQueryVariables,
+  FetchViewerDocument,
+  FetchViewerQuery,
+  FetchViewerQueryVariables,
+  HenkenPageDocument,
+  HenkenPageQuery,
+  HenkenPageQueryVariables,
+  RecommendationPageDocument,
+  RecommendationPageQuery,
+  RecommendationPageQueryVariables,
+  UserPageDocument,
+  UserPageQuery,
+  UserPageQueryVariables,
+} from '../codegen';
 import {
   factoryAllAnswerPages,
   factoryAnswerPage,
 } from '../factories/AnswerPage';
 import {
-  AllUserPagesDocument,
-  AllUserPagesQuery,
-  AllUserPagesQueryVariables,
-  UserPageDocument,
-  UserPageQuery,
-  UserPageQueryVariables,
-  GetViewerQuery,
-  GetViewerQueryVariables,
-  GetViewerDocument,
-  AllHenkenPagesQuery,
-  AllHenkenPagesQueryVariables,
-  AllHenkenPagesDocument,
-  HenkenPageDocument,
-  HenkenPageQuery,
-  HenkenPageQueryVariables,
-  RecommendationPageQuery,
-  RecommendationPageQueryVariables,
-  RecommendationPageDocument,
-  AllRecommendationsPagesDocument,
-  AllRecommendationsPagesQuery,
-  AllRecommendationsPagesQueryVariables,
-  AnswerPageQuery,
-  AnswerPageQueryVariables,
-  AnswerPageDocument,
-  AllAnswerPagesQuery,
-  AllAnswerPagesQueryVariables,
-  AllAnswerPagesDocument,
-} from '../codegen';
+  factoryAllHenkenPages,
+  factoryHenkenPage,
+} from '../factories/HenkenPage';
 import {
   factoryAllRecommendationsPages,
   factoryRecommendationPage,
 } from '../factories/RecommendationPage';
+import {factoryAllUserPages, factoryUserPage} from '../factories/UserPage';
 import {
-  factoryUnauthorizedViewer,
   factoryAuthorizedViewer,
+  factoryUnauthorizedViewer,
 } from '../factories/Viewer';
-import {factoryUserPage, factoryAllUserPages} from '../factories/UserPage';
-import {
-  factoryAllHenkenPages,
-  factoryHenkenPage,
-} from '../factories/HenkenPage';
 
 const generateSeed = (variables: Record<string, unknown>) =>
   Number.parseInt(
@@ -61,8 +61,8 @@ const generateSeed = (variables: Record<string, unknown>) =>
   );
 
 export const handlers = [
-  graphql.query<GetViewerQuery, GetViewerQueryVariables>(
-    GetViewerDocument,
+  graphql.query<FetchViewerQuery, FetchViewerQueryVariables>(
+    FetchViewerDocument,
     (req, res, ctx) => {
       faker.seed(0);
       if (req.headers.get('Authorization'))
