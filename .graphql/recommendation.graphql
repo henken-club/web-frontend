@@ -1,0 +1,56 @@
+type Recommendation implements Node {
+  id: ID!
+
+  recommendsTo: User!
+
+  content: Content!
+  score: Int!
+
+  updatedAt: DateTime!
+}
+
+type RecommendationEdge implements Edge {
+  cursor: String!
+  node: Recommendation!
+}
+
+type RecommendationConnection implements Connection {
+  edges: [RecommendationEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+input RecommendationOrder {
+  order: OrderDirection!
+  field: RecommendationOrderField!
+}
+
+enum RecommendationOrderField {
+  SCORE
+}
+
+extend type Query {
+  recommendation(id: ID!): Recommendation!
+  findRecommendation(id: ID!): FindRecommendationPayload!
+  manyRecommendations(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    orderBy: RecommendationOrder!
+  ): RecommendationConnection!
+}
+
+type FindRecommendationPayload {
+  recommendation: Recommendation
+}
+
+extend type User {
+  recommendations(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    orderBy: RecommendationOrder!
+  ): RecommendationConnection!
+}
