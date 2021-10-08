@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import {Image} from '~/components/Image';
 import {useTranslation} from '~/i18n/useTranslation';
 import {
+  LinkSettings,
   LinkUser,
   LinkUserPostsAnswers,
   LinkUserPostsHenkens,
@@ -22,23 +23,25 @@ import {
 
 export const AccordionItem: React.VFC<{
   className?: string;
+  link: React.FC<{className?: string}>;
   icon: IconType;
   text: string;
-}> = ({className, icon: Icon, text}) => (
-  <div
-    className={clsx(
-      className,
-      ['col-span-1'],
-      [['px-3'], ['py-3']],
-      [['flex'], ['items-center']],
-      ['bg-white', 'hover:bg-blue-100'],
-    )}
-  >
-    <Icon className={clsx(['text-sm'])} />
-    <span className={clsx(['ml-2'], ['text-xs'], ['whitespace-nowrap'])}>
-      {text}
-    </span>
-  </div>
+}> = ({className, link: Link, icon: Icon, text}) => (
+  <Link>
+    <a
+      className={clsx(
+        className,
+        [['px-3'], ['py-3']],
+        [['flex'], ['items-center']],
+        ['bg-white', 'hover:bg-blue-100'],
+      )}
+    >
+      <Icon className={clsx(['text-sm'])} />
+      <span className={clsx(['ml-2'], ['text-xs'], ['whitespace-nowrap'])}>
+        {text}
+      </span>
+    </a>
+  </Link>
 );
 
 export type AccordionProps = {
@@ -60,7 +63,7 @@ export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
       )}
     >
       <LinkUser alias={viewer.alias}>
-        <div
+        <a
           className={clsx(
             [['px-4'], ['py-2']],
             [['flex'], ['items-center']],
@@ -82,7 +85,7 @@ export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
             </span>
             <span className={clsx(['text-sm'])}>{viewer.alias}</span>
           </div>
-        </div>
+        </a>
       </LinkUser>
       <div
         className={clsx(
@@ -90,38 +93,48 @@ export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
           ['border-t', ['border-gray-200']],
         )}
       >
-        <LinkUserPostsHenkens alias={viewer.alias}>
-          <AccordionItem
-            icon={IconPostHenkens}
-            text={LL.HeaderNav.Accordion.PostsHenkens()}
-          />
-        </LinkUserPostsHenkens>
-        <LinkUserReceivedHenkens alias={viewer.alias}>
-          <AccordionItem
-            icon={IconReceivedHenkens}
-            text={LL.HeaderNav.Accordion.ReceivedHenkens()}
-          />
-        </LinkUserReceivedHenkens>
-        <LinkUserPostsAnswers alias={viewer.alias}>
-          <AccordionItem
-            icon={IconPostAnswers}
-            text={LL.HeaderNav.Accordion.PostsAnswers()}
-          />
-        </LinkUserPostsAnswers>
-        <LinkUserReceivedAnswers alias={viewer.alias}>
-          <AccordionItem
-            icon={IconReceivedAnswers}
-            text={LL.HeaderNav.Accordion.ReceivedAnswers()}
-          />
-        </LinkUserReceivedAnswers>
+        <AccordionItem
+          className={clsx(['col-span-1'])}
+          link={(props) => (
+            <LinkUserPostsHenkens alias={viewer.alias} {...props} />
+          )}
+          icon={IconPostHenkens}
+          text={LL.HeaderNav.Accordion.PostsHenkens()}
+        />
+        <AccordionItem
+          className={clsx(['col-span-1'])}
+          link={(props) => (
+            <LinkUserReceivedHenkens alias={viewer.alias} {...props} />
+          )}
+          icon={IconReceivedHenkens}
+          text={LL.HeaderNav.Accordion.ReceivedHenkens()}
+        />
+        <AccordionItem
+          className={clsx(['col-span-1'])}
+          link={(props) => (
+            <LinkUserPostsAnswers alias={viewer.alias} {...props} />
+          )}
+          icon={IconPostAnswers}
+          text={LL.HeaderNav.Accordion.PostsAnswers()}
+        />
+        <AccordionItem
+          className={clsx(['col-span-1'])}
+          link={(props) => (
+            <LinkUserReceivedAnswers alias={viewer.alias} {...props} />
+          )}
+          icon={IconReceivedAnswers}
+          text={LL.HeaderNav.Accordion.ReceivedAnswers()}
+        />
       </div>
       <AccordionItem
         className={clsx(['border-t', ['border-gray-200']])}
+        link={(props) => <LinkSettings {...props} />}
         icon={IconSettings}
         text={LL.HeaderNav.Accordion.Settings()}
       />
       <AccordionItem
         className={clsx(['border-t', ['border-gray-200']])}
+        link={(props) => <LinkSettings {...props} />}
         icon={IconSignOut}
         text={LL.HeaderNav.Accordion.SignOut()}
       />
