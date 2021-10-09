@@ -5,7 +5,10 @@ const mockedUseAuth0 = (): Pick<
   'isAuthenticated' | 'user' | 'getAccessTokenSilently' | 'loginWithRedirect'
 > => ({
   isAuthenticated: true,
-  user: {name: 'TestUser'},
+  user: {
+    name: 'TestUser',
+    picture: 'https://cdn.fakercloud.com/avatars/ricburton_128.jpg',
+  },
   async getAccessTokenSilently() {
     return 'access_token';
   },
