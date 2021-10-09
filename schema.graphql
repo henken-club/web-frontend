@@ -346,7 +346,7 @@ enum RecommendationOrderField {
 }
 
 type RegisterUserPayload {
-  user: User
+  user: User!
 }
 
 type User implements Node {

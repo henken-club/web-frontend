@@ -17,9 +17,18 @@ export const Alias: React.VFC<{className?: string; disabled: boolean}> = ({
       htmlFor="alias"
       className={clsx(className, ['inline-flex', ['flex-col']])}
     >
-      <span className={clsx(['mb-2'])}>{LL.RegisterForm.Alias()}</span>
+      <span className={clsx(['mb-2'], ['text-sm'])}>
+        {LL.RegisterForm.Alias()}
+      </span>
       <input
         {...register('alias')}
+        className={clsx(
+          ['px-2'],
+          ['py-1'],
+          ['bg-blue-50'],
+          ['border', ['border-blue-400']],
+          ['rounded'],
+        )}
         name="alias"
         type="text"
         autoComplete="off"

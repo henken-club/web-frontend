@@ -11,7 +11,6 @@ export default {
   component: Component,
   argTypes: {
     registering: {table: {disable: true}},
-    completed: {table: {disable: true}},
   },
 } as Meta;
 
@@ -51,5 +50,10 @@ export const Completed: Story<ComponentProps<typeof Component>> = (args) => {
 };
 Completed.storyName = '登録完了';
 Completed.args = {
-  completed: true,
+  completed: {
+    id: 'id',
+    alias: 'alias',
+    displayName: 'DisplayName',
+    avatar: '/avatar_1.png',
+  },
 };

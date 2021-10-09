@@ -9,7 +9,7 @@ export function factoryRegisterUser(
     __typename: 'Mutation',
     registerUser: {
       __typename: 'RegisterUserPayload',
-      user: {__typename: 'User', id: id()},
+      user: {__typename: 'User', id: id(), ...variables},
     },
   };
 }

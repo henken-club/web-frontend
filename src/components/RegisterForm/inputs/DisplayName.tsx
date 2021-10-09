@@ -19,9 +19,18 @@ export const DisplayName: React.VFC<{className?: string; disabled: boolean}> =
         htmlFor="displayName"
         className={clsx(className, ['inline-flex', ['flex-col']])}
       >
-        <span className={clsx(['mb-2'])}>{LL.RegisterForm.DisplayName()}</span>
+        <span className={clsx(['mb-2'], ['text-sm'])}>
+          {LL.RegisterForm.DisplayName()}
+        </span>
         <input
           {...register('displayName')}
+          className={clsx(
+            ['px-2'],
+            ['py-1'],
+            ['bg-blue-50'],
+            ['border', ['border-blue-400']],
+            ['rounded'],
+          )}
           name="displayName"
           type="text"
           autoComplete="off"
