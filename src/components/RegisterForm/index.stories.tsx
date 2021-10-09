@@ -9,6 +9,9 @@ import {Component} from '.';
 export default {
   title: 'RegisterForm',
   component: Component,
+  argTypes: {
+    registering: {table: {disable: true}},
+  },
 } as Meta;
 
 export const Primary: Story<ComponentProps<typeof Component>> = (args) => {

@@ -117,7 +117,7 @@ export const Component: React.VFC<{
   );
 };
 
-export const RegisterForm: React.VFC = () => {
+export const RegisterForm: React.VFC<{className?: string}> = ({...props}) => {
   const {user} = useAuth();
   const methods = useForm<FormValue>({
     defaultValues: {displayName: user?.name, picture: user?.picture},
@@ -137,6 +137,7 @@ export const RegisterForm: React.VFC = () => {
   return (
     <FormProvider {...methods}>
       <Component
+        {...props}
         onSubmit={methods.handleSubmit(handleValid, handleInvalid)}
         registering={fetching}
       />

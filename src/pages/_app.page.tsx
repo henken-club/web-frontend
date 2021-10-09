@@ -3,12 +3,13 @@ import React from 'react';
 import {AppProps} from 'next/app';
 import {RecoilRoot} from 'recoil';
 
+import {AuthProvider} from '~/auth/AuthProvider';
 import {localeDetector} from '~/i18n/detector';
 import TypesafeI18n from '~/i18n/i18n-react';
 import {UrqlProvider} from '~/urql/UrqlProvider';
-import {AuthManager} from '~/auth/AuthManager';
+import {Viewer} from '~/auth/AuthManager';
 import {DefaultLayout} from '~/components/Layout';
-import {AuthProvider} from '~/auth/AuthProvider';
+import {RegisterFormManager} from '~/components/RegisterForm/Manager';
 
 import '~/styles/index.css';
 
@@ -33,7 +34,8 @@ const App = ({
       <RecoilRoot>
         <UrqlProvider>
           <TypesafeI18n initialLocale={detectedLocales}>
-            <AuthManager />
+            <Viewer />
+            <RegisterFormManager />
             <PageLayout>
               <Component {...pageProps} />
             </PageLayout>

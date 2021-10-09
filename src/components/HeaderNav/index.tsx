@@ -4,6 +4,7 @@ import React, {useMemo} from 'react';
 import {Personal} from './Personal';
 import {HeaderNavContext} from './context';
 
+import {useShowRegisterForm} from '~/components/RegisterForm/Manager';
 import {LinkIndex} from '~/components/Link';
 import {useTranslation} from '~/i18n/useTranslation';
 import {useViewer} from '~/auth/useViewer';
@@ -39,6 +40,7 @@ export const Component: React.VFC<ComponentProps> = ({className}) => {
 
 export const HeaderNav: React.VFC<{className?: string}> = ({className}) => {
   const {loginWithRedirect, isAuthenticated} = useAuth();
+  const showRegisterForm = useShowRegisterForm();
   const viewer = useViewer();
 
   const value = useMemo<React.ContextType<typeof HeaderNavContext>>(() => {
@@ -47,9 +49,9 @@ export const HeaderNav: React.VFC<{className?: string}> = ({className}) => {
         ? ({authenticated: true, viewer} as const)
         : ({authenticated: false} as const)),
       callLogin: loginWithRedirect,
-      callRegister: () => {},
+      callRegister: showRegisterForm,
     };
-  }, [isAuthenticated, loginWithRedirect, viewer]);
+  }, [isAuthenticated, loginWithRedirect, showRegisterForm, viewer]);
 
   return (
     <HeaderNavContext.Provider value={value}>
