@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import {Accordion} from './Accordion';
 
-import {Image} from '~/components/Image';
+import {Avatar} from '~/components/Avatar';
 
 const Details = styled.details`
   & > summary::-webkit-details-marker {
@@ -35,13 +35,7 @@ export const Viewer: React.VFC<ViewerProps> = ({className, viewer}) => {
     <Details className={clsx(className, ['relative'], ['inline-flex'])}>
       <summary className={clsx(['flex'], ['cursor-pointer'])}>
         <div className={clsx(['w-12'], ['h-12'])}>
-          <Image
-            className={clsx(['rounded-full'])}
-            src={viewer.avatar}
-            alt={viewer.alias}
-            width={64}
-            height={64}
-          />
+          <Avatar user={{alias: viewer.alias, avatar: viewer.avatar}} />
         </div>
       </summary>
       <Accordion
