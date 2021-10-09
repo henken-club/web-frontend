@@ -1,12 +1,11 @@
 import gql from 'graphql-tag';
 import React, {useEffect} from 'react';
-import {useRecoilValue, useSetRecoilState} from 'recoil';
+import {useSetRecoilState} from 'recoil';
 
 import {useFetchViewerQuery} from './codegen';
 import {viewerState} from './useViewer';
 
 import {useAuth} from '~/auth/useAuth';
-import {RegisterForm} from '~/components/RegisterForm';
 
 const FetchViewerQuery = gql`
   query FetchViewer {
@@ -19,9 +18,10 @@ const FetchViewerQuery = gql`
   }
 `;
 
-export const ViewerFetcher: React.VFC = () => {
+export const Viewer: React.VFC = () => {
+  const {isAuthenticated} = useAuth();
   const recoilSetter = useSetRecoilState(viewerState);
-  const [result] = useFetchViewerQuery();
+  const [result] = useFetchViewerQuery({pause: !isAuthenticated});
 
   const {data} = result;
 
@@ -33,24 +33,4 @@ export const ViewerFetcher: React.VFC = () => {
   }, [data, recoilSetter]);
 
   return <></>;
-};
-
-export const AuthManager: React.VFC = () => {
-  const {isAuthenticated} = useAuth();
-  const viewer = useRecoilValue(viewerState);
-
-  if (isAuthenticated && viewer) return <></>;
-  else if (isAuthenticated && viewer === null)
-    return (
-      <>
-        <RegisterForm />
-      </>
-    );
-  else if (isAuthenticated && viewer === undefined)
-    return (
-      <>
-        <ViewerFetcher />
-      </>
-    );
-  else return <></>;
 };
