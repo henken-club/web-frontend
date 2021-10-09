@@ -2,13 +2,13 @@
 import React from 'react';
 import {AppProps} from 'next/app';
 import {RecoilRoot} from 'recoil';
-import {Auth0Provider} from '@auth0/auth0-react';
 
 import {localeDetector} from '~/i18n/detector';
 import TypesafeI18n from '~/i18n/i18n-react';
 import {UrqlProvider} from '~/urql/UrqlProvider';
 import {AuthManager} from '~/auth/AuthManager';
 import {DefaultLayout} from '~/components/Layout';
+import {AuthProvider} from '~/auth/AuthProvider';
 
 import '~/styles/index.css';
 
@@ -24,7 +24,7 @@ const App = ({
   const PageLayout = DefaultLayout;
 
   return (
-    <Auth0Provider
+    <AuthProvider
       domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
       clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID}
       audience={process.env.NEXT_PUBLIC_AUTH0_AUDIENCE}
@@ -40,7 +40,7 @@ const App = ({
           </TypesafeI18n>
         </UrqlProvider>
       </RecoilRoot>
-    </Auth0Provider>
+    </AuthProvider>
   );
 };
 
