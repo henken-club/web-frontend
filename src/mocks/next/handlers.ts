@@ -33,6 +33,7 @@ import {
   UserPageQueryVariables,
   RegisterUserMutation,
   RegisterUserMutationVariables,
+  RegisterUserDocument,
 } from '../codegen';
 import {
   factoryAllAnswerPages,

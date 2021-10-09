@@ -77,16 +77,3 @@ generates:
       nonOptionalTypename: true
       scalars:
         DateTime: string
-
-  ./src/mocks/next/codegen.ts:
-    documents:
-      - 'src/**/*.{ts,tsx}'
-      - '!src/**/codegen.ts'
-      - '!src/**/*.codegen.ts'
-    plugins:
-      - typescript
-      - typescript-operations
-      - typed-document-node
-    config:
-      scalars:
-        DateTime: string
