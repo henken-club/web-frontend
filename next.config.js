@@ -14,6 +14,7 @@ const nextConfig = {
   },
   images: {
     domains: [
+      'pbs.twimg.com',
       ...(process.env.NEXT_PUBLIC_MSW_ENABLED === 'true'
         ? ['cdn.fakercloud.com', 'placeimg.com']
         : []),
