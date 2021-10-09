@@ -168,9 +168,7 @@ export const RegisterForm: React.VFC<{className?: string}> = ({...props}) => {
       displayName: value.displayName,
       avatar: value.avatar,
     }).then((result) => {
-      if (result.error || !result.data) {
-        console.error('Oh no!', result.error);
-      } else {
+      if (!result.error && result.data) {
         const {__typename, ...user} = result.data.registerUser.user;
         setCompleted(user);
         updateViewer(user);
