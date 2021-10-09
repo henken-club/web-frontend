@@ -39,17 +39,11 @@ export const AuthManager: React.VFC = () => {
   const {isAuthenticated} = useAuth();
   const viewer = useRecoilValue(viewerState);
 
-  if (isAuthenticated && viewer) return <></>;
+  if (isAuthenticated && viewer === undefined) return <ViewerFetcher />;
   else if (isAuthenticated && viewer === null)
     return (
       <>
         <RegisterForm />
-      </>
-    );
-  else if (isAuthenticated && viewer === undefined)
-    return (
-      <>
-        <ViewerFetcher />
       </>
     );
   else return <></>;
