@@ -35,6 +35,7 @@ const ja: BaseTranslation = {
     },
     Submit: '登録する',
     Registering: '登録中',
+    Registered: '登録完了！お楽しみ下さい！',
   },
 };
 

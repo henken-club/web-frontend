@@ -16,8 +16,12 @@ export const IconSignIn = (props) => (
 export const IconSignOut = (props) => (
   <FontAwesomeIcon fixedWidth icon={solid('right-from-bracket')} {...props} />
 );
+
 export const IconRegister = (props) => (
   <FontAwesomeIcon fixedWidth icon={solid('user-plus')} {...props} />
+);
+export const IconRegistered = (props) => (
+  <FontAwesomeIcon fixedWidth icon={solid('hands-clapping')} {...props} />
 );
 
 export const IconPostHenkens = (props) => (

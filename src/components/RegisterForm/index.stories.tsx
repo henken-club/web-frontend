@@ -11,6 +11,7 @@ export default {
   component: Component,
   argTypes: {
     registering: {table: {disable: true}},
+    completed: {table: {disable: true}},
   },
 } as Meta;
 
@@ -38,4 +39,17 @@ export const Registering: Story<ComponentProps<typeof Component>> = (args) => {
 Registering.storyName = '登録中';
 Registering.args = {
   registering: true,
+};
+
+export const Completed: Story<ComponentProps<typeof Component>> = (args) => {
+  const methods = useForm<FormValue>();
+  return (
+    <FormProvider {...methods}>
+      <Component {...args} />
+    </FormProvider>
+  );
+};
+Completed.storyName = '登録完了';
+Completed.args = {
+  completed: true,
 };

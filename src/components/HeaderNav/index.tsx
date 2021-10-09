@@ -4,7 +4,7 @@ import React, {useMemo} from 'react';
 import {Personal} from './Personal';
 import {HeaderNavContext} from './context';
 
-import {useShowRegisterForm} from '~/components/RegisterForm/Manager';
+import {useRegisterForm} from '~/components/RegisterForm/useRegisterForm';
 import {LinkIndex} from '~/components/Link';
 import {useTranslation} from '~/i18n/useTranslation';
 import {useViewer} from '~/auth/useViewer';
@@ -40,7 +40,7 @@ export const Component: React.VFC<ComponentProps> = ({className}) => {
 
 export const HeaderNav: React.VFC<{className?: string}> = ({className}) => {
   const {loginWithRedirect, isAuthenticated} = useAuth();
-  const showRegisterForm = useShowRegisterForm();
+  const {show: showRegisterForm} = useRegisterForm();
   const viewer = useViewer();
 
   const value = useMemo<React.ContextType<typeof HeaderNavContext>>(() => {

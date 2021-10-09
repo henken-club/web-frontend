@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, {useState} from 'react';
 import {
   FormProvider,
   SubmitErrorHandler,
@@ -9,13 +9,15 @@ import {
 import {gql} from 'graphql-request';
 
 import {useRegisterUserMutation} from '../codegen';
-import {IconLoading, IconRegister} from '../Icon';
 
 import {Alias} from './inputs/Alias';
 import {DisplayName} from './inputs/DisplayName';
 import {Picture} from './inputs/Picture';
 import {FormValue} from './FormValue';
+import {useRegisterForm} from './useRegisterForm';
 
+import {TimerBar} from '~/components/TimerBar';
+import {IconLoading, IconRegister, IconRegistered} from '~/components/Icon';
 import {useTranslation} from '~/i18n/useTranslation';
 import {useAuth} from '~/auth/useAuth';
 import {LinkTos, LinkPrivacy} from '~/components/Link';
@@ -34,12 +36,12 @@ const RegisterFormMutation = gql`
   }
 `;
 
-export const Component: React.VFC<{
-  className?: string;
-  onSubmit(): void;
-
-  registering: boolean;
-}> = ({className, onSubmit, registering: loading}) => {
+export const Component: React.VFC<
+  {
+    className?: string;
+    onSubmit(): void;
+  } & ({completed: true} | {registering: boolean})
+> = ({className, onSubmit, ...props}) => {
   const {LL} = useTranslation();
 
   return (
@@ -57,21 +59,32 @@ export const Component: React.VFC<{
       )}
       onSubmit={onSubmit}
     >
-      {loading && (
+      {'completed' in props && (
         <div
           className={clsx(
             ['absolute', ['inset-0']],
-            [['bg-black'], ['bg-opacity-25']],
+            ['z-1'],
+            [['bg-green-400'], ['bg-opacity-75']],
             ['flex', ['flex-col'], ['items-center'], ['justify-center']],
           )}
         >
-          <IconLoading className={clsx([['text-blue-400'], ['text-4xl']])} />
-          <span className={clsx('mt-2', [['text-white'], ['text-sm']])}>
-            {LL.RegisterForm.Registering()}
+          <IconRegistered className={clsx([['text-white'], ['text-4xl']])} />
+          <span
+            className={clsx('mt-4', [
+              ['text-white'],
+              ['text-base'],
+              ['font-bold'],
+            ])}
+          >
+            {LL.RegisterForm.Registered()}
           </span>
+          <TimerBar
+            className={clsx(['w-16'], ['h-1'], ['mt-2'], ['bg-white'])}
+            duration={2000}
+          />
         </div>
       )}
-      <div className={clsx(['flex', ['flex-col'], ['items-center']])}>
+      <div className={clsx(['z-0'], ['flex', ['flex-col'], ['items-center']])}>
         <span className={clsx(['text-lg'])}>{LL.RegisterForm.Title()}</span>
         <p className={clsx([['text-xs'], ['text-gray-700']], ['mt-2'])}>
           {LL.RegisterForm.Description()}
@@ -93,26 +106,58 @@ export const Component: React.VFC<{
           </LinkPrivacy>
         </div>
       </div>
-      <Picture className={clsx(['w-full'], ['mt-6'])} disabled={loading} />
-      <Alias className={clsx(['w-full'], ['mt-4'])} disabled={loading} />
-      <DisplayName className={clsx(['w-full'], ['mt-4'])} disabled={loading} />
-      <button
-        className={clsx(
-          ['mt-8'],
-          ['inline-flex', ['items-center']],
-          [['px-3'], ['py-1']],
-          ['bg-blue-400', 'hover:bg-blue-600'],
-          [['text-white'], ['text-base']],
-          ['rounded-md'],
-        )}
-        type="submit"
-        disabled={loading}
-      >
-        <IconRegister className={clsx(['text-sm'])} />
-        <span className={clsx(['text-base'], ['ml-2'])}>
-          {LL.RegisterForm.Submit()}
-        </span>
-      </button>
+      <Picture
+        className={clsx(['w-full'], ['mt-6'])}
+        disabled={
+          'completed' in props || ('registering' in props && props.registering)
+        }
+      />
+      <Alias
+        className={clsx(['w-full'], ['mt-4'])}
+        disabled={
+          'completed' in props || ('registering' in props && props.registering)
+        }
+      />
+      <DisplayName
+        className={clsx(['w-full'], ['mt-4'])}
+        disabled={
+          'completed' in props || ('registering' in props && props.registering)
+        }
+      />
+      {!('completed' in props) && (
+        <button
+          className={clsx(
+            ['mt-8'],
+            ['inline-flex', ['items-center']],
+            [['px-3'], ['py-1']],
+            ['bg-blue-400', {'hover:bg-blue-600': !props.registering}],
+            [['text-white'], ['text-base']],
+            ['rounded-md'],
+          )}
+          type="submit"
+          disabled={
+            'completed' in props ||
+            ('registering' in props && props.registering)
+          }
+        >
+          {props.registering && (
+            <>
+              <IconLoading className={clsx(['text-sm'])} />
+              <span className={clsx(['text-base'], ['ml-2'])}>
+                {LL.RegisterForm.Registering()}
+              </span>
+            </>
+          )}
+          {!props.registering && (
+            <>
+              <IconRegister className={clsx(['text-sm'])} />
+              <span className={clsx(['text-base'], ['ml-2'])}>
+                {LL.RegisterForm.Submit()}
+              </span>
+            </>
+          )}
+        </button>
+      )}
     </form>
   );
 };
@@ -124,14 +169,22 @@ export const RegisterForm: React.VFC<{className?: string}> = ({...props}) => {
   });
   const [result, register] = useRegisterUserMutation();
   const {fetching} = result;
+  const [completed, setCompleted] = useState<boolean>(false);
+  const {hide} = useRegisterForm();
 
-  const handleValid: SubmitHandler<FormValue> = async (value) => {
-    await register({
+  const handleValid: SubmitHandler<FormValue> = async (value) =>
+    register({
       alias: value.alias,
       displayName: value.displayName,
       avatar: value.picture,
+    }).then((result) => {
+      if (result.error) {
+        console.error('Oh no!', result.error);
+      } else {
+        setCompleted(true);
+        setTimeout(() => hide(), 2000);
+      }
     });
-  };
   const handleInvalid: SubmitErrorHandler<FormValue> = (error) => {};
 
   return (
@@ -139,7 +192,7 @@ export const RegisterForm: React.VFC<{className?: string}> = ({...props}) => {
       <Component
         {...props}
         onSubmit={methods.handleSubmit(handleValid, handleInvalid)}
-        registering={fetching}
+        {...(completed ? {completed: true} : {registering: fetching})}
       />
     </FormProvider>
   );

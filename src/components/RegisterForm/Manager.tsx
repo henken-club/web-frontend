@@ -1,30 +1,12 @@
-import {atom, useRecoilValue, useSetRecoilState} from 'recoil';
 import React from 'react';
 import clsx from 'clsx';
 
+import {useRegisterForm} from './useRegisterForm';
+
 import {RegisterForm} from '.';
 
-export const visibilityRegisterFormState = atom<boolean>({
-  key: 'register_form_visibility',
-  default: false,
-});
-
-export const useRegisterFormVisibility = () =>
-  useRecoilValue(visibilityRegisterFormState);
-
-export const useShowRegisterForm = (): (() => void) => {
-  const recoilSetter = useSetRecoilState(visibilityRegisterFormState);
-  return () => recoilSetter(true);
-};
-
-export const useHideRegisterForm = (): (() => void) => {
-  const recoilSetter = useSetRecoilState(visibilityRegisterFormState);
-  return () => recoilSetter(false);
-};
-
 export const RegisterFormManager: React.VFC = () => {
-  const visibility = useRegisterFormVisibility();
-  const hide = useHideRegisterForm();
+  const {visibility, hide} = useRegisterForm();
 
   if (!visibility) return <></>;
   return (
