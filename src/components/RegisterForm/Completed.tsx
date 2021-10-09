@@ -3,8 +3,8 @@ import React from 'react';
 
 import {IconRegistered} from '~/components/Icon';
 import {TimerBar} from '~/components/TimerBar';
-import {Image} from '~/components/Image';
 import {useTranslation} from '~/i18n/useTranslation';
+import {Avatar} from '~/components/Avatar';
 
 export const Component: React.VFC<{
   className?: string;
@@ -24,15 +24,8 @@ export const Component: React.VFC<{
       )}
     >
       <div className={clsx(['space-x-2'], ['flex', ['items-center']])}>
-        <div
-          className={clsx(
-            ['w-10'],
-            ['h-10'],
-            ['overflow-hidden'],
-            ['rounded-full'],
-          )}
-        >
-          <Image alt={alias} src={avatar} width={64} height={64} />
+        <div className={clsx(['w-10'], ['h-10'])}>
+          <Avatar user={{alias, avatar}} />
         </div>
         <IconRegistered className={clsx([['text-white'], ['text-4xl']])} />
       </div>

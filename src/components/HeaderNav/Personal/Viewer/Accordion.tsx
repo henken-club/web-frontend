@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import {Image} from '~/components/Image';
+import {Avatar} from '~/components/Avatar';
 import {useTranslation} from '~/i18n/useTranslation';
 import {
   LinkSettings,
@@ -71,13 +71,7 @@ export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
           )}
         >
           <div className={clsx(['w-10'], ['h-10'])}>
-            <Image
-              className={clsx(['rounded-full'])}
-              src={viewer.avatar}
-              alt={viewer.alias}
-              width={64}
-              height={64}
-            />
+            <Avatar user={{alias: viewer.alias, avatar: viewer.avatar}} />
           </div>
           <div className={clsx(['ml-4'], [['flex'], ['flex-col']])}>
             <span className={clsx(['font-bold'], ['text-sm'])}>

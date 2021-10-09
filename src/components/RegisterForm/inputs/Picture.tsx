@@ -25,15 +25,14 @@ export const Picture: React.VFC<{className?: string; disabled: boolean}> = ({
         {LL.RegisterForm.Avatar()}
       </span>
       <div className={clsx(['flex', ['items-center']])}>
-        <div
-          className={clsx(
-            ['w-8'],
-            ['h-8'],
-            ['overflow-hidden'],
-            ['rounded-full'],
-          )}
-        >
-          <Image alt={avatarUrl} src={avatarUrl} width={32} height={32} />
+        <div className={clsx(['w-8'], ['h-8'])}>
+          <Image
+            className={clsx(['rounded-full'])}
+            alt={avatarUrl}
+            src={avatarUrl}
+            width={96}
+            height={96}
+          />
         </div>
         <input
           {...register('avatar')}
