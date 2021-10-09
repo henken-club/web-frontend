@@ -7,6 +7,12 @@ type LinkProps<T extends Record<string, unknown> = Record<string, unknown>> =
 export const LinkIndex: React.FC<LinkProps> = ({...props}) => (
   <NextLink href="/" {...props} />
 );
+export const LinkTos: React.FC<LinkProps> = ({...props}) => (
+  <NextLink href="/tos" {...props} />
+);
+export const LinkPrivacy: React.FC<LinkProps> = ({...props}) => (
+  <NextLink href="/privacy" {...props} />
+);
 
 export const LinkSettings: React.FC<LinkProps> = ({alias, ...props}) => (
   <NextLink href="/settings" {...props} />

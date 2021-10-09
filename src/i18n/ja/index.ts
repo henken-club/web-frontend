@@ -6,6 +6,8 @@ const ja: BaseTranslation = {
   },
 
   Login: 'ログイン',
+  TermOfService: 'サービス利用規約',
+  PrivacyPolicy: 'プライバシーポリシー',
 
   HeaderNav: {
     Accordion: {
@@ -17,6 +19,23 @@ const ja: BaseTranslation = {
       SignOut: 'ログアウト',
     },
     NeedRegister: 'ユーザー登録',
+  },
+
+  RegisterForm: {
+    Title: 'ユーザー登録',
+    Description:
+      '本サービスの利用にはユーザー登録をする必要がありますが、後ですることも出来ます。',
+    Alias: 'エイリアス',
+    DisplayName: '表示名',
+    Avatar: 'プロフィール画像',
+    aria: {
+      Alias: 'エイリアス',
+      DisplayName: '表示名',
+      Avatar: 'プロフィール画像',
+    },
+    Submit: '登録する',
+    Registering: '登録中',
+    Registered: 'ようこそ、{displayName:string}さん！どうぞお楽しみ下さい！',
   },
 };
 

@@ -31,6 +31,9 @@ import {
   UserPageDocument,
   UserPageQuery,
   UserPageQueryVariables,
+  RegisterUserMutation,
+  RegisterUserMutationVariables,
+  RegisterUserDocument,
 } from '../codegen';
 import {
   factoryAllAnswerPages,
@@ -44,6 +47,7 @@ import {
   factoryAllRecommendationsPages,
   factoryRecommendationPage,
 } from '../factories/RecommendationPage';
+import {factoryRegisterUser} from '../factories/RegisterUser';
 import {factoryAllUserPages, factoryUserPage} from '../factories/UserPage';
 import {
   factoryAuthorizedViewer,
@@ -125,5 +129,9 @@ export const handlers = [
       faker.seed(generateSeed(req.variables));
       return res(ctx.data(factoryAnswerPage(req.variables)));
     },
+  ),
+  graphql.mutation<RegisterUserMutation, RegisterUserMutationVariables>(
+    RegisterUserDocument,
+    (req, res, ctx) => res(ctx.data(factoryRegisterUser(req.variables))),
   ),
 ];
