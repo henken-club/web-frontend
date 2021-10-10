@@ -29,6 +29,8 @@ Initial.storyName = '初期状態';
 Initial.args = {
   contextValue: {
     updateQuery: action('update-query'),
+    updateFocus: action('update-focus'),
+    focus: true,
     query: '',
     fetching: false,
     suggestions: {nodes: []},
@@ -46,6 +48,8 @@ Fetching.storyName = '提案がある状態で，取得中';
 Fetching.args = {
   contextValue: {
     updateQuery: action('update-query'),
+    updateFocus: action('update-focus'),
+    focus: true,
     query: 'query',
     fetching: true,
     suggestions: {
@@ -88,6 +92,8 @@ FetchingWithNoSuggestions.storyName = '提案が無い状態で，取得中';
 FetchingWithNoSuggestions.args = {
   contextValue: {
     updateQuery: action('update-query'),
+    updateFocus: action('update-focus'),
+    focus: true,
     query: '',
     fetching: true,
     suggestions: {nodes: []},
@@ -105,6 +111,8 @@ Fetched.storyName = '取得済みで，提案がある';
 Fetched.args = {
   contextValue: {
     updateQuery: action('update-query'),
+    updateFocus: action('update-focus'),
+    focus: true,
     query: '',
     fetching: false,
     suggestions: {
@@ -153,6 +161,8 @@ FetchedButNoSuggestions.storyName = '取得済みで，提案が一件も無い'
 FetchedButNoSuggestions.args = {
   contextValue: {
     updateQuery: action('update-query'),
+    updateFocus: action('update-focus'),
+    focus: true,
     query: '',
     fetching: false,
     suggestions: {nodes: []},
