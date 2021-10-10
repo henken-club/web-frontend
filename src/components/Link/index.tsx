@@ -40,3 +40,17 @@ export const LinkUserReceivedAnswers: React.FC<LinkProps<{alias: string}>> = ({
   alias,
   ...props
 }) => <NextLink href={`/users/${alias}/answers/received`} {...props} />;
+
+export const LinkAuthor: React.FC<LinkProps<{id: string}>> = ({
+  id,
+  ...props
+}) => <NextLink href={`/authors/${id}`} {...props} />;
+
+export const LinkBook: React.FC<LinkProps<{id: string}>> = ({id, ...props}) => (
+  <NextLink href={`/books/${id}`} {...props} />
+);
+
+export const LinkBookSeries: React.FC<LinkProps<{id: string}>> = ({
+  id,
+  ...props
+}) => <NextLink href={`/bookseries/${id}`} {...props} />;
