@@ -5,6 +5,8 @@ const ja: BaseTranslation = {
     Name: 'henken.club',
   },
 
+  Followees: 'フォロイー',
+  Followers: 'フォロワー',
   Login: 'ログイン',
   TermOfService: 'サービス利用規約',
   PrivacyPolicy: 'プライバシーポリシー',
@@ -46,6 +48,12 @@ const ja: BaseTranslation = {
       Author: '著者',
       Book: '本',
       BookSeries: '本のシリーズ',
+    },
+  },
+
+  UserPage: {
+    UserGrid: {
+      More: 'もっと',
     },
   },
 };

@@ -6,14 +6,12 @@ import {
   NextPage,
 } from 'next';
 import React from 'react';
-import {Merge} from 'type-fest';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import {getSdk} from './index.page.codegen';
 import {TransformedProps, transformer} from './index.transform';
 
 import {graphqlClient} from '~/libs/graphql-request';
+import {TemplateUserPage} from '~/components/templates/UserPage';
 
 const AllUserPagesQuery = gql`
   query AllUserPages($limit: Int!) {
@@ -46,7 +44,7 @@ const UserPageQuery = gql`
         alias
         displayName
         avatar
-        followees(first: 12, orderBy: {field: CREATED_AT, direction: DESC}) {
+        followees(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
           totalCount
           pageInfo {
             hasNextPage
@@ -61,7 +59,7 @@ const UserPageQuery = gql`
             }
           }
         }
-        followers(first: 12, orderBy: {field: CREATED_AT, direction: DESC}) {
+        followers(first: 10, orderBy: {field: CREATED_AT, direction: DESC}) {
           totalCount
           pageInfo {
             hasNextPage
@@ -176,37 +174,13 @@ export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   }
 };
 
-export type PageProps = Merge<
-  {className?: string},
-  InferGetStaticPropsType<typeof getStaticProps>
->;
-export const Page: NextPage<PageProps> = ({className, user, ...props}) => {
+export const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  user,
+  ...props
+}) => {
   return (
     <>
-      <Image width={128} height={128} src={user.avatar} />
-      <p>{user.id}</p>
-      <p>{user.alias}</p>
-      <p>{user.displayName}</p>
-      <>
-        <p>Followees</p>
-        {user.followees.users.map(({id, alias, avatar}) => (
-          <Link key={id} href={`/users/${alias}`}>
-            <a>
-              <Image width={24} height={24} src={avatar} />
-            </a>
-          </Link>
-        ))}
-      </>
-      <>
-        <p>Followers</p>
-        {user.followers.users.map(({id, alias, avatar}) => (
-          <Link key={id} href={`/users/${alias}`}>
-            <a>
-              <Image width={24} height={24} src={avatar} />
-            </a>
-          </Link>
-        ))}
-      </>
+      <TemplateUserPage user={user} />
     </>
   );
 };

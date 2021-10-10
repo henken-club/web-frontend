@@ -37,128 +37,130 @@ export const factoryAllUserPages = ({
 
 export const factoryUserPage = (
   variables: UserPageQueryVariables,
-): UserPageQuery => ({
-  __typename: 'Query',
-  findUser: {
-    __typename: 'FindUserPayload',
-    user: {
-      __typename: 'User',
-      id: id(),
-      alias: variables.alias,
-      displayName: displayName(),
-      avatar: avatar(),
-      followees: {
-        __typename: 'FollowingConnection',
-        totalCount: totalCount(),
-        pageInfo: {
-          __typename: 'PageInfo',
-          hasNextPage: hasNextPage(),
-        },
-        edges: repeat(10, () => ({
-          __typename: 'FollowingEdge',
-          node: {
-            __typename: 'Following',
-            user: {
-              __typename: 'User',
-              id: id(),
-              alias: alias(),
-              avatar: avatar(),
-            },
+): UserPageQuery => {
+  return {
+    __typename: 'Query',
+    findUser: {
+      __typename: 'FindUserPayload',
+      user: {
+        __typename: 'User',
+        id: id(),
+        alias: variables.alias,
+        displayName: displayName(),
+        avatar: avatar(),
+        followees: {
+          __typename: 'FollowingConnection',
+          totalCount: totalCount(),
+          pageInfo: {
+            __typename: 'PageInfo',
+            hasNextPage: hasNextPage(),
           },
-        })),
-      },
-      followers: {
-        __typename: 'FollowingConnection',
-        totalCount: totalCount(),
-        pageInfo: {
-          __typename: 'PageInfo',
-          hasNextPage: hasNextPage(),
-        },
-        edges: repeat(10, () => ({
-          __typename: 'FollowingEdge',
-          node: {
-            __typename: 'Following',
-            user: {
-              __typename: 'User',
-              id: id(),
-              alias: alias(),
-              avatar: avatar(),
-            },
-          },
-        })),
-      },
-      postsHenkens: {
-        __typename: 'HenkenConnection',
-        totalCount: totalCount(),
-        pageInfo: {
-          __typename: 'PageInfo',
-          hasNextPage: hasNextPage(),
-        },
-        edges: [
-          {
-            __typename: 'HenkenEdge',
+          edges: repeat(10, () => ({
+            __typename: 'FollowingEdge',
             node: {
-              __typename: 'Henken',
-              id: id(),
-              comment: comment(),
-              content: {
-                __typename: 'Book',
-                id: id(),
-                title: title(),
-              },
-              postsTo: {
+              __typename: 'Following',
+              user: {
                 __typename: 'User',
                 id: id(),
                 alias: alias(),
-                displayName: displayName(),
                 avatar: avatar(),
               },
-              answer: {
-                __typename: 'Answer',
-                id: id(),
-                comment: comment(),
-                type: answerType(),
-              },
             },
-          },
-        ],
-      },
-      receivedHenkens: {
-        __typename: 'HenkenConnection',
-        totalCount: totalCount(),
-        pageInfo: {
-          __typename: 'PageInfo',
-          hasNextPage: hasNextPage(),
+          })),
         },
-        edges: [
-          {
-            __typename: 'HenkenEdge',
+        followers: {
+          __typename: 'FollowingConnection',
+          totalCount: totalCount(),
+          pageInfo: {
+            __typename: 'PageInfo',
+            hasNextPage: hasNextPage(),
+          },
+          edges: repeat(10, () => ({
+            __typename: 'FollowingEdge',
             node: {
-              __typename: 'Henken',
-              id: id(),
-              comment: comment(),
-              content: {
-                __typename: 'Book',
-                id: id(),
-                title: title(),
-              },
-              postedBy: {
+              __typename: 'Following',
+              user: {
                 __typename: 'User',
                 id: id(),
                 alias: alias(),
-                displayName: displayName(),
                 avatar: avatar(),
               },
-              answer: {
-                __typename: 'Answer',
+            },
+          })),
+        },
+        postsHenkens: {
+          __typename: 'HenkenConnection',
+          totalCount: totalCount(),
+          pageInfo: {
+            __typename: 'PageInfo',
+            hasNextPage: hasNextPage(),
+          },
+          edges: [
+            {
+              __typename: 'HenkenEdge',
+              node: {
+                __typename: 'Henken',
                 id: id(),
                 comment: comment(),
-                type: answerType(),
+                content: {
+                  __typename: 'Book',
+                  id: id(),
+                  title: title(),
+                },
+                postsTo: {
+                  __typename: 'User',
+                  id: id(),
+                  alias: alias(),
+                  displayName: displayName(),
+                  avatar: avatar(),
+                },
+                answer: {
+                  __typename: 'Answer',
+                  id: id(),
+                  comment: comment(),
+                  type: answerType(),
+                },
               },
             },
+          ],
+        },
+        receivedHenkens: {
+          __typename: 'HenkenConnection',
+          totalCount: totalCount(),
+          pageInfo: {
+            __typename: 'PageInfo',
+            hasNextPage: hasNextPage(),
           },
-        ],
+          edges: [
+            {
+              __typename: 'HenkenEdge',
+              node: {
+                __typename: 'Henken',
+                id: id(),
+                comment: comment(),
+                content: {
+                  __typename: 'Book',
+                  id: id(),
+                  title: title(),
+                },
+                postedBy: {
+                  __typename: 'User',
+                  id: id(),
+                  alias: alias(),
+                  displayName: displayName(),
+                  avatar: avatar(),
+                },
+                answer: {
+                  __typename: 'Answer',
+                  id: id(),
+                  comment: comment(),
+                  type: answerType(),
+                },
+              },
+            },
+          ],
+        },
       },
     },
-  },
-});
+  };
+};
