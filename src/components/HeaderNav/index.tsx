@@ -32,7 +32,7 @@ export const Component: React.VFC<ComponentProps> = ({className}) => {
           </span>
         </LinkIndex>
         <div className={clsx(['flex-grow'])} />
-        <Personal />
+        <Personal className={clsx(['w-32'])} />
       </div>
     </nav>
   );

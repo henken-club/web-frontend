@@ -24,7 +24,7 @@ export const Component: React.VFC<{className?: string; callLogin(): void}> = ({
   className,
   callLogin,
 }) => (
-  <div className={clsx(className, ['inline-flex'])}>
+  <div className={clsx(className, ['inline-flex', ['justify-center']])}>
     <RegisterButton callLogin={callLogin} />
   </div>
 );
