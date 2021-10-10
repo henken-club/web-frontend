@@ -33,7 +33,7 @@ enum AnswerType {
   WRONG
 }
 
-type Author implements Content & Node {
+type Author implements Content & Node & SearchContent {
   id: ID!
   name: String!
   writings(after: String, before: String, first: Int, last: Int, orderBy: AuthorWritingsOrder!): WritingConnection!
@@ -68,7 +68,7 @@ input AuthorWritingsOrder {
   field: AuthorWritingOrderField!
 }
 
-type Book implements Content & Node {
+type Book implements Content & Node & SearchContent {
   cover: String
   id: ID!
   isbn: String
@@ -96,7 +96,7 @@ enum BookOrderField {
   ID
 }
 
-type BookSeries implements Content & Node {
+type BookSeries implements Content & Node & SearchContent {
   id: ID!
   parts(after: String, before: String, first: Int, last: Int, orderBy: BookSeriesPartsOrder!): BookSeriesPartConnection!
   title: String!
@@ -311,6 +311,7 @@ type Query {
   manyRecommendations(after: String, before: String, first: Int, last: Int, orderBy: RecommendationOrder!): RecommendationConnection!
   manyUsers(after: String, before: String, first: Int, last: Int, orderBy: UserOrder!): UserConnection!
   recommendation(id: ID!): Recommendation!
+  search(limit: Int!, query: String!, skip: Int = 0): SearchPayload!
   user(id: ID!): User!
 
   """Return current user. Return `null` if user not registered"""
@@ -347,6 +348,18 @@ enum RecommendationOrderField {
 
 type RegisterUserPayload {
   user: User!
+}
+
+interface SearchContent {
+  id: ID!
+}
+
+type SearchPayload {
+  nodes: [SearchResult!]!
+}
+
+type SearchResult {
+  content: SearchContent!
 }
 
 type User implements Node {
