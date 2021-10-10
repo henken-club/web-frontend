@@ -1,9 +1,22 @@
-import React, {ComponentProps} from 'react';
+import React, {ComponentProps, ContextType, useMemo} from 'react';
 import clsx from 'clsx';
+import {gql} from 'graphql-tag';
 
 import {Profile} from './Profile';
+import {UserPageContext} from './context';
 
 import {useTranslation} from '~/i18n/useTranslation';
+import {useUserPageWithViewerQuery} from '~/components/codegen';
+import {useViewer} from '~/auth/useViewer';
+
+const UserPageWithViewer = gql`
+  query UserPageWithViewer($id: ID!) {
+    viewer {
+      isFollowing(id: $id)
+      canPostHenken(id: $id)
+    }
+  }
+`;
 
 export const Component: React.VFC<{
   user: ComponentProps<typeof Profile>['user'];
@@ -30,5 +43,30 @@ export const TemplateUserPage: React.VFC<{
   className?: string;
   user: ComponentProps<typeof Component>['user'];
 }> = ({...props}) => {
-  return <Component {...props} />;
+  const viewer = useViewer();
+  const [result] = useUserPageWithViewerQuery({pause: !viewer});
+
+  const contextValue = useMemo<ContextType<typeof UserPageContext>>(() => {
+    if (result.data?.viewer)
+      return {
+        isFollowing: result.data.viewer.isFollowing,
+        canPostsHenken: result.data.viewer.canPostHenken,
+        follow: () => {},
+        unfollow: () => {},
+        postHenken: () => {},
+      };
+    return {
+      isFollowing: false,
+      canPostsHenken: false,
+      follow: () => {},
+      unfollow: () => {},
+      postHenken: () => {},
+    };
+  }, [result.data?.viewer]);
+
+  return (
+    <UserPageContext.Provider value={contextValue}>
+      <Component {...props} />
+    </UserPageContext.Provider>
+  );
 };

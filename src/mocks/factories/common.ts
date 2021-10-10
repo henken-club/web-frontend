@@ -3,6 +3,8 @@ import faker from 'faker';
 import {AnswerType} from '../codegen';
 
 // common
+export const boolean = faker.datatype.boolean;
+
 export const id = faker.datatype.uuid;
 export const createdAt = () =>
   faker.date.between('2020-01-01', '2020-12-31').toISOString();

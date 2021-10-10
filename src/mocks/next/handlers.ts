@@ -28,15 +28,18 @@ import {
   RecommendationPageDocument,
   RecommendationPageQuery,
   RecommendationPageQueryVariables,
+  RegisterUserDocument,
+  RegisterUserMutation,
+  RegisterUserMutationVariables,
+  SearchBoxDocument,
+  SearchBoxQuery,
+  SearchBoxQueryVariables,
   UserPageDocument,
   UserPageQuery,
   UserPageQueryVariables,
-  RegisterUserMutation,
-  RegisterUserMutationVariables,
-  RegisterUserDocument,
-  SearchBoxQuery,
-  SearchBoxQueryVariables,
-  SearchBoxDocument,
+  UserPageWithViewerDocument,
+  UserPageWithViewerQuery,
+  UserPageWithViewerQueryVariables,
 } from '../codegen';
 import {
   factoryAllAnswerPages,
@@ -52,7 +55,11 @@ import {
 } from '../factories/RecommendationPage';
 import {factoryRegisterUser} from '../factories/RegisterUser';
 import {factorySearchBox} from '../factories/SearchBox';
-import {factoryAllUserPages, factoryUserPage} from '../factories/UserPage';
+import {
+  factoryAllUserPages,
+  factoryUserPage,
+  factoryUserPageWithViewer,
+} from '../factories/UserPage';
 import {
   factoryAuthorizedViewer,
   factoryUnauthorizedViewer,
@@ -141,5 +148,9 @@ export const handlers = [
   graphql.mutation<RegisterUserMutation, RegisterUserMutationVariables>(
     RegisterUserDocument,
     (req, res, ctx) => res(ctx.data(factoryRegisterUser(req.variables))),
+  ),
+  graphql.query<UserPageWithViewerQuery, UserPageWithViewerQueryVariables>(
+    UserPageWithViewerDocument,
+    (req, res, ctx) => res(ctx.data(factoryUserPageWithViewer(req.variables))),
   ),
 ];

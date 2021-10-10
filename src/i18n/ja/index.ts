@@ -52,6 +52,12 @@ const ja: BaseTranslation = {
   },
 
   UserPage: {
+    Profile: {
+      CannotPostHenken: '偏見を送れません',
+      Following: 'フォロー中です',
+      Follow: 'フォローする',
+      Unfollow: 'フォローを外す',
+    },
     UserGrid: {
       More: 'もっと',
     },

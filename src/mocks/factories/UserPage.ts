@@ -9,6 +9,7 @@ import {
   alias,
   answerType,
   avatar,
+  boolean,
   comment,
   displayName,
   hasNextPage,
@@ -17,6 +18,11 @@ import {
   title,
   totalCount,
 } from './common';
+
+import {
+  UserPageWithViewerQuery,
+  UserPageWithViewerQueryVariables,
+} from '~/components/codegen';
 
 export const factoryAllUserPages = ({
   limit,
@@ -164,3 +170,14 @@ export const factoryUserPage = (
     },
   };
 };
+
+export const factoryUserPageWithViewer = (
+  variables: UserPageWithViewerQueryVariables,
+): UserPageWithViewerQuery => ({
+  __typename: 'Query',
+  viewer: {
+    __typename: 'User',
+    isFollowing: boolean(),
+    canPostHenken: boolean(),
+  },
+});

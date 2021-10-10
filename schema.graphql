@@ -365,10 +365,12 @@ type SearchResult {
 type User implements Node {
   alias: String!
   avatar: String!
+  canPostHenken(id: ID!): Boolean!
   displayName: String!
   followees(after: String, before: String, first: Int, last: Int, orderBy: FollowingOrder!): FollowingConnection!
   followers(after: String, before: String, first: Int, last: Int, orderBy: FollowingOrder!): FollowingConnection!
   id: ID!
+  isFollowing(id: ID!): Boolean!
   postsAnswers(after: String, before: String, filter: UserPostsAnswersFilter, first: Int, last: Int, orderBy: AnswerOrder!): AnswerConnection!
   postsHenkens(after: String, before: String, filter: UserPostsHenkensFilter, first: Int, last: Int, orderBy: HenkenOrder!): HenkenConnection!
   receivedAnswers(after: String, before: String, filter: UserReceivedAnswersFilter, first: Int, last: Int, orderBy: AnswerOrder!): AnswerConnection!

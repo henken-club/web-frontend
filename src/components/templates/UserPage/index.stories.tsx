@@ -1,23 +1,37 @@
 import {Meta, Story} from '@storybook/react';
-import React, {ComponentProps} from 'react';
+import React, {ComponentProps, ContextType} from 'react';
+import {action} from '@storybook/addon-actions';
+
+import {UserPageContext} from './context';
 
 import {Component} from '.';
 
 export default {
   title: 'UserPage',
   component: Component,
-  argTypes: {
-    registering: {table: {disable: true}},
-  },
+  argTypes: {},
 } as Meta;
 
-type StoryProps = ComponentProps<typeof Component>;
+type StoryProps = ComponentProps<typeof Component> & {
+  contextValue: ContextType<typeof UserPageContext>;
+};
 
-export const Primary: Story<StoryProps> = ({...args}) => {
-  return <Component {...args} />;
+export const Primary: Story<StoryProps> = ({contextValue, ...args}) => {
+  return (
+    <UserPageContext.Provider value={contextValue}>
+      <Component {...args} />
+    </UserPageContext.Provider>
+  );
 };
 Primary.storyName = '通常';
 Primary.args = {
+  contextValue: {
+    isFollowing: true,
+    canPostsHenken: true,
+    follow: action('follow'),
+    unfollow: action('unfollow'),
+    postHenken: action('postHenken'),
+  },
   user: {
     id: '1',
     alias: 'alias',
