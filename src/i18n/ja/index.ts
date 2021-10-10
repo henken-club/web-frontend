@@ -37,6 +37,17 @@ const ja: BaseTranslation = {
     Registering: '登録中',
     Registered: 'ようこそ、{displayName:string}さん！どうぞお楽しみ下さい！',
   },
+
+  SearchBox: {
+    aria: {
+      SearchInput: '検索ボックス',
+    },
+    Suggestions: {
+      Author: '著者',
+      Book: '本',
+      BookSeries: '本のシリーズ',
+    },
+  },
 };
 
 export default ja;

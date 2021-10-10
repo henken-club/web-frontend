@@ -9,6 +9,7 @@ import {LinkIndex} from '~/components/Link';
 import {useTranslation} from '~/i18n/useTranslation';
 import {useViewer} from '~/auth/useViewer';
 import {useAuth} from '~/auth/useAuth';
+import {SearchBox} from '~/components/SearchBox';
 
 export type ComponentProps = {className?: string};
 export const Component: React.VFC<ComponentProps> = ({className}) => {
@@ -31,7 +32,9 @@ export const Component: React.VFC<ComponentProps> = ({className}) => {
             {LL.Brand.Name()}
           </span>
         </LinkIndex>
-        <div className={clsx(['flex-grow'])} />
+        <div className={clsx(['flex-grow'], ['mx-4'])}>
+          <SearchBox className={clsx('w-full')} />
+        </div>
         <Personal />
       </div>
     </nav>
