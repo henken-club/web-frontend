@@ -42,13 +42,31 @@ const RegisterFormMutation = gql`
   }
 `;
 
-export const Component: React.VFC<{className?: string}> = ({className}) => {
+export const Component: React.VFC<{
+  className?: string;
+  focus: boolean;
+}> = ({className, focus}) => {
   return (
     <div className={clsx(className, ['relative'])}>
-      <Input className={clsx(['w-full'])} />
-      <Suggestions
-        className={clsx(['absolute', ['top-full']], ['mt-0.5'], ['w-full'])}
-      />
+      <Input className={clsx(['relative'], ['w-full'], ['z-1'])} />
+
+      <>
+        <div
+          className={clsx(
+            ['fixed', 'inset-0', 'z-0'],
+            [{hidden: !focus}],
+            ['bg-black', ['bg-opacity-25']],
+          )}
+        />
+        <Suggestions
+          className={clsx(
+            ['absolute', ['top-full'], 'z-1'],
+            [{hidden: !focus}],
+            ['mt-0.5'],
+            ['w-full'],
+          )}
+        />
+      </>
     </div>
   );
 };
@@ -56,10 +74,10 @@ export const Component: React.VFC<{className?: string}> = ({className}) => {
 export const SearchBox: React.VFC<{className?: string}> = ({...props}) => {
   const [input, setInputValue] = useState('');
   const [query, setQuery] = useState('');
-  const [pause] = useState<boolean>(false);
+  const [focus, setFocus] = useState(false);
   const [result, reexecuteQuery] = useSearchBoxQuery({
     variables: {query},
-    pause: pause && query !== '',
+    pause: query === '',
   });
   const {fetching, data} = result;
 
@@ -105,6 +123,8 @@ export const SearchBox: React.VFC<{className?: string}> = ({...props}) => {
     if (input === '') {
       return {
         updateQuery: (query) => setInputValue(query),
+        focus,
+        updateFocus: setFocus,
         query: '',
         fetching: false,
         suggestions: undefined,
@@ -112,15 +132,17 @@ export const SearchBox: React.VFC<{className?: string}> = ({...props}) => {
     }
     return {
       updateQuery: (query) => setInputValue(query),
+      focus,
+      updateFocus: setFocus,
       query: input,
       fetching,
       suggestions,
     };
-  }, [fetching, input, suggestions]);
+  }, [fetching, focus, input, suggestions]);
 
   return (
     <SearchBoxContext.Provider value={contextValue}>
-      <Component {...props} />
+      <Component {...props} focus={focus} />
     </SearchBoxContext.Provider>
   );
 };

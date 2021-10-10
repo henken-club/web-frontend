@@ -22,7 +22,11 @@ export type Suggestion =
   | {type: 'bookSeries'; content: BookSeriesType};
 
 export const SearchBoxContext = React.createContext<
-  {updateQuery(query: string): void} & (
+  {
+    updateQuery(query: string): void;
+    focus: boolean;
+    updateFocus(focus: boolean): void;
+  } & (
     | {
         // 初期状態
         query: '';
@@ -44,6 +48,8 @@ export const SearchBoxContext = React.createContext<
   )
 >({
   updateQuery() {},
+  focus: false,
+  updateFocus() {},
   query: '',
   fetching: false,
   suggestions: {nodes: []},
