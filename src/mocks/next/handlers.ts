@@ -34,6 +34,9 @@ import {
   RegisterUserMutation,
   RegisterUserMutationVariables,
   RegisterUserDocument,
+  SearchBoxQuery,
+  SearchBoxQueryVariables,
+  SearchBoxDocument,
 } from '../codegen';
 import {
   factoryAllAnswerPages,
@@ -48,6 +51,7 @@ import {
   factoryRecommendationPage,
 } from '../factories/RecommendationPage';
 import {factoryRegisterUser} from '../factories/RegisterUser';
+import {factorySearchBox} from '../factories/SearchBox';
 import {factoryAllUserPages, factoryUserPage} from '../factories/UserPage';
 import {
   factoryAuthorizedViewer,
@@ -73,6 +77,10 @@ export const handlers = [
         return res(ctx.data(factoryAuthorizedViewer()));
       else return res(ctx.data(factoryUnauthorizedViewer()));
     },
+  ),
+  graphql.query<SearchBoxQuery, SearchBoxQueryVariables>(
+    SearchBoxDocument,
+    (req, res, ctx) => res(ctx.data(factorySearchBox(req.variables))),
   ),
   graphql.query<AllUserPagesQuery, AllUserPagesQueryVariables>(
     AllUserPagesDocument,

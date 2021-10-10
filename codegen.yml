@@ -32,6 +32,7 @@ generates:
     config:
       scalars:
         DateTime: string
+      nonOptionalTypename: true
 
   ./src/libs/codegen.ts:
     plugins:

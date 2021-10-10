@@ -1,7 +1,11 @@
 import clsx from 'clsx';
 import {gql} from 'graphql-request';
-import React from 'react';
+import React, {ContextType, useMemo, useState} from 'react';
+import {useDebounce} from 'react-use';
 
+import {useSearchBoxQuery} from '../codegen';
+
+import {SearchBoxContext} from './context';
 import {Input} from './Input';
 import {Suggestions} from './Suggestions';
 
@@ -21,6 +25,7 @@ const RegisterFormMutation = gql`
               edges {
                 node {
                   author {
+                    id
                     name
                   }
                 }
@@ -49,5 +54,73 @@ export const Component: React.VFC<{className?: string}> = ({className}) => {
 };
 
 export const SearchBox: React.VFC<{className?: string}> = ({...props}) => {
-  return <Component {...props} />;
+  const [input, setInputValue] = useState('');
+  const [query, setQuery] = useState('');
+  const [pause] = useState<boolean>(false);
+  const [result, reexecuteQuery] = useSearchBoxQuery({
+    variables: {query},
+    pause: pause && query !== '',
+  });
+  const {fetching, data} = result;
+
+  useDebounce(() => setQuery(input), 500, [input]);
+
+  const suggestions = useMemo<
+    Exclude<ContextType<typeof SearchBoxContext>['suggestions'], undefined>
+  >(
+    () => ({
+      nodes: data?.search.nodes
+        ? data.search.nodes.map(({content}) => {
+            switch (content.__typename) {
+              case 'Author':
+                return {
+                  type: 'author',
+                  content: {id: content.id, name: content.name},
+                };
+              case 'Book':
+                return {
+                  type: 'book',
+                  content: {
+                    id: content.id,
+                    title: content.title,
+                    authors: content.writings.edges.map(({node}) => ({
+                      id: node.author.id,
+                      name: node.author.name,
+                    })),
+                  },
+                };
+              case 'BookSeries':
+                return {
+                  type: 'bookSeries',
+                  content: {id: content.id, title: content.title},
+                };
+            }
+          })
+        : [],
+    }),
+    [data?.search],
+  );
+
+  const contextValue = useMemo<ContextType<typeof SearchBoxContext>>(() => {
+    if (input === '') {
+      return {
+        updateQuery: (query) => setInputValue(query),
+        query: '',
+        fetching: false,
+        suggestions: undefined,
+      };
+    }
+    return {
+      updateQuery: (query) => setInputValue(query),
+      query: input,
+      fetching,
+      suggestions,
+    };
+  }, [fetching, input, suggestions]);
+
+  return (
+    <SearchBoxContext.Provider value={contextValue}>
+      <Component {...props} />
+    </SearchBoxContext.Provider>
+  );
 };

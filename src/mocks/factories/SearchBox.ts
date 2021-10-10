@@ -1,20 +1,38 @@
 import {SearchBoxQuery, SearchBoxQueryVariables} from '../codegen';
 
-import {authorName, id, repeat, title, which} from './common';
+import {authorName, between, id, repeat, title, which} from './common';
 
-export function factoryRegisterUser(
+export function factorySearchBox(
   variables: SearchBoxQueryVariables,
 ): SearchBoxQuery {
   return {
     __typename: 'Query',
     search: {
       __typename: 'SearchPayload',
-      nodes: repeat(5, () => ({
+      nodes: repeat(between(0, 5), () => ({
         __typename: 'SearchResult',
         content: which([
-          {__typename: 'Book', id: id(), title: title()},
-          {__typename: 'BookSeries', id: id(), title: title()},
           {__typename: 'Author', id: id(), name: authorName()},
+          {
+            __typename: 'Book',
+            id: id(),
+            title: title(),
+            writings: {
+              __typename: 'WritingConnection',
+              edges: repeat(between(1, 4), () => ({
+                __typename: 'WritingEdge',
+                node: {
+                  __typename: 'Writing',
+                  author: {
+                    __typename: 'Author',
+                    id: id(),
+                    name: authorName(),
+                  },
+                },
+              })),
+            },
+          },
+          {__typename: 'BookSeries', id: id(), title: title()},
         ]),
       })),
     },

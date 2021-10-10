@@ -11,13 +11,13 @@ import {useTranslation} from '~/i18n/useTranslation';
 
 export const Component: React.VFC<{
   className?: string;
-  suggestions: [] | Suggestion[];
-}> = ({className, suggestions}) => {
+  suggestions: {nodes: [] | Suggestion[]};
+}> = ({className, suggestions: {nodes}}) => {
   const {LL} = useTranslation();
   return (
     <div className={clsx(className)}>
-      {suggestions.length === 0 && <></>}
-      {suggestions.length > 0 && (
+      {nodes.length === 0 && <></>}
+      {nodes.length > 0 && (
         <div
           className={clsx(
             ['w-full'],
@@ -26,22 +26,16 @@ export const Component: React.VFC<{
             ['shadow-lg'],
           )}
         >
-          {suggestions.map((suggestion) => (
-            <div key={suggestion.content.id}>
-              {suggestion.type === 'author' && (
-                <Author
-                  className={clsx(['w-full'])}
-                  value={suggestion.content}
-                />
+          {nodes.map((node) => (
+            <div key={node.content.id}>
+              {node.type === 'author' && (
+                <Author className={clsx(['w-full'])} value={node.content} />
               )}
-              {suggestion.type === 'book' && (
-                <Book className={clsx(['w-full'])} value={suggestion.content} />
+              {node.type === 'book' && (
+                <Book className={clsx(['w-full'])} value={node.content} />
               )}
-              {suggestion.type === 'bookSeries' && (
-                <BookSeries
-                  className={clsx(['w-full'])}
-                  value={suggestion.content}
-                />
+              {node.type === 'bookSeries' && (
+                <BookSeries className={clsx(['w-full'])} value={node.content} />
               )}
             </div>
           ))}

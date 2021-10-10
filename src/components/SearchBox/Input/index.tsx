@@ -1,14 +1,20 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, {useContext} from 'react';
+
+import {SearchBoxContext} from '../context';
 
 import {useTranslation} from '~/i18n/useTranslation';
 
-export const Component: React.VFC<{className?: string}> = ({className}) => {
+export const Component: React.VFC<{
+  className?: string;
+  onInputQuery: (query: string) => void;
+}> = ({className, onInputQuery: onChange}) => {
   const {LL} = useTranslation();
   return (
     <div className={clsx(className, ['inline-flex'])}>
       <label className={clsx(['flex-grow'])}>
         <input
+          onChange={(event) => onChange(event.currentTarget.value)}
           type="search"
           autoComplete="on"
           aria-label={LL.SearchBox.aria.SearchInput()}
@@ -26,5 +32,7 @@ export const Component: React.VFC<{className?: string}> = ({className}) => {
   );
 };
 export const Input: React.VFC<{className?: string}> = ({...props}) => {
-  return <Component {...props} />;
+  const {updateQuery} = useContext(SearchBoxContext);
+
+  return <Component {...props} onInputQuery={updateQuery} />;
 };

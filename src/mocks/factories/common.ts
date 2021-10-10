@@ -15,6 +15,8 @@ export const hasNextPage = faker.datatype.boolean;
 export const which = faker.random.arrayElement;
 export const repeat = <T>(count: number, generator: () => T): T[] =>
   [...new Array(count)].map((_, i) => generator());
+export const between = (min: number, max: number) =>
+  min + faker.datatype.number(max - min);
 
 // User
 export const alias = faker.lorem.word;

@@ -22,22 +22,29 @@ export type Suggestion =
   | {type: 'bookSeries'; content: BookSeriesType};
 
 export const SearchBoxContext = React.createContext<
-  // 初期状態
-  | {
-      fetching: false;
-      suggestions: undefined;
-    }
-  // 取得中
-  | {
-      fetching: true;
-      suggestions: [] | Suggestion[];
-    }
-  // 取得済み
-  | {
-      fetching: false;
-      suggestions: [] | Suggestion[];
-    }
+  {updateQuery(query: string): void} & (
+    | {
+        // 初期状態
+        query: '';
+        fetching: false;
+        suggestions: undefined;
+      }
+    | {
+        // 取得中
+        query: string;
+        fetching: true;
+        suggestions: {nodes: [] | Suggestion[]};
+      }
+    | {
+        // 取得済み
+        query: string;
+        fetching: false;
+        suggestions: {nodes: [] | Suggestion[]};
+      }
+  )
 >({
+  updateQuery() {},
+  query: '',
   fetching: false,
-  suggestions: undefined,
+  suggestions: {nodes: []},
 });

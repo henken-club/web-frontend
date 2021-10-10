@@ -1,5 +1,6 @@
 import {Meta, Story} from '@storybook/react';
 import React, {ComponentProps, ContextType} from 'react';
+import {action} from '@storybook/addon-actions';
 
 import {SearchBoxContext} from './context';
 
@@ -27,8 +28,10 @@ export const Initial: Story<StoryProps> = ({contextValue, ...args}) => {
 Initial.storyName = '初期状態';
 Initial.args = {
   contextValue: {
+    updateQuery: action('update-query'),
+    query: '',
     fetching: false,
-    suggestions: undefined,
+    suggestions: {nodes: []},
   },
 };
 
@@ -42,25 +45,32 @@ export const Fetching: Story<StoryProps> = ({contextValue, ...args}) => {
 Fetching.storyName = '提案がある状態で，取得中';
 Fetching.args = {
   contextValue: {
+    updateQuery: action('update-query'),
+    query: 'query',
     fetching: true,
-    suggestions: [
-      {
-        type: 'author',
-        content: {id: 'author', name: 'Author_name'},
-      },
-      {
-        type: 'book',
-        content: {
-          id: 'book',
-          title: 'Book_title',
-          authors: [{name: 'Author1'}, {name: 'Author2'}],
+    suggestions: {
+      nodes: [
+        {
+          type: 'author',
+          content: {id: 'author', name: 'Author_name'},
         },
-      },
-      {
-        type: 'bookSeries',
-        content: {id: 'book_series', title: 'BookSeries_title'},
-      },
-    ],
+        {
+          type: 'book',
+          content: {
+            id: 'book',
+            title: 'Book_title',
+            authors: [
+              {id: 'book.author.1', name: 'Author1'},
+              {id: 'book.author.2', name: 'Author2'},
+            ],
+          },
+        },
+        {
+          type: 'bookSeries',
+          content: {id: 'book_series', title: 'BookSeries_title'},
+        },
+      ],
+    },
   },
 };
 
@@ -77,8 +87,10 @@ export const FetchingWithNoSuggestions: Story<StoryProps> = ({
 FetchingWithNoSuggestions.storyName = '提案が無い状態で，取得中';
 FetchingWithNoSuggestions.args = {
   contextValue: {
+    updateQuery: action('update-query'),
+    query: '',
     fetching: true,
-    suggestions: [],
+    suggestions: {nodes: []},
   },
 };
 
@@ -92,31 +104,38 @@ export const Fetched: Story<StoryProps> = ({contextValue, ...args}) => {
 Fetched.storyName = '取得済みで，提案がある';
 Fetched.args = {
   contextValue: {
+    updateQuery: action('update-query'),
+    query: '',
     fetching: false,
-    suggestions: [
-      {
-        type: 'author',
-        content: {
-          id: 'author',
-          name: 'Author_name',
+    suggestions: {
+      nodes: [
+        {
+          type: 'author',
+          content: {
+            id: 'author',
+            name: 'Author_name',
+          },
         },
-      },
-      {
-        type: 'book',
-        content: {
-          id: 'book',
-          title: 'Book_title',
-          authors: [{name: 'Author1'}, {name: 'Author2'}],
+        {
+          type: 'book',
+          content: {
+            id: 'book',
+            title: 'Book_title',
+            authors: [
+              {id: 'book.author.1', name: 'Author1'},
+              {id: 'book.author.2', name: 'Author2'},
+            ],
+          },
         },
-      },
-      {
-        type: 'bookSeries',
-        content: {
-          id: 'book_series',
-          title: 'BookSeries_title',
+        {
+          type: 'bookSeries',
+          content: {
+            id: 'book_series',
+            title: 'BookSeries_title',
+          },
         },
-      },
-    ],
+      ],
+    },
   },
 };
 
@@ -133,7 +152,9 @@ export const FetchedButNoSuggestions: Story<StoryProps> = ({
 FetchedButNoSuggestions.storyName = '取得済みで，提案が一件も無い';
 FetchedButNoSuggestions.args = {
   contextValue: {
+    updateQuery: action('update-query'),
+    query: '',
     fetching: false,
-    suggestions: [],
+    suggestions: {nodes: []},
   },
 };

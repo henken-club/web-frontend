@@ -18,33 +18,35 @@ export const Suggestions: Story<StoryProps> = (args) => {
 };
 Suggestions.storyName = '提案がある';
 Suggestions.args = {
-  suggestions: [
-    {
-      type: 'author',
-      content: {
-        id: 'author',
-        name: 'Author_name',
+  suggestions: {
+    nodes: [
+      {
+        type: 'author',
+        content: {
+          id: 'author',
+          name: 'Author_name',
+        },
       },
-    },
-    {
-      type: 'book',
-      content: {
-        id: 'book',
-        title: 'Book_title',
-        authors: [
-          {id: 'book-author-1', name: 'Author1'},
-          {id: 'book-author-2', name: 'Author2'},
-        ],
+      {
+        type: 'book',
+        content: {
+          id: 'book',
+          title: 'Book_title',
+          authors: [
+            {id: 'book-author-1', name: 'Author1'},
+            {id: 'book-author-2', name: 'Author2'},
+          ],
+        },
       },
-    },
-    {
-      type: 'bookSeries',
-      content: {
-        id: 'book_series',
-        title: 'BookSeries_title',
+      {
+        type: 'bookSeries',
+        content: {
+          id: 'book_series',
+          title: 'BookSeries_title',
+        },
       },
-    },
-  ],
+    ],
+  },
 };
 
 export const NoSuggestions: Story<StoryProps> = (args) => {
@@ -52,5 +54,5 @@ export const NoSuggestions: Story<StoryProps> = (args) => {
 };
 NoSuggestions.storyName = '提案なし';
 NoSuggestions.args = {
-  suggestions: [],
+  suggestions: {nodes: []},
 };
