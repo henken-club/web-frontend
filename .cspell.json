@@ -5,12 +5,13 @@
   "files": ["src/**/*"],
   "ignorePaths": ["*.snap", "*.codegen.*", "codegen.ts", "src/i18n/i18n-*"],
   "words": [
+    "bookseries",
+    "codegen",
     "followee",
     "followees",
     "henken",
     "henkens",
-    "typesafe",
-    "codegen"
+    "typesafe"
   ],
   "ignoreWords": ["fontawesome", "fortawesome", "urql", "nextjs", "clsx"]
 }
