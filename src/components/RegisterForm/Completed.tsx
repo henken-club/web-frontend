@@ -4,7 +4,7 @@ import React from 'react';
 import {IconRegistered} from '~/components/Icon';
 import {TimerBar} from '~/components/TimerBar';
 import {useTranslation} from '~/i18n/useTranslation';
-import {Avatar} from '~/components/Avatar';
+import {AvatarSmall} from '~/components/Avatar';
 
 export const Component: React.VFC<{
   className?: string;
@@ -25,7 +25,7 @@ export const Component: React.VFC<{
     >
       <div className={clsx(['space-x-2'], ['flex', ['items-center']])}>
         <div className={clsx(['w-10'], ['h-10'])}>
-          <Avatar user={{alias, avatar}} />
+          <AvatarSmall user={{alias, avatar}} />
         </div>
         <IconRegistered className={clsx([['text-white'], ['text-4xl']])} />
       </div>
