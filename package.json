@@ -10,7 +10,7 @@
     "watch:codegen": "gql-gen --watch",
     "watch:i18n": "typesafe-i18n",
     "generate": "run-p -cln generate:*",
-    "generate:codegen": "gql-gen -e",
+    "generate:codegen": "gql-gen",
     "generate:i18n": "typesafe-i18n --no-watch",
     "typecheck": "tsc --noEmit",
     "test": "jest --config=jest.config.ts",

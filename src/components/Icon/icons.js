@@ -37,3 +37,13 @@ export const IconPostAnswers = (props) => (
 export const IconReceivedAnswers = (props) => (
   <FontAwesomeIcon fixedWidth icon={solid('right-to-bracket')} {...props} />
 );
+
+export const IconAuthor = (props) => (
+  <FontAwesomeIcon fixedWidth icon={solid('pen-nib')} {...props} />
+);
+export const IconBook = (props) => (
+  <FontAwesomeIcon fixedWidth icon={solid('book')} {...props} />
+);
+export const IconBookSeries = (props) => (
+  <FontAwesomeIcon fixedWidth icon={solid('bars-staggered')} {...props} />
+);

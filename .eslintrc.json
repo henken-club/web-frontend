@@ -9,6 +9,8 @@
   "plugins": ["unused-imports"],
   "rules": {
     "unused-imports/no-unused-imports": [2],
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/label-has-associated-control": [2],
     "jsx-a11y/anchor-is-valid": [
       2,
       {
