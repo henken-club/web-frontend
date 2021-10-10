@@ -42,9 +42,12 @@ export const Component: React.VFC<{
 export const TemplateUserPage: React.VFC<{
   className?: string;
   user: ComponentProps<typeof Component>['user'];
-}> = ({...props}) => {
+}> = ({user, ...props}) => {
   const viewer = useViewer();
-  const [result] = useUserPageWithViewerQuery({pause: !viewer});
+  const [result] = useUserPageWithViewerQuery({
+    pause: !viewer,
+    variables: {id: user.id},
+  });
 
   const contextValue = useMemo<ContextType<typeof UserPageContext>>(() => {
     if (result.data?.viewer)
@@ -66,7 +69,7 @@ export const TemplateUserPage: React.VFC<{
 
   return (
     <UserPageContext.Provider value={contextValue}>
-      <Component {...props} />
+      <Component {...props} user={user} />
     </UserPageContext.Provider>
   );
 };
