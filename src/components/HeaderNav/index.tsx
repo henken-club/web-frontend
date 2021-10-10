@@ -35,7 +35,7 @@ export const Component: React.VFC<ComponentProps> = ({className}) => {
         <div className={clsx(['flex-grow'], ['mx-4'])}>
           <SearchBox className={clsx('w-full')} />
         </div>
-        <Personal />
+        <Personal className={clsx(['w-32'])} />
       </div>
     </nav>
   );
