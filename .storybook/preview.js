@@ -4,7 +4,7 @@ import {RouterContext} from 'next/dist/shared/lib/router-context';
 import TypesafeI18n from '~/i18n/i18n-react';
 
 import '~/styles/index.css';
-import {MINIMAL_VIEWPORTS} from '@storybook/addon-viewport';
+import {MINIMAL_VIEWPORTS, INITIAL_VIEWPORTS} from '@storybook/addon-viewport';
 import {TAILWIND_VIEWPORTS} from './tailwindViewports';
 
 Object.defineProperty(nextImage, 'default', {
@@ -25,8 +25,9 @@ export const parameters = {
   storySort: {method: 'alphabetical'},
   viewport: {
     viewports: {
-      ...MINIMAL_VIEWPORTS,
       ...TAILWIND_VIEWPORTS,
+      ...MINIMAL_VIEWPORTS,
+      ...INITIAL_VIEWPORTS,
     },
   },
   nextRouter: {

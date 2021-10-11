@@ -5,11 +5,22 @@ import {action} from '@storybook/addon-actions';
 import {UserPageContext} from './context';
 
 import {Component} from '.';
+import {PageContainer} from '~/components/Layout';
 
 export default {
   title: 'UserPage',
   component: Component,
+  parameters: {
+    layout: 'fullscreen',
+  },
   argTypes: {},
+  decorators: [
+    (Story) => (
+      <PageContainer>
+        <Story />
+      </PageContainer>
+    ),
+  ],
 } as Meta;
 
 type StoryProps = ComponentProps<typeof Component> & {
