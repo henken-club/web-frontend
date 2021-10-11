@@ -16,7 +16,7 @@ export const UsersGrid: React.VFC<{
     <div
       className={clsx(className, [
         'inline-grid',
-        ['grid-cols-4', 'md:grid-cols-6', 'xl:grid-cols-4'],
+        ['grid-cols-4', 'sm:grid-cols-6'],
         ['gap-x-2'],
         ['gap-y-2'],
       ])}

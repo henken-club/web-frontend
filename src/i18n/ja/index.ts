@@ -5,6 +5,10 @@ const ja: BaseTranslation = {
     Name: 'henken.club',
   },
 
+  Format: {
+    Alias: '@{alias:string}',
+  },
+
   Followees: 'フォロイー',
   Followers: 'フォロワー',
   Login: 'ログイン',
