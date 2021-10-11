@@ -25,5 +25,5 @@ export const Primary: Story<ComponentProps<typeof Component>> = (args) => {
 Primary.args = {
   alias: 'alias',
   displayName: 'DisplayName',
-  avatar: '/avatar_1.png',
+  avatar: '/.mock/avatar_1.png',
 };
