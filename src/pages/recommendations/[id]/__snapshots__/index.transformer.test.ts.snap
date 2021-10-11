@@ -13,7 +13,7 @@ Object {
     "id": "89bd9d8d-69a6-474e-8f46-7cc8796ed151",
     "recommendsTo": Object {
       "alias": "blanditiis",
-      "avatar": "https://cdn.fakercloud.com/avatars/logorado_128.jpg",
+      "avatar": "/.mock/avatar_7.png",
       "displayName": "Curt",
       "id": "5dfc2ddf-7cc7-48ca-9ba9-28fc816742cb",
     },
@@ -35,7 +35,7 @@ Object {
     "id": "6fbe024f-2316-4265-a6e8-d65a837e308a",
     "recommendsTo": Object {
       "alias": "a",
-      "avatar": "https://cdn.fakercloud.com/avatars/koridhandy_128.jpg",
+      "avatar": "/.mock/avatar_7.png",
       "displayName": "Hannah",
       "id": "7862f3cc-bfc5-41b8-aded-1d0420ea196a",
     },
@@ -57,7 +57,7 @@ Object {
     "id": "620e8f67-6552-43b9-9474-a9d8a27892bc",
     "recommendsTo": Object {
       "alias": "rerum",
-      "avatar": "https://cdn.fakercloud.com/avatars/joreira_128.jpg",
+      "avatar": "/.mock/avatar_6.png",
       "displayName": "Madeline",
       "id": "876d21f8-4146-4112-a799-331c39527537",
     },
@@ -80,7 +80,7 @@ Object {
     "id": "81bd4189-e6e0-4203-b017-b0277a345a79",
     "recommendsTo": Object {
       "alias": "ut",
-      "avatar": "https://cdn.fakercloud.com/avatars/shinze_128.jpg",
+      "avatar": "/.mock/avatar_11.png",
       "displayName": "Rahul",
       "id": "c8f46684-4b97-4427-8ccd-443e6be0f2a5",
     },
@@ -102,7 +102,7 @@ Object {
     "id": "fe82fdb9-b932-4f30-b4e6-ac039d5f9269",
     "recommendsTo": Object {
       "alias": "occaecati",
-      "avatar": "https://cdn.fakercloud.com/avatars/antonyryndya_128.jpg",
+      "avatar": "/.mock/avatar_2.png",
       "displayName": "Devin",
       "id": "9640afc6-0f0c-4fd7-a711-922dbd6e8dfd",
     },
@@ -124,7 +124,7 @@ Object {
     "id": "30dd35ef-7196-4c58-b4f3-c1abd732ce14",
     "recommendsTo": Object {
       "alias": "cumque",
-      "avatar": "https://cdn.fakercloud.com/avatars/renbyrd_128.jpg",
+      "avatar": "/.mock/avatar_10.png",
       "displayName": "Rosalee",
       "id": "14ea8979-b404-414d-9d2e-2ff8f13f073a",
     },
@@ -139,7 +139,7 @@ Object {
   "recommendation": Object {
     "content": Object {
       "book": Object {
-        "cover": null,
+        "cover": "/.mock/bookcover_4.jpg",
         "id": "b9bbcee5-d446-4bb6-b76b-f57e5bb31a60",
         "title": "assumenda vero voluptas",
       },
@@ -148,7 +148,7 @@ Object {
     "id": "ef53d105-1f91-4896-8579-d7cb68392abf",
     "recommendsTo": Object {
       "alias": "aliquam",
-      "avatar": "https://cdn.fakercloud.com/avatars/myastro_128.jpg",
+      "avatar": "/.mock/avatar_9.png",
       "displayName": "Paris",
       "id": "76aecd70-ab2c-45b9-b789-11f3633db7f8",
     },
@@ -163,7 +163,7 @@ Object {
   "recommendation": Object {
     "content": Object {
       "book": Object {
-        "cover": "http://placeimg.com/640/480/abstract",
+        "cover": "/.mock/bookcover_5.jpg",
         "id": "554d7cf5-2924-4178-94a4-5e76b66fec25",
         "title": "quod ullam nihil",
       },
@@ -172,7 +172,7 @@ Object {
     "id": "13c57fb7-f484-4811-a407-8adc5661a4ae",
     "recommendsTo": Object {
       "alias": "quis",
-      "avatar": "https://cdn.fakercloud.com/avatars/johnsmithagency_128.jpg",
+      "avatar": "/.mock/avatar_6.png",
       "displayName": "Vallie",
       "id": "57ee40c9-4fd3-428c-af27-86c5a3713779",
     },
@@ -195,7 +195,7 @@ Object {
     "id": "d0f3d68d-3609-46c6-a8d7-e828bc6bd906",
     "recommendsTo": Object {
       "alias": "vel",
-      "avatar": "https://cdn.fakercloud.com/avatars/quailandquasar_128.jpg",
+      "avatar": "/.mock/avatar_10.png",
       "displayName": "Keyon",
       "id": "7fd50341-4fa2-4452-9738-6fe85af10554",
     },
@@ -218,7 +218,7 @@ Object {
     "id": "05877025-203e-4623-a165-725e5fb0fbb9",
     "recommendsTo": Object {
       "alias": "ut",
-      "avatar": "https://cdn.fakercloud.com/avatars/calebogden_128.jpg",
+      "avatar": "/.mock/avatar_3.png",
       "displayName": "Will",
       "id": "2af88bf6-ab9d-4a7c-b6cd-f12181f7a3de",
     },

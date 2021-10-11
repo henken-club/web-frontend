@@ -4,7 +4,7 @@ exports[`index.transform transformer findUser.userが存在する場合 0 1`] = 
 Object {
   "user": Object {
     "alias": "unde",
-    "avatar": "https://cdn.fakercloud.com/avatars/grahamkennery_128.jpg",
+    "avatar": "/.mock/avatar_5.png",
     "displayName": "Aiyana",
     "followees": Object {
       "count": 83261,
@@ -12,52 +12,52 @@ Object {
       "users": Array [
         Object {
           "alias": "dolores",
-          "avatar": "https://cdn.fakercloud.com/avatars/S0ufi4n3_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "c2ddf7cc-78ca-41ba-928f-c816742cb739",
         },
         Object {
           "alias": "similique",
-          "avatar": "https://cdn.fakercloud.com/avatars/aaronalfred_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "5929396f-ea75-496e-b10f-aaa2352c5955",
         },
         Object {
           "alias": "perferendis",
-          "avatar": "https://cdn.fakercloud.com/avatars/andrewcohen_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "7aff1a3a-2fa9-4467-b392-51aa52c3f5ad",
         },
         Object {
           "alias": "eligendi",
-          "avatar": "https://cdn.fakercloud.com/avatars/lisovsky_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "9da1ffe7-8f09-47b0-874f-15471b5e6e13",
         },
         Object {
           "alias": "ratione",
-          "avatar": "https://cdn.fakercloud.com/avatars/namankreative_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "9d488e1e-91e4-450a-92ab-d44269802d50",
         },
         Object {
           "alias": "aut",
-          "avatar": "https://cdn.fakercloud.com/avatars/danpliego_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "94bb4f63-c969-4e9a-befa-77dfb14cd66a",
         },
         Object {
           "alias": "aut",
-          "avatar": "https://cdn.fakercloud.com/avatars/drewbyreese_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "95efb9ba-88f3-4a66-9970-74ba4469b6e2",
         },
         Object {
           "alias": "repellat",
-          "avatar": "https://cdn.fakercloud.com/avatars/shadeed9_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "1959890a-fa56-43e2-916f-e4c8b711e5b7",
         },
         Object {
           "alias": "incidunt",
-          "avatar": "https://cdn.fakercloud.com/avatars/ChrisFarina78_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "2ed02892-1cdd-4c69-a601-fb576b0d5f0d",
         },
         Object {
           "alias": "in",
-          "avatar": "https://cdn.fakercloud.com/avatars/nicoleglynn_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "c5fbb258-7053-4202-873d-5fe9b90c2890",
         },
       ],
@@ -68,52 +68,52 @@ Object {
       "users": Array [
         Object {
           "alias": "corrupti",
-          "avatar": "https://cdn.fakercloud.com/avatars/el_fuertisimo_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "e49a8d9c-bf48-4633-b23f-9b77f3a41006",
         },
         Object {
           "alias": "voluptatem",
-          "avatar": "https://cdn.fakercloud.com/avatars/thaisselenator__128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "ebf69280-d1ba-477a-89eb-f737ae4203ce",
         },
         Object {
           "alias": "rem",
-          "avatar": "https://cdn.fakercloud.com/avatars/VinThomas_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "6a95d8a0-d446-4ce2-af7a-73cf3be453f8",
         },
         Object {
           "alias": "corrupti",
-          "avatar": "https://cdn.fakercloud.com/avatars/atariboy_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "b326b5a7-3429-4cdb-9a84-22bb679d2322",
         },
         Object {
           "alias": "maiores",
-          "avatar": "https://cdn.fakercloud.com/avatars/dicesales_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "5bf0cbb1-e31b-48b9-8f34-43a1108e0adc",
         },
         Object {
           "alias": "et",
-          "avatar": "https://cdn.fakercloud.com/avatars/ratbus_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "b921879f-ce95-43f7-bef7-fbc7abd74dd3",
         },
         Object {
           "alias": "nisi",
-          "avatar": "https://cdn.fakercloud.com/avatars/vitorleal_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "0f5d2cff-7c70-4a45-a26d-436813f16d9f",
         },
         Object {
           "alias": "dolore",
-          "avatar": "https://cdn.fakercloud.com/avatars/j2deme_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "ce6c5561-46c3-4e25-8fb0-08c42e141aac",
         },
         Object {
           "alias": "dicta",
-          "avatar": "https://cdn.fakercloud.com/avatars/agustincruiz_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "6c8dd6b1-4429-4074-b477-8a7bd466d28c",
         },
         Object {
           "alias": "in",
-          "avatar": "https://cdn.fakercloud.com/avatars/imammuht_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "ab3cdca4-2519-404e-923c-7e0bc7178e47",
         },
       ],
@@ -139,7 +139,7 @@ Object {
           "id": "a70c6882-82aa-4482-962f-222e9817ee17",
           "postsTo": Object {
             "alias": "nulla",
-            "avatar": "https://cdn.fakercloud.com/avatars/krystalfister_128.jpg",
+            "avatar": "/.mock/avatar_7.png",
             "displayName": "Gregory",
             "id": "d2efd121-aa6f-41e6-b4bd-b04f15756082",
           },
@@ -167,7 +167,7 @@ Object {
           "id": "3f5f0642-dac7-4af5-95cc-413aa63aae8d",
           "postedBy": Object {
             "alias": "labore",
-            "avatar": "https://cdn.fakercloud.com/avatars/kaelifa_128.jpg",
+            "avatar": "/.mock/avatar_7.png",
             "displayName": "Myron",
             "id": "7fe35b60-eb1e-4a42-a555-ba3c28744ed5",
           },
@@ -183,7 +183,7 @@ exports[`index.transform transformer findUser.userが存在する場合 1 1`] = 
 Object {
   "user": Object {
     "alias": "esse",
-    "avatar": "https://cdn.fakercloud.com/avatars/jesseddy_128.jpg",
+    "avatar": "/.mock/avatar_6.png",
     "displayName": "Haylee",
     "followees": Object {
       "count": 55868,
@@ -191,52 +191,52 @@ Object {
       "users": Array [
         Object {
           "alias": "velit",
-          "avatar": "https://cdn.fakercloud.com/avatars/nerrsoft_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "2f3ccbfc-51b8-4ede-91d0-420ea196af68",
         },
         Object {
           "alias": "sit",
-          "avatar": "https://cdn.fakercloud.com/avatars/alterchuca_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "452acd60-0c9f-4ab4-87c3-1177e14e4128",
         },
         Object {
           "alias": "eos",
-          "avatar": "https://cdn.fakercloud.com/avatars/kerihenare_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "ae3e4479-0999-42f9-8b31-86fb7680c80a",
         },
         Object {
           "alias": "ut",
-          "avatar": "https://cdn.fakercloud.com/avatars/pyronite_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "cf09ee82-72ec-4668-aae5-59cab2eb9ac5",
         },
         Object {
           "alias": "sequi",
-          "avatar": "https://cdn.fakercloud.com/avatars/evandrix_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "45ec6ef0-a791-41cf-9759-f663cec940c9",
         },
         Object {
           "alias": "facere",
-          "avatar": "https://cdn.fakercloud.com/avatars/charliecwaite_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "980eb57e-c970-44ed-b8f1-272be3b713c8",
         },
         Object {
           "alias": "consequatur",
-          "avatar": "https://cdn.fakercloud.com/avatars/S0ufi4n3_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "e0b81206-0108-431d-8838-fd4134199f68",
         },
         Object {
           "alias": "perferendis",
-          "avatar": "https://cdn.fakercloud.com/avatars/bagawarman_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "dc43bc96-6dcb-4686-a502-1e0e1c39b08a",
         },
         Object {
           "alias": "et",
-          "avatar": "https://cdn.fakercloud.com/avatars/alagoon_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "14f59431-42b2-43f9-9f0d-b34739fde2c0",
         },
         Object {
           "alias": "facere",
-          "avatar": "https://cdn.fakercloud.com/avatars/bobwassermann_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "07d9c975-8f19-4268-83be-a7421c53a131",
         },
       ],
@@ -247,52 +247,52 @@ Object {
       "users": Array [
         Object {
           "alias": "in",
-          "avatar": "https://cdn.fakercloud.com/avatars/vicivadeline_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "41c23ea9-8de9-4451-bb8c-be2ea063b9cf",
         },
         Object {
           "alias": "voluptatem",
-          "avatar": "https://cdn.fakercloud.com/avatars/jimmuirhead_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "e83e0ae6-4729-4087-ace5-69f025212b80",
         },
         Object {
           "alias": "in",
-          "avatar": "https://cdn.fakercloud.com/avatars/divya_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "ffd50721-582e-4c85-8f59-ee3d0ef7685c",
         },
         Object {
           "alias": "sint",
-          "avatar": "https://cdn.fakercloud.com/avatars/luxe_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "27f950f9-363c-4d53-ad98-23c9900060a6",
         },
         Object {
           "alias": "voluptatem",
-          "avatar": "https://cdn.fakercloud.com/avatars/mwarkentin_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "0dfc64f1-92d3-496a-94b9-bc1d0ccbed05",
         },
         Object {
           "alias": "nam",
-          "avatar": "https://cdn.fakercloud.com/avatars/kevinoh_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "77563606-8529-4862-b6aa-346053c0eeec",
         },
         Object {
           "alias": "quae",
-          "avatar": "https://cdn.fakercloud.com/avatars/byrnecore_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "4044d88d-c291-4b08-bc09-17c5a1c6b13f",
         },
         Object {
           "alias": "et",
-          "avatar": "https://cdn.fakercloud.com/avatars/falling_soul_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "4cdd1ba9-2287-4e57-bd9d-42e8e7431737",
         },
         Object {
           "alias": "ratione",
-          "avatar": "https://cdn.fakercloud.com/avatars/codepoet_ru_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "b0383ad0-6299-4351-a8c7-3239a82a82fc",
         },
         Object {
           "alias": "et",
-          "avatar": "https://cdn.fakercloud.com/avatars/normanbox_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "08ecb045-6d1d-4580-99f3-dad510abbc96",
         },
       ],
@@ -318,7 +318,7 @@ Object {
           "id": "cfb44543-aa5c-4c87-9c0f-74f25e886ffa",
           "postsTo": Object {
             "alias": "eius",
-            "avatar": "https://cdn.fakercloud.com/avatars/peejfancher_128.jpg",
+            "avatar": "/.mock/avatar_9.png",
             "displayName": "Vicenta",
             "id": "334ace73-0e87-43bc-8470-391d268bc8e8",
           },
@@ -346,7 +346,7 @@ Object {
           "id": "02b190a1-9791-450f-8f66-bd7f797a71cf",
           "postedBy": Object {
             "alias": "ipsam",
-            "avatar": "https://cdn.fakercloud.com/avatars/thekevinjones_128.jpg",
+            "avatar": "/.mock/avatar_11.png",
             "displayName": "Olin",
             "id": "dbbb4ef6-93a2-471e-9d2d-4ad944ff4c88",
           },
@@ -362,7 +362,7 @@ exports[`index.transform transformer findUser.userが存在する場合 2 1`] = 
 Object {
   "user": Object {
     "alias": "iusto",
-    "avatar": "https://cdn.fakercloud.com/avatars/laasli_128.jpg",
+    "avatar": "/.mock/avatar_7.png",
     "displayName": "Rubie",
     "followees": Object {
       "count": 49423,
@@ -370,52 +370,52 @@ Object {
       "users": Array [
         Object {
           "alias": "autem",
-          "avatar": "https://cdn.fakercloud.com/avatars/kapaluccio_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "d21f8414-6112-4279-9331-c39527537aa7",
         },
         Object {
           "alias": "perspiciatis",
-          "avatar": "https://cdn.fakercloud.com/avatars/sainraja_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "a69cf912-2bdf-4883-af55-946c65c784fc",
         },
         Object {
           "alias": "omnis",
-          "avatar": "https://cdn.fakercloud.com/avatars/adamawesomeface_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "1f5dd863-0b36-41ef-bf8c-b9bc72f46855",
         },
         Object {
           "alias": "iure",
-          "avatar": "https://cdn.fakercloud.com/avatars/rahmeen_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "efb788e5-8496-46de-b06b-05c3459e05a8",
         },
         Object {
           "alias": "ut",
-          "avatar": "https://cdn.fakercloud.com/avatars/rehatkathuria_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "7e6d568a-f516-45f0-abfa-c336ea9ac28e",
         },
         Object {
           "alias": "fuga",
-          "avatar": "https://cdn.fakercloud.com/avatars/tbakdesigns_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "927d6b9c-1853-43ec-9c58-4eee6f8e90db",
         },
         Object {
           "alias": "non",
-          "avatar": "https://cdn.fakercloud.com/avatars/divya_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "2d987586-b43e-4271-9430-0a142281e4c3",
         },
         Object {
           "alias": "nihil",
-          "avatar": "https://cdn.fakercloud.com/avatars/RussellBishop_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "4708dd4f-2083-45a2-a3dd-3bb0a9c40d38",
         },
         Object {
           "alias": "iusto",
-          "avatar": "https://cdn.fakercloud.com/avatars/jehnglynn_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "100e569e-0d11-4056-8a73-0e46096499ff",
         },
         Object {
           "alias": "placeat",
-          "avatar": "https://cdn.fakercloud.com/avatars/sur4dye_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "53d677b8-c850-4b22-b2b0-c5c08df35a7a",
         },
       ],
@@ -426,52 +426,52 @@ Object {
       "users": Array [
         Object {
           "alias": "vero",
-          "avatar": "https://cdn.fakercloud.com/avatars/jydesign_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "6fd47bb7-020d-4f81-9ad4-0316aea9ce7b",
         },
         Object {
           "alias": "autem",
-          "avatar": "https://cdn.fakercloud.com/avatars/souuf_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "68f3c066-598e-46ac-9aeb-f5d9265131d3",
         },
         Object {
           "alias": "qui",
-          "avatar": "https://cdn.fakercloud.com/avatars/conspirator_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "5492c1d5-3cb6-4cc0-81d6-f3cefb2bfc05",
         },
         Object {
           "alias": "omnis",
-          "avatar": "https://cdn.fakercloud.com/avatars/jeremyshimko_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "9a262e2a-060d-4066-afc2-7b45bafa33cc",
         },
         Object {
           "alias": "voluptate",
-          "avatar": "https://cdn.fakercloud.com/avatars/suprb_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "12d47b26-864b-42f1-b336-6ab1db51525b",
         },
         Object {
           "alias": "officiis",
-          "avatar": "https://cdn.fakercloud.com/avatars/abdots_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "0f2a87e1-28b2-438d-91d5-59f7f5dfb8b6",
         },
         Object {
           "alias": "magni",
-          "avatar": "https://cdn.fakercloud.com/avatars/syropian_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "f4daa013-9050-426e-8d38-b73734b63620",
         },
         Object {
           "alias": "vel",
-          "avatar": "https://cdn.fakercloud.com/avatars/joaoedumedeiros_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "f035a173-9f65-42b5-a24d-e6e04df3ae84",
         },
         Object {
           "alias": "consequatur",
-          "avatar": "https://cdn.fakercloud.com/avatars/andrewofficer_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "5ffdb38b-0731-4f88-95d0-b454b2856341",
         },
         Object {
           "alias": "iure",
-          "avatar": "https://cdn.fakercloud.com/avatars/wegotvices_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "c7c12e93-57e6-454a-933e-4d1dbaac4bed",
         },
       ],
@@ -497,7 +497,7 @@ Object {
           "id": "855ae1d0-d0fa-4097-8fe2-43a87aa5742c",
           "postsTo": Object {
             "alias": "corrupti",
-            "avatar": "https://cdn.fakercloud.com/avatars/mbilalsiddique1_128.jpg",
+            "avatar": "/.mock/avatar_8.png",
             "displayName": "Dakota",
             "id": "172db324-48cc-44a9-89d4-a3243e60d105",
           },
@@ -525,7 +525,7 @@ Object {
           "id": "094e37ff-4950-4aba-9d15-ff97b93ff3a2",
           "postedBy": Object {
             "alias": "voluptatem",
-            "avatar": "https://cdn.fakercloud.com/avatars/madewulf_128.jpg",
+            "avatar": "/.mock/avatar_8.png",
             "displayName": "Garnett",
             "id": "8b0ac226-f58f-497a-97ab-e60deff5201a",
           },
@@ -541,7 +541,7 @@ exports[`index.transform transformer findUser.userが存在する場合 3 1`] = 
 Object {
   "user": Object {
     "alias": "omnis",
-    "avatar": "https://cdn.fakercloud.com/avatars/r_oy_128.jpg",
+    "avatar": "/.mock/avatar_10.png",
     "displayName": "Albertha",
     "followees": Object {
       "count": 55885,
@@ -549,52 +549,52 @@ Object {
       "users": Array [
         Object {
           "alias": "in",
-          "avatar": "https://cdn.fakercloud.com/avatars/gusoto_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "466844b9-7427-48cc-9443-e6be0f2a5ecd",
         },
         Object {
           "alias": "quia",
-          "avatar": "https://cdn.fakercloud.com/avatars/prrstn_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "616ac8b5-0356-497b-8943-7ada9d4c4571",
         },
         Object {
           "alias": "corporis",
-          "avatar": "https://cdn.fakercloud.com/avatars/d_nny_m_cher_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "318d1b77-55b8-4b7b-8b55-da7589d58720",
         },
         Object {
           "alias": "tenetur",
-          "avatar": "https://cdn.fakercloud.com/avatars/muridrahhal_128.jpg",
+          "avatar": "/.mock/avatar_8.png",
           "id": "cf530b7a-0b87-4e93-9e14-322f1b2c8131",
         },
         Object {
           "alias": "eum",
-          "avatar": "https://cdn.fakercloud.com/avatars/caseycavanagh_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "a585b846-edd9-4be7-8d5b-caeeca45e883",
         },
         Object {
           "alias": "rerum",
-          "avatar": "https://cdn.fakercloud.com/avatars/aaronalfred_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "3b3cffcd-3871-4872-a4c4-7e78392519e1",
         },
         Object {
           "alias": "dolorem",
-          "avatar": "https://cdn.fakercloud.com/avatars/sergeyalmone_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "2f640434-b4ae-47d4-aaff-56817021df38",
         },
         Object {
           "alias": "eos",
-          "avatar": "https://cdn.fakercloud.com/avatars/kuldarkalvik_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "f2f42b7e-b551-4bdb-8dbd-21b4d8be51b6",
         },
         Object {
           "alias": "optio",
-          "avatar": "https://cdn.fakercloud.com/avatars/stefanotirloni_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "5a64ed27-ebca-4f95-b323-dd4f1b47b43d",
         },
         Object {
           "alias": "nisi",
-          "avatar": "https://cdn.fakercloud.com/avatars/vovkasolovev_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "01e35dcd-b594-4367-8a1c-dc86c631f7cd",
         },
       ],
@@ -605,52 +605,52 @@ Object {
       "users": Array [
         Object {
           "alias": "nemo",
-          "avatar": "https://cdn.fakercloud.com/avatars/akmur_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "b6d20003-b54c-4872-bf88-5d41c7e05ee7",
         },
         Object {
           "alias": "et",
-          "avatar": "https://cdn.fakercloud.com/avatars/craigelimeliah_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "41386122-f667-499f-9457-962c49c92130",
         },
         Object {
           "alias": "harum",
-          "avatar": "https://cdn.fakercloud.com/avatars/salimianoff_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "70040f74-21a4-4cf9-abb6-9027b559c2c3",
         },
         Object {
           "alias": "doloribus",
-          "avatar": "https://cdn.fakercloud.com/avatars/nepdud_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "c4a6ae04-822b-4c90-9105-690138bc014d",
         },
         Object {
           "alias": "consectetur",
-          "avatar": "https://cdn.fakercloud.com/avatars/karsh_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "f178bda9-7fd5-42dd-a0dd-ca17bad7ac51",
         },
         Object {
           "alias": "libero",
-          "avatar": "https://cdn.fakercloud.com/avatars/coreyweb_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "9d0e03d4-de05-420a-be6b-bc71866e4ce3",
         },
         Object {
           "alias": "enim",
-          "avatar": "https://cdn.fakercloud.com/avatars/robinlayfield_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "ceeb46ef-df80-4981-9c92-e882d1a9c70a",
         },
         Object {
           "alias": "alias",
-          "avatar": "https://cdn.fakercloud.com/avatars/meelford_128.jpg",
+          "avatar": "/.mock/avatar_8.png",
           "id": "af91fa99-9ab8-4586-9972-8bb7166f102b",
         },
         Object {
           "alias": "vitae",
-          "avatar": "https://cdn.fakercloud.com/avatars/yigitpinarbasi_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "36328594-d97f-4ee6-aba8-e9a47fbc3208",
         },
         Object {
           "alias": "rerum",
-          "avatar": "https://cdn.fakercloud.com/avatars/therealmarvin_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "8074ab90-1b69-46b5-88f8-589b068960f6",
         },
       ],
@@ -676,7 +676,7 @@ Object {
           "id": "0d1531b5-8080-47f0-868f-fde9133ed6e9",
           "postsTo": Object {
             "alias": "excepturi",
-            "avatar": "https://cdn.fakercloud.com/avatars/muridrahhal_128.jpg",
+            "avatar": "/.mock/avatar_8.png",
             "displayName": "Juliet",
             "id": "4766f96e-bb60-4e2b-97b1-6597e4c87307",
           },
@@ -704,7 +704,7 @@ Object {
           "id": "c23a7f12-e00b-4e52-810f-24b595d5ff58",
           "postedBy": Object {
             "alias": "et",
-            "avatar": "https://cdn.fakercloud.com/avatars/hafeeskhan_128.jpg",
+            "avatar": "/.mock/avatar_5.png",
             "displayName": "Leann",
             "id": "3cc721ad-a6a1-4124-902d-cac01f64cf70",
           },
@@ -720,7 +720,7 @@ exports[`index.transform transformer findUser.userが存在する場合 4 1`] = 
 Object {
   "user": Object {
     "alias": "delectus",
-    "avatar": "https://cdn.fakercloud.com/avatars/mastermindesign_128.jpg",
+    "avatar": "/.mock/avatar_8.png",
     "displayName": "Adelbert",
     "followees": Object {
       "count": 38657,
@@ -728,52 +728,52 @@ Object {
       "users": Array [
         Object {
           "alias": "aperiam",
-          "avatar": "https://cdn.fakercloud.com/avatars/blakehawksworth_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "0afc60f0-cfd7-4271-9922-dbd6e8dfd841",
         },
         Object {
           "alias": "saepe",
-          "avatar": "https://cdn.fakercloud.com/avatars/tom_even_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "38382a56-3a66-4a93-8229-6587a5418490",
         },
         Object {
           "alias": "libero",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "53ac3271-2aef-465d-a6be-56e569ddbdb9",
         },
         Object {
           "alias": "sint",
-          "avatar": "https://cdn.fakercloud.com/avatars/tom_even_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "19031b3e-c819-411f-8229-9f55c00814ad",
         },
         Object {
           "alias": "quis",
-          "avatar": "https://cdn.fakercloud.com/avatars/dawidwu_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "92dd7ccb-8aee-4a32-b5ed-2523f756e986",
         },
         Object {
           "alias": "voluptate",
-          "avatar": "https://cdn.fakercloud.com/avatars/thibaut_re_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "26161e3f-09e1-4eb8-abd7-50079214cccc",
         },
         Object {
           "alias": "et",
-          "avatar": "https://cdn.fakercloud.com/avatars/designervzm_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "fe21f378-c0c3-4f0f-90a0-98b0ea08ea87",
         },
         Object {
           "alias": "doloribus",
-          "avatar": "https://cdn.fakercloud.com/avatars/switmer777_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "2f7ba071-eae4-4766-8c58-e7bd8e226bc9",
         },
         Object {
           "alias": "mollitia",
-          "avatar": "https://cdn.fakercloud.com/avatars/vonachoo_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "152cb4d1-13dc-4ccb-a547-f54da5456eee",
         },
         Object {
           "alias": "doloremque",
-          "avatar": "https://cdn.fakercloud.com/avatars/catarino_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "4cb1b1b8-7d7e-46af-b025-3f5e40411164",
         },
       ],
@@ -784,52 +784,52 @@ Object {
       "users": Array [
         Object {
           "alias": "ut",
-          "avatar": "https://cdn.fakercloud.com/avatars/coreyhaggard_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "fc719696-e4b7-4df5-be12-963b65fe3d62",
         },
         Object {
           "alias": "unde",
-          "avatar": "https://cdn.fakercloud.com/avatars/anasnakawa_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "004d4576-64c1-447d-b99b-3082f854f201",
         },
         Object {
           "alias": "quo",
-          "avatar": "https://cdn.fakercloud.com/avatars/ashernatali_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "98f3e48e-c2fa-4b1f-afb7-da62168dc9f4",
         },
         Object {
           "alias": "officiis",
-          "avatar": "https://cdn.fakercloud.com/avatars/anasnakawa_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "83611336-705d-426d-95a2-241b2ffa1568",
         },
         Object {
           "alias": "nam",
-          "avatar": "https://cdn.fakercloud.com/avatars/shalt0ni_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "9a08e469-265c-4950-8a29-e366d3b099d7",
         },
         Object {
           "alias": "rerum",
-          "avatar": "https://cdn.fakercloud.com/avatars/chanpory_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "23971ae1-c50a-4e33-949e-6fe3d7db6830",
         },
         Object {
           "alias": "voluptatibus",
-          "avatar": "https://cdn.fakercloud.com/avatars/ah_lice_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "6d8daff3-cf19-4efa-95fb-67180932d576",
         },
         Object {
           "alias": "error",
-          "avatar": "https://cdn.fakercloud.com/avatars/thekevinjones_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "ab45a73f-ad14-4568-9018-c55813be8d03",
         },
         Object {
           "alias": "excepturi",
-          "avatar": "https://cdn.fakercloud.com/avatars/scottiedude_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "cd05a64f-6212-481f-94b1-ad7f676edebb",
         },
         Object {
           "alias": "ratione",
-          "avatar": "https://cdn.fakercloud.com/avatars/stan_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "b23df664-a84d-4c68-9541-40b4f38c40bf",
         },
       ],
@@ -855,7 +855,7 @@ Object {
           "id": "a86c721e-7491-4fa0-8897-0addc789689c",
           "postsTo": Object {
             "alias": "repellendus",
-            "avatar": "https://cdn.fakercloud.com/avatars/kerihenare_128.jpg",
+            "avatar": "/.mock/avatar_7.png",
             "displayName": "Ephraim",
             "id": "4a1d4db3-8795-4a08-af8c-efdb4c9cdf25",
           },
@@ -883,7 +883,7 @@ Object {
           "id": "cd46de14-facb-4024-adc3-127011f7d03e",
           "postedBy": Object {
             "alias": "dolores",
-            "avatar": "https://cdn.fakercloud.com/avatars/codepoet_ru_128.jpg",
+            "avatar": "/.mock/avatar_3.png",
             "displayName": "Haylie",
             "id": "4e149ea9-b410-4cac-bf96-435073fc696f",
           },
@@ -899,7 +899,7 @@ exports[`index.transform transformer findUser.userが存在する場合 5 1`] = 
 Object {
   "user": Object {
     "alias": "modi",
-    "avatar": "https://cdn.fakercloud.com/avatars/arpitnj_128.jpg",
+    "avatar": "/.mock/avatar_2.png",
     "displayName": "Harrison",
     "followees": Object {
       "count": 29607,
@@ -907,52 +907,52 @@ Object {
       "users": Array [
         Object {
           "alias": "et",
-          "avatar": "https://cdn.fakercloud.com/avatars/SlaapMe_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "a8979b40-414d-45d2-a2ff-8f13f073abdc",
         },
         Object {
           "alias": "assumenda",
-          "avatar": "https://cdn.fakercloud.com/avatars/cboller1_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "9950b8da-ef04-4bca-93eb-0979f162d589",
         },
         Object {
           "alias": "nihil",
-          "avatar": "https://cdn.fakercloud.com/avatars/_yardenoon_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "710e1417-40f4-4a3d-b96a-6c4e3ebde1a5",
         },
         Object {
           "alias": "ut",
-          "avatar": "https://cdn.fakercloud.com/avatars/garand_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "983c20d3-d5a3-42c2-95af-739efef11cdf",
         },
         Object {
           "alias": "dolore",
-          "avatar": "https://cdn.fakercloud.com/avatars/xamorep_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "176b85f0-5205-4d11-97bd-c877fc807906",
         },
         Object {
           "alias": "saepe",
-          "avatar": "https://cdn.fakercloud.com/avatars/axel_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "cca0b3f7-9b85-4359-acfd-63ed521c8eab",
         },
         Object {
           "alias": "cum",
-          "avatar": "https://cdn.fakercloud.com/avatars/ddggccaa_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "f1c9cfbe-b4c9-4f55-b1a3-53d5ac30678d",
         },
         Object {
           "alias": "distinctio",
-          "avatar": "https://cdn.fakercloud.com/avatars/brenton_clarke_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "41c3b11c-1253-4dde-8c9e-ed02f9954bd0",
         },
         Object {
           "alias": "rerum",
-          "avatar": "https://cdn.fakercloud.com/avatars/judzhin_miles_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "f21f9e7b-ae3b-4068-a59e-d7161ab83f5c",
         },
         Object {
           "alias": "dolores",
-          "avatar": "https://cdn.fakercloud.com/avatars/aoimedia_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "b3692b8c-1fb3-4c6d-ab5e-5c7c81412442",
         },
       ],
@@ -963,52 +963,52 @@ Object {
       "users": Array [
         Object {
           "alias": "totam",
-          "avatar": "https://cdn.fakercloud.com/avatars/funwatercat_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "a59bf68d-87ad-4b09-a9a9-657c19249381",
         },
         Object {
           "alias": "rerum",
-          "avatar": "https://cdn.fakercloud.com/avatars/giuliusa_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "d042a064-75d9-46c7-9221-ebbd79ae8a2c",
         },
         Object {
           "alias": "autem",
-          "avatar": "https://cdn.fakercloud.com/avatars/perfectflow_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "f0ce291d-e6eb-4bdc-a2fc-a33206a03d42",
         },
         Object {
           "alias": "voluptas",
-          "avatar": "https://cdn.fakercloud.com/avatars/sbtransparent_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "095c99af-7697-4f5c-bf4e-ce1130732032",
         },
         Object {
           "alias": "saepe",
-          "avatar": "https://cdn.fakercloud.com/avatars/doooon_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "5e3ed094-ace7-4bc4-b018-2b7cf30a3f64",
         },
         Object {
           "alias": "quia",
-          "avatar": "https://cdn.fakercloud.com/avatars/franciscoamk_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "c6393ff9-aeca-4f75-8755-c0202631a252",
         },
         Object {
           "alias": "cumque",
-          "avatar": "https://cdn.fakercloud.com/avatars/j_drake__128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "5a1662c1-7479-40d4-81b0-8d7b0d6205ae",
         },
         Object {
           "alias": "sit",
-          "avatar": "https://cdn.fakercloud.com/avatars/kirangopal_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "1e4ff036-9935-4361-9839-0cb3fa0cdc82",
         },
         Object {
           "alias": "eveniet",
-          "avatar": "https://cdn.fakercloud.com/avatars/mocabyte_128.jpg",
+          "avatar": "/.mock/avatar_8.png",
           "id": "10881543-44fd-4784-8f1f-1bc2bef70c9b",
         },
         Object {
           "alias": "possimus",
-          "avatar": "https://cdn.fakercloud.com/avatars/bistrianiosip_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "8c4c6717-f185-4ee7-bebc-cf38c8aef165",
         },
       ],
@@ -1034,7 +1034,7 @@ Object {
           "id": "6d3858a5-47d3-44dc-b5d8-9dc7a9f5b7f0",
           "postsTo": Object {
             "alias": "similique",
-            "avatar": "https://cdn.fakercloud.com/avatars/lososina_128.jpg",
+            "avatar": "/.mock/avatar_7.png",
             "displayName": "Gia",
             "id": "c7dcd053-6b95-401d-8937-1a0f2c6ad37f",
           },
@@ -1062,7 +1062,7 @@ Object {
           "id": "66edde53-db27-43ea-854a-01d7254837eb",
           "postedBy": Object {
             "alias": "ea",
-            "avatar": "https://cdn.fakercloud.com/avatars/plbabin_128.jpg",
+            "avatar": "/.mock/avatar_10.png",
             "displayName": "Newton",
             "id": "7ce2212c-10a6-4a0a-bf33-d0b2369e7d10",
           },
@@ -1078,7 +1078,7 @@ exports[`index.transform transformer findUser.userが存在する場合 6 1`] = 
 Object {
   "user": Object {
     "alias": "saepe",
-    "avatar": "https://cdn.fakercloud.com/avatars/joeymurdah_128.jpg",
+    "avatar": "/.mock/avatar_6.png",
     "displayName": "Reese",
     "followees": Object {
       "count": 41320,
@@ -1086,52 +1086,52 @@ Object {
       "users": Array [
         Object {
           "alias": "quod",
-          "avatar": "https://cdn.fakercloud.com/avatars/marclgonzales_128.jpg",
+          "avatar": "/.mock/avatar_8.png",
           "id": "ecd70ab2-c5b9-4b78-911f-3633db7f84ca",
         },
         Object {
           "alias": "voluptas",
-          "avatar": "https://cdn.fakercloud.com/avatars/jpenico_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "bbcee5d4-46bb-46b7-abf5-7e5bb31a60cd",
         },
         Object {
           "alias": "rerum",
-          "avatar": "https://cdn.fakercloud.com/avatars/petebernardo_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "48327c59-b336-458d-898e-7fade2796746",
         },
         Object {
           "alias": "et",
-          "avatar": "https://cdn.fakercloud.com/avatars/jordyvdboom_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "fd8a827b-6063-44e0-a629-a82aa14a0cf3",
         },
         Object {
           "alias": "accusantium",
-          "avatar": "https://cdn.fakercloud.com/avatars/scips_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "8650a5da-9497-412b-a3f7-10c55d68a855",
         },
         Object {
           "alias": "ipsa",
-          "avatar": "https://cdn.fakercloud.com/avatars/digitalmaverick_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "b4c219d4-ec32-41cd-9d04-80acfac9ce7a",
         },
         Object {
           "alias": "illum",
-          "avatar": "https://cdn.fakercloud.com/avatars/akashsharma39_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "d70f849e-1514-49b7-9400-6ac1e014f442",
         },
         Object {
           "alias": "nihil",
-          "avatar": "https://cdn.fakercloud.com/avatars/davecraige_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "0cd6b3d8-048d-437b-9afc-563af59ff9f7",
         },
         Object {
           "alias": "non",
-          "avatar": "https://cdn.fakercloud.com/avatars/cybind_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "03983a28-563a-4cee-80e4-34d25fb3b5c0",
         },
         Object {
           "alias": "et",
-          "avatar": "https://cdn.fakercloud.com/avatars/isnifer_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "aeef3a04-407d-402c-838b-4dd88872ebe3",
         },
       ],
@@ -1142,52 +1142,52 @@ Object {
       "users": Array [
         Object {
           "alias": "voluptatem",
-          "avatar": "https://cdn.fakercloud.com/avatars/lvovenok_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "a14f0617-6312-43bb-9771-431e002afaca",
         },
         Object {
           "alias": "ipsa",
-          "avatar": "https://cdn.fakercloud.com/avatars/jagan123_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "6c8d9ac2-1b74-48de-9e17-e17bf8011ec1",
         },
         Object {
           "alias": "molestiae",
-          "avatar": "https://cdn.fakercloud.com/avatars/timmillwood_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "7bd3623d-d813-4483-97e5-aeccbb62398d",
         },
         Object {
           "alias": "consequatur",
-          "avatar": "https://cdn.fakercloud.com/avatars/bistrianiosip_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "9a74946a-4b14-4ea3-80d6-a1e816d3f993",
         },
         Object {
           "alias": "error",
-          "avatar": "https://cdn.fakercloud.com/avatars/mizko_128.jpg",
+          "avatar": "/.mock/avatar_8.png",
           "id": "0a647e7a-aec3-4d45-8946-aba989b6dacd",
         },
         Object {
           "alias": "labore",
-          "avatar": "https://cdn.fakercloud.com/avatars/y2graphic_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "f2214a15-a52e-45d2-8555-a49f3d99f008",
         },
         Object {
           "alias": "delectus",
-          "avatar": "https://cdn.fakercloud.com/avatars/isnifer_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "5dc47716-57d0-4b64-bb25-22df34893e0a",
         },
         Object {
           "alias": "qui",
-          "avatar": "https://cdn.fakercloud.com/avatars/chadengle_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "e6501167-2ea3-4cdc-8129-4769d6aed274",
         },
         Object {
           "alias": "placeat",
-          "avatar": "https://cdn.fakercloud.com/avatars/buddhasource_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "7b429694-dce0-49cb-a66a-afdf52cf5030",
         },
         Object {
           "alias": "est",
-          "avatar": "https://cdn.fakercloud.com/avatars/d_nny_m_cher_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "940f8ffc-993f-4c9b-b02b-cb8cd4c1acc3",
         },
       ],
@@ -1213,7 +1213,7 @@ Object {
           "id": "d3e7c41f-f378-4eb1-af95-168ac1e3b926",
           "postsTo": Object {
             "alias": "tempore",
-            "avatar": "https://cdn.fakercloud.com/avatars/g3d_128.jpg",
+            "avatar": "/.mock/avatar_5.png",
             "displayName": "Ariane",
             "id": "f92cf25a-00d0-4c57-bc4b-d714c24ef1bb",
           },
@@ -1241,7 +1241,7 @@ Object {
           "id": "b3265622-d0f0-40a1-8728-3dd5e274b094",
           "postedBy": Object {
             "alias": "harum",
-            "avatar": "https://cdn.fakercloud.com/avatars/konus_128.jpg",
+            "avatar": "/.mock/avatar_7.png",
             "displayName": "Darlene",
             "id": "65bb321b-f778-4fa9-9150-be1978bfef8b",
           },
@@ -1257,7 +1257,7 @@ exports[`index.transform transformer findUser.userが存在する場合 7 1`] = 
 Object {
   "user": Object {
     "alias": "beatae",
-    "avatar": "https://cdn.fakercloud.com/avatars/frankiefreesbie_128.jpg",
+    "avatar": "/.mock/avatar_5.png",
     "displayName": "Creola",
     "followees": Object {
       "count": 45212,
@@ -1265,52 +1265,52 @@ Object {
       "users": Array [
         Object {
           "alias": "ut",
-          "avatar": "https://cdn.fakercloud.com/avatars/gofrasdesign_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "e40c94fd-328c-4ef2-b86c-5a37137795f7",
         },
         Object {
           "alias": "nihil",
-          "avatar": "https://cdn.fakercloud.com/avatars/kamal_chaneman_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "4d7cf529-2417-4854-a45e-76b66fec25b4",
         },
         Object {
           "alias": "qui",
-          "avatar": "https://cdn.fakercloud.com/avatars/uxalex_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "69aa8466-0a17-4bc8-abbf-7af024a983df",
         },
         Object {
           "alias": "est",
-          "avatar": "https://cdn.fakercloud.com/avatars/ssiskind_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "7da7add2-8407-41bc-b62a-58564c2f6478",
         },
         Object {
           "alias": "rerum",
-          "avatar": "https://cdn.fakercloud.com/avatars/al_li_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "c7817cc7-e3ae-4c4f-b05e-64372c6bd2ca",
         },
         Object {
           "alias": "consequuntur",
-          "avatar": "https://cdn.fakercloud.com/avatars/sachingawas_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "757d76f9-bb0d-4cc8-8266-7f038d96d9f2",
         },
         Object {
           "alias": "fuga",
-          "avatar": "https://cdn.fakercloud.com/avatars/ccinojasso1_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "39a72c38-9620-4cad-b038-8c8f74428efe",
         },
         Object {
           "alias": "voluptatem",
-          "avatar": "https://cdn.fakercloud.com/avatars/zvchkelly_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "a7ebfd92-2a6c-4f85-ab07-46c80d0a5d1a",
         },
         Object {
           "alias": "aliquid",
-          "avatar": "https://cdn.fakercloud.com/avatars/martinansty_128.jpg",
+          "avatar": "/.mock/avatar_8.png",
           "id": "0885b169-2350-494f-8ff3-801d5e371ccd",
         },
         Object {
           "alias": "id",
-          "avatar": "https://cdn.fakercloud.com/avatars/nemanjaivanovic_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "3de0d464-817e-4b03-a51b-526b28838a58",
         },
       ],
@@ -1321,52 +1321,52 @@ Object {
       "users": Array [
         Object {
           "alias": "ut",
-          "avatar": "https://cdn.fakercloud.com/avatars/pmeissner_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "3c566f3f-e3d7-41c5-a3d7-34f8de060a29",
         },
         Object {
           "alias": "illum",
-          "avatar": "https://cdn.fakercloud.com/avatars/operatino_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "808b3f09-b47a-4db6-a022-f0f4649902f3",
         },
         Object {
           "alias": "omnis",
-          "avatar": "https://cdn.fakercloud.com/avatars/bennyjien_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "a4c23c41-329a-417e-a7a7-014acdeaa37c",
         },
         Object {
           "alias": "blanditiis",
-          "avatar": "https://cdn.fakercloud.com/avatars/dnirmal_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "9d497458-0a94-4fd5-aae1-d11aa444ce83",
         },
         Object {
           "alias": "id",
-          "avatar": "https://cdn.fakercloud.com/avatars/sterlingrules_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "e80b885b-00c9-489e-a9b5-3fb1f06b2555",
         },
         Object {
           "alias": "provident",
-          "avatar": "https://cdn.fakercloud.com/avatars/dotgridline_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "959eba65-2093-46fa-ae29-43e32ecd26fe",
         },
         Object {
           "alias": "reprehenderit",
-          "avatar": "https://cdn.fakercloud.com/avatars/puzik_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "0aeb5bb4-8e14-4142-92f0-b03f11a8f1f3",
         },
         Object {
           "alias": "aspernatur",
-          "avatar": "https://cdn.fakercloud.com/avatars/barputro_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "ef37b03f-0016-4d8a-afd8-966ddcd1dbbe",
         },
         Object {
           "alias": "amet",
-          "avatar": "https://cdn.fakercloud.com/avatars/aaronalfred_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "477587d2-36a4-450c-a3a7-61538ea51ea8",
         },
         Object {
           "alias": "unde",
-          "avatar": "https://cdn.fakercloud.com/avatars/stefanotirloni_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "ecb06d80-aac2-4757-b870-abba14deeb2d",
         },
       ],
@@ -1392,7 +1392,7 @@ Object {
           "id": "b70e84c9-b710-4df3-ac97-52cb0cdb7f74",
           "postsTo": Object {
             "alias": "voluptatem",
-            "avatar": "https://cdn.fakercloud.com/avatars/dpmachado_128.jpg",
+            "avatar": "/.mock/avatar_4.png",
             "displayName": "Rae",
             "id": "5fbfd15f-ffa7-48cb-b6cb-548e58c3068e",
           },
@@ -1420,7 +1420,7 @@ Object {
           "id": "5a6edeff-ee3f-410b-a54e-5777f39c5355",
           "postedBy": Object {
             "alias": "qui",
-            "avatar": "https://cdn.fakercloud.com/avatars/aleinadsays_128.jpg",
+            "avatar": "/.mock/avatar_1.png",
             "displayName": "Gisselle",
             "id": "1deba64b-e828-4552-bdfd-c2db15845919",
           },
@@ -1436,7 +1436,7 @@ exports[`index.transform transformer findUser.userが存在する場合 8 1`] = 
 Object {
   "user": Object {
     "alias": "officiis",
-    "avatar": "https://cdn.fakercloud.com/avatars/jordyvdboom_128.jpg",
+    "avatar": "/.mock/avatar_6.png",
     "displayName": "Edyth",
     "followees": Object {
       "count": 97385,
@@ -1444,52 +1444,52 @@ Object {
       "users": Array [
         Object {
           "alias": "distinctio",
-          "avatar": "https://cdn.fakercloud.com/avatars/tweetubhai_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "503414fa-2452-4173-86fe-85af1055469c",
         },
         Object {
           "alias": "amet",
-          "avatar": "https://cdn.fakercloud.com/avatars/johncafazza_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "452614ac-1a71-4a92-8a00-7ec3f9940275",
         },
         Object {
           "alias": "enim",
-          "avatar": "https://cdn.fakercloud.com/avatars/j04ntoh_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "a43d2d8b-17b8-4faf-b5b9-7a98a7700106",
         },
         Object {
           "alias": "voluptatum",
-          "avatar": "https://cdn.fakercloud.com/avatars/salimianoff_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "c2f819bb-f4b6-47d1-9cb0-81d3b5de3747",
         },
         Object {
           "alias": "aspernatur",
-          "avatar": "https://cdn.fakercloud.com/avatars/kaelifa_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "7399d889-f4b6-4289-a84c-ec6432ea602c",
         },
         Object {
           "alias": "eius",
-          "avatar": "https://cdn.fakercloud.com/avatars/jarsen_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "ef4ff35d-6de3-4aac-bbbe-16827402fbe8",
         },
         Object {
           "alias": "quisquam",
-          "avatar": "https://cdn.fakercloud.com/avatars/johnriordan_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "9c785a86-9ad1-4169-b862-52aa5e30762e",
         },
         Object {
           "alias": "magnam",
-          "avatar": "https://cdn.fakercloud.com/avatars/joki4_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "95630082-2898-4280-87d3-dc72c1c65b28",
         },
         Object {
           "alias": "consequatur",
-          "avatar": "https://cdn.fakercloud.com/avatars/dallasbpeters_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "356e0e4b-8d68-48fb-8e85-b46779b2d053",
         },
         Object {
           "alias": "eos",
-          "avatar": "https://cdn.fakercloud.com/avatars/stefooo_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "46ba64ff-bd29-4f56-a6af-ba10cbe1a6b3",
         },
       ],
@@ -1500,52 +1500,52 @@ Object {
       "users": Array [
         Object {
           "alias": "in",
-          "avatar": "https://cdn.fakercloud.com/avatars/helderleal_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "5e0b4e2b-508e-4c3f-94ef-c2170274a0b3",
         },
         Object {
           "alias": "recusandae",
-          "avatar": "https://cdn.fakercloud.com/avatars/baumannzone_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "f754101e-f363-4b08-8646-9588cfcdeb83",
         },
         Object {
           "alias": "omnis",
-          "avatar": "https://cdn.fakercloud.com/avatars/sreejithexp_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "d439b7e9-e7d2-4aaf-b4ab-61ba5bba4706",
         },
         Object {
           "alias": "est",
-          "avatar": "https://cdn.fakercloud.com/avatars/konus_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "679540da-2c08-4eb6-ad8f-3e58becb046a",
         },
         Object {
           "alias": "suscipit",
-          "avatar": "https://cdn.fakercloud.com/avatars/bistrianiosip_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "bf6a8a68-5352-4df1-b08a-05ef721696d8",
         },
         Object {
           "alias": "ratione",
-          "avatar": "https://cdn.fakercloud.com/avatars/megdraws_128.jpg",
+          "avatar": "/.mock/avatar_8.png",
           "id": "1f5aee5a-5a59-4f32-8627-b3d73a016af8",
         },
         Object {
           "alias": "quia",
-          "avatar": "https://cdn.fakercloud.com/avatars/baliomega_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "8bc73a56-3973-4eda-a135-fbeff568d3f5",
         },
         Object {
           "alias": "quia",
-          "avatar": "https://cdn.fakercloud.com/avatars/sprayaga_128.jpg",
+          "avatar": "/.mock/avatar_11.png",
           "id": "22f460d4-81d0-4cf5-90bb-4571d1c7825f",
         },
         Object {
           "alias": "nemo",
-          "avatar": "https://cdn.fakercloud.com/avatars/vitorleal_128.jpg",
+          "avatar": "/.mock/avatar_12.png",
           "id": "eb196e04-aaf6-4955-a58b-627b42e45f75",
         },
         Object {
           "alias": "atque",
-          "avatar": "https://cdn.fakercloud.com/avatars/moscoz_128.jpg",
+          "avatar": "/.mock/avatar_8.png",
           "id": "9e53c0c5-8b2f-4d5c-972e-ce7171360baf",
         },
       ],
@@ -1571,7 +1571,7 @@ Object {
           "id": "08d1df46-51bd-4b7c-a1d7-5d2fdb4c019f",
           "postsTo": Object {
             "alias": "eos",
-            "avatar": "https://cdn.fakercloud.com/avatars/thedamianhdez_128.jpg",
+            "avatar": "/.mock/avatar_11.png",
             "displayName": "Jessy",
             "id": "af1880d6-8e60-416a-9a7b-53a6c764d6f0",
           },
@@ -1599,7 +1599,7 @@ Object {
           "id": "949f95e0-babf-4981-acfc-6fc4139161e5",
           "postedBy": Object {
             "alias": "facere",
-            "avatar": "https://cdn.fakercloud.com/avatars/randomlies_128.jpg",
+            "avatar": "/.mock/avatar_10.png",
             "displayName": "Josue",
             "id": "7592fb29-902e-4cb1-adab-7a2c6469090d",
           },
@@ -1615,7 +1615,7 @@ exports[`index.transform transformer findUser.userが存在する場合 9 1`] = 
 Object {
   "user": Object {
     "alias": "aut",
-    "avatar": "https://cdn.fakercloud.com/avatars/bartjo_128.jpg",
+    "avatar": "/.mock/avatar_2.png",
     "displayName": "Stan",
     "followees": Object {
       "count": 66689,
@@ -1623,52 +1623,52 @@ Object {
       "users": Array [
         Object {
           "alias": "libero",
-          "avatar": "https://cdn.fakercloud.com/avatars/d_nny_m_cher_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "88bf6ab9-da7c-4f6c-9f12-181f7a3deff2",
         },
         Object {
           "alias": "est",
-          "avatar": "https://cdn.fakercloud.com/avatars/abdullindenis_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "9dce0c95-1729-4679-b26e-df2eb6b4e50f",
         },
         Object {
           "alias": "ut",
-          "avatar": "https://cdn.fakercloud.com/avatars/ceekaytweet_128.jpg",
+          "avatar": "/.mock/avatar_3.png",
           "id": "a274060a-23c2-4222-95a7-db5c04ce7016",
         },
         Object {
           "alias": "ut",
-          "avatar": "https://cdn.fakercloud.com/avatars/adrienths_128.jpg",
+          "avatar": "/.mock/avatar_1.png",
           "id": "c50737b6-5383-403d-b868-9d7065b98242",
         },
         Object {
           "alias": "consequatur",
-          "avatar": "https://cdn.fakercloud.com/avatars/daykiine_128.jpg",
+          "avatar": "/.mock/avatar_4.png",
           "id": "382f9b79-2c1f-4804-81b7-2ac008d15c9c",
         },
         Object {
           "alias": "magnam",
-          "avatar": "https://cdn.fakercloud.com/avatars/logorado_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "c1fe28f2-e11d-4b87-8c9b-5cc57ef880ee",
         },
         Object {
           "alias": "ipsum",
-          "avatar": "https://cdn.fakercloud.com/avatars/nilshoenson_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "8089dd11-dccc-46c0-bc0a-ce987f14f54b",
         },
         Object {
           "alias": "aut",
-          "avatar": "https://cdn.fakercloud.com/avatars/jesseddy_128.jpg",
+          "avatar": "/.mock/avatar_6.png",
           "id": "4b4e1b4a-fdfa-4440-9f3a-b9826626e513",
         },
         Object {
           "alias": "sed",
-          "avatar": "https://cdn.fakercloud.com/avatars/paulfarino_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "ac7ba948-dc27-4907-ba07-8fed8e50f287",
         },
         Object {
           "alias": "maxime",
-          "avatar": "https://cdn.fakercloud.com/avatars/mrmartineau_128.jpg",
+          "avatar": "/.mock/avatar_8.png",
           "id": "358920ba-fab6-402e-a4bd-95e79e2d9c05",
         },
       ],
@@ -1679,52 +1679,52 @@ Object {
       "users": Array [
         Object {
           "alias": "quos",
-          "avatar": "https://cdn.fakercloud.com/avatars/psdesignuk_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "e07f7f27-c0e5-4b4a-9bfb-5ba22acef042",
         },
         Object {
           "alias": "voluptas",
-          "avatar": "https://cdn.fakercloud.com/avatars/lu4sh1i_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "b0048d75-de04-4168-94d7-e22e49ac1202",
         },
         Object {
           "alias": "eius",
-          "avatar": "https://cdn.fakercloud.com/avatars/haydn_woods_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "658c8b53-6b46-431c-9217-414d1dd16bee",
         },
         Object {
           "alias": "exercitationem",
-          "avatar": "https://cdn.fakercloud.com/avatars/samscouto_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "ac3e30f4-20a3-4c0a-84a5-4dd056ea2f82",
         },
         Object {
           "alias": "cumque",
-          "avatar": "https://cdn.fakercloud.com/avatars/olgary_128.jpg",
+          "avatar": "/.mock/avatar_9.png",
           "id": "c2591273-38b1-4bb0-a05e-a51424f38c44",
         },
         Object {
           "alias": "fugit",
-          "avatar": "https://cdn.fakercloud.com/avatars/bfrohs_128.jpg",
+          "avatar": "/.mock/avatar_2.png",
           "id": "eac82a52-c7e7-4c02-bee1-adfe59c99490",
         },
         Object {
           "alias": "quos",
-          "avatar": "https://cdn.fakercloud.com/avatars/sbtransparent_128.jpg",
+          "avatar": "/.mock/avatar_10.png",
           "id": "381b8750-3d56-485b-b90a-09f5d5987b8e",
         },
         Object {
           "alias": "qui",
-          "avatar": "https://cdn.fakercloud.com/avatars/kostaspt_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "f87d201c-53ca-45d4-9164-fa4ace6a5cc7",
         },
         Object {
           "alias": "tempore",
-          "avatar": "https://cdn.fakercloud.com/avatars/kojourin_128.jpg",
+          "avatar": "/.mock/avatar_7.png",
           "id": "b032d9b9-70c2-4e0c-942b-a9fd96175173",
         },
         Object {
           "alias": "culpa",
-          "avatar": "https://cdn.fakercloud.com/avatars/gregrwilkinson_128.jpg",
+          "avatar": "/.mock/avatar_5.png",
           "id": "78dbf431-7266-452b-9eb1-e401024e9df2",
         },
       ],
@@ -1750,7 +1750,7 @@ Object {
           "id": "a4fbd959-d345-4f46-88ea-750d7f693384",
           "postsTo": Object {
             "alias": "velit",
-            "avatar": "https://cdn.fakercloud.com/avatars/mohanrohith_128.jpg",
+            "avatar": "/.mock/avatar_8.png",
             "displayName": "Jack",
             "id": "9da23f5d-ff43-4bf4-895d-7d30c6563eb0",
           },
@@ -1778,7 +1778,7 @@ Object {
           "id": "982380f8-51aa-483f-81d7-b863ab5fee40",
           "postedBy": Object {
             "alias": "maxime",
-            "avatar": "https://cdn.fakercloud.com/avatars/gearpixels_128.jpg",
+            "avatar": "/.mock/avatar_5.png",
             "displayName": "Joey",
             "id": "c349999f-ae64-4a15-9f83-ff1c56b392dc",
           },
