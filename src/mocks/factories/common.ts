@@ -25,18 +25,18 @@ export const alias = faker.lorem.word;
 export const displayName = faker.name.firstName;
 export const avatar = () =>
   which([
-    '/mock/avatar_1.png',
-    '/mock/avatar_2.png',
-    '/mock/avatar_3.png',
-    '/mock/avatar_4.png',
-    '/mock/avatar_5.png',
-    '/mock/avatar_6.png',
-    '/mock/avatar_7.png',
-    '/mock/avatar_8.png',
-    '/mock/avatar_9.png',
-    '/mock/avatar_10.png',
-    '/mock/avatar_11.png',
-    '/mock/avatar_12.png',
+    '/.mock/avatar_1.png',
+    '/.mock/avatar_2.png',
+    '/.mock/avatar_3.png',
+    '/.mock/avatar_4.png',
+    '/.mock/avatar_5.png',
+    '/.mock/avatar_6.png',
+    '/.mock/avatar_7.png',
+    '/.mock/avatar_8.png',
+    '/.mock/avatar_9.png',
+    '/.mock/avatar_10.png',
+    '/.mock/avatar_11.png',
+    '/.mock/avatar_12.png',
   ]);
 
 // Henken, Answer
@@ -52,14 +52,14 @@ export const score = faker.datatype.number;
 // Book
 export const bookCover = () =>
   which([
-    '/mock/bookcover_1.jpg',
-    '/mock/bookcover_2.jpg',
-    '/mock/bookcover_3.jpg',
-    '/mock/bookcover_4.jpg',
-    '/mock/bookcover_5.jpg',
-    '/mock/bookcover_6.jpg',
-    '/mock/bookcover_7.jpg',
-    '/mock/bookcover_8.jpg',
+    '/.mock/bookcover_1.jpg',
+    '/.mock/bookcover_2.jpg',
+    '/.mock/bookcover_3.jpg',
+    '/.mock/bookcover_4.jpg',
+    '/.mock/bookcover_5.jpg',
+    '/.mock/bookcover_6.jpg',
+    '/.mock/bookcover_7.jpg',
+    '/.mock/bookcover_8.jpg',
   ]);
 
 // Author
