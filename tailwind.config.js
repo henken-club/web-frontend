@@ -9,6 +9,11 @@ module.exports = {
       1: 1,
       infinity: 2147483647,
     },
+    extend: {
+      screens: {
+        xs: '360px',
+      },
+    },
   },
   variants: {
     extend: {

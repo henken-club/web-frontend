@@ -2,8 +2,15 @@
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
   "version": "0.2",
   "language": "en",
-  "files": ["src/**/*"],
-  "ignorePaths": ["*.snap", "*.codegen.*", "codegen.ts", "src/i18n/i18n-*"],
+  "files": [
+    "src/**/*"
+  ],
+  "ignorePaths": [
+    "*.snap",
+    "*.codegen.*",
+    "codegen.ts",
+    "src/i18n/i18n-*"
+  ],
   "words": [
     "bookcover",
     "bookseries",
@@ -14,7 +21,14 @@
     "henkens",
     "reexecute",
     "typesafe",
-    "unfollow"
+    "unfollow",
+    "viewports"
   ],
-  "ignoreWords": ["fontawesome", "fortawesome", "urql", "nextjs", "clsx"]
+  "ignoreWords": [
+    "fontawesome",
+    "fortawesome",
+    "urql",
+    "nextjs",
+    "clsx"
+  ]
 }
