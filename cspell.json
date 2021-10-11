@@ -5,6 +5,7 @@
   "files": ["src/**/*"],
   "ignorePaths": ["*.snap", "*.codegen.*", "codegen.ts", "src/i18n/i18n-*"],
   "words": [
+    "bookcover",
     "bookseries",
     "codegen",
     "followee",
