@@ -16,17 +16,17 @@ type RecommendsTo = {
 
 type ContentAuthor = {
   type: 'Author';
-  author: {name: string};
+  author: {name: string;};
 };
 
 type ContentBook = {
   type: 'Book';
-  book: {id: string; title: string; cover: string | null};
+  book: {id: string; title: string; cover: string | null;};
 };
 
 type ContentBookSeries = {
   type: 'BookSeries';
-  bookSeries: {id: string; title: string};
+  bookSeries: {id: string; title: string;};
 };
 
 export type TransformedProps = {
@@ -72,15 +72,14 @@ export const transformContent = (
 
 export const transformer = ({
   findRecommendation: {recommendation},
-}: PageResult): TransformedProps | null =>
-  recommendation
-    ? {
-        recommendation: {
-          id: recommendation.id,
-          score: recommendation.score,
-          updatedAt: recommendation.updatedAt,
-          recommendsTo: serializeUser(recommendation.recommendsTo),
-          content: transformContent(recommendation.content),
-        },
-      }
-    : null;
+}: PageResult): TransformedProps | null => (recommendation
+  ? {
+    recommendation: {
+      id: recommendation.id,
+      score: recommendation.score,
+      updatedAt: recommendation.updatedAt,
+      recommendsTo: serializeUser(recommendation.recommendsTo),
+      content: transformContent(recommendation.content),
+    },
+  }
+  : null);

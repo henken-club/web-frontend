@@ -1,5 +1,5 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
 import {IconType} from '../Icon';
 
@@ -7,14 +7,13 @@ export const ButtonTemplate: React.VFC<{
   className?: string;
   onClick(): void;
   icon?: IconType;
-  text: React.VFC<{className?: string}>;
+  text: React.VFC<{className?: string;}>;
 }> = ({className, onClick, icon: Icon, text: Text}) => (
   <button className={clsx(className)} type="button" onClick={onClick}>
     {Icon && <Icon />}
     <Text />
   </button>
 );
-
 export type ButtonProps = {
   className?: string;
   onClick(): void;
@@ -38,13 +37,11 @@ export const ButtonNormal: React.VFC<ButtonProps> = ({
       ['rounded-md'],
     )}
     // eslint-disable-next-line @shopify/jsx-no-complex-expressions
-    icon={
-      Icon
-        ? ({className, ...props}) => (
-            <Icon {...props} className={clsx(className, 'text-xs')} />
-          )
-        : undefined
-    }
+    icon={Icon
+      ? ({className, ...props}) => (
+        <Icon {...props} className={clsx(className, 'text-xs')} />
+      )
+      : undefined}
     text={({className, ...props}) => (
       <span {...props} className={clsx(className, [{'ml-1': Boolean(Icon)}])}>
         {text}

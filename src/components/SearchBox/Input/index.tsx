@@ -35,7 +35,7 @@ export const Component: React.VFC<{
     </div>
   );
 };
-export const Input: React.VFC<{className?: string}> = ({...props}) => {
+export const Input: React.VFC<{className?: string;}> = ({...props}) => {
   const {updateQuery, updateFocus} = useContext(SearchBoxContext);
 
   return (

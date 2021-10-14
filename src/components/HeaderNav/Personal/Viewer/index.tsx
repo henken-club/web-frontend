@@ -1,5 +1,5 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 import styled from 'styled-components';
 
 import {Accordion} from './Accordion';
@@ -28,7 +28,7 @@ const Details = styled.details`
 
 export type ViewerProps = {
   className?: string;
-  viewer: {id: string; alias: string; displayName: string; avatar: string};
+  viewer: {id: string; alias: string; displayName: string; avatar: string;};
 };
 export const Viewer: React.VFC<ViewerProps> = ({className, viewer}) => {
   return (

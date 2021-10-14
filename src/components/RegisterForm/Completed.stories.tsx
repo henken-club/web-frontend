@@ -2,8 +2,8 @@ import {Meta, Story} from '@storybook/react';
 import React, {ComponentProps} from 'react';
 import {FormProvider, useForm} from 'react-hook-form';
 
-import {FormValue} from './FormValue';
 import {Component} from './Completed';
+import {FormValue} from './FormValue';
 
 export default {
   title: 'RegisterForm/Completed',

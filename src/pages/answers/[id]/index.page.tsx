@@ -25,7 +25,7 @@ const AllAnswerPagesQuery = gql`
   }
 `;
 
-export type UrlQuery = {id: string};
+export type UrlQuery = {id: string;};
 export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
   return getSdk(graphqlClient)
     .AllAnswerPages({limit: 10})
@@ -84,15 +84,17 @@ export type StaticProps = SerializedProps;
 export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
-  if (!params?.id) return {notFound: true};
+  if (!params?.id)
+    return {notFound: true};
   const result = await getSdk(graphqlClient).AnswerPage({id: params.id});
   const transformed = serializer(result);
-  if (transformed === null) return {notFound: true};
+  if (transformed === null)
+    return {notFound: true};
   return {props: transformed, revalidate: 60};
 };
 
 export type PageProps = Merge<
-  {className?: string},
+  {className?: string;},
   InferGetStaticPropsType<typeof getStaticProps>
 >;
 export const Page: NextPage<PageProps> = ({className, answer, ...props}) => {

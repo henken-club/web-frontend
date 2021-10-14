@@ -17,9 +17,9 @@ type ResultAnswer = Exclude<
 export const serializeContent: SerializeContent<
   ResultAnswer['henken']['content'],
   {
-    book: {title: string; cover: string | null};
-    bookSeries: {title: string};
-    author: {name: string};
+    book: {title: string; cover: string | null;};
+    bookSeries: {title: string;};
+    author: {name: string;};
   }
 > = (content) => {
   switch (content.__typename) {
@@ -79,18 +79,17 @@ export type SerializedProps = {
 
 export const serializer = ({
   findAnswer: {answer},
-}: PageQueryResult): SerializedProps | null =>
-  answer
-    ? {
-        answer: serializeAnswer({
-          ...answer,
-          type: serializeAnswerType(answer.type),
-          henken: serializeHenken({
-            ...answer.henken,
-            postsTo: serializeUser({...answer.henken.postsTo}),
-            postedBy: serializeUser({...answer.henken.postedBy}),
-            content: serializeContent({...answer.henken.content}),
-          }),
-        }),
-      }
-    : null;
+}: PageQueryResult): SerializedProps | null => (answer
+  ? {
+    answer: serializeAnswer({
+      ...answer,
+      type: serializeAnswerType(answer.type),
+      henken: serializeHenken({
+        ...answer.henken,
+        postsTo: serializeUser({...answer.henken.postsTo}),
+        postedBy: serializeUser({...answer.henken.postedBy}),
+        content: serializeContent({...answer.henken.content}),
+      }),
+    }),
+  }
+  : null);

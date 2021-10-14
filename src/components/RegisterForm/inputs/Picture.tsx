@@ -4,10 +4,10 @@ import {useFormContext} from 'react-hook-form';
 
 import {FormValue} from '../FormValue';
 
-import {useTranslation} from '~/i18n/useTranslation';
 import {Image} from '~/components/Image';
+import {useTranslation} from '~/i18n/useTranslation';
 
-export const Picture: React.VFC<{className?: string; disabled: boolean}> = ({
+export const Picture: React.VFC<{className?: string; disabled: boolean;}> = ({
   className,
   disabled,
 }) => {

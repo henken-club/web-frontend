@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 
 import {useAuth} from '~/auth/useAuth';
 
-export const useAccessToken = (): {token: string | null} => {
+export const useAccessToken = (): {token: string | null;} => {
   const {isAuthenticated, getAccessTokenSilently} = useAuth();
 
   const [token, setToken] = useState<string | null>(null);

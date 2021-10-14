@@ -5,10 +5,10 @@ import {
   InferGetStaticPropsType,
   NextPage,
 } from 'next';
-import React from 'react';
-import {Merge} from 'type-fest';
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
+import {Merge} from 'type-fest';
 
 import {getSdk} from './index.page.codegen';
 import {TransformedProps, transformer} from './index.transform';
@@ -28,7 +28,7 @@ const AllUserPagesQuery = gql`
   }
 `;
 
-export type UrlQuery = {alias: string};
+export type UrlQuery = {alias: string;};
 export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
   return getSdk(graphqlClient)
     .AllUserPages({limit: 100})
@@ -164,20 +164,23 @@ export type StaticProps = TransformedProps;
 export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
-  if (!params?.alias) return {notFound: true};
+  if (!params?.alias)
+    return {notFound: true};
 
   try {
     const result = await getSdk(graphqlClient).UserPage({alias: params.alias});
     const transformed = transformer(result);
-    if (transformed) return {props: transformed, revalidate: 60};
-    else return {notFound: true};
+    if (transformed)
+      return {props: transformed, revalidate: 60};
+    else
+      return {notFound: true};
   } catch (error) {
     return {notFound: true};
   }
 };
 
 export type PageProps = Merge<
-  {className?: string},
+  {className?: string;},
   InferGetStaticPropsType<typeof getStaticProps>
 >;
 export const Page: NextPage<PageProps> = ({className, user, ...props}) => {

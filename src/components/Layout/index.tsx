@@ -6,6 +6,8 @@ import {HeaderNav} from '~/components/HeaderNav';
 export const DefaultLayout: React.FC = ({children}) => (
   <main className={clsx(['flex', 'flex-col'], ['min-h-screen'])}>
     <HeaderNav className={clsx(['sticky'], ['w-full'])} />
-    <section className={clsx('container', 'mx-auto')}>{children}</section>
+    <section className={clsx('container', 'mx-auto')}>
+      {children}
+    </section>
   </main>
 );

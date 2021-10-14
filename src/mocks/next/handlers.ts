@@ -28,15 +28,15 @@ import {
   RecommendationPageDocument,
   RecommendationPageQuery,
   RecommendationPageQueryVariables,
+  RegisterUserDocument,
+  RegisterUserMutation,
+  RegisterUserMutationVariables,
+  SearchBoxDocument,
+  SearchBoxQuery,
+  SearchBoxQueryVariables,
   UserPageDocument,
   UserPageQuery,
   UserPageQueryVariables,
-  RegisterUserMutation,
-  RegisterUserMutationVariables,
-  RegisterUserDocument,
-  SearchBoxQuery,
-  SearchBoxQueryVariables,
-  SearchBoxDocument,
 } from '../codegen';
 import {
   factoryAllAnswerPages,
@@ -75,7 +75,8 @@ export const handlers = [
       faker.seed(0);
       if (req.headers.get('Authorization'))
         return res(ctx.data(factoryAuthorizedViewer()));
-      else return res(ctx.data(factoryUnauthorizedViewer()));
+      else
+        return res(ctx.data(factoryUnauthorizedViewer()));
     },
   ),
   graphql.query<SearchBoxQuery, SearchBoxQueryVariables>(

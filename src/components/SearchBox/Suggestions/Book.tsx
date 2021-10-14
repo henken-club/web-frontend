@@ -12,7 +12,7 @@ export const Component: React.VFC<{
   className?: string;
   id: string;
   title: string;
-  authors: {id: string; name: string}[];
+  authors: {id: string; name: string;}[];
 }> = ({className, id, title, authors}) => {
   const {LL} = useTranslation();
   return (

@@ -6,7 +6,7 @@ import {useTranslation} from '~/i18n/useTranslation';
 
 export const BadgeTemplate: React.VFC<{
   className?: string;
-  icon: React.VFC<{className?: string}>;
+  icon: React.VFC<{className?: string;}>;
   text: string;
 }> = ({className, icon: Icon, text}) => {
   return (

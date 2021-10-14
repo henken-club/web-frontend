@@ -2,8 +2,8 @@ import faker from 'faker';
 
 import {transformer} from './index.transform';
 
-import {factoryUserPage} from '~/mocks/factories/UserPage';
 import {alias} from '~/mocks/factories/common';
+import {factoryUserPage} from '~/mocks/factories/UserPage';
 
 describe('index.transform', () => {
   describe('transformer', () => {

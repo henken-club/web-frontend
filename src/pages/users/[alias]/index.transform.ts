@@ -8,7 +8,7 @@ type User = Exclude<UserPageQueryResult['findUser']['user'], null | undefined>;
 export const transformUser = <T extends Record<string, unknown>>({
   __typename,
   ...props
-}: {__typename: 'User'} & T) => ({
+}: {__typename: 'User';} & T) => ({
   ...props,
 });
 
@@ -23,48 +23,49 @@ export const transformAnswerType = (type: AnswerTypeEnum): AnswerType => {
 };
 
 type ActivityNode =
-  | {id: string} & (
-      | {
-          type: 'Henken';
-          henken: {
+  & {id: string;}
+  & (
+    | {
+      type: 'Henken';
+      henken: {
+        id: string;
+        createdAt: string;
+        comment: string;
+        postedBy: {
+          id: string;
+          alias: string;
+          displayName: string;
+          avatar: string;
+        };
+        content:
+          | {type: 'Book'; book: {id: string; title: string;};}
+          | {type: 'BookSeries'; bookSeries: {id: string; title: string;};};
+      };
+    }
+    | {
+      type: 'Answer';
+      answer: {
+        id: string;
+        createdAt: string;
+        comment: string;
+        type: AnswerType;
+        answerTo: {
+          id: string;
+          createdAt: string;
+          comment: string;
+          postedBy: {
             id: string;
-            createdAt: string;
-            comment: string;
-            postedBy: {
-              id: string;
-              alias: string;
-              displayName: string;
-              avatar: string;
-            };
-            content:
-              | {type: 'Book'; book: {id: string; title: string}}
-              | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
+            alias: string;
+            displayName: string;
+            avatar: string;
           };
-        }
-      | {
-          type: 'Answer';
-          answer: {
-            id: string;
-            createdAt: string;
-            comment: string;
-            type: AnswerType;
-            answerTo: {
-              id: string;
-              createdAt: string;
-              comment: string;
-              postedBy: {
-                id: string;
-                alias: string;
-                displayName: string;
-                avatar: string;
-              };
-              content:
-                | {type: 'Book'; book: {id: string; title: string}}
-                | {type: 'BookSeries'; bookSeries: {id: string; title: string}};
-            };
-          };
-        }
-    );
+          content:
+            | {type: 'Book'; book: {id: string; title: string;};}
+            | {type: 'BookSeries'; bookSeries: {id: string; title: string;};};
+        };
+      };
+    }
+  );
 
 export type TransformedProps = {
   user: {
@@ -97,9 +98,9 @@ export type TransformedProps = {
         id: string;
         comment: string;
         content:
-          | {type: 'Book'; book: {id: string; title: string}}
-          | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
-          | {type: 'Author'; author: {id: string; name: string}};
+          | {type: 'Book'; book: {id: string; title: string;};}
+          | {type: 'BookSeries'; bookSeries: {id: string; title: string;};}
+          | {type: 'Author'; author: {id: string; name: string;};};
         postsTo: {
           id: string;
           alias: string;
@@ -120,9 +121,9 @@ export type TransformedProps = {
         id: string;
         comment: string;
         content:
-          | {type: 'Book'; book: {id: string; title: string}}
-          | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
-          | {type: 'Author'; author: {id: string; name: string}};
+          | {type: 'Book'; book: {id: string; title: string;};}
+          | {type: 'BookSeries'; bookSeries: {id: string; title: string;};}
+          | {type: 'Author'; author: {id: string; name: string;};};
         postedBy: {
           id: string;
           alias: string;
@@ -141,13 +142,13 @@ export type TransformedProps = {
 
 export const transformHenkenContent = (
   props:
-    | {__typename: 'Book'; id: string; title: string}
-    | {__typename: 'BookSeries'; id: string; title: string}
-    | {__typename: 'Author'; id: string; name: string},
+    | {__typename: 'Book'; id: string; title: string;}
+    | {__typename: 'BookSeries'; id: string; title: string;}
+    | {__typename: 'Author'; id: string; name: string;},
 ):
-  | {type: 'Book'; book: {id: string; title: string}}
-  | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
-  | {type: 'Author'; author: {id: string; name: string}} => {
+  | {type: 'Book'; book: {id: string; title: string;};}
+  | {type: 'BookSeries'; bookSeries: {id: string; title: string;};}
+  | {type: 'Author'; author: {id: string; name: string;};} => {
   switch (props.__typename) {
     case 'Book':
       return {
@@ -169,62 +170,61 @@ export const transformHenkenContent = (
 
 export const transformer = ({
   findUser: {user},
-}: UserPageQueryResult): TransformedProps | null =>
-  user
-    ? {
-        user: {
-          id: user.id,
-          alias: user.alias,
-          displayName: user.displayName,
-          avatar: user.avatar,
-          followees: {
-            count: user.followees.totalCount,
-            more: user.followees.pageInfo.hasNextPage,
-            users: user.followees.edges.map(({node: {user}}) =>
-              transformUser(user),
-            ),
-          },
-          followers: {
-            count: user.followers.totalCount,
-            more: user.followers.pageInfo.hasNextPage,
-            users: user.followers.edges.map(({node: {user}}) =>
-              transformUser(user),
-            ),
-          },
-          postsHenkens: {
-            count: user.postsHenkens.totalCount,
-            more: user.postsHenkens.pageInfo.hasNextPage,
-            henkens: user.postsHenkens.edges.map(({node}) => ({
-              id: node.id,
-              comment: node.comment,
-              content: transformHenkenContent(node.content),
-              postsTo: transformUser(node.postsTo),
-              answer: node.answer
-                ? {
-                    id: node.answer.id,
-                    comment: node.answer.comment,
-                    type: transformAnswerType(node.answer.type),
-                  }
-                : null,
-            })),
-          },
-          receivedHenkens: {
-            count: user.receivedHenkens.totalCount,
-            more: user.receivedHenkens.pageInfo.hasNextPage,
-            henkens: user.receivedHenkens.edges.map(({node}) => ({
-              id: node.id,
-              comment: node.comment,
-              content: transformHenkenContent(node.content),
-              postedBy: transformUser(node.postedBy),
-              answer: node.answer
-                ? {
-                    id: node.answer.id,
-                    comment: node.answer.comment,
-                    type: transformAnswerType(node.answer.type),
-                  }
-                : null,
-            })),
-          },
-        },
-      }
-    : null;
+}: UserPageQueryResult): TransformedProps | null => (user
+  ? {
+    user: {
+      id: user.id,
+      alias: user.alias,
+      displayName: user.displayName,
+      avatar: user.avatar,
+      followees: {
+        count: user.followees.totalCount,
+        more: user.followees.pageInfo.hasNextPage,
+        users: user.followees.edges.map(({node: {user}}) =>
+          transformUser(user)
+        ),
+      },
+      followers: {
+        count: user.followers.totalCount,
+        more: user.followers.pageInfo.hasNextPage,
+        users: user.followers.edges.map(({node: {user}}) =>
+          transformUser(user)
+        ),
+      },
+      postsHenkens: {
+        count: user.postsHenkens.totalCount,
+        more: user.postsHenkens.pageInfo.hasNextPage,
+        henkens: user.postsHenkens.edges.map(({node}) => ({
+          id: node.id,
+          comment: node.comment,
+          content: transformHenkenContent(node.content),
+          postsTo: transformUser(node.postsTo),
+          answer: node.answer
+            ? {
+              id: node.answer.id,
+              comment: node.answer.comment,
+              type: transformAnswerType(node.answer.type),
+            }
+            : null,
+        })),
+      },
+      receivedHenkens: {
+        count: user.receivedHenkens.totalCount,
+        more: user.receivedHenkens.pageInfo.hasNextPage,
+        henkens: user.receivedHenkens.edges.map(({node}) => ({
+          id: node.id,
+          comment: node.comment,
+          content: transformHenkenContent(node.content),
+          postedBy: transformUser(node.postedBy),
+          answer: node.answer
+            ? {
+              id: node.answer.id,
+              comment: node.answer.comment,
+              type: transformAnswerType(node.answer.type),
+            }
+            : null,
+        })),
+      },
+    },
+  }
+  : null);

@@ -5,13 +5,13 @@ import {
   InferGetStaticPropsType,
   NextPage,
 } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import {Merge} from 'type-fest';
-import Link from 'next/link';
-import Image from 'next/image';
 
-import {SerializedProps, serializer} from './index.serializer';
 import {getSdk} from './index.page.codegen';
+import {SerializedProps, serializer} from './index.serializer';
 
 import {graphqlClient} from '~/libs/graphql-request';
 
@@ -27,7 +27,7 @@ const AllHenkenPagesQuery = gql`
   }
 `;
 
-export type UrlQuery = {id: string};
+export type UrlQuery = {id: string;};
 export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
   return getSdk(graphqlClient)
     .AllHenkenPages({limit: 100})
@@ -81,14 +81,16 @@ export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
   if (!params?.id) return {notFound: true};
+
   const result = await getSdk(graphqlClient).HenkenPage({id: params.id});
   const transformed = serializer(result);
   if (transformed === null) return {notFound: true};
+
   return {props: transformed, revalidate: 60};
 };
 
 export const User: React.VFC<{
-  user: {id: string; avatar: string; alias: string; displayName: string};
+  user: {id: string; avatar: string; alias: string; displayName: string;};
 }> = ({user: {id, alias, avatar, displayName}}) => (
   <>
     <Link href={`/users/${alias}`}>
@@ -100,9 +102,8 @@ export const User: React.VFC<{
     <span>{alias}</span>
   </>
 );
-
 export type PageProps = Merge<
-  {className?: string},
+  {className?: string;},
   InferGetStaticPropsType<typeof getStaticProps>
 >;
 export const Page: NextPage<PageProps> = ({className, henken, ...props}) => {
@@ -117,9 +118,10 @@ export const Page: NextPage<PageProps> = ({className, henken, ...props}) => {
       <p>Content</p>
       {henken.content.type === 'Book' && (
         <>
-          {henken.content.book.cover && (
-            <Image width={320} height={320} src={henken.content.book.cover} />
-          )}
+          {henken.content.book.cover
+            && (
+              <Image width={320} height={320} src={henken.content.book.cover} />
+            )}
           <span>{henken.content.book.title}</span>
         </>
       )}

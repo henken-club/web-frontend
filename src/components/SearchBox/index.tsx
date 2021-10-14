@@ -71,7 +71,7 @@ export const Component: React.VFC<{
   );
 };
 
-export const SearchBox: React.VFC<{className?: string}> = ({...props}) => {
+export const SearchBox: React.VFC<{className?: string;}> = ({...props}) => {
   const [input, setInputValue] = useState('');
   const [query, setQuery] = useState('');
   const [focus, setFocus] = useState(false);
@@ -89,31 +89,31 @@ export const SearchBox: React.VFC<{className?: string}> = ({...props}) => {
     () => ({
       nodes: data?.search.nodes
         ? data.search.nodes.map(({content}) => {
-            switch (content.__typename) {
-              case 'Author':
-                return {
-                  type: 'author',
-                  content: {id: content.id, name: content.name},
-                };
-              case 'Book':
-                return {
-                  type: 'book',
-                  content: {
-                    id: content.id,
-                    title: content.title,
-                    authors: content.writings.edges.map(({node}) => ({
-                      id: node.author.id,
-                      name: node.author.name,
-                    })),
-                  },
-                };
-              case 'BookSeries':
-                return {
-                  type: 'bookSeries',
-                  content: {id: content.id, title: content.title},
-                };
-            }
-          })
+          switch (content.__typename) {
+            case 'Author':
+              return {
+                type: 'author',
+                content: {id: content.id, name: content.name},
+              };
+            case 'Book':
+              return {
+                type: 'book',
+                content: {
+                  id: content.id,
+                  title: content.title,
+                  authors: content.writings.edges.map(({node}) => ({
+                    id: node.author.id,
+                    name: node.author.name,
+                  })),
+                },
+              };
+            case 'BookSeries':
+              return {
+                type: 'bookSeries',
+                content: {id: content.id, title: content.title},
+              };
+          }
+        })
         : [],
     }),
     [data?.search],

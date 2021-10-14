@@ -1,11 +1,11 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
 import {Viewer as ViewerComp} from './Viewer';
 
 import {Viewer} from '~/auth/useViewer';
 
-export const Component: React.VFC<{className?: string; viewer: Viewer}> = ({
+export const Component: React.VFC<{className?: string; viewer: Viewer;}> = ({
   className,
   viewer,
 }) => (

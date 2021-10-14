@@ -1,5 +1,5 @@
-import * as nextImage from 'next/image';
 import {RouterContext} from 'next/dist/shared/lib/router-context';
+import * as nextImage from 'next/image';
 
 import TypesafeI18n from '~/i18n/i18n-react';
 

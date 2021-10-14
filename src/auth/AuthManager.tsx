@@ -29,7 +29,9 @@ export const Viewer: React.VFC = () => {
     if (data?.viewer) {
       const {__typename, ...viewer} = data.viewer;
       recoilSetter(viewer);
-    } else if (data?.viewer === null) recoilSetter(null);
+    } else if (data?.viewer === null) {
+      recoilSetter(null);
+    }
   }, [data, recoilSetter]);
 
   return <></>;
