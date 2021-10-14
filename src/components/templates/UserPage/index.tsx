@@ -23,8 +23,21 @@ export const Component: React.VFC<{
 }> = ({user}) => {
   const {LL} = useTranslation();
   return (
-    <div className={clsx(['flex', ['flex-col', 'lg:flex-row']])}>
-      <div className={clsx(['flex', ['flex-col']])}>
+    <div
+      className={clsx([
+        'grid',
+        ['grid-cols-1', 'lg:grid-cols-3', 'xl:grid-cols-4', '2xl:grid-cols-5'],
+        ['grid-flow-row', 'xl:grid-flow-row'],
+        ['gap-x-4'],
+        ['gap-y-4'],
+      ])}
+    >
+      <div
+        className={clsx(
+          [['col-span-full', 'lg:col-span-1'], ['xl:max-w-screen-xs']],
+          ['bg-blue-200'],
+        )}
+      >
         <Profile
           className={clsx([])}
           user={{
@@ -39,58 +52,38 @@ export const Component: React.VFC<{
       </div>
       <div
         className={clsx(
-          ['flex-grow'],
           [
-            ['mt-4', 'lg:mt-0'],
-            ['ml-0', 'lg:ml-4'],
+            [
+              'col-span-full',
+              'lg:col-span-2',
+              'xl:col-span-2',
+              '2xl:col-span-3',
+            ],
           ],
-          ['grid', ['grid-cols-2', 'grid-cols-3']],
+          ['grid', ['grid-cols-1', 'lg:grid-cols-2'], ['gap-x-4'], ['gap-y-4']],
         )}
       >
-        <div
-          className={clsx(
-            ['h-8'],
-            [
-              ['col-span-full', 'col-span-2'],
-              ['col-start-1'],
-              ['xl:col-end-3'],
-              ['order-1'],
-            ],
-            ['bg-blue-300'],
-          )}
-        >
+        <div className={clsx(['col-span-full'], ['bg-blue-300'])}>
           <p>PostForm</p>
         </div>
-        <div
-          className={clsx(
-            [
-              ['col-span-full', 'xl:col-span-1'],
-              ['col-start-1', 'xl:col-start-3'],
-              ['order-3', 'xl:order-4'],
-            ],
-            ['grid', ['grid-cols-1', 'sm:grid-cols-2', 'xl:grid-cols-1']],
-          )}
-        >
-          <div className={clsx(['h-8'], ['col-span-1'], ['bg-blue-500'])}>
-            <p>Posted</p>
-          </div>
-          <div className={clsx(['h-8'], ['col-span-1'], ['bg-blue-600'])}>
-            <p>Posts</p>
-          </div>
+        <div className={clsx(['col-span-1'], ['bg-blue-500'])}>
+          <p>Posted</p>
         </div>
-        <div
-          className={clsx(
-            ['h-8'],
-            [
-              ['col-span-full', 'xl:col-span-2'],
-              ['xl:col-start-1'],
-              ['order-4', 'xl:order-3'],
-            ],
-            ['bg-blue-400'],
-          )}
-        >
-          <p>Timeline</p>
+        <div className={clsx(['col-span-1'], ['bg-blue-600'])}>
+          <p>Posts</p>
         </div>
+      </div>
+      <div
+        className={clsx(
+          [
+            ['col-span-full', 'lg:col-span-2', 'xl:col-span-1'],
+            ['lg:col-start-2', 'xl:col-start-auto'],
+            ['xl:max-w-screen-xs'],
+          ],
+          ['bg-blue-400'],
+        )}
+      >
+        <p>Timeline</p>
       </div>
     </div>
   );

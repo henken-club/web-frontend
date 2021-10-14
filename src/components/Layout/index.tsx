@@ -7,15 +7,7 @@ export const PageContainer: React.FC<{className?: string}> = ({
   children,
   className,
 }) => (
-  <div
-    className={clsx(
-      className,
-      ['container', ['mx-auto']],
-      [['px-4'], ['py-8']],
-    )}
-  >
-    {children}
-  </div>
+  <div className={clsx(className, ['container', ['mx-auto']])}>{children}</div>
 );
 
 export const DefaultLayout: React.FC = ({children}) => (
