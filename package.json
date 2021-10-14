@@ -13,6 +13,7 @@
     "generate:codegen": "gql-gen",
     "generate:i18n": "typesafe-i18n --no-watch",
     "typecheck": "tsc --noEmit",
+    "spellcheck": "cspell",
     "test": "jest --config=jest.config.ts",
     "test:watch": "yarn run test --watch",
     "test:update-snapshot": "yarn run test --updateSnapshot",
@@ -21,7 +22,6 @@
     "lint": "run-s -cn lint:*",
     "lint:eslint": "eslint . --ext .js,.jsx,.ts,.tsx --cache",
     "lint:prettier": "prettier --check **/*.{json,yml,graphql}",
-    "lint:cspell": "cspell",
     "fmt": "run-s -cn fmt:*",
     "fmt:eslint": "yarn lint:eslint --fix",
     "fmt:prettier": "yarn lint:prettier --write"
