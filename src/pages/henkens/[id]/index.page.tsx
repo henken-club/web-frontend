@@ -118,10 +118,8 @@ export const Page: NextPage<PageProps> = ({className, henken, ...props}) => {
       <p>Content</p>
       {henken.content.type === 'Book' && (
         <>
-          {henken.content.book.cover
-            && (
-              <Image width={320} height={320} src={henken.content.book.cover} />
-            )}
+          {henken.content.book.cover &&
+            <Image width={320} height={320} src={henken.content.book.cover} />}
           <span>{henken.content.book.title}</span>
         </>
       )}

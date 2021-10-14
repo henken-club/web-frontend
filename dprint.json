@@ -7,6 +7,8 @@
     "quoteStyle": "preferSingle",
     "spaceSurroundingProperties": false,
     "useBraces": "preferNone",
+    "operatorPosition": "sameLine",
+    "conditionalExpression.operatorPosition": "nextLine",
     "arrowFunction.bracePosition": "maintain",
     "importDeclaration.spaceSurroundingNamedImports": false,
     "jsx.quoteStyle": "preferDouble",

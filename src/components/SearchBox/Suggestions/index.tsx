@@ -28,12 +28,12 @@ export const Component: React.VFC<{
         >
           {nodes.map((node) => (
             <div key={node.content.id}>
-              {node.type === 'author'
-                && <Author className={clsx(['w-full'])} value={node.content} />}
-              {node.type === 'book'
-                && <Book className={clsx(['w-full'])} value={node.content} />}
-              {node.type === 'bookSeries'
-                && (
+              {node.type === 'author' &&
+                <Author className={clsx(['w-full'])} value={node.content} />}
+              {node.type === 'book' &&
+                <Book className={clsx(['w-full'])} value={node.content} />}
+              {node.type === 'bookSeries' &&
+                (
                   <BookSeries
                     className={clsx(['w-full'])}
                     value={node.content}

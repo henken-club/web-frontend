@@ -97,18 +97,18 @@ export const Component: React.VFC<
       </div>
       <Picture
         className={clsx(['w-full'], ['mt-6'])}
-        disabled={'completed' in props
-          || ('registering' in props && props.registering)}
+        disabled={'completed' in props ||
+          ('registering' in props && props.registering)}
       />
       <Alias
         className={clsx(['w-full'], ['mt-4'])}
-        disabled={'completed' in props
-          || ('registering' in props && props.registering)}
+        disabled={'completed' in props ||
+          ('registering' in props && props.registering)}
       />
       <DisplayName
         className={clsx(['w-full'], ['mt-4'])}
-        disabled={'completed' in props
-          || ('registering' in props && props.registering)}
+        disabled={'completed' in props ||
+          ('registering' in props && props.registering)}
       />
       <button
         className={clsx(
@@ -123,8 +123,8 @@ export const Component: React.VFC<
           ['rounded-md'],
         )}
         type="submit"
-        disabled={'completed' in props
-          || ('registering' in props && props.registering)}
+        disabled={'completed' in props ||
+          ('registering' in props && props.registering)}
       >
         {'registering' in props && props.registering && (
           <>

@@ -180,16 +180,16 @@ export const transformer = ({
       followees: {
         count: user.followees.totalCount,
         more: user.followees.pageInfo.hasNextPage,
-        users: user.followees.edges.map(({node: {user}}) =>
-          transformUser(user)
-        ),
+        users: user.followees.edges.map((
+          {node: {user}},
+        ) => (transformUser(user))),
       },
       followers: {
         count: user.followers.totalCount,
         more: user.followers.pageInfo.hasNextPage,
-        users: user.followers.edges.map(({node: {user}}) =>
-          transformUser(user)
-        ),
+        users: user.followers.edges.map((
+          {node: {user}},
+        ) => (transformUser(user))),
       },
       postsHenkens: {
         count: user.postsHenkens.totalCount,
