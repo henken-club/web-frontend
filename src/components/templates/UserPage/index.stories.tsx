@@ -27,22 +27,7 @@ type StoryProps = ComponentProps<typeof Component> & {
   contextValue: ContextType<typeof UserPageContext>;
 };
 
-export const Primary: Story<StoryProps> = ({contextValue, ...args}) => {
-  return (
-    <UserPageContext.Provider value={contextValue}>
-      <Component {...args} />
-    </UserPageContext.Provider>
-  );
-};
-Primary.storyName = '通常';
-Primary.args = {
-  contextValue: {
-    isFollowing: true,
-    canPostsHenken: true,
-    follow: action('follow'),
-    unfollow: action('unfollow'),
-    postHenken: action('postHenken'),
-  },
+const commonArgs = {
   user: {
     id: '1',
     alias: 'alias',
@@ -161,6 +146,41 @@ Primary.args = {
       ],
     },
     postsHenkens: {count: 10, more: true, henkens: []},
-    receivedHenkens: {count: 10, more: true, henkens: []},
+    postsAnswers: {count: 10, more: true, answers: []},
   },
+};
+
+export const Authenticated: Story<StoryProps> = ({contextValue, ...args}) => {
+  return (
+    <UserPageContext.Provider value={contextValue}>
+      <Component {...args} />
+    </UserPageContext.Provider>
+  );
+};
+Authenticated.storyName = 'ログイン済み';
+Authenticated.args = {
+  contextValue: {
+    loggedIn: true,
+    isFollowing: true,
+    canPostsHenken: true,
+    follow: action('follow'),
+    unfollow: action('unfollow'),
+    postHenken: action('postHenken'),
+  },
+  ...commonArgs,
+};
+
+export const Unauthenticated: Story<StoryProps> = ({contextValue, ...args}) => {
+  return (
+    <UserPageContext.Provider value={contextValue}>
+      <Component {...args} />
+    </UserPageContext.Provider>
+  );
+};
+Unauthenticated.storyName = '未ログイン時';
+Unauthenticated.args = {
+  contextValue: {
+    loggedIn: false,
+  },
+  ...commonArgs,
 };

@@ -2,8 +2,10 @@ import React, {ComponentProps, ContextType, useMemo} from 'react';
 import clsx from 'clsx';
 import {gql} from 'graphql-tag';
 
-import {Profile} from './Profile';
 import {UserPageContext} from './context';
+import {Henkens} from './Henkens';
+import {Answers} from './Answers';
+import {Header} from './Header';
 
 import {useTranslation} from '~/i18n/useTranslation';
 import {useUserPageWithViewerQuery} from '~/components/codegen';
@@ -19,71 +21,74 @@ const UserPageWithViewer = gql`
 `;
 
 export const Component: React.VFC<{
-  user: ComponentProps<typeof Profile>['user'];
+  user: ComponentProps<typeof Header>['user'] &
+    ComponentProps<typeof Henkens>['user'] &
+    ComponentProps<typeof Answers>['user'];
 }> = ({user}) => {
   const {LL} = useTranslation();
   return (
-    <div
-      className={clsx([
-        'grid',
-        ['grid-cols-1', 'lg:grid-cols-3', 'xl:grid-cols-4', '2xl:grid-cols-5'],
-        ['grid-flow-row', 'xl:grid-flow-row'],
-        ['gap-x-4'],
-        ['gap-y-4'],
-      ])}
-    >
+    <div className={clsx()}>
+      <Header
+        className={clsx(['w-full'], ['bg-blue-100'])}
+        user={{
+          id: user.id,
+          alias: user.alias,
+          displayName: user.displayName,
+          avatar: user.avatar,
+          followees: user.followees,
+          followers: user.followers,
+        }}
+      />
       <div
         className={clsx(
-          [['col-span-full', 'lg:col-span-1'], ['xl:max-w-screen-xs']],
-          ['bg-blue-200'],
+          [['px-4'], ['py-4']],
+          ['flex', ['flex-col', 'lg:flex-row']],
+          [['space-y-4', 'lg:space-y-0'], ['lg:space-x-4']],
         )}
       >
-        <Profile
-          className={clsx([])}
-          user={{
-            id: user.id,
-            alias: user.alias,
-            displayName: user.displayName,
-            avatar: user.avatar,
-            followees: user.followees,
-            followers: user.followers,
-          }}
-        />
-      </div>
-      <div
-        className={clsx(
-          [
-            [
-              'col-span-full',
-              'lg:col-span-2',
-              'xl:col-span-2',
-              '2xl:col-span-3',
-            ],
-          ],
-          ['grid', ['grid-cols-1', 'lg:grid-cols-2'], ['gap-x-4'], ['gap-y-4']],
-        )}
-      >
-        <div className={clsx(['col-span-full'], ['bg-blue-300'])}>
-          <p>PostForm</p>
+        <div
+          className={clsx(
+            [['w-full', 'lg:w-1/3', 'xl:w-1/4'], ['lg:max-w-screen-xs']],
+            ['grid', ['grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-1']],
+            [['gap-x-4'], ['gap-y-4']],
+          )}
+        >
+          <Henkens
+            className={clsx(['bg-blue-200'])}
+            user={{
+              displayName: user.displayName,
+              postsHenkens: user.postsHenkens,
+            }}
+          />
+          <Answers
+            className={clsx(['bg-blue-300'])}
+            user={{
+              displayName: user.displayName,
+              postsAnswers: user.postsAnswers,
+            }}
+          />
         </div>
-        <div className={clsx(['col-span-1'], ['bg-blue-500'])}>
-          <p>Posted</p>
+        <div
+          className={clsx(['flex-grow'], ['flex', ['flex-col']], ['space-y-4'])}
+        >
+          <section
+            className={clsx(
+              [['col-start-2'], ['col-end-3'], ['row-start-1'], ['row-end-2']],
+              ['w-full'],
+              ['bg-blue-400'],
+            )}
+          >
+            <h2>フォーム</h2>
+          </section>
+          <section
+            className={clsx(
+              [['col-start-2'], ['col-end-3'], ['row-start-2'], ['row-end-3']],
+              ['bg-blue-500'],
+            )}
+          >
+            <h2>タイムライン</h2>
+          </section>
         </div>
-        <div className={clsx(['col-span-1'], ['bg-blue-600'])}>
-          <p>Posts</p>
-        </div>
-      </div>
-      <div
-        className={clsx(
-          [
-            ['col-span-full', 'lg:col-span-2', 'xl:col-span-1'],
-            ['lg:col-start-2', 'xl:col-start-auto'],
-            ['xl:max-w-screen-xs'],
-          ],
-          ['bg-blue-400'],
-        )}
-      >
-        <p>Timeline</p>
       </div>
     </div>
   );
@@ -102,19 +107,14 @@ export const TemplateUserPage: React.VFC<{
   const contextValue = useMemo<ContextType<typeof UserPageContext>>(() => {
     if (result.data?.viewer)
       return {
+        loggedIn: true,
         isFollowing: result.data.viewer.isFollowing,
         canPostsHenken: result.data.viewer.canPostHenken,
         follow: () => {},
         unfollow: () => {},
         postHenken: () => {},
       };
-    return {
-      isFollowing: false,
-      canPostsHenken: false,
-      follow: () => {},
-      unfollow: () => {},
-      postHenken: () => {},
-    };
+    return {loggedIn: false};
   }, [result.data?.viewer]);
 
   return (
