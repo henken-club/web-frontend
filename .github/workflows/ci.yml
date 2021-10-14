@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - 'main'
+      - "main"
   pull_request:
 
 jobs:
@@ -31,17 +31,12 @@ jobs:
       - uses: bahmutov/npm-install@v1
       - run: yarn run lint:prettier
 
-  cspell:
-    name: cspell
+  spellcheck:
+    name: Spell Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14
-          cache: yarn
-      - uses: bahmutov/npm-install@v1
-      - run: npm run lint:cspell
+      - uses: streetsidesoftware/cspell-action@v1.3.4
 
   codegen:
     name: Codegen
