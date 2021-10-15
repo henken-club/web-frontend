@@ -1,11 +1,11 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
-import {useTranslation} from '~/i18n/useTranslation';
 import {ButtonNormal} from '~/components/Button';
 import {IconSignIn} from '~/components/Icon';
+import {useTranslation} from '~/i18n/useTranslation';
 
-export const LoginButton: React.VFC<{className?: string; login(): void}> = ({
+export const LoginButton: React.VFC<{className?: string; login(): void;}> = ({
   login: callLogin,
   ...props
 }) => {
@@ -20,7 +20,7 @@ export const LoginButton: React.VFC<{className?: string; login(): void}> = ({
   );
 };
 
-export const Component: React.VFC<{className?: string; callLogin(): void}> = ({
+export const Component: React.VFC<{className?: string; callLogin(): void;}> = ({
   className,
   callLogin,
 }) => (
@@ -28,5 +28,4 @@ export const Component: React.VFC<{className?: string; callLogin(): void}> = ({
     <LoginButton login={callLogin} />
   </div>
 );
-
 export const NeedLogin = Component;

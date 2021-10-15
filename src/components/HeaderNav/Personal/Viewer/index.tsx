@@ -1,10 +1,10 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 import styled from 'styled-components';
 
 import {Accordion} from './Accordion';
 
-import {Avatar} from '~/components/Avatar';
+import {AvatarSmall} from '~/components/Avatar';
 
 const Details = styled.details`
   & > summary::-webkit-details-marker {
@@ -28,14 +28,14 @@ const Details = styled.details`
 
 export type ViewerProps = {
   className?: string;
-  viewer: {id: string; alias: string; displayName: string; avatar: string};
+  viewer: {id: string; alias: string; displayName: string; avatar: string;};
 };
 export const Viewer: React.VFC<ViewerProps> = ({className, viewer}) => {
   return (
     <Details className={clsx(className, ['relative'], ['inline-flex'])}>
       <summary className={clsx(['flex'], ['cursor-pointer'])}>
         <div className={clsx(['w-12'], ['h-12'])}>
-          <Avatar user={{alias: viewer.alias, avatar: viewer.avatar}} />
+          <AvatarSmall user={{alias: viewer.alias, avatar: viewer.avatar}} />
         </div>
       </summary>
       <Accordion

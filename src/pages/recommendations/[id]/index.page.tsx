@@ -25,7 +25,7 @@ const AllRecommendationsPagesQuery = gql`
   }
 `;
 
-export type UrlQuery = {id: string};
+export type UrlQuery = {id: string;};
 export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
   return getSdk(graphqlClient)
     .AllRecommendationsPages({limit: 100})
@@ -75,16 +75,18 @@ export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
   if (!params?.id) return {redirect: {destination: '/', permanent: true}};
+
   const result = await getSdk(graphqlClient).RecommendationPage({
     id: params.id,
   });
   const transformed = transformer(result);
   if (transformed === null) return {notFound: true};
+
   return {props: transformed, revalidate: 60};
 };
 
 export type PageProps = Merge<
-  {className?: string},
+  {className?: string;},
   InferGetStaticPropsType<typeof getStaticProps>
 >;
 export const Page: NextPage<PageProps> = ({className, recommendation}) => {

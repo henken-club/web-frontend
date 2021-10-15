@@ -1,14 +1,14 @@
 import faker from 'faker';
 
-import {transformer} from './index.transform';
+import {serializer} from './index.serializer';
 
-import {factoryUserPage} from '~/mocks/factories/UserPage';
 import {alias} from '~/mocks/factories/common';
+import {factoryUserPage} from '~/mocks/factories/UserPage';
 
-describe('index.transform', () => {
-  describe('transformer', () => {
+describe('index.serializer', () => {
+  describe('serializer', () => {
     it('findUser.userがnullならnullを返却', () => {
-      const actual = transformer({
+      const actual = serializer({
         __typename: 'Query',
         findUser: {
           __typename: 'FindUserPayload',
@@ -24,7 +24,7 @@ describe('index.transform', () => {
         return [factoryUserPage({alias: alias()})];
       }),
     )('findUser.userが存在する場合 %#', (payload) => {
-      const actual = transformer(payload);
+      const actual = serializer(payload);
       expect(actual).toMatchSnapshot();
     });
   });

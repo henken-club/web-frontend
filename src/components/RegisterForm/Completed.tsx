@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import {AvatarSmall} from '~/components/Avatar';
 import {IconRegistered} from '~/components/Icon';
 import {TimerBar} from '~/components/TimerBar';
 import {useTranslation} from '~/i18n/useTranslation';
-import {Avatar} from '~/components/Avatar';
 
 export const Component: React.VFC<{
   className?: string;
@@ -25,7 +25,7 @@ export const Component: React.VFC<{
     >
       <div className={clsx(['space-x-2'], ['flex', ['items-center']])}>
         <div className={clsx(['w-10'], ['h-10'])}>
-          <Avatar user={{alias, avatar}} />
+          <AvatarSmall user={{alias, avatar}} />
         </div>
         <IconRegistered className={clsx([['text-white'], ['text-4xl']])} />
       </div>
@@ -44,7 +44,7 @@ export const Component: React.VFC<{
 
 export const Completed: React.VFC<{
   className?: string;
-  viewer: {alias: string; displayName: string; avatar: string};
+  viewer: {alias: string; displayName: string; avatar: string;};
 }> = ({viewer, ...props}) => {
   return <Component {...props} {...viewer} />;
 };

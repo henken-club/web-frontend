@@ -76,7 +76,7 @@ Registered.args = {
       id: 'id',
       alias: 'alias',
       displayName: 'DisplayName',
-      avatar: '/avatar_1.png',
+      avatar: '/.mock/avatar_1.png',
     },
   },
 };

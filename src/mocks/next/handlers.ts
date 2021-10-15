@@ -28,12 +28,18 @@ import {
   RecommendationPageDocument,
   RecommendationPageQuery,
   RecommendationPageQueryVariables,
+  RegisterUserDocument,
+  RegisterUserMutation,
+  RegisterUserMutationVariables,
+  SearchBoxDocument,
+  SearchBoxQuery,
+  SearchBoxQueryVariables,
   UserPageDocument,
   UserPageQuery,
   UserPageQueryVariables,
-  RegisterUserMutation,
-  RegisterUserMutationVariables,
-  RegisterUserDocument,
+  UserPageWithViewerDocument,
+  UserPageWithViewerQuery,
+  UserPageWithViewerQueryVariables,
 } from '../codegen';
 import {
   factoryAllAnswerPages,
@@ -48,7 +54,12 @@ import {
   factoryRecommendationPage,
 } from '../factories/RecommendationPage';
 import {factoryRegisterUser} from '../factories/RegisterUser';
-import {factoryAllUserPages, factoryUserPage} from '../factories/UserPage';
+import {factorySearchBox} from '../factories/SearchBox';
+import {
+  factoryAllUserPages,
+  factoryUserPage,
+  factoryUserPageWithViewer,
+} from '../factories/UserPage';
 import {
   factoryAuthorizedViewer,
   factoryUnauthorizedViewer,
@@ -71,8 +82,13 @@ export const handlers = [
       faker.seed(0);
       if (req.headers.get('Authorization'))
         return res(ctx.data(factoryAuthorizedViewer()));
-      else return res(ctx.data(factoryUnauthorizedViewer()));
+      else
+        return res(ctx.data(factoryUnauthorizedViewer()));
     },
+  ),
+  graphql.query<SearchBoxQuery, SearchBoxQueryVariables>(
+    SearchBoxDocument,
+    (req, res, ctx) => res(ctx.data(factorySearchBox(req.variables))),
   ),
   graphql.query<AllUserPagesQuery, AllUserPagesQueryVariables>(
     AllUserPagesDocument,
@@ -133,5 +149,9 @@ export const handlers = [
   graphql.mutation<RegisterUserMutation, RegisterUserMutationVariables>(
     RegisterUserDocument,
     (req, res, ctx) => res(ctx.data(factoryRegisterUser(req.variables))),
+  ),
+  graphql.query<UserPageWithViewerQuery, UserPageWithViewerQueryVariables>(
+    UserPageWithViewerDocument,
+    (req, res, ctx) => res(ctx.data(factoryUserPageWithViewer(req.variables))),
   ),
 ];

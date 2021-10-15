@@ -7,7 +7,7 @@ import {FormValue} from '../FormValue';
 import {useAuth} from '~/auth/useAuth';
 import {useTranslation} from '~/i18n/useTranslation';
 
-export const DisplayName: React.VFC<{className?: string; disabled: boolean}> =
+export const DisplayName: React.VFC<{className?: string; disabled: boolean;}> =
   ({className, disabled}) => {
     const {LL} = useTranslation();
     const {register} = useFormContext<FormValue>();

@@ -1,6 +1,6 @@
 import {NextPage} from 'next';
-import React from 'react';
 import Link from 'next/link';
+import React from 'react';
 
 import {useAuth} from '~/auth/useAuth';
 import {useViewer} from '~/auth/useViewer';
@@ -16,7 +16,10 @@ export const Page: NextPage<PageProps> = ({...props}) => {
     <>
       <p>IndexPage</p>
       {!isAuthenticated && (
-        <button type="button" onClick={() => loginWithRedirect()}>
+        <button
+          type="button"
+          onClick={() => loginWithRedirect()}
+        >
           Log In
         </button>
       )}

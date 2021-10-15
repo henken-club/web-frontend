@@ -1,16 +1,17 @@
 import clsx from 'clsx';
 import React, {useMemo} from 'react';
 
-import {Personal} from './Personal';
 import {HeaderNavContext} from './context';
+import {Personal} from './Personal';
 
-import {useRegisterForm} from '~/components/RegisterForm/useRegisterForm';
-import {LinkIndex} from '~/components/Link';
-import {useTranslation} from '~/i18n/useTranslation';
-import {useViewer} from '~/auth/useViewer';
 import {useAuth} from '~/auth/useAuth';
+import {useViewer} from '~/auth/useViewer';
+import {LinkIndex} from '~/components/Link';
+import {useRegisterForm} from '~/components/RegisterForm/useRegisterForm';
+import {SearchBox} from '~/components/SearchBox';
+import {useTranslation} from '~/i18n/useTranslation';
 
-export type ComponentProps = {className?: string};
+export type ComponentProps = {className?: string;};
 export const Component: React.VFC<ComponentProps> = ({className}) => {
   const {LL} = useTranslation();
 
@@ -31,23 +32,25 @@ export const Component: React.VFC<ComponentProps> = ({className}) => {
             {LL.Brand.Name()}
           </span>
         </LinkIndex>
-        <div className={clsx(['flex-grow'])} />
+        <div className={clsx(['flex-grow'], ['mx-4'])}>
+          <SearchBox className={clsx('w-full')} />
+        </div>
         <Personal className={clsx(['w-32'])} />
       </div>
     </nav>
   );
 };
 
-export const HeaderNav: React.VFC<{className?: string}> = ({className}) => {
+export const HeaderNav: React.VFC<{className?: string;}> = ({className}) => {
   const {loginWithRedirect, isAuthenticated} = useAuth();
   const {show: showRegisterForm} = useRegisterForm();
   const viewer = useViewer();
 
   const value = useMemo<React.ContextType<typeof HeaderNavContext>>(() => {
     return {
-      ...(isAuthenticated
+      ...isAuthenticated
         ? ({authenticated: true, viewer} as const)
-        : ({authenticated: false} as const)),
+        : {authenticated: false} as const,
       callLogin: loginWithRedirect,
       callRegister: showRegisterForm,
     };

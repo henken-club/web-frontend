@@ -2,8 +2,8 @@ import {Meta, Story} from '@storybook/react';
 import React, {ComponentProps} from 'react';
 import {FormProvider, useForm} from 'react-hook-form';
 
-import {FormValue} from './FormValue';
 import {Component} from './Completed';
+import {FormValue} from './FormValue';
 
 export default {
   title: 'RegisterForm/Completed',
@@ -25,5 +25,5 @@ export const Primary: Story<ComponentProps<typeof Component>> = (args) => {
 Primary.args = {
   alias: 'alias',
   displayName: 'DisplayName',
-  avatar: '/avatar_1.png',
+  avatar: '/.mock/avatar_1.png',
 };

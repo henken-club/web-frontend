@@ -6,7 +6,7 @@ import {FormValue} from '../FormValue';
 
 import {useTranslation} from '~/i18n/useTranslation';
 
-export const Alias: React.VFC<{className?: string; disabled: boolean}> = ({
+export const Alias: React.VFC<{className?: string; disabled: boolean;}> = ({
   className,
   disabled,
 }) => {

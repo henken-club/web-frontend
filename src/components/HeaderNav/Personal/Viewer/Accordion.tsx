@@ -1,8 +1,16 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
-import {Avatar} from '~/components/Avatar';
-import {useTranslation} from '~/i18n/useTranslation';
+import {AvatarSmall} from '~/components/Avatar';
+import {
+  IconPostAnswers,
+  IconPostHenkens,
+  IconReceivedAnswers,
+  IconReceivedHenkens,
+  IconSettings,
+  IconSignOut,
+  IconType,
+} from '~/components/Icon';
 import {
   LinkSettings,
   LinkUser,
@@ -11,19 +19,11 @@ import {
   LinkUserReceivedAnswers,
   LinkUserReceivedHenkens,
 } from '~/components/Link';
-import {
-  IconType,
-  IconPostHenkens,
-  IconReceivedHenkens,
-  IconSettings,
-  IconSignOut,
-  IconReceivedAnswers,
-  IconPostAnswers,
-} from '~/components/Icon';
+import {useTranslation} from '~/i18n/useTranslation';
 
 export const AccordionItem: React.VFC<{
   className?: string;
-  link: React.FC<{className?: string}>;
+  link: React.FC<{className?: string;}>;
   icon: IconType;
   text: string;
 }> = ({className, link: Link, icon: Icon, text}) => (
@@ -43,10 +43,9 @@ export const AccordionItem: React.VFC<{
     </a>
   </Link>
 );
-
 export type AccordionProps = {
   className?: string;
-  viewer: {id: string; alias: string; displayName: string; avatar: string};
+  viewer: {id: string; alias: string; displayName: string; avatar: string;};
 };
 export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
   const {LL} = useTranslation();
@@ -71,7 +70,7 @@ export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
           )}
         >
           <div className={clsx(['w-10'], ['h-10'])}>
-            <Avatar user={{alias: viewer.alias, avatar: viewer.avatar}} />
+            <AvatarSmall user={{alias: viewer.alias, avatar: viewer.avatar}} />
           </div>
           <div className={clsx(['ml-4'], [['flex'], ['flex-col']])}>
             <span className={clsx(['font-bold'], ['text-sm'])}>

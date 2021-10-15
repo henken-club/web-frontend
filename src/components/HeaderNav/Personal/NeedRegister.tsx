@@ -1,9 +1,9 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
-import {useTranslation} from '~/i18n/useTranslation';
 import {ButtonNormal} from '~/components/Button';
 import {IconRegister} from '~/components/Icon';
+import {useTranslation} from '~/i18n/useTranslation';
 
 export const RegisterButton: React.VFC<{
   className?: string;
@@ -20,7 +20,7 @@ export const RegisterButton: React.VFC<{
   );
 };
 
-export const Component: React.VFC<{className?: string; callLogin(): void}> = ({
+export const Component: React.VFC<{className?: string; callLogin(): void;}> = ({
   className,
   callLogin,
 }) => (
@@ -28,5 +28,4 @@ export const Component: React.VFC<{className?: string; callLogin(): void}> = ({
     <RegisterButton callLogin={callLogin} />
   </div>
 );
-
 export const NeedToRegister = Component;
