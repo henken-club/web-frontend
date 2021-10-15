@@ -4,6 +4,8 @@ import * as nextImage from 'next/image';
 import TypesafeI18n from '~/i18n/i18n-react';
 
 import '~/styles/index.css';
+import {MINIMAL_VIEWPORTS, INITIAL_VIEWPORTS} from '@storybook/addon-viewport';
+import {TAILWIND_VIEWPORTS} from './tailwindViewports';
 
 Object.defineProperty(nextImage, 'default', {
   configurable: true,
@@ -21,6 +23,13 @@ export const decorators = [
 export const parameters = {
   actions: {argTypesRegex: '^on[A-Z].*'},
   storySort: {method: 'alphabetical'},
+  viewport: {
+    viewports: {
+      ...TAILWIND_VIEWPORTS,
+      ...MINIMAL_VIEWPORTS,
+      ...INITIAL_VIEWPORTS,
+    },
+  },
   nextRouter: {
     Provider: RouterContext.Provider,
   },

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`index.transform transformer findUser.userが存在する場合 0 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 0 1`] = `
 Object {
   "user": Object {
     "alias": "unde",
@@ -119,67 +119,67 @@ Object {
       ],
     },
     "id": "9bd9d8d6-9a67-44e0-b467-cc8796ed151a",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "iste earum sed",
+          "henken": Object {
+            "comment": "delectus sit unde",
+            "content": Object {
+              "type": "book",
+              "value": Object {
+                "id": "0e457e18-58b6-4a89-bbe3-a5aa8e4824d0",
+                "title": "quidem impedit ullam",
+              },
+            },
+            "id": "8d8f5c0b-2f2f-4b7b-994a-276b26916fe1",
+          },
+          "id": "35b60eb1-ea42-4655-9ba3-c28744ed53b8",
+          "postsTo": Object {
+            "alias": "velit",
+            "avatar": "/.mock/avatar_8.png",
+            "displayName": "Kallie",
+            "id": "79f9dfe0-ab7d-4a8a-90ce-187f86bc173d",
+          },
+          "type": "wrong",
+        },
+      ],
+      "count": 95095,
+      "more": true,
+    },
     "postsHenkens": Object {
       "count": 95943,
       "henkens": Array [
         Object {
           "answer": Object {
-            "comment": "autem aut quos",
-            "id": "ea19f1d1-7051-4339-9080-86a1840394c2",
+            "comment": "et magnam tempora",
+            "id": "864dbb67-5fd5-4e60-b375-ed4f6fbee41f",
             "type": "right",
           },
           "comment": "et est debitis",
           "content": Object {
-            "book": Object {
-              "id": "61e6b7b9-5bc0-4ab3-820c-4f3789fd871f",
-              "title": "dolorum in eos",
+            "type": "bookSeries",
+            "value": Object {
+              "id": "a19f1d17-0513-439d-8808-6a1840394c26",
+              "title": "aut quos fugit",
             },
-            "type": "Book",
           },
           "id": "a70c6882-82aa-4482-962f-222e9817ee17",
           "postsTo": Object {
-            "alias": "nulla",
-            "avatar": "/.mock/avatar_7.png",
-            "displayName": "Gregory",
-            "id": "d2efd121-aa6f-41e6-b4bd-b04f15756082",
+            "alias": "at",
+            "avatar": "/.mock/avatar_6.png",
+            "displayName": "Henry",
+            "id": "93f5f064-2dac-47af-915c-c413aa63aae8",
           },
         },
       ],
       "more": false,
     },
-    "receivedHenkens": Object {
-      "count": 98163,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "eum sapiente saepe",
-            "id": "8f3a8d8f-5c0b-42f2-bb7b-194a276b2691",
-            "type": "right",
-          },
-          "comment": "nihil dolores iste",
-          "content": Object {
-            "book": Object {
-              "id": "64dbb675-fd5e-460b-b75e-d4f6fbee41f3",
-              "title": "magnam tempora odit",
-            },
-            "type": "Book",
-          },
-          "id": "3f5f0642-dac7-4af5-95cc-413aa63aae8d",
-          "postedBy": Object {
-            "alias": "labore",
-            "avatar": "/.mock/avatar_7.png",
-            "displayName": "Myron",
-            "id": "7fe35b60-eb1e-4a42-a555-ba3c28744ed5",
-          },
-        },
-      ],
-      "more": true,
-    },
   },
 }
 `;
 
-exports[`index.transform transformer findUser.userが存在する場合 1 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 1 1`] = `
 Object {
   "user": Object {
     "alias": "esse",
@@ -298,57 +298,53 @@ Object {
       ],
     },
     "id": "fbe024f2-3162-465a-ae8d-65a837e308ae",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "quia consequatur et",
+          "henken": Object {
+            "comment": "in sed enim",
+            "content": Object {
+              "type": "bookSeries",
+              "value": Object {
+                "id": "9a0b1311-7e65-4f92-bf6c-3d2a9a0750f5",
+                "title": "est quos non",
+              },
+            },
+            "id": "083fd04b-7ea0-4284-9ede-88b47ea7450e",
+          },
+          "id": "b4ef693a-271e-4dd2-94ad-944ff4c885ce",
+          "postsTo": Object {
+            "alias": "tempore",
+            "avatar": "/.mock/avatar_10.png",
+            "displayName": "Sasha",
+            "id": "97779250-1c55-4ff2-b75a-80c47d12508b",
+          },
+          "type": "right",
+        },
+      ],
+      "count": 71112,
+      "more": true,
+    },
     "postsHenkens": Object {
       "count": 3457,
       "henkens": Array [
         Object {
-          "answer": Object {
-            "comment": "minima molestiae illum",
-            "id": "c409b275-f138-44b1-b651-da0c6b7cb5ed",
-            "type": "wrong",
-          },
+          "answer": null,
           "comment": "sed asperiores asperiores",
           "content": Object {
-            "book": Object {
-              "id": "8a8c275e-0829-4be0-95bd-cb7b73d7894f",
-              "title": "corrupti sed ad",
+            "type": "book",
+            "value": Object {
+              "id": "34ace730-e873-4bc4-8703-91d268bc8e83",
+              "title": "a id aut",
             },
-            "type": "Book",
           },
           "id": "cfb44543-aa5c-4c87-9c0f-74f25e886ffa",
           "postsTo": Object {
-            "alias": "eius",
-            "avatar": "/.mock/avatar_9.png",
-            "displayName": "Vicenta",
-            "id": "334ace73-0e87-43bc-8470-391d268bc8e8",
-          },
-        },
-      ],
-      "more": true,
-    },
-    "receivedHenkens": Object {
-      "count": 65631,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "nostrum suscipit aut",
-            "id": "15e6083f-d04b-47ea-8284-5ede88b47ea7",
-            "type": "wrong",
-          },
-          "comment": "ea dolor et",
-          "content": Object {
-            "book": Object {
-              "id": "f0ac02b9-b098-4104-bcee-c8eb21293d9b",
-              "title": "et iste doloribus",
-            },
-            "type": "Book",
-          },
-          "id": "02b190a1-9791-450f-8f66-bd7f797a71cf",
-          "postedBy": Object {
-            "alias": "ipsam",
-            "avatar": "/.mock/avatar_11.png",
-            "displayName": "Olin",
-            "id": "dbbb4ef6-93a2-471e-9d2d-4ad944ff4c88",
+            "alias": "doloribus",
+            "avatar": "/.mock/avatar_10.png",
+            "displayName": "Greyson",
+            "id": "a02b190a-1979-4150-bcf6-6bd7f797a71c",
           },
         },
       ],
@@ -358,7 +354,7 @@ Object {
 }
 `;
 
-exports[`index.transform transformer findUser.userが存在する場合 2 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 2 1`] = `
 Object {
   "user": Object {
     "alias": "iusto",
@@ -477,67 +473,63 @@ Object {
       ],
     },
     "id": "20e8f676-5523-4b91-874a-9d8a27892bc4",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "aut cupiditate nemo",
+          "henken": Object {
+            "comment": "deserunt eum impedit",
+            "content": Object {
+              "type": "author",
+              "value": Object {
+                "id": "5cf10e47-ab76-4708-ac52-854b354edeea",
+                "name": "Lucy Hyatt",
+              },
+            },
+            "id": "4ec93e09-62ef-40f0-b1c4-ab2792a09884",
+          },
+          "id": "ac226f58-f97a-4d7a-be60-deff5201a559",
+          "postsTo": Object {
+            "alias": "fuga",
+            "avatar": "/.mock/avatar_12.png",
+            "displayName": "Dwight",
+            "id": "173bcd8c-8b03-4255-b523-6f1c16d8277e",
+          },
+          "type": "right",
+        },
+      ],
+      "count": 69819,
+      "more": false,
+    },
     "postsHenkens": Object {
       "count": 61108,
       "henkens": Array [
         Object {
-          "answer": Object {
-            "comment": "ea voluptates et",
-            "id": "9487784b-8ec3-4d28-8c70-f2bb86251945",
-            "type": "right",
-          },
+          "answer": null,
           "comment": "doloremque aperiam rerum",
           "content": Object {
-            "book": Object {
-              "id": "cc6ea3b1-1beb-4d36-a331-34eb9d65c315",
-              "title": "corrupti delectus qui",
+            "type": "book",
+            "value": Object {
+              "id": "72db3244-8cc4-4a9c-9d4a-3243e60d1057",
+              "title": "eius fuga error",
             },
-            "type": "Book",
           },
           "id": "855ae1d0-d0fa-4097-8fe2-43a87aa5742c",
           "postsTo": Object {
-            "alias": "corrupti",
-            "avatar": "/.mock/avatar_8.png",
-            "displayName": "Dakota",
-            "id": "172db324-48cc-44a9-89d4-a3243e60d105",
+            "alias": "neque",
+            "avatar": "/.mock/avatar_2.png",
+            "displayName": "Kariane",
+            "id": "d094e37f-f495-40ab-add1-5ff97b93ff3a",
           },
         },
       ],
       "more": false,
     },
-    "receivedHenkens": Object {
-      "count": 62395,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "deserunt molestias ut",
-            "id": "18464ec9-3e09-462e-b0f0-71c4ab2792a0",
-            "type": "right",
-          },
-          "comment": "perspiciatis neque sapiente",
-          "content": Object {
-            "book": Object {
-              "id": "f8d890e8-2b65-48a1-9d32-867553a10e5c",
-              "title": "iusto et aut",
-            },
-            "type": "Book",
-          },
-          "id": "094e37ff-4950-4aba-9d15-ff97b93ff3a2",
-          "postedBy": Object {
-            "alias": "voluptatem",
-            "avatar": "/.mock/avatar_8.png",
-            "displayName": "Garnett",
-            "id": "8b0ac226-f58f-497a-97ab-e60deff5201a",
-          },
-        },
-      ],
-      "more": true,
-    },
   },
 }
 `;
 
-exports[`index.transform transformer findUser.userが存在する場合 3 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 3 1`] = `
 Object {
   "user": Object {
     "alias": "omnis",
@@ -656,67 +648,63 @@ Object {
       ],
     },
     "id": "1bd4189e-6e02-4033-817b-0277a345a79e",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "et voluptas numquam",
+          "henken": Object {
+            "comment": "voluptatum nihil et",
+            "content": Object {
+              "type": "book",
+              "value": Object {
+                "id": "01e60aa7-e52d-48bb-a223-b1a27174fcfb",
+                "title": "distinctio omnis ea",
+              },
+            },
+            "id": "d4df9c53-5e98-4288-b4e5-a51db2736250",
+          },
+          "id": "21ada6a1-124d-402d-8ac0-1f64cf70d967",
+          "postsTo": Object {
+            "alias": "eligendi",
+            "avatar": "/.mock/avatar_8.png",
+            "displayName": "Marco",
+            "id": "1b4baa77-a21f-4e36-b920-f76fc7027532",
+          },
+          "type": "wrong",
+        },
+      ],
+      "count": 79240,
+      "more": false,
+    },
     "postsHenkens": Object {
       "count": 13827,
       "henkens": Array [
         Object {
-          "answer": Object {
-            "comment": "omnis blanditiis cum",
-            "id": "a1b4b268-7fd8-45bb-8f5e-1884291a2895",
-            "type": "right",
-          },
+          "answer": null,
           "comment": "deleniti sed tempora",
           "content": Object {
-            "book": Object {
+            "type": "author",
+            "value": Object {
               "id": "5c506204-a02f-49a9-ab64-84bcd6727e40",
-              "title": "accusantium rerum aut",
+              "name": "Ms. Julie Greenholt",
             },
-            "type": "Book",
           },
           "id": "0d1531b5-8080-47f0-868f-fde9133ed6e9",
           "postsTo": Object {
-            "alias": "excepturi",
-            "avatar": "/.mock/avatar_8.png",
-            "displayName": "Juliet",
-            "id": "4766f96e-bb60-4e2b-97b1-6597e4c87307",
+            "alias": "dolorum",
+            "avatar": "/.mock/avatar_6.png",
+            "displayName": "Floy",
+            "id": "c23a7f12-e00b-4e52-810f-24b595d5ff58",
           },
         },
       ],
       "more": true,
     },
-    "receivedHenkens": Object {
-      "count": 69892,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "ut qui neque",
-            "id": "7ac3dd4d-f9c5-435e-9828-8b4e5a51db27",
-            "type": "right",
-          },
-          "comment": "dolorum ea ducimus",
-          "content": Object {
-            "book": Object {
-              "id": "28968f89-f2bb-42fa-a984-0dc7edb76264",
-              "title": "maxime quidem odit",
-            },
-            "type": "Book",
-          },
-          "id": "c23a7f12-e00b-4e52-810f-24b595d5ff58",
-          "postedBy": Object {
-            "alias": "et",
-            "avatar": "/.mock/avatar_5.png",
-            "displayName": "Leann",
-            "id": "3cc721ad-a6a1-4124-902d-cac01f64cf70",
-          },
-        },
-      ],
-      "more": false,
-    },
   },
 }
 `;
 
-exports[`index.transform transformer findUser.userが存在する場合 4 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 4 1`] = `
 Object {
   "user": Object {
     "alias": "delectus",
@@ -835,67 +823,67 @@ Object {
       ],
     },
     "id": "e82fdb9b-932f-430b-8e6a-c039d5f9269c",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "voluptates nostrum ullam",
+          "henken": Object {
+            "comment": "dolorum laudantium aut",
+            "content": Object {
+              "type": "author",
+              "value": Object {
+                "id": "94f2eefc-d559-4534-9daf-ccefa7c038b0",
+                "name": "Ramiro Franecki",
+              },
+            },
+            "id": "6e9577be-1bf7-43f3-aa79-34d5e8a6c10e",
+          },
+          "id": "49ea9b41-0cac-4ff9-a435-073fc696f763",
+          "postsTo": Object {
+            "alias": "et",
+            "avatar": "/.mock/avatar_1.png",
+            "displayName": "Evalyn",
+            "id": "3f6fd842-529e-47e3-9db9-92b9f5691815",
+          },
+          "type": "wrong",
+        },
+      ],
+      "count": 88746,
+      "more": false,
+    },
     "postsHenkens": Object {
       "count": 6162,
       "henkens": Array [
         Object {
           "answer": Object {
-            "comment": "expedita ut voluptas",
-            "id": "0911f079-111a-489a-bd99-e50b3335e10a",
-            "type": "right",
+            "comment": "maiores nobis et",
+            "id": "b31d4eaa-bd50-4217-bcc8-1354bca7cc02",
+            "type": "wrong",
           },
           "comment": "minima et qui",
           "content": Object {
-            "book": Object {
-              "id": "52b4ac5b-c7b6-47b9-af7a-6a467cfd44e5",
-              "title": "ipsam tempore eaque",
+            "type": "book",
+            "value": Object {
+              "id": "a1d4db38-795a-408a-b8ce-fdb4c9cdf25c",
+              "title": "quia sint aut",
             },
-            "type": "Book",
           },
           "id": "a86c721e-7491-4fa0-8897-0addc789689c",
           "postsTo": Object {
-            "alias": "repellendus",
-            "avatar": "/.mock/avatar_7.png",
-            "displayName": "Ephraim",
-            "id": "4a1d4db3-8795-4a08-af8c-efdb4c9cdf25",
+            "alias": "saepe",
+            "avatar": "/.mock/avatar_5.png",
+            "displayName": "Rosalee",
+            "id": "3cd46de1-4fac-4b02-82dc-3127011f7d03",
           },
         },
       ],
       "more": true,
     },
-    "receivedHenkens": Object {
-      "count": 65239,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "aut fugit sit",
-            "id": "e44c6e95-77be-41bf-b3f3-ea7934d5e8a6",
-            "type": "wrong",
-          },
-          "comment": "nulla qui placeat",
-          "content": Object {
-            "book": Object {
-              "id": "31d4eaab-d502-4173-8c81-354bca7cc02f",
-              "title": "nobis et et",
-            },
-            "type": "Book",
-          },
-          "id": "cd46de14-facb-4024-adc3-127011f7d03e",
-          "postedBy": Object {
-            "alias": "dolores",
-            "avatar": "/.mock/avatar_3.png",
-            "displayName": "Haylie",
-            "id": "4e149ea9-b410-4cac-bf96-435073fc696f",
-          },
-        },
-      ],
-      "more": false,
-    },
   },
 }
 `;
 
-exports[`index.transform transformer findUser.userが存在する場合 5 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 5 1`] = `
 Object {
   "user": Object {
     "alias": "modi",
@@ -1014,67 +1002,67 @@ Object {
       ],
     },
     "id": "0dd35ef7-196c-4587-8f3c-1abd732ce143",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "vel magni voluptatem",
+          "henken": Object {
+            "comment": "temporibus et quod",
+            "content": Object {
+              "type": "bookSeries",
+              "value": Object {
+                "id": "7502ac53-4515-4b46-b6bd-94cd2f8e1b15",
+                "title": "et et deserunt",
+              },
+            },
+            "id": "45c07ce6-baa8-4cc9-aa61-1064051ad886",
+          },
+          "id": "2212c10a-6a0a-43f3-bd0b-2369e7d105cc",
+          "postsTo": Object {
+            "alias": "eos",
+            "avatar": "/.mock/avatar_4.png",
+            "displayName": "Chandler",
+            "id": "bf9d1f6f-bef7-4e27-aea4-791c1081f563",
+          },
+          "type": "right",
+        },
+      ],
+      "count": 75290,
+      "more": true,
+    },
     "postsHenkens": Object {
       "count": 84395,
       "henkens": Array [
         Object {
           "answer": Object {
-            "comment": "qui illum voluptatem",
-            "id": "ea83afec-0540-4290-b5de-d4c13f8757eb",
-            "type": "right",
+            "comment": "assumenda excepturi officiis",
+            "id": "58af2191-660e-4965-b34f-5d27f590fb04",
+            "type": "wrong",
           },
           "comment": "et occaecati ipsum",
           "content": Object {
-            "book": Object {
+            "type": "author",
+            "value": Object {
               "id": "7d46285a-435d-4c9e-ae96-aec9af810c49",
-              "title": "et sint voluptatem",
+              "name": "Irene Rosenbaum",
             },
-            "type": "Book",
           },
           "id": "6d3858a5-47d3-44dc-b5d8-9dc7a9f5b7f0",
           "postsTo": Object {
-            "alias": "similique",
-            "avatar": "/.mock/avatar_7.png",
-            "displayName": "Gia",
-            "id": "c7dcd053-6b95-401d-8937-1a0f2c6ad37f",
+            "alias": "maxime",
+            "avatar": "/.mock/avatar_2.png",
+            "displayName": "Arnaldo",
+            "id": "366edde5-3db2-473e-a454-a01d7254837e",
           },
         },
       ],
       "more": true,
     },
-    "receivedHenkens": Object {
-      "count": 24061,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "eum molestias sint",
-            "id": "d20345c0-7ce6-4baa-8cc9-aa611064051a",
-            "type": "right",
-          },
-          "comment": "vitae qui suscipit",
-          "content": Object {
-            "book": Object {
-              "id": "8af21916-60e9-465b-b4f5-d27f590fb04c",
-              "title": "excepturi officiis fuga",
-            },
-            "type": "Book",
-          },
-          "id": "66edde53-db27-43ea-854a-01d7254837eb",
-          "postedBy": Object {
-            "alias": "ea",
-            "avatar": "/.mock/avatar_10.png",
-            "displayName": "Newton",
-            "id": "7ce2212c-10a6-4a0a-bf33-d0b2369e7d10",
-          },
-        },
-      ],
-      "more": false,
-    },
   },
 }
 `;
 
-exports[`index.transform transformer findUser.userが存在する場合 6 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 6 1`] = `
 Object {
   "user": Object {
     "alias": "saepe",
@@ -1193,67 +1181,67 @@ Object {
       ],
     },
     "id": "f53d1051-f918-4968-979d-7cb68392abfe",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "recusandae ut laudantium",
+          "henken": Object {
+            "comment": "sit est dolores",
+            "content": Object {
+              "type": "book",
+              "value": Object {
+                "id": "e3861d93-3107-49c5-bad9-02e4ab66f212",
+                "title": "qui est beatae",
+              },
+            },
+            "id": "a9741c2d-c7fa-451a-b859-0eb085dd16fe",
+          },
+          "id": "b321bf77-8fa9-4d15-8be1-978bfef8ba38",
+          "postsTo": Object {
+            "alias": "dolore",
+            "avatar": "/.mock/avatar_1.png",
+            "displayName": "Jaycee",
+            "id": "fe22d47a-a214-44e7-9d1e-741145f6d923",
+          },
+          "type": "wrong",
+        },
+      ],
+      "count": 32882,
+      "more": true,
+    },
     "postsHenkens": Object {
       "count": 42876,
       "henkens": Array [
         Object {
           "answer": Object {
-            "comment": "id laudantium magni",
-            "id": "a20b1f71-1e06-4aee-878d-ab5e4fd9af1b",
+            "comment": "nihil est architecto",
+            "id": "a9facf66-4300-44af-8628-71229f38c31a",
             "type": "wrong",
           },
           "comment": "ab odit et",
           "content": Object {
-            "book": Object {
-              "id": "09e8a057-e9f3-41a4-981e-330e6e0593b2",
-              "title": "in illo ut",
+            "type": "bookSeries",
+            "value": Object {
+              "id": "20b1f711-e06a-4ee0-b8da-b5e4fd9af1bb",
+              "title": "laudantium magni repudiandae",
             },
-            "type": "Book",
           },
           "id": "d3e7c41f-f378-4eb1-af95-168ac1e3b926",
           "postsTo": Object {
-            "alias": "tempore",
-            "avatar": "/.mock/avatar_5.png",
-            "displayName": "Ariane",
-            "id": "f92cf25a-00d0-4c57-bc4b-d714c24ef1bb",
+            "alias": "quis",
+            "avatar": "/.mock/avatar_9.png",
+            "displayName": "Jefferey",
+            "id": "9b326562-2d0f-400a-9472-83dd5e274b09",
           },
         },
       ],
       "more": false,
     },
-    "receivedHenkens": Object {
-      "count": 88911,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "fugit ea asperiores",
-            "id": "e57da974-1c2d-4c7f-a51a-b8590eb085dd",
-            "type": "wrong",
-          },
-          "comment": "corrupti cum facilis",
-          "content": Object {
-            "book": Object {
-              "id": "9facf664-3004-4af0-a287-1229f38c31a6",
-              "title": "est architecto quas",
-            },
-            "type": "Book",
-          },
-          "id": "b3265622-d0f0-40a1-8728-3dd5e274b094",
-          "postedBy": Object {
-            "alias": "harum",
-            "avatar": "/.mock/avatar_7.png",
-            "displayName": "Darlene",
-            "id": "65bb321b-f778-4fa9-9150-be1978bfef8b",
-          },
-        },
-      ],
-      "more": true,
-    },
   },
 }
 `;
 
-exports[`index.transform transformer findUser.userが存在する場合 7 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 7 1`] = `
 Object {
   "user": Object {
     "alias": "beatae",
@@ -1372,67 +1360,63 @@ Object {
       ],
     },
     "id": "3c57fb7f-4848-4116-8078-adc5661a4aeb",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "ut eum quibusdam",
+          "henken": Object {
+            "comment": "pariatur qui harum",
+            "content": Object {
+              "type": "book",
+              "value": Object {
+                "id": "97678025-25bf-4cea-90eb-d66410925009",
+                "title": "voluptatibus ea ut",
+              },
+            },
+            "id": "a9bb1f2b-0c13-41bf-8e83-e41fc92507d4",
+          },
+          "id": "a64be828-5527-4dfd-82db-158459196612",
+          "postsTo": Object {
+            "alias": "et",
+            "avatar": "/.mock/avatar_5.png",
+            "displayName": "Adah",
+            "id": "e71d2ce6-ee14-4ce0-b2b1-d4764e86e1c4",
+          },
+          "type": "right",
+        },
+      ],
+      "count": 93314,
+      "more": true,
+    },
     "postsHenkens": Object {
       "count": 28350,
       "henkens": Array [
         Object {
-          "answer": Object {
-            "comment": "debitis iste repellat",
-            "id": "705f61f9-11e6-4d83-8589-fcafefc4b3e7",
-            "type": "wrong",
-          },
+          "answer": null,
           "comment": "minima ut debitis",
           "content": Object {
-            "book": Object {
+            "type": "author",
+            "value": Object {
               "id": "268f665d-7b41-4037-a4f7-1e620a7a44f7",
-              "title": "veritatis ut culpa",
+              "name": "Dr. Misty Heaney",
             },
-            "type": "Book",
           },
           "id": "b70e84c9-b710-4df3-ac97-52cb0cdb7f74",
           "postsTo": Object {
-            "alias": "voluptatem",
-            "avatar": "/.mock/avatar_4.png",
-            "displayName": "Rae",
-            "id": "5fbfd15f-ffa7-48cb-b6cb-548e58c3068e",
+            "alias": "et",
+            "avatar": "/.mock/avatar_10.png",
+            "displayName": "Olin",
+            "id": "5a6edeff-ee3f-410b-a54e-5777f39c5355",
           },
         },
       ],
       "more": true,
     },
-    "receivedHenkens": Object {
-      "count": 16935,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "consequatur inventore totam",
-            "id": "236c5a9b-b1f2-4b0c-931b-f0e83e41fc92",
-            "type": "wrong",
-          },
-          "comment": "et est qui",
-          "content": Object {
-            "book": Object {
-              "id": "325315d3-7993-449a-a0d3-173f68a56f46",
-              "title": "nisi eveniet sed",
-            },
-            "type": "Book",
-          },
-          "id": "5a6edeff-ee3f-410b-a54e-5777f39c5355",
-          "postedBy": Object {
-            "alias": "qui",
-            "avatar": "/.mock/avatar_1.png",
-            "displayName": "Gisselle",
-            "id": "1deba64b-e828-4552-bdfd-c2db15845919",
-          },
-        },
-      ],
-      "more": false,
-    },
   },
 }
 `;
 
-exports[`index.transform transformer findUser.userが存在する場合 8 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 8 1`] = `
 Object {
   "user": Object {
     "alias": "officiis",
@@ -1551,67 +1535,67 @@ Object {
       ],
     },
     "id": "0f3d68d3-6096-4c66-8d7e-828bc6bd9065",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "ipsa est voluptates",
+          "henken": Object {
+            "comment": "sequi et nobis",
+            "content": Object {
+              "type": "bookSeries",
+              "value": Object {
+                "id": "aedef386-a53d-4170-b41e-57c4084e20ce",
+                "title": "inventore labore qui",
+              },
+            },
+            "id": "5ab0dec0-a930-469c-8fad-967b4275d85f",
+          },
+          "id": "2fb29902-ecb1-46da-b7a2-c6469090dc8c",
+          "postsTo": Object {
+            "alias": "eos",
+            "avatar": "/.mock/avatar_11.png",
+            "displayName": "Willa",
+            "id": "8aaa4ccb-ecc7-41cb-b54a-18bb234c1cae",
+          },
+          "type": "right",
+        },
+      ],
+      "count": 32606,
+      "more": true,
+    },
     "postsHenkens": Object {
       "count": 82735,
       "henkens": Array [
         Object {
           "answer": Object {
-            "comment": "ratione alias quos",
-            "id": "63663576-aaad-4d60-8399-8e0da7afc265",
-            "type": "right",
+            "comment": "est temporibus dolore",
+            "id": "42510a57-30d4-41b0-88d9-5762784c4dee",
+            "type": "wrong",
           },
           "comment": "vitae voluptas debitis",
           "content": Object {
-            "book": Object {
+            "type": "author",
+            "value": Object {
               "id": "2cab086d-b60c-4502-b17f-d13705ae395a",
-              "title": "sint laudantium quam",
+              "name": "Raul O'Reilly",
             },
-            "type": "Book",
           },
           "id": "08d1df46-51bd-4b7c-a1d7-5d2fdb4c019f",
           "postsTo": Object {
-            "alias": "eos",
+            "alias": "voluptas",
             "avatar": "/.mock/avatar_11.png",
-            "displayName": "Jessy",
-            "id": "af1880d6-8e60-416a-9a7b-53a6c764d6f0",
+            "displayName": "Elsie",
+            "id": "3949f95e-0bab-4f98-9acf-c6fc4139161e",
           },
         },
       ],
       "more": true,
     },
-    "receivedHenkens": Object {
-      "count": 9055,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "qui non quis",
-            "id": "0be25ab0-dec0-4a93-869c-0fad967b4275",
-            "type": "wrong",
-          },
-          "comment": "enim et enim",
-          "content": Object {
-            "book": Object {
-              "id": "2510a573-0d41-4b08-8d95-762784c4dee9",
-              "title": "temporibus dolore rerum",
-            },
-            "type": "Book",
-          },
-          "id": "949f95e0-babf-4981-acfc-6fc4139161e5",
-          "postedBy": Object {
-            "alias": "facere",
-            "avatar": "/.mock/avatar_10.png",
-            "displayName": "Josue",
-            "id": "7592fb29-902e-4cb1-adab-7a2c6469090d",
-          },
-        },
-      ],
-      "more": false,
-    },
   },
 }
 `;
 
-exports[`index.transform transformer findUser.userが存在する場合 9 1`] = `
+exports[`index.serializer serializer findUser.userが存在する場合 9 1`] = `
 Object {
   "user": Object {
     "alias": "aut",
@@ -1730,57 +1714,57 @@ Object {
       ],
     },
     "id": "58770252-03e6-4232-9657-25e5fb0fbb92",
+    "postsAnswers": Object {
+      "answers": Array [
+        Object {
+          "comment": "eum quia tempora",
+          "henken": Object {
+            "comment": "sit vero ab",
+            "content": Object {
+              "type": "bookSeries",
+              "value": Object {
+                "id": "2834e3f0-e592-40c9-acda-7e31c03c6d92",
+                "title": "quidem consequatur deleniti",
+              },
+            },
+            "id": "c169def7-5152-474b-8006-3cb2ac15b09b",
+          },
+          "id": "999fae64-a15d-4f83-bf1c-56b392dcb85c",
+          "postsTo": Object {
+            "alias": "ullam",
+            "avatar": "/.mock/avatar_5.png",
+            "displayName": "Laury",
+            "id": "a83e7455-2d1a-4346-9a04-2e81ec670502",
+          },
+          "type": "right",
+        },
+      ],
+      "count": 27385,
+      "more": true,
+    },
     "postsHenkens": Object {
       "count": 67998,
       "henkens": Array [
         Object {
           "answer": Object {
-            "comment": "sit sed quod",
-            "id": "f60eaeb8-194f-4783-9ebb-f13d9406b937",
+            "comment": "voluptate aperiam inventore",
+            "id": "00e6b937-4ee2-4ac5-9d54-8c2c9d2094d6",
             "type": "wrong",
           },
           "comment": "doloribus illum cum",
           "content": Object {
-            "book": Object {
-              "id": "8f832bbb-2823-4989-a3ee-3b8c1c184af0",
-              "title": "quae qui ea",
+            "type": "book",
+            "value": Object {
+              "id": "a23f5dff-43bf-44c9-9d7d-30c6563eb037",
+              "title": "et voluptatibus reprehenderit",
             },
-            "type": "Book",
           },
           "id": "a4fbd959-d345-4f46-88ea-750d7f693384",
           "postsTo": Object {
-            "alias": "velit",
-            "avatar": "/.mock/avatar_8.png",
-            "displayName": "Jack",
-            "id": "9da23f5d-ff43-4bf4-895d-7d30c6563eb0",
-          },
-        },
-      ],
-      "more": false,
-    },
-    "receivedHenkens": Object {
-      "count": 90666,
-      "henkens": Array [
-        Object {
-          "answer": Object {
-            "comment": "ut placeat ipsa",
-            "id": "c6330c16-9def-4751-9274-b40063cb2ac1",
-            "type": "wrong",
-          },
-          "comment": "et et dignissimos",
-          "content": Object {
-            "book": Object {
-              "id": "00e6b937-4ee2-4ac5-9d54-8c2c9d2094d6",
-              "title": "voluptate aperiam inventore",
-            },
-            "type": "Book",
-          },
-          "id": "982380f8-51aa-483f-81d7-b863ab5fee40",
-          "postedBy": Object {
-            "alias": "maxime",
-            "avatar": "/.mock/avatar_5.png",
-            "displayName": "Joey",
-            "id": "c349999f-ae64-4a15-9f83-ff1c56b392dc",
+            "alias": "et",
+            "avatar": "/.mock/avatar_6.png",
+            "displayName": "Hope",
+            "id": "982380f8-51aa-483f-81d7-b863ab5fee40",
           },
         },
       ],

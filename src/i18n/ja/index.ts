@@ -5,6 +5,12 @@ const ja: BaseTranslation = {
     Name: 'henken.club',
   },
 
+  Format: {
+    Alias: '@{alias:string}',
+  },
+
+  Followees: 'フォロイー',
+  Followers: 'フォロワー',
   Login: 'ログイン',
   TermOfService: 'サービス利用規約',
   PrivacyPolicy: 'プライバシーポリシー',
@@ -45,6 +51,22 @@ const ja: BaseTranslation = {
       Author: '著者',
       Book: '本',
       BookSeries: '本のシリーズ',
+    },
+  },
+
+  UserPage: {
+    Header: {
+      IsFollowed: 'フォローされています',
+      CanPostHenken: '偏見を送れます',
+    },
+    Profile: {
+      CannotPostHenken: '偏見を送れません',
+      Following: 'フォロー中です',
+      Follow: 'フォローする',
+      Unfollow: 'フォローを外す',
+    },
+    UserGrid: {
+      More: 'もっと',
     },
   },
 };

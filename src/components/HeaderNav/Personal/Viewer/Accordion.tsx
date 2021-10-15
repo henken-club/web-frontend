@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import {Avatar} from '~/components/Avatar';
+import {AvatarSmall} from '~/components/Avatar';
 import {
   IconPostAnswers,
   IconPostHenkens,
@@ -70,7 +70,7 @@ export const Accordion: React.VFC<AccordionProps> = ({className, viewer}) => {
           )}
         >
           <div className={clsx(['w-10'], ['h-10'])}>
-            <Avatar user={{alias: viewer.alias, avatar: viewer.avatar}} />
+            <AvatarSmall user={{alias: viewer.alias, avatar: viewer.avatar}} />
           </div>
           <div className={clsx(['ml-4'], [['flex'], ['flex-col']])}>
             <span className={clsx(['font-bold'], ['text-sm'])}>

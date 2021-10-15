@@ -8,7 +8,9 @@ import {
 import {
   alias,
   answerType,
+  authorName,
   avatar,
+  boolean,
   comment,
   displayName,
   hasNextPage,
@@ -16,7 +18,13 @@ import {
   repeat,
   title,
   totalCount,
+  which,
 } from './common';
+
+import {
+  UserPageWithViewerQuery,
+  UserPageWithViewerQueryVariables,
+} from '~/components/codegen';
 
 export const factoryAllUserPages = ({
   limit,
@@ -37,128 +45,169 @@ export const factoryAllUserPages = ({
 
 export const factoryUserPage = (
   variables: UserPageQueryVariables,
-): UserPageQuery => ({
-  __typename: 'Query',
-  findUser: {
-    __typename: 'FindUserPayload',
-    user: {
-      __typename: 'User',
-      id: id(),
-      alias: variables.alias,
-      displayName: displayName(),
-      avatar: avatar(),
-      followees: {
-        __typename: 'FollowingConnection',
-        totalCount: totalCount(),
-        pageInfo: {
-          __typename: 'PageInfo',
-          hasNextPage: hasNextPage(),
-        },
-        edges: repeat(10, () => ({
-          __typename: 'FollowingEdge',
-          node: {
-            __typename: 'Following',
-            user: {
-              __typename: 'User',
-              id: id(),
-              alias: alias(),
-              avatar: avatar(),
-            },
+): UserPageQuery => {
+  return {
+    __typename: 'Query',
+    findUser: {
+      __typename: 'FindUserPayload',
+      user: {
+        __typename: 'User',
+        id: id(),
+        alias: variables.alias,
+        displayName: displayName(),
+        avatar: avatar(),
+        followees: {
+          __typename: 'FollowingConnection',
+          totalCount: totalCount(),
+          pageInfo: {
+            __typename: 'PageInfo',
+            hasNextPage: hasNextPage(),
           },
-        })),
-      },
-      followers: {
-        __typename: 'FollowingConnection',
-        totalCount: totalCount(),
-        pageInfo: {
-          __typename: 'PageInfo',
-          hasNextPage: hasNextPage(),
-        },
-        edges: repeat(10, () => ({
-          __typename: 'FollowingEdge',
-          node: {
-            __typename: 'Following',
-            user: {
-              __typename: 'User',
-              id: id(),
-              alias: alias(),
-              avatar: avatar(),
-            },
-          },
-        })),
-      },
-      postsHenkens: {
-        __typename: 'HenkenConnection',
-        totalCount: totalCount(),
-        pageInfo: {
-          __typename: 'PageInfo',
-          hasNextPage: hasNextPage(),
-        },
-        edges: [
-          {
-            __typename: 'HenkenEdge',
+          edges: repeat(10, () => ({
+            __typename: 'FollowingEdge',
             node: {
-              __typename: 'Henken',
-              id: id(),
-              comment: comment(),
-              content: {
-                __typename: 'Book',
-                id: id(),
-                title: title(),
-              },
-              postsTo: {
+              __typename: 'Following',
+              user: {
                 __typename: 'User',
                 id: id(),
                 alias: alias(),
-                displayName: displayName(),
                 avatar: avatar(),
               },
-              answer: {
+            },
+          })),
+        },
+        followers: {
+          __typename: 'FollowingConnection',
+          totalCount: totalCount(),
+          pageInfo: {
+            __typename: 'PageInfo',
+            hasNextPage: hasNextPage(),
+          },
+          edges: repeat(10, () => ({
+            __typename: 'FollowingEdge',
+            node: {
+              __typename: 'Following',
+              user: {
+                __typename: 'User',
+                id: id(),
+                alias: alias(),
+                avatar: avatar(),
+              },
+            },
+          })),
+        },
+        postsHenkens: {
+          __typename: 'HenkenConnection',
+          totalCount: totalCount(),
+          pageInfo: {
+            __typename: 'PageInfo',
+            hasNextPage: hasNextPage(),
+          },
+          edges: [
+            {
+              __typename: 'HenkenEdge',
+              node: {
+                __typename: 'Henken',
+                id: id(),
+                comment: comment(),
+                content: which([
+                  {
+                    __typename: 'Author',
+                    id: id(),
+                    name: authorName(),
+                  },
+                  {
+                    __typename: 'Book',
+                    id: id(),
+                    title: title(),
+                  },
+                  {
+                    __typename: 'BookSeries',
+                    id: id(),
+                    title: title(),
+                  },
+                ]),
+                postsTo: {
+                  __typename: 'User',
+                  id: id(),
+                  alias: alias(),
+                  displayName: displayName(),
+                  avatar: avatar(),
+                },
+                answer: which([
+                  {
+                    __typename: 'Answer',
+                    id: id(),
+                    comment: comment(),
+                    type: answerType(),
+                  },
+                  null,
+                ]),
+              },
+            },
+          ],
+        },
+        postsAnswers: {
+          __typename: 'AnswerConnection',
+          totalCount: totalCount(),
+          pageInfo: {
+            __typename: 'PageInfo',
+            hasNextPage: hasNextPage(),
+          },
+          edges: [
+            {
+              __typename: 'AnswerEdge',
+              node: {
                 __typename: 'Answer',
                 id: id(),
                 comment: comment(),
                 type: answerType(),
+                henken: {
+                  __typename: 'Henken',
+                  id: id(),
+                  comment: comment(),
+                  content: which([
+                    {
+                      __typename: 'Author',
+                      id: id(),
+                      name: authorName(),
+                    },
+                    {
+                      __typename: 'Book',
+                      id: id(),
+                      title: title(),
+                    },
+                    {
+                      __typename: 'BookSeries',
+                      id: id(),
+                      title: title(),
+                    },
+                  ]),
+                  postsTo: {
+                    __typename: 'User',
+                    id: id(),
+                    alias: alias(),
+                    displayName: displayName(),
+                    avatar: avatar(),
+                  },
+                },
               },
             },
-          },
-        ],
-      },
-      receivedHenkens: {
-        __typename: 'HenkenConnection',
-        totalCount: totalCount(),
-        pageInfo: {
-          __typename: 'PageInfo',
-          hasNextPage: hasNextPage(),
+          ],
         },
-        edges: [
-          {
-            __typename: 'HenkenEdge',
-            node: {
-              __typename: 'Henken',
-              id: id(),
-              comment: comment(),
-              content: {
-                __typename: 'Book',
-                id: id(),
-                title: title(),
-              },
-              postedBy: {
-                __typename: 'User',
-                id: id(),
-                alias: alias(),
-                displayName: displayName(),
-                avatar: avatar(),
-              },
-              answer: {
-                __typename: 'Answer',
-                id: id(),
-                comment: comment(),
-                type: answerType(),
-              },
-            },
-          },
-        ],
       },
     },
+  };
+};
+
+export const factoryUserPageWithViewer = (
+  variables: UserPageWithViewerQueryVariables,
+): UserPageWithViewerQuery => ({
+  __typename: 'Query',
+  viewer: {
+    __typename: 'User',
+    isFollowing: boolean(),
+    isFollowed: boolean(),
+    canPostHenken: boolean(),
   },
 });
