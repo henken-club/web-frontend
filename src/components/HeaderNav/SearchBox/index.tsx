@@ -3,7 +3,7 @@ import {gql} from 'graphql-request';
 import React, {ContextType, useMemo, useState} from 'react';
 import {useDebounce} from 'react-use';
 
-import {useSearchBoxQuery} from '../codegen';
+import {useSearchBoxQuery} from '../../codegen';
 
 import {SearchBoxContext} from './context';
 import {Input} from './Input';

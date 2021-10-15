@@ -3,7 +3,7 @@ import React from 'react';
 import {Viewer} from '~/auth/useViewer';
 
 export const HeaderNavContext = React.createContext<
-  & {callLogin(): void; callRegister(): void;}
+  & {onFocus(): void; onBlur(): void; callLogin(): void; callRegister(): void;}
   & (
     | {authenticated: false;}
     | {authenticated: true; viewer: undefined;}
@@ -11,6 +11,8 @@ export const HeaderNavContext = React.createContext<
     | {authenticated: true; viewer: Viewer;}
   )
 >({
+  onFocus() {},
+  onBlur() {},
   callLogin: () => {},
   callRegister: () => {},
   authenticated: false,

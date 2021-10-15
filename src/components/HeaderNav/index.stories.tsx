@@ -1,3 +1,4 @@
+import {action} from '@storybook/addon-actions';
 import {Meta, Story} from '@storybook/react';
 import React, {ContextType} from 'react';
 
@@ -21,7 +22,10 @@ export const NotLoggedInYet: Story<StoryProps> = ({contextValue, ...args}) => (
 );
 NotLoggedInYet.storyName = '未ログイン';
 NotLoggedInYet.args = {
+  focusing: false,
   contextValue: {
+    onFocus: action('on-focus'),
+    onBlur: action('on-blur'),
     callLogin: () => {},
     callRegister: () => {},
     authenticated: false,
@@ -35,7 +39,10 @@ export const FetchingViewer: Story<StoryProps> = ({contextValue, ...args}) => (
 );
 FetchingViewer.storyName = 'Viewer取得中';
 FetchingViewer.args = {
+  focusing: false,
   contextValue: {
+    onFocus: action('on-focus'),
+    onBlur: action('on-blur'),
     callLogin: () => {},
     callRegister: () => {},
     authenticated: true,
@@ -53,7 +60,10 @@ export const NotRegisteredYet: Story<StoryProps> = ({
 );
 NotRegisteredYet.storyName = 'ログイン済みだが登録未完了';
 NotRegisteredYet.args = {
+  focusing: false,
   contextValue: {
+    onFocus: action('on-focus'),
+    onBlur: action('on-blur'),
     callLogin: () => {},
     callRegister: () => {},
     authenticated: true,
@@ -68,7 +78,10 @@ export const Registered: Story<StoryProps> = ({contextValue, ...args}) => (
 );
 Registered.storyName = '登録済み';
 Registered.args = {
+  focusing: false,
   contextValue: {
+    onFocus: action('on-focus'),
+    onBlur: action('on-blur'),
     callLogin: () => {},
     callRegister: () => {},
     authenticated: true,

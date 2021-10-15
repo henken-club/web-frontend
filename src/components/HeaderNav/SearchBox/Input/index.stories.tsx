@@ -1,10 +1,11 @@
+import {action} from '@storybook/addon-actions';
 import {Meta, Story} from '@storybook/react';
 import React, {ComponentProps} from 'react';
 
-import {Component} from './BookSeries';
+import {Component} from '.';
 
 export default {
-  title: 'SearchBox/Suggestions/BookSeries',
+  title: 'HeaderNav/SearchBox/Input',
   component: Component,
   argTypes: {
     registering: {table: {disable: true}},
@@ -17,6 +18,5 @@ export const Primary: Story<StoryProps> = (args) => {
   return <Component {...args} />;
 };
 Primary.args = {
-  id: 'book_series',
-  title: 'BookSeries_title',
+  onInputQuery: action('input-query'),
 };

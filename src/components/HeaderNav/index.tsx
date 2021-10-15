@@ -1,22 +1,31 @@
 import clsx from 'clsx';
-import React, {useMemo} from 'react';
+import React, {useMemo, useState} from 'react';
 
 import {HeaderNavContext} from './context';
 import {Personal} from './Personal';
 
 import {useAuth} from '~/auth/useAuth';
 import {useViewer} from '~/auth/useViewer';
+import {SearchBox} from '~/components/HeaderNav/SearchBox';
 import {LinkIndex} from '~/components/Link';
 import {useRegisterForm} from '~/components/RegisterForm/useRegisterForm';
-import {SearchBox} from '~/components/SearchBox';
 import {useTranslation} from '~/i18n/useTranslation';
 
-export type ComponentProps = {className?: string;};
-export const Component: React.VFC<ComponentProps> = ({className}) => {
+export type ComponentProps = {className?: string; focusing: boolean;};
+export const Component: React.VFC<ComponentProps> = (
+  {className, focusing},
+) => {
   const {LL} = useTranslation();
 
   return (
     <nav className={clsx(className, ['h-16'], ['bg-gray-100'], ['shadow-lg'])}>
+      <div
+        className={clsx(
+          ['fixed', 'inset-0', 'z-0'],
+          [{hidden: !focusing}],
+          ['bg-black', ['bg-opacity-25']],
+        )}
+      />
       <div
         className={clsx(
           ['h-full'],
@@ -44,6 +53,7 @@ export const Component: React.VFC<ComponentProps> = ({className}) => {
 export const HeaderNav: React.VFC<{className?: string;}> = ({className}) => {
   const {loginWithRedirect, isAuthenticated} = useAuth();
   const {show: showRegisterForm} = useRegisterForm();
+  const [focus, setFocus] = useState(false);
   const viewer = useViewer();
 
   const value = useMemo<React.ContextType<typeof HeaderNavContext>>(() => {
@@ -53,12 +63,18 @@ export const HeaderNav: React.VFC<{className?: string;}> = ({className}) => {
         : {authenticated: false} as const,
       callLogin: loginWithRedirect,
       callRegister: showRegisterForm,
+      onFocus: () => {
+        setFocus(true);
+      },
+      onBlur: () => {
+        setFocus(false);
+      },
     };
   }, [isAuthenticated, loginWithRedirect, showRegisterForm, viewer]);
 
   return (
     <HeaderNavContext.Provider value={value}>
-      <Component />
+      <Component focusing={focus} />
     </HeaderNavContext.Provider>
   );
 };
