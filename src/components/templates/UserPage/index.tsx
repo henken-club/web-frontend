@@ -1,15 +1,15 @@
-import React, {ComponentProps, ContextType, useMemo} from 'react';
 import clsx from 'clsx';
 import {gql} from 'graphql-tag';
+import React, {ComponentProps, ContextType, useMemo} from 'react';
 
-import {UserPageContext} from './context';
-import {Henkens} from './Henkens';
 import {Answers} from './Answers';
+import {UserPageContext} from './context';
 import {Header} from './Header';
+import {Henkens} from './Henkens';
 
-import {useTranslation} from '~/i18n/useTranslation';
-import {useUserPageWithViewerQuery} from '~/components/codegen';
 import {useViewer} from '~/auth/useViewer';
+import {useUserPageWithViewerQuery} from '~/components/codegen';
+import {useTranslation} from '~/i18n/useTranslation';
 
 const UserPageWithViewer = gql`
   query UserPageWithViewer($id: ID!) {
@@ -22,9 +22,10 @@ const UserPageWithViewer = gql`
 `;
 
 export const Component: React.VFC<{
-  user: ComponentProps<typeof Header>['user'] &
-    ComponentProps<typeof Henkens>['user'] &
-    ComponentProps<typeof Answers>['user'];
+  user:
+    & ComponentProps<typeof Header>['user']
+    & ComponentProps<typeof Henkens>['user']
+    & ComponentProps<typeof Answers>['user'];
 }> = ({user}) => {
   const {LL} = useTranslation();
   return (
@@ -127,9 +128,9 @@ export const TemplateUserPage: React.VFC<{
         id: string;
         comment: string;
         content:
-          | {type: 'book'; value: {id: string; title: string}}
-          | {type: 'bookSeries'; value: {id: string; title: string}}
-          | {type: 'author'; value: {id: string; name: string}};
+          | {type: 'book'; value: {id: string; title: string;};}
+          | {type: 'bookSeries'; value: {id: string; title: string;};}
+          | {type: 'author'; value: {id: string; name: string;};};
         postsTo: {
           id: string;
           alias: string;
@@ -160,9 +161,9 @@ export const TemplateUserPage: React.VFC<{
           id: string;
           comment: string;
           content:
-            | {type: 'book'; value: {id: string; title: string}}
-            | {type: 'bookSeries'; value: {id: string; title: string}}
-            | {type: 'author'; value: {id: string; name: string}};
+            | {type: 'book'; value: {id: string; title: string;};}
+            | {type: 'bookSeries'; value: {id: string; title: string;};}
+            | {type: 'author'; value: {id: string; name: string;};};
         };
       }[];
     };
@@ -175,7 +176,7 @@ export const TemplateUserPage: React.VFC<{
   });
 
   const contextValue = useMemo<ContextType<typeof UserPageContext>>(() => {
-    if (result.data?.viewer)
+    if (result.data?.viewer) {
       return {
         loggedIn: true,
         isFollowing: result.data.viewer.isFollowing,
@@ -185,6 +186,7 @@ export const TemplateUserPage: React.VFC<{
         unfollow: () => {},
         postHenken: () => {},
       };
+    }
     return {
       loggedIn: false,
     };

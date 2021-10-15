@@ -23,11 +23,11 @@ export const LinkUser: React.FC<LinkProps<{alias: string;}>> = ({
   alias,
   ...props
 }) => <NextLink href={`/users/${alias}`} {...props} />;
-export const LinkUserFollowees: React.FC<LinkProps<{alias: string}>> = ({
+export const LinkUserFollowees: React.FC<LinkProps<{alias: string;}>> = ({
   alias,
   ...props
 }) => <NextLink href={`/users/${alias}/followees`} {...props} />;
-export const LinkUserFollowers: React.FC<LinkProps<{alias: string}>> = ({
+export const LinkUserFollowers: React.FC<LinkProps<{alias: string;}>> = ({
   alias,
   ...props
 }) => <NextLink href={`/users/${alias}/followers`} {...props} />;

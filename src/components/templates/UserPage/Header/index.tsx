@@ -4,12 +4,12 @@ import React, {ComponentProps, ContextType, useContext, useMemo} from 'react';
 import {UserPageContext} from '../context';
 
 import {Badges} from './Badges';
+import {FollowButton} from './ButtonFollow';
 import {UserPageHeaderContext} from './context';
 import {Followees, Followers} from './Follow';
-import {FollowButton} from './ButtonFollow';
 
-import {useTranslation} from '~/i18n/useTranslation';
 import {AvatarLarge} from '~/components/Avatar';
+import {useTranslation} from '~/i18n/useTranslation';
 
 export const Component: React.VFC<{
   className?: string;
@@ -18,16 +18,16 @@ export const Component: React.VFC<{
   avatar: string;
   followers: {
     count: number;
-    users: {id: string; alias: string; avatar: string}[];
+    users: {id: string; alias: string; avatar: string;}[];
     more: boolean;
   };
   followees: {
     count: number;
-    users: {id: string; alias: string; avatar: string}[];
+    users: {id: string; alias: string; avatar: string;}[];
     more: boolean;
   };
   viewer:
-    | {isFollowing: boolean; isFollowed: boolean; canPostHenken: boolean}
+    | {isFollowing: boolean; isFollowed: boolean; canPostHenken: boolean;}
     | undefined;
 }> = ({
   className,
@@ -153,9 +153,8 @@ export const Component: React.VFC<{
             />
           </div>
           <div className={clsx(['sm:flex-grow'])}>
-            {viewer && viewer.isFollowing && (
-              <FollowButton className={clsx(['w-full'])} />
-            )}
+            {viewer && viewer.isFollowing &&
+              <FollowButton className={clsx(['w-full'])} />}
           </div>
         </div>
       </div>
@@ -172,44 +171,46 @@ export const Header: React.VFC<{
     avatar: string;
     followers: {
       count: number;
-      users: {id: string; alias: string; avatar: string}[];
+      users: {id: string; alias: string; avatar: string;}[];
       more: boolean;
     };
     followees: {
       count: number;
-      users: {id: string; alias: string; avatar: string}[];
+      users: {id: string; alias: string; avatar: string;}[];
       more: boolean;
     };
   };
 }> = ({user, ...props}) => {
   const pageContext = useContext(UserPageContext);
 
-  const memoized = useMemo<{
-    contextValue: ContextType<typeof UserPageHeaderContext>;
-    componentValue: ComponentProps<typeof Component>['viewer'];
-  } | null>(
+  const memoized = useMemo<
+    {
+      contextValue: ContextType<typeof UserPageHeaderContext>;
+      componentValue: ComponentProps<typeof Component>['viewer'];
+    } | null
+  >(
     () =>
       pageContext.loggedIn
         ? {
-            contextValue: {
-              follow: pageContext.follow,
-              callUnfollowPopup: () => {},
-            },
-            componentValue: {
-              isFollowing: pageContext.isFollowing,
-              isFollowed: pageContext.isFollowed,
-              canPostHenken: pageContext.canPostsHenken,
-            },
-          }
+          contextValue: {
+            follow: pageContext.follow,
+            callUnfollowPopup: () => {},
+          },
+          componentValue: {
+            isFollowing: pageContext.isFollowing,
+            isFollowed: pageContext.isFollowed,
+            canPostHenken: pageContext.canPostsHenken,
+          },
+        }
         : null,
     [pageContext],
   );
 
-  if (memoized)
+  if (memoized) {
     return (
       <UserPageHeaderContext.Provider value={memoized.contextValue}>
         <Component {...props} {...user} viewer={memoized.componentValue} />
       </UserPageHeaderContext.Provider>
     );
-  else return <Component {...props} {...user} viewer={undefined} />;
+  } else { return <Component {...props} {...user} viewer={undefined} />; }
 };

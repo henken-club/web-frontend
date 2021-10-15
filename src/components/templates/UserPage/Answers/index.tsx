@@ -19,14 +19,16 @@ export const Component: React.VFC<{
       id: string;
       comment: string;
       content:
-        | {type: 'book'; value: {id: string; title: string}}
-        | {type: 'bookSeries'; value: {id: string; title: string}}
-        | {type: 'author'; value: {id: string; name: string}};
+        | {type: 'book'; value: {id: string; title: string;};}
+        | {type: 'bookSeries'; value: {id: string; title: string;};}
+        | {type: 'author'; value: {id: string; name: string;};};
     };
   }[];
 }> = ({className}) => (
   <section className={clsx(className, ['col-span-1'], ['bg-blue-600'])}>
-    <h2>送った回答</h2>
+    <h2>
+      送った回答
+    </h2>
   </section>
 );
 
@@ -50,9 +52,9 @@ export const Answers: React.VFC<{
           id: string;
           comment: string;
           content:
-            | {type: 'book'; value: {id: string; title: string}}
-            | {type: 'bookSeries'; value: {id: string; title: string}}
-            | {type: 'author'; value: {id: string; name: string}};
+            | {type: 'book'; value: {id: string; title: string;};}
+            | {type: 'bookSeries'; value: {id: string; title: string;};}
+            | {type: 'author'; value: {id: string; name: string;};};
         };
       }[];
     };

@@ -9,15 +9,17 @@ export const Component: React.VFC<{
   henkens: {
     id: string;
     comment: string;
-    postsTo: {id: string; alias: string; displayName: string; avatar: string};
+    postsTo: {id: string; alias: string; displayName: string; avatar: string;};
     content:
-      | {type: 'author'; value: {id: string; name: string}}
-      | {type: 'book'; value: {id: string; title: string}}
-      | {type: 'bookSeries'; value: {id: string; title: string}};
+      | {type: 'author'; value: {id: string; name: string;};}
+      | {type: 'book'; value: {id: string; title: string;};}
+      | {type: 'bookSeries'; value: {id: string; title: string;};};
   }[];
 }> = ({className}) => (
   <div className={clsx(className, ['col-span-1'], ['bg-blue-600'])}>
-    <h2>送った偏見</h2>
+    <h2>
+      送った偏見
+    </h2>
   </div>
 );
 
@@ -38,9 +40,9 @@ export const Henkens: React.VFC<{
           avatar: string;
         };
         content:
-          | {type: 'author'; value: {id: string; name: string}}
-          | {type: 'book'; value: {id: string; title: string}}
-          | {type: 'bookSeries'; value: {id: string; title: string}};
+          | {type: 'author'; value: {id: string; name: string;};}
+          | {type: 'book'; value: {id: string; title: string;};}
+          | {type: 'bookSeries'; value: {id: string; title: string;};};
       }[];
     };
   };

@@ -6,7 +6,7 @@ import {UserPageHeaderContext} from './context';
 import {IconFollow} from '~/components/Icon';
 import {useTranslation} from '~/i18n/useTranslation';
 
-export const Component: React.VFC<{className?: string; follow(): void}> = ({
+export const Component: React.VFC<{className?: string; follow(): void;}> = ({
   className,
   follow,
 }) => {
@@ -32,7 +32,7 @@ export const Component: React.VFC<{className?: string; follow(): void}> = ({
   );
 };
 
-export const FollowButton: React.VFC<{className?: string}> = ({...props}) => {
+export const FollowButton: React.VFC<{className?: string;}> = ({...props}) => {
   const {follow} = useContext(UserPageHeaderContext);
 
   return <Component {...props} follow={follow} />;

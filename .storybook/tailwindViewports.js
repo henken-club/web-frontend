@@ -1,5 +1,5 @@
-import configfile from '../tailwind.config.js';
 import resolveConfig from 'tailwindcss/resolveConfig';
+import configfile from '../tailwind.config.js';
 
 const tailwindConfig = resolveConfig(configfile);
 
