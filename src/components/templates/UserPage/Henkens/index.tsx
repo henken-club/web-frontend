@@ -11,9 +11,9 @@ export const Component: React.VFC<{
     comment: string;
     postsTo: {id: string; alias: string; displayName: string; avatar: string};
     content:
-      | {type: 'author'; content: {id: string; name: string}}
-      | {type: 'book'; content: {id: string; title: string}}
-      | {type: 'bookSeries'; content: {id: string; title: string}};
+      | {type: 'author'; value: {id: string; name: string}}
+      | {type: 'book'; value: {id: string; title: string}}
+      | {type: 'bookSeries'; value: {id: string; title: string}};
   }[];
 }> = ({className}) => (
   <div className={clsx(className, ['col-span-1'], ['bg-blue-600'])}>
@@ -38,9 +38,9 @@ export const Henkens: React.VFC<{
           avatar: string;
         };
         content:
-          | {type: 'author'; content: {id: string; name: string}}
-          | {type: 'book'; content: {id: string; title: string}}
-          | {type: 'bookSeries'; content: {id: string; title: string}};
+          | {type: 'author'; value: {id: string; name: string}}
+          | {type: 'book'; value: {id: string; title: string}}
+          | {type: 'bookSeries'; value: {id: string; title: string}};
       }[];
     };
   };

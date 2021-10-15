@@ -15,13 +15,13 @@ export const Component: React.VFC<{
       displayName: string;
       avatar: string;
     };
-    henkens: {
+    henken: {
       id: string;
       comment: string;
       content:
-        | {type: 'Book'; book: {id: string; title: string}}
-        | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
-        | {type: 'Author'; author: {id: string; name: string}};
+        | {type: 'book'; value: {id: string; title: string}}
+        | {type: 'bookSeries'; value: {id: string; title: string}}
+        | {type: 'author'; value: {id: string; name: string}};
     };
   }[];
 }> = ({className}) => (
@@ -46,13 +46,13 @@ export const Answers: React.VFC<{
           displayName: string;
           avatar: string;
         };
-        henkens: {
+        henken: {
           id: string;
           comment: string;
           content:
-            | {type: 'Book'; book: {id: string; title: string}}
-            | {type: 'BookSeries'; bookSeries: {id: string; title: string}}
-            | {type: 'Author'; author: {id: string; name: string}};
+            | {type: 'book'; value: {id: string; title: string}}
+            | {type: 'bookSeries'; value: {id: string; title: string}}
+            | {type: 'author'; value: {id: string; name: string}};
         };
       }[];
     };

@@ -8,7 +8,7 @@ import {
 import React from 'react';
 
 import {getSdk} from './index.page.codegen';
-import {TransformedProps, transformer} from './index.transform';
+import {SerializedPageProps, serializer} from './index.serializer';
 
 import {graphqlClient} from '~/libs/graphql-request';
 import {TemplateUserPage} from '~/components/templates/UserPage';
@@ -74,47 +74,6 @@ const UserPageQuery = gql`
             }
           }
         }
-        receivedHenkens(
-          first: 3
-          orderBy: {field: CREATED_AT, direction: DESC}
-        ) {
-          totalCount
-          pageInfo {
-            hasNextPage
-          }
-          edges {
-            node {
-              id
-              comment
-              postedBy {
-                id
-                alias
-                displayName
-                avatar
-              }
-              content {
-                __typename
-                ... on Book {
-                  id
-                  title
-                }
-                ... on BookSeries {
-                  id
-                  title
-                }
-                ... on Author {
-                  id
-                  name
-                }
-              }
-              answer {
-                id
-                comment
-                type
-              }
-            }
-          }
-        }
         postsHenkens(first: 3, orderBy: {field: CREATED_AT, direction: DESC}) {
           totalCount
           pageInfo {
@@ -153,12 +112,50 @@ const UserPageQuery = gql`
             }
           }
         }
+        postsAnswers(first: 3, orderBy: {field: CREATED_AT, direction: DESC}) {
+          totalCount
+          pageInfo {
+            hasNextPage
+          }
+          edges {
+            node {
+              id
+              type
+              comment
+              henken {
+                id
+                comment
+                postsTo {
+                  id
+                  alias
+                  displayName
+                  avatar
+                }
+                content {
+                  __typename
+                  ... on Book {
+                    id
+                    title
+                  }
+                  ... on BookSeries {
+                    id
+                    title
+                  }
+                  ... on Author {
+                    id
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
 `;
 
-export type StaticProps = TransformedProps;
+export type StaticProps = SerializedPageProps;
 export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
@@ -166,7 +163,7 @@ export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
 
   try {
     const result = await getSdk(graphqlClient).UserPage({alias: params.alias});
-    const transformed = transformer(result);
+    const transformed = serializer(result);
     if (transformed) return {props: transformed, revalidate: 60};
     else return {notFound: true};
   } catch (error) {

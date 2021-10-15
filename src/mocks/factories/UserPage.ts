@@ -8,6 +8,7 @@ import {
 import {
   alias,
   answerType,
+  authorName,
   avatar,
   boolean,
   comment,
@@ -17,6 +18,7 @@ import {
   repeat,
   title,
   totalCount,
+  which,
 } from './common';
 
 import {
@@ -108,11 +110,23 @@ export const factoryUserPage = (
                 __typename: 'Henken',
                 id: id(),
                 comment: comment(),
-                content: {
-                  __typename: 'Book',
-                  id: id(),
-                  title: title(),
-                },
+                content: which([
+                  {
+                    __typename: 'Author',
+                    id: id(),
+                    name: authorName(),
+                  },
+                  {
+                    __typename: 'Book',
+                    id: id(),
+                    title: title(),
+                  },
+                  {
+                    __typename: 'BookSeries',
+                    id: id(),
+                    title: title(),
+                  },
+                ]),
                 postsTo: {
                   __typename: 'User',
                   id: id(),
@@ -120,18 +134,21 @@ export const factoryUserPage = (
                   displayName: displayName(),
                   avatar: avatar(),
                 },
-                answer: {
-                  __typename: 'Answer',
-                  id: id(),
-                  comment: comment(),
-                  type: answerType(),
-                },
+                answer: which([
+                  {
+                    __typename: 'Answer',
+                    id: id(),
+                    comment: comment(),
+                    type: answerType(),
+                  },
+                  null,
+                ]),
               },
             },
           ],
         },
-        receivedHenkens: {
-          __typename: 'HenkenConnection',
+        postsAnswers: {
+          __typename: 'AnswerConnection',
           totalCount: totalCount(),
           pageInfo: {
             __typename: 'PageInfo',
@@ -139,28 +156,40 @@ export const factoryUserPage = (
           },
           edges: [
             {
-              __typename: 'HenkenEdge',
+              __typename: 'AnswerEdge',
               node: {
-                __typename: 'Henken',
+                __typename: 'Answer',
                 id: id(),
                 comment: comment(),
-                content: {
-                  __typename: 'Book',
-                  id: id(),
-                  title: title(),
-                },
-                postedBy: {
-                  __typename: 'User',
-                  id: id(),
-                  alias: alias(),
-                  displayName: displayName(),
-                  avatar: avatar(),
-                },
-                answer: {
-                  __typename: 'Answer',
+                type: answerType(),
+                henken: {
+                  __typename: 'Henken',
                   id: id(),
                   comment: comment(),
-                  type: answerType(),
+                  content: which([
+                    {
+                      __typename: 'Author',
+                      id: id(),
+                      name: authorName(),
+                    },
+                    {
+                      __typename: 'Book',
+                      id: id(),
+                      title: title(),
+                    },
+                    {
+                      __typename: 'BookSeries',
+                      id: id(),
+                      title: title(),
+                    },
+                  ]),
+                  postsTo: {
+                    __typename: 'User',
+                    id: id(),
+                    alias: alias(),
+                    displayName: displayName(),
+                    avatar: avatar(),
+                  },
                 },
               },
             },
