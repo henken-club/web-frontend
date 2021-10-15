@@ -120,7 +120,7 @@ export type SerializedPageProps = {
 
 export const serializer = ({
   findUser: {user},
-}: UserPageQueryResult): SerializedPageProps | null =>
+}: UserPageQueryResult): SerializedPageProps | null => (
   user
     ? {
       user: {
@@ -131,16 +131,16 @@ export const serializer = ({
         followees: {
           count: user.followees.totalCount,
           more: user.followees.pageInfo.hasNextPage,
-          users: user.followees.edges.map(({node: {user}}) =>
-            serializeUser(user)
-          ),
+          users: user.followees.edges.map((
+            {node: {user}},
+          ) => (serializeUser(user))),
         },
         followers: {
           count: user.followers.totalCount,
           more: user.followers.pageInfo.hasNextPage,
-          users: user.followers.edges.map(({node: {user}}) =>
-            serializeUser(user)
-          ),
+          users: user.followers.edges.map((
+            {node: {user}},
+          ) => (serializeUser(user))),
         },
         postsHenkens: {
           count: user.postsHenkens.totalCount,
@@ -180,4 +180,5 @@ export const serializer = ({
         },
       },
     }
-    : null;
+    : null
+);

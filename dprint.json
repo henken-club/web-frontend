@@ -34,7 +34,8 @@
     "**/codegen.ts",
     "**/*.codegen.ts",
     "next-env.d.ts",
-    "public/mockServiceWorker.js"
+    "public/mockServiceWorker.js",
+    "src/i18n/i18n-*"
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.57.2.wasm",

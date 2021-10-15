@@ -189,7 +189,7 @@ export const Header: React.VFC<{
       componentValue: ComponentProps<typeof Component>['viewer'];
     } | null
   >(
-    () =>
+    () => (
       pageContext.loggedIn
         ? {
           contextValue: {
@@ -202,7 +202,8 @@ export const Header: React.VFC<{
             canPostHenken: pageContext.canPostsHenken,
           },
         }
-        : null,
+        : null
+    ),
     [pageContext],
   );
 
@@ -212,5 +213,7 @@ export const Header: React.VFC<{
         <Component {...props} {...user} viewer={memoized.componentValue} />
       </UserPageHeaderContext.Provider>
     );
-  } else { return <Component {...props} {...user} viewer={undefined} />; }
+  } else {
+    return <Component {...props} {...user} viewer={undefined} />;
+  }
 };
