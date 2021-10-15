@@ -1,6 +1,8 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, {ContextType, useContext} from 'react';
 import styled from 'styled-components';
+
+import {HeaderNavContext} from '../../context';
 
 import {Accordion} from './Accordion';
 
@@ -26,13 +28,18 @@ const Details = styled.details`
   }
 `;
 
-export type ViewerProps = {
+export const Component: React.VFC<{
   className?: string;
   viewer: {id: string; alias: string; displayName: string; avatar: string;};
-};
-export const Viewer: React.VFC<ViewerProps> = ({className, viewer}) => {
+  onFocus(): void;
+  onBlur(): void;
+}> = ({className, viewer, onFocus, onBlur}) => {
   return (
-    <Details className={clsx(className, ['relative'], ['inline-flex'])}>
+    <Details
+      className={clsx(className, ['relative'], ['inline-flex'])}
+      onFocus={onFocus}
+      onBlur={onBlur}
+    >
       <summary className={clsx(['flex'], ['cursor-pointer'])}>
         <div className={clsx(['w-12'], ['h-12'])}>
           <AvatarSmall user={{alias: viewer.alias, avatar: viewer.avatar}} />
@@ -48,4 +55,14 @@ export const Viewer: React.VFC<ViewerProps> = ({className, viewer}) => {
       />
     </Details>
   );
+};
+
+export const Viewer: React.VFC<{
+  className?: string;
+  viewer: {id: string; alias: string; displayName: string; avatar: string;};
+}> = ({...props}) => {
+  const {onFocus, onBlur} = useContext<ContextType<typeof HeaderNavContext>>(
+    HeaderNavContext,
+  );
+  return <Component {...props} onFocus={onFocus} onBlur={onBlur} />;
 };

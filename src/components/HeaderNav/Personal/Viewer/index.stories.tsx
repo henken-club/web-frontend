@@ -1,11 +1,12 @@
+import {action} from '@storybook/addon-actions';
 import {Meta, Story} from '@storybook/react';
-import React from 'react';
+import React, {ComponentProps} from 'react';
 
-import {Viewer, ViewerProps} from '.';
+import {Component} from '.';
 
 export default {
   title: 'HeaderNav/Personal/Viewer',
-  component: Viewer,
+  component: Component,
   decorators: [
     (Story) => (
       <div css={{display: 'flex', justifyContent: 'flex-end'}}>
@@ -15,7 +16,9 @@ export default {
   ],
 } as Meta;
 
-export const Primary: Story<ViewerProps> = (args) => <Viewer {...args} />;
+type StoryProps = ComponentProps<typeof Component>;
+
+export const Primary: Story<StoryProps> = (args) => <Component {...args} />;
 Primary.args = {
   viewer: {
     id: 'id',
@@ -23,4 +26,6 @@ Primary.args = {
     displayName: 'DisplayName',
     avatar: '/.mock/avatar_1.png',
   },
+  onFocus: action('onFocus'),
+  onBlur: action('onBlur'),
 };
