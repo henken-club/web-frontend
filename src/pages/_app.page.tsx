@@ -1,19 +1,20 @@
 /* eslint-disable no-process-env */
-import React from 'react';
 import {AppProps} from 'next/app';
+import React from 'react';
 import {RecoilRoot} from 'recoil';
 
+import {Viewer} from '~/auth/AuthManager';
 import {AuthProvider} from '~/auth/AuthProvider';
+import {DefaultLayout} from '~/components/Layout';
+import {RegisterFormManager} from '~/components/RegisterForm/Manager';
 import {localeDetector} from '~/i18n/detector';
 import TypesafeI18n from '~/i18n/i18n-react';
 import {UrqlProvider} from '~/urql/UrqlProvider';
-import {Viewer} from '~/auth/AuthManager';
-import {DefaultLayout} from '~/components/Layout';
-import {RegisterFormManager} from '~/components/RegisterForm/Manager';
 
 import '~/styles/index.css';
 
-if (process.env.NEXT_PUBLIC_MSW_ENABLED === 'true') require('../mocks/next');
+if (process.env.NEXT_PUBLIC_MSW_ENABLED === 'true')
+  require('../mocks/next');
 
 const App = ({
   Component,

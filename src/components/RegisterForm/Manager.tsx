@@ -1,5 +1,5 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
 import {useRegisterForm} from './useRegisterForm';
 
@@ -8,7 +8,9 @@ import {RegisterForm} from '.';
 export const RegisterFormManager: React.VFC = () => {
   const {visibility, hide} = useRegisterForm();
 
-  if (!visibility) return <></>;
+  if (!visibility)
+    return <></>;
+
   return (
     <div
       className={clsx(

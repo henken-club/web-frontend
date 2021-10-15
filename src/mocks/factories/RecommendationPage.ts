@@ -7,16 +7,16 @@ import {
 
 import {
   alias,
+  authorName,
   avatar,
   bookCover,
   displayName,
-  score,
   id,
+  repeat,
+  score,
   title,
   updatedAt,
   which,
-  repeat,
-  authorName,
 } from './common';
 
 export const factoryAllRecommendationsPages = ({

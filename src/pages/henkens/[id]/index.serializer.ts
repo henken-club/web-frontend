@@ -1,9 +1,9 @@
 import {HenkenPageQuery as PageQueryResult} from './index.page.codegen';
 
 import {
-  serializeUser,
-  serializeHenken,
   SerializeContent,
+  serializeHenken,
+  serializeUser,
 } from '~/libs/serializer';
 
 type ResultHenken = Exclude<
@@ -14,9 +14,9 @@ type ResultHenken = Exclude<
 export const serializeContent: SerializeContent<
   ResultHenken['content'],
   {
-    book: {title: string; cover: string | null};
-    bookSeries: {title: string};
-    author: {name: string};
+    book: {title: string; cover: string | null;};
+    bookSeries: {title: string;};
+    author: {name: string;};
   }
 > = (content) => {
   switch (content.__typename) {
@@ -52,22 +52,21 @@ export type SerializedProps = {
   henken: {
     id: string;
     comment: string;
-    postedBy: {id: string; alias: string; displayName: string; avatar: string};
-    postsTo: {id: string; alias: string; displayName: string; avatar: string};
+    postedBy: {id: string; alias: string; displayName: string; avatar: string;};
+    postsTo: {id: string; alias: string; displayName: string; avatar: string;};
     content: ReturnType<typeof serializeContent>;
   };
 };
 
 export const serializer = ({
   findHenken: {henken},
-}: PageQueryResult): SerializedProps | null =>
-  henken
-    ? {
-        henken: serializeHenken({
-          ...henken,
-          postsTo: serializeUser({...henken.postsTo}),
-          postedBy: serializeUser({...henken.postedBy}),
-          content: serializeContent({...henken.content}),
-        }),
-      }
-    : null;
+}: PageQueryResult): SerializedProps | null => (henken
+  ? {
+    henken: serializeHenken({
+      ...henken,
+      postsTo: serializeUser({...henken.postsTo}),
+      postedBy: serializeUser({...henken.postedBy}),
+      content: serializeContent({...henken.content}),
+    }),
+  }
+  : null);

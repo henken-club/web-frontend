@@ -1,9 +1,9 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
 import {IconLoading} from '~/components/Icon';
 
-export const Component: React.VFC<{className?: string}> = ({className}) => (
+export const Component: React.VFC<{className?: string;}> = ({className}) => (
   <div className={clsx(className, ['inline-flex', ['justify-center']])}>
     <IconLoading className={clsx(['text-lg'], ['text-blue-500'])} />
   </div>

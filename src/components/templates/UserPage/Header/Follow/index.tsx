@@ -8,7 +8,7 @@ export const Followees: React.VFC<{
   className?: string;
   alias: string;
   followees: {
-    users: {id: string; alias: string; avatar: string}[];
+    users: {id: string; alias: string; avatar: string;}[];
     more: boolean;
   };
 }> = ({alias, followees, ...props}) => (
@@ -23,7 +23,7 @@ export const Followers: React.VFC<{
   className?: string;
   alias: string;
   followers: {
-    users: {id: string; alias: string; avatar: string}[];
+    users: {id: string; alias: string; avatar: string;}[];
     more: boolean;
   };
 }> = ({alias, followers, ...props}) => (

@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import {gql} from 'graphql-request';
 import React, {useState} from 'react';
 import {
   FormProvider,
@@ -6,22 +7,21 @@ import {
   SubmitHandler,
   useForm,
 } from 'react-hook-form';
-import {gql} from 'graphql-request';
 
 import {useRegisterUserMutation} from '../codegen';
 
+import {Completed} from './Completed';
+import {FormValue} from './FormValue';
 import {Alias} from './inputs/Alias';
 import {DisplayName} from './inputs/DisplayName';
 import {Picture} from './inputs/Picture';
-import {FormValue} from './FormValue';
 import {useRegisterForm} from './useRegisterForm';
-import {Completed} from './Completed';
 
-import {IconLoading, IconRegister} from '~/components/Icon';
-import {useTranslation} from '~/i18n/useTranslation';
 import {useAuth} from '~/auth/useAuth';
-import {LinkTos, LinkPrivacy} from '~/components/Link';
 import {useUpdateViewer, Viewer} from '~/auth/useViewer';
+import {IconLoading, IconRegister} from '~/components/Icon';
+import {LinkPrivacy, LinkTos} from '~/components/Link';
+import {useTranslation} from '~/i18n/useTranslation';
 
 const RegisterFormMutation = gql`
   mutation RegisterUser(
@@ -44,7 +44,7 @@ export const Component: React.VFC<
   {
     className?: string;
     onSubmit(): void;
-  } & ({completed: Viewer} | {registering: boolean})
+  } & ({completed: Viewer;} | {registering: boolean;})
 > = ({className, onSubmit, ...props}) => {
   const {LL} = useTranslation();
 
@@ -97,21 +97,18 @@ export const Component: React.VFC<
       </div>
       <Picture
         className={clsx(['w-full'], ['mt-6'])}
-        disabled={
-          'completed' in props || ('registering' in props && props.registering)
-        }
+        disabled={'completed' in props ||
+          ('registering' in props && props.registering)}
       />
       <Alias
         className={clsx(['w-full'], ['mt-4'])}
-        disabled={
-          'completed' in props || ('registering' in props && props.registering)
-        }
+        disabled={'completed' in props ||
+          ('registering' in props && props.registering)}
       />
       <DisplayName
         className={clsx(['w-full'], ['mt-4'])}
-        disabled={
-          'completed' in props || ('registering' in props && props.registering)
-        }
+        disabled={'completed' in props ||
+          ('registering' in props && props.registering)}
       />
       <button
         className={clsx(
@@ -126,9 +123,8 @@ export const Component: React.VFC<
           ['rounded-md'],
         )}
         type="submit"
-        disabled={
-          'completed' in props || ('registering' in props && props.registering)
-        }
+        disabled={'completed' in props ||
+          ('registering' in props && props.registering)}
       >
         {'registering' in props && props.registering && (
           <>
@@ -151,7 +147,7 @@ export const Component: React.VFC<
   );
 };
 
-export const RegisterForm: React.VFC<{className?: string}> = ({...props}) => {
+export const RegisterForm: React.VFC<{className?: string;}> = ({...props}) => {
   const {user} = useAuth();
   const methods = useForm<FormValue>({
     defaultValues: {displayName: user?.name, avatar: user?.picture},

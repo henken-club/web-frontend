@@ -1,5 +1,5 @@
-import {createClient, Client, Provider, ClientOptions} from 'urql';
 import React, {useEffect, useState} from 'react';
+import {Client, ClientOptions, createClient, Provider} from 'urql';
 
 import {useAccessToken} from '~/urql/useAccessToken';
 

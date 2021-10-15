@@ -11,7 +11,7 @@ const ShrinkX = keyframes`
   }
 `;
 
-const AnimatedDiv = styled.div<{duration: number}>`
+const AnimatedDiv = styled.div<{duration: number;}>`
   transform-origin: left;
   animation-name: ${ShrinkX};
   animation-duration: ${(props) => props.duration}ms;
@@ -20,6 +20,6 @@ const AnimatedDiv = styled.div<{duration: number}>`
   animation-fill-mode: both;
 `;
 
-export const TimerBar: React.VFC<{className?: string; duration: number}> = ({
+export const TimerBar: React.VFC<{className?: string; duration: number;}> = ({
   ...props
 }) => <AnimatedDiv {...props} />;

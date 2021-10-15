@@ -10,8 +10,8 @@ import React from 'react';
 import {getSdk} from './index.page.codegen';
 import {SerializedPageProps, serializer} from './index.serializer';
 
-import {graphqlClient} from '~/libs/graphql-request';
 import {TemplateUserPage} from '~/components/templates/UserPage';
+import {graphqlClient} from '~/libs/graphql-request';
 
 const AllUserPagesQuery = gql`
   query AllUserPages($limit: Int!) {
@@ -26,7 +26,7 @@ const AllUserPagesQuery = gql`
   }
 `;
 
-export type UrlQuery = {alias: string};
+export type UrlQuery = {alias: string;};
 export const getStaticPaths: GetStaticPaths<UrlQuery> = async () => {
   return getSdk(graphqlClient)
     .AllUserPages({limit: 100})
@@ -159,13 +159,16 @@ export type StaticProps = SerializedPageProps;
 export const getStaticProps: GetStaticProps<StaticProps, UrlQuery> = async ({
   params,
 }) => {
-  if (!params?.alias) return {notFound: true};
+  if (!params?.alias)
+    return {notFound: true};
 
   try {
     const result = await getSdk(graphqlClient).UserPage({alias: params.alias});
     const transformed = serializer(result);
-    if (transformed) return {props: transformed, revalidate: 60};
-    else return {notFound: true};
+    if (transformed)
+      return {props: transformed, revalidate: 60};
+    else
+      return {notFound: true};
   } catch (error) {
     return {notFound: true};
   }

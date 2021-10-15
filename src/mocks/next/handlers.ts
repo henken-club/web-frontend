@@ -82,7 +82,8 @@ export const handlers = [
       faker.seed(0);
       if (req.headers.get('Authorization'))
         return res(ctx.data(factoryAuthorizedViewer()));
-      else return res(ctx.data(factoryUnauthorizedViewer()));
+      else
+        return res(ctx.data(factoryUnauthorizedViewer()));
     },
   ),
   graphql.query<SearchBoxQuery, SearchBoxQueryVariables>(

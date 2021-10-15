@@ -4,7 +4,7 @@ import React from 'react';
 import {Image} from '~/components/Image';
 
 export const AvatarSmall: React.VFC<{
-  user: {alias: string; avatar: string};
+  user: {alias: string; avatar: string;};
 }> = ({user: {alias, avatar}}) => (
   <Image
     className={clsx(['rounded-full'])}
@@ -16,7 +16,7 @@ export const AvatarSmall: React.VFC<{
 );
 
 export const AvatarLarge: React.VFC<{
-  user: {alias: string; avatar: string};
+  user: {alias: string; avatar: string;};
 }> = ({user: {alias, avatar}}) => (
   <Image
     className={clsx(['rounded-full'])}

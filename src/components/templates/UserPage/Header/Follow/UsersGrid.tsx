@@ -1,14 +1,14 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
-import {LinkUser} from '~/components/Link';
 import {AvatarSmall} from '~/components/Avatar';
+import {LinkUser} from '~/components/Link';
 import {useTranslation} from '~/i18n/useTranslation';
 
 export const UsersGrid: React.VFC<{
   className?: string;
-  linkMore: React.FC<{className?: string}>;
-  users: {id: string; alias: string; avatar: string}[];
+  linkMore: React.FC<{className?: string;}>;
+  users: {id: string; alias: string; avatar: string;}[];
   more: boolean;
 }> = ({className, users, more, linkMore: LinkMore}) => {
   const {LL} = useTranslation();

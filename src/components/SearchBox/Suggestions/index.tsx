@@ -11,7 +11,7 @@ import {useTranslation} from '~/i18n/useTranslation';
 
 export const Component: React.VFC<{
   className?: string;
-  suggestions: {nodes: [] | Suggestion[]};
+  suggestions: {nodes: [] | Suggestion[];};
 }> = ({className, suggestions: {nodes}}) => {
   const {LL} = useTranslation();
   return (
@@ -28,15 +28,17 @@ export const Component: React.VFC<{
         >
           {nodes.map((node) => (
             <div key={node.content.id}>
-              {node.type === 'author' && (
-                <Author className={clsx(['w-full'])} value={node.content} />
-              )}
-              {node.type === 'book' && (
-                <Book className={clsx(['w-full'])} value={node.content} />
-              )}
-              {node.type === 'bookSeries' && (
-                <BookSeries className={clsx(['w-full'])} value={node.content} />
-              )}
+              {node.type === 'author' &&
+                <Author className={clsx(['w-full'])} value={node.content} />}
+              {node.type === 'book' &&
+                <Book className={clsx(['w-full'])} value={node.content} />}
+              {node.type === 'bookSeries' &&
+                (
+                  <BookSeries
+                    className={clsx(['w-full'])}
+                    value={node.content}
+                  />
+                )}
             </div>
           ))}
         </div>
@@ -45,9 +47,10 @@ export const Component: React.VFC<{
   );
 };
 
-export const Suggestions: React.VFC<{className?: string}> = ({...props}) => {
+export const Suggestions: React.VFC<{className?: string;}> = ({...props}) => {
   const {suggestions} = useContext(SearchBoxContext);
 
-  if (!suggestions) return <></>;
+  if (!suggestions)
+    return <></>;
   return <Component {...props} suggestions={suggestions} />;
 };

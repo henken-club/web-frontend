@@ -3,12 +3,11 @@
   "extends": [
     "plugin:@shopify/typescript",
     "plugin:@shopify/react",
-    "plugin:@next/next/recommended",
-    "plugin:@shopify/prettier"
+    "plugin:@next/next/recommended"
   ],
   "plugins": ["unused-imports"],
   "rules": {
-    "unused-imports/no-unused-imports": [2],
+    "curly": [0, "multi-or-nest"],
     "jsx-a11y/label-has-for": 0,
     "jsx-a11y/label-has-associated-control": [2],
     "jsx-a11y/anchor-is-valid": [
@@ -20,7 +19,22 @@
       }
     ],
     "@typescript-eslint/consistent-type-definitions": [2, "type"],
-    "@typescript-eslint/consistent-indexed-object-style": [2, "record"]
+    "@typescript-eslint/consistent-indexed-object-style": [2, "record"],
+    "@typescript-eslint/member-delimiter-style": [2, {
+      "multiline": { "delimiter": "semi", "requireLast": true },
+      "singleline": { "delimiter": "semi", "requireLast": true }
+    }],
+    "unused-imports/no-unused-imports": [2],
+    // quotes
+    "quotes": [0],
+    "@typescript-eslint/quotes": [2, "single"],
+    // curly-spacing
+    "object-curly-spacing": 0,
+    "babel/object-curly-spacing": 0,
+    "@typescript-eslint/object-curly-spacing": [2],
+    // no-extra-parens
+    "no-extra-parens": 0,
+    "@typescript-eslint/no-extra-parens": [2, "functions"]
   },
   "overrides": [
     {

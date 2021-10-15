@@ -11,8 +11,8 @@ generates:
 
   ./src/auth/codegen.ts:
     documents:
-      - 'src/auth/**/*.{ts,tsx}'
-      - '!src/auth/**/*.codegen.ts'
+      - "src/auth/**/*.{ts,tsx}"
+      - "!src/auth/**/*.codegen.ts"
     plugins:
       - typescript
       - typescript-operations
@@ -23,8 +23,8 @@ generates:
 
   ./src/components/codegen.ts:
     documents:
-      - 'src/components/**/*.{ts,tsx}'
-      - '!src/components/**/*.codegen.ts'
+      - "src/components/**/*.{ts,tsx}"
+      - "!src/components/**/*.codegen.ts"
     plugins:
       - typescript
       - typescript-operations
@@ -67,9 +67,9 @@ generates:
 
   ./src/mocks/codegen.ts:
     documents:
-      - 'src/**/*.{ts,tsx}'
-      - '!src/**/codegen.ts'
-      - '!src/**/*.codegen.ts'
+      - "src/**/*.{ts,tsx}"
+      - "!src/**/codegen.ts"
+      - "!src/**/*.codegen.ts"
     plugins:
       - typescript
       - typescript-operations

@@ -3,11 +3,13 @@ import React from 'react';
 
 import {HeaderNav} from '~/components/HeaderNav';
 
-export const PageContainer: React.FC<{className?: string}> = ({
+export const PageContainer: React.FC<{className?: string;}> = ({
   children,
   className,
 }) => (
-  <div className={clsx(className, ['container', ['mx-auto']])}>{children}</div>
+  <div className={clsx(className, ['container', ['mx-auto']])}>
+    {children}
+  </div>
 );
 
 export const DefaultLayout: React.FC = ({children}) => (

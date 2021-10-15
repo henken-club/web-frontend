@@ -2,8 +2,8 @@ import faker from 'faker';
 
 import {serializer} from './index.serializer';
 
-import {factoryUserPage} from '~/mocks/factories/UserPage';
 import {alias} from '~/mocks/factories/common';
+import {factoryUserPage} from '~/mocks/factories/UserPage';
 
 describe('index.serializer', () => {
   describe('serializer', () => {

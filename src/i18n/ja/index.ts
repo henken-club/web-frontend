@@ -29,8 +29,7 @@ const ja: BaseTranslation = {
 
   RegisterForm: {
     Title: 'ユーザー登録',
-    Description:
-      '本サービスの利用にはユーザー登録をする必要がありますが、後ですることも出来ます。',
+    Description: '本サービスの利用にはユーザー登録をする必要がありますが、後ですることも出来ます。',
     Alias: 'エイリアス',
     DisplayName: '表示名',
     Avatar: 'プロフィール画像',
