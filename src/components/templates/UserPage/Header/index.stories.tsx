@@ -2,29 +2,24 @@ import {Meta, Story} from '@storybook/react';
 import React, {ComponentProps, ContextType} from 'react';
 import {action} from '@storybook/addon-actions';
 
-import {UserPageProfileContext} from './context';
+import {UserPageHeaderContext} from './context';
 
 import {Component} from '.';
 
 export default {
-  title: 'UserPage/Profile',
+  title: 'UserPage/Header',
   component: Component,
-  argTypes: {
-    isFollowing: {table: {disable: true}},
-    canPostHenken: {table: {disable: true}},
+  parameters: {
+    layout: 'fullscreen',
   },
+  argTypes: {},
 } as Meta;
 
 type StoryProps = ComponentProps<typeof Component> & {
-  contextValue: ContextType<typeof UserPageProfileContext>;
+  contextValue: ContextType<typeof UserPageHeaderContext>;
 };
 
 const commonArgs = {
-  contextValue: {
-    follow: action('follow'),
-    callPostHenkenPopup: action('callPostHenkenPopup'),
-    callUnfollowPopup: action('callUnfollowPopup'),
-  },
   id: '1',
   alias: 'alias',
   displayName: 'displayName',
@@ -143,71 +138,32 @@ const commonArgs = {
   },
 };
 
-export const NotFollowingAndCannotPostHenken: Story<StoryProps> = ({
-  contextValue,
-  ...args
-}) => {
+export const LoggedIn: Story<StoryProps> = ({contextValue, ...args}) => {
   return (
-    <UserPageProfileContext.Provider value={contextValue}>
+    <UserPageHeaderContext.Provider value={contextValue}>
       <Component {...args} />
-    </UserPageProfileContext.Provider>
+    </UserPageHeaderContext.Provider>
   );
 };
-NotFollowingAndCannotPostHenken.storyName =
-  'フォローはしていないし，偏見も送れない';
-NotFollowingAndCannotPostHenken.args = {
+LoggedIn.storyName = 'ログインしている';
+LoggedIn.args = {
   ...commonArgs,
-  isFollowing: false,
-  canPostHenken: false,
+  contextValue: {
+    follow: action('follow'),
+    callUnfollowPopup: action('callUnfollowPopup'),
+  },
+  viewer: {
+    isFollowing: true,
+    isFollowed: true,
+    canPostHenken: true,
+  },
 };
 
-export const NotFollowingButCanPostHenken: Story<StoryProps> = ({
-  contextValue,
-  ...args
-}) => {
-  return (
-    <UserPageProfileContext.Provider value={contextValue}>
-      <Component {...args} />
-    </UserPageProfileContext.Provider>
-  );
+export const NotLoggedIn: Story<StoryProps> = ({contextValue, ...args}) => {
+  return <Component {...args} />;
 };
-NotFollowingButCanPostHenken.storyName = 'フォローはしていないが，偏見を送れる';
-NotFollowingButCanPostHenken.args = {
+NotLoggedIn.storyName = 'ログインしていない';
+NotLoggedIn.args = {
   ...commonArgs,
-  isFollowing: false,
-  canPostHenken: true,
-};
-
-export const FollowingButCannotPostHenken: Story<StoryProps> = ({
-  contextValue,
-  ...args
-}) => {
-  return (
-    <UserPageProfileContext.Provider value={contextValue}>
-      <Component {...args} />
-    </UserPageProfileContext.Provider>
-  );
-};
-FollowingButCannotPostHenken.storyName = 'フォロー中だが，偏見を送れない';
-FollowingButCannotPostHenken.args = {
-  ...commonArgs,
-  isFollowing: true,
-  canPostHenken: false,
-};
-
-export const FollowingAndCanPostHenken: Story<StoryProps> = ({
-  contextValue,
-  ...args
-}) => {
-  return (
-    <UserPageProfileContext.Provider value={contextValue}>
-      <Component {...args} />
-    </UserPageProfileContext.Provider>
-  );
-};
-FollowingAndCanPostHenken.storyName = 'フォロー中かつ，偏見を送れる';
-FollowingAndCanPostHenken.args = {
-  ...commonArgs,
-  isFollowing: true,
-  canPostHenken: true,
+  viewer: undefined,
 };

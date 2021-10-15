@@ -162,6 +162,7 @@ Authenticated.args = {
   contextValue: {
     loggedIn: true,
     isFollowing: true,
+    isFollowed: true,
     canPostsHenken: true,
     follow: action('follow'),
     unfollow: action('unfollow'),

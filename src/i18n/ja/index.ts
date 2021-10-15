@@ -56,6 +56,10 @@ const ja: BaseTranslation = {
   },
 
   UserPage: {
+    Header: {
+      IsFollowed: 'フォローされています',
+      CanPostHenken: '偏見を送れます',
+    },
     Profile: {
       CannotPostHenken: '偏見を送れません',
       Following: 'フォロー中です',

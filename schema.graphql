@@ -370,6 +370,7 @@ type User implements Node {
   followees(after: String, before: String, first: Int, last: Int, orderBy: FollowingOrder!): FollowingConnection!
   followers(after: String, before: String, first: Int, last: Int, orderBy: FollowingOrder!): FollowingConnection!
   id: ID!
+  isFollowed(id: ID!): Boolean!
   isFollowing(id: ID!): Boolean!
   postsAnswers(after: String, before: String, filter: UserPostsAnswersFilter, first: Int, last: Int, orderBy: AnswerOrder!): AnswerConnection!
   postsHenkens(after: String, before: String, filter: UserPostsHenkensFilter, first: Int, last: Int, orderBy: HenkenOrder!): HenkenConnection!

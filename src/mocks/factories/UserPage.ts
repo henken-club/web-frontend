@@ -178,6 +178,7 @@ export const factoryUserPageWithViewer = (
   viewer: {
     __typename: 'User',
     isFollowing: boolean(),
+    isFollowed: boolean(),
     canPostHenken: boolean(),
   },
 });

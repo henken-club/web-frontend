@@ -15,6 +15,7 @@ const UserPageWithViewer = gql`
   query UserPageWithViewer($id: ID!) {
     viewer {
       isFollowing(id: $id)
+      isFollowed(id: $id)
       canPostHenken(id: $id)
     }
   }
@@ -29,7 +30,7 @@ export const Component: React.VFC<{
   return (
     <div className={clsx()}>
       <Header
-        className={clsx(['w-full'], ['bg-blue-100'])}
+        className={clsx(['w-full'])}
         user={{
           id: user.id,
           alias: user.alias,
@@ -109,12 +110,15 @@ export const TemplateUserPage: React.VFC<{
       return {
         loggedIn: true,
         isFollowing: result.data.viewer.isFollowing,
+        isFollowed: result.data.viewer.isFollowed,
         canPostsHenken: result.data.viewer.canPostHenken,
         follow: () => {},
         unfollow: () => {},
         postHenken: () => {},
       };
-    return {loggedIn: false};
+    return {
+      loggedIn: false,
+    };
   }, [result.data?.viewer]);
 
   return (

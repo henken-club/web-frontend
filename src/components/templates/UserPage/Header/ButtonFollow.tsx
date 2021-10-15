@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, {useContext} from 'react';
 
-import {UserPageProfileContext} from './context';
+import {UserPageHeaderContext} from './context';
 
 import {IconFollow} from '~/components/Icon';
 import {useTranslation} from '~/i18n/useTranslation';
@@ -16,6 +16,7 @@ export const Component: React.VFC<{className?: string; follow(): void}> = ({
       type="button"
       className={clsx(
         className,
+        [['px-2'], ['py-2']],
         ['inline-flex', ['justify-center'], ['items-center']],
         ['bg-blue-400', 'hover:bg-blue-600'],
         [['text-white']],
@@ -23,8 +24,8 @@ export const Component: React.VFC<{className?: string; follow(): void}> = ({
       )}
       onClick={() => follow()}
     >
-      <IconFollow className={clsx(['text-sm'])} />
-      <span className={clsx(['ml-2'], ['text-base'])}>
+      <IconFollow className={clsx(['text-xs'])} />
+      <span className={clsx(['ml-1'], ['text-sm'])}>
         {LL.UserPage.Profile.Follow()}
       </span>
     </button>
@@ -32,7 +33,7 @@ export const Component: React.VFC<{className?: string; follow(): void}> = ({
 };
 
 export const FollowButton: React.VFC<{className?: string}> = ({...props}) => {
-  const {follow} = useContext(UserPageProfileContext);
+  const {follow} = useContext(UserPageHeaderContext);
 
   return <Component {...props} follow={follow} />;
 };
