@@ -17,13 +17,13 @@ Object {
       "id": "20592939-6fea-4759-aeb1-0faaa2352c59",
       "postedBy": Object {
         "alias": "eligendi",
-        "avatar": "https://cdn.fakercloud.com/avatars/lmjabreu_128.jpg",
+        "avatar": "/.mock/avatar_7.png",
         "displayName": "Kenna",
         "id": "9da1ffe7-8f09-47b0-874f-15471b5e6e13",
       },
       "postsTo": Object {
         "alias": "qui",
-        "avatar": "https://cdn.fakercloud.com/avatars/andrewcohen_128.jpg",
+        "avatar": "/.mock/avatar_2.png",
         "displayName": "Adrain",
         "id": "07aff1a3-a2fa-4946-b739-251aa52c3f5a",
       },
@@ -43,7 +43,7 @@ Object {
       "comment": "magni cupiditate sit",
       "content": Object {
         "book": Object {
-          "cover": null,
+          "cover": "/.mock/bookcover_1.jpg",
           "id": "5ec6ef0a-7911-4cf1-b59f-663cec940c92",
           "title": "voluptas culpa non",
         },
@@ -52,13 +52,13 @@ Object {
       "id": "3b452acd-600c-49fa-b447-c31177e14e41",
       "postedBy": Object {
         "alias": "ut",
-        "avatar": "https://cdn.fakercloud.com/avatars/derekebradley_128.jpg",
+        "avatar": "/.mock/avatar_4.png",
         "displayName": "Norberto",
         "id": "cf09ee82-72ec-4668-aae5-59cab2eb9ac5",
       },
       "postsTo": Object {
         "alias": "nam",
-        "avatar": "https://cdn.fakercloud.com/avatars/kerihenare_128.jpg",
+        "avatar": "/.mock/avatar_7.png",
         "displayName": "Brook",
         "id": "1ae3e447-9099-492f-94b3-186fb7680c80",
       },
@@ -78,7 +78,7 @@ Object {
       "comment": "tenetur quibusdam perspiciatis",
       "content": Object {
         "book": Object {
-          "cover": null,
+          "cover": "/.mock/bookcover_4.jpg",
           "id": "e6d568af-5165-4f0a-bfac-336ea9ac28ef",
           "title": "omnis in dolores",
         },
@@ -87,13 +87,13 @@ Object {
       "id": "c8a69cf9-122b-4df8-83ef-55946c65c784",
       "postedBy": Object {
         "alias": "iure",
-        "avatar": "https://cdn.fakercloud.com/avatars/justinrgraham_128.jpg",
+        "avatar": "/.mock/avatar_6.png",
         "displayName": "Oceane",
         "id": "efb788e5-8496-46de-b06b-05c3459e05a8",
       },
       "postsTo": Object {
         "alias": "ex",
-        "avatar": "https://cdn.fakercloud.com/avatars/adamawesomeface_128.jpg",
+        "avatar": "/.mock/avatar_1.png",
         "displayName": "Nolan",
         "id": "d1f5dd86-30b3-461e-bff8-cb9bc72f4685",
       },
@@ -113,7 +113,7 @@ Object {
       "comment": "blanditiis architecto quia",
       "content": Object {
         "book": Object {
-          "cover": null,
+          "cover": "/.mock/bookcover_2.jpg",
           "id": "585b846e-dd9b-4e7c-95bc-aeeca45e883d",
           "title": "consectetur ut est",
         },
@@ -122,13 +122,13 @@ Object {
       "id": "66616ac8-b503-4569-bb49-437ada9d4c45",
       "postedBy": Object {
         "alias": "tenetur",
-        "avatar": "https://cdn.fakercloud.com/avatars/nathalie_fs_128.jpg",
+        "avatar": "/.mock/avatar_9.png",
         "displayName": "Malvina",
         "id": "cf530b7a-0b87-4e93-9e14-322f1b2c8131",
       },
       "postsTo": Object {
         "alias": "veritatis",
-        "avatar": "https://cdn.fakercloud.com/avatars/d_nny_m_cher_128.jpg",
+        "avatar": "/.mock/avatar_3.png",
         "displayName": "Eliza",
         "id": "c318d1b7-755b-48b7-bcb5-5da7589d5872",
       },
@@ -156,13 +156,13 @@ Object {
       "id": "0238382a-563a-466a-93c2-296587a54184",
       "postedBy": Object {
         "alias": "sint",
-        "avatar": "https://cdn.fakercloud.com/avatars/looneydoodle_128.jpg",
+        "avatar": "/.mock/avatar_7.png",
         "displayName": "Tobin",
         "id": "19031b3e-c819-411f-8229-9f55c00814ad",
       },
       "postsTo": Object {
         "alias": "mollitia",
-        "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+        "avatar": "/.mock/avatar_2.png",
         "displayName": "Marcellus",
         "id": "e53ac327-12ae-4f65-9e6b-e56e569ddbdb",
       },
@@ -190,13 +190,13 @@ Object {
       "id": "909950b8-daef-404b-8ad3-eb0979f162d5",
       "postedBy": Object {
         "alias": "ut",
-        "avatar": "https://cdn.fakercloud.com/avatars/angelceballos_128.jpg",
+        "avatar": "/.mock/avatar_2.png",
         "displayName": "Fermin",
         "id": "983c20d3-d5a3-42c2-95af-739efef11cdf",
       },
       "postsTo": Object {
         "alias": "ea",
-        "avatar": "https://cdn.fakercloud.com/avatars/_yardenoon_128.jpg",
+        "avatar": "/.mock/avatar_1.png",
         "displayName": "Henry",
         "id": "3710e141-740f-44a3-9f96-a6c4e3ebde1a",
       },
@@ -224,13 +224,13 @@ Object {
       "id": "b9bbcee5-d446-4bb6-b76b-f57e5bb31a60",
       "postedBy": Object {
         "alias": "et",
-        "avatar": "https://cdn.fakercloud.com/avatars/kennyadr_128.jpg",
+        "avatar": "/.mock/avatar_7.png",
         "displayName": "Jaydon",
         "id": "fd8a827b-6063-44e0-a629-a82aa14a0cf3",
       },
       "postsTo": Object {
         "alias": "ea",
-        "avatar": "https://cdn.fakercloud.com/avatars/petebernardo_128.jpg",
+        "avatar": "/.mock/avatar_9.png",
         "displayName": "Tyson",
         "id": "748327c5-9b33-4658-9898-e7fade279674",
       },
@@ -250,7 +250,7 @@ Object {
       "comment": "quod ullam nihil",
       "content": Object {
         "book": Object {
-          "cover": null,
+          "cover": "/.mock/bookcover_4.jpg",
           "id": "7817cc7e-3aec-44f3-85e6-4372c6bd2caa",
           "title": "quasi dolores ex",
         },
@@ -259,13 +259,13 @@ Object {
       "id": "554d7cf5-2924-4178-94a4-5e76b66fec25",
       "postedBy": Object {
         "alias": "est",
-        "avatar": "https://cdn.fakercloud.com/avatars/rpatey_128.jpg",
+        "avatar": "/.mock/avatar_10.png",
         "displayName": "Sanford",
         "id": "7da7add2-8407-41bc-b62a-58564c2f6478",
       },
       "postsTo": Object {
         "alias": "delectus",
-        "avatar": "https://cdn.fakercloud.com/avatars/uxalex_128.jpg",
+        "avatar": "/.mock/avatar_12.png",
         "displayName": "Bud",
         "id": "869aa846-60a1-47bc-8abb-f7af024a983d",
       },
@@ -285,7 +285,7 @@ Object {
       "comment": "ducimus autem amet",
       "content": Object {
         "book": Object {
-          "cover": null,
+          "cover": "/.mock/bookcover_3.jpg",
           "id": "399d889f-4b62-4896-84ce-c6432ea602c1",
           "title": "quas et repellat",
         },
@@ -294,13 +294,13 @@ Object {
       "id": "af452614-ac1a-471a-92ca-007ec3f99402",
       "postedBy": Object {
         "alias": "voluptatum",
-        "avatar": "https://cdn.fakercloud.com/avatars/juangomezw_128.jpg",
+        "avatar": "/.mock/avatar_6.png",
         "displayName": "Rashawn",
         "id": "c2f819bb-f4b6-47d1-9cb0-81d3b5de3747",
       },
       "postsTo": Object {
         "alias": "iusto",
-        "avatar": "https://cdn.fakercloud.com/avatars/j04ntoh_128.jpg",
+        "avatar": "/.mock/avatar_6.png",
         "displayName": "Donavon",
         "id": "7a43d2d8-b17b-48fa-b75b-97a98a770010",
       },
@@ -328,13 +328,13 @@ Object {
       "id": "a39dce0c-9517-4296-b972-6edf2eb6b4e5",
       "postedBy": Object {
         "alias": "ut",
-        "avatar": "https://cdn.fakercloud.com/avatars/colgruv_128.jpg",
+        "avatar": "/.mock/avatar_3.png",
         "displayName": "Amos",
         "id": "c50737b6-5383-403d-b868-9d7065b98242",
       },
       "postsTo": Object {
         "alias": "autem",
-        "avatar": "https://cdn.fakercloud.com/avatars/ceekaytweet_128.jpg",
+        "avatar": "/.mock/avatar_3.png",
         "displayName": "Stewart",
         "id": "0a274060-a23c-4222-a15a-7db5c04ce701",
       },
