@@ -47,3 +47,7 @@ export const IconBook = (props) => (
 export const IconBookSeries = (props) => (
   <FontAwesomeIcon fixedWidth icon={solid('bars-staggered')} {...props} />
 );
+
+export const IconFollow = (props) => (
+  <FontAwesomeIcon fixedWidth icon={solid('user-plus')} {...props} />
+);

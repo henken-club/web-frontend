@@ -13,7 +13,9 @@
     "henken",
     "henkens",
     "reexecute",
-    "typesafe"
+    "typesafe",
+    "unfollow",
+    "viewports"
   ],
   "ignoreWords": ["fontawesome", "fortawesome", "urql", "nextjs", "clsx"]
 }
