@@ -4,7 +4,7 @@ import React, {ComponentProps} from 'react';
 import {Component} from './Author';
 
 export default {
-  title: 'SearchBox/Suggestions/Author',
+  title: 'HeaderNav/SearchBox/Suggestions/Author',
   component: Component,
   argTypes: {
     registering: {table: {disable: true}},

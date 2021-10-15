@@ -6,9 +6,9 @@ import {Personal} from './Personal';
 
 import {useAuth} from '~/auth/useAuth';
 import {useViewer} from '~/auth/useViewer';
+import {SearchBox} from '~/components/HeaderNav/SearchBox';
 import {LinkIndex} from '~/components/Link';
 import {useRegisterForm} from '~/components/RegisterForm/useRegisterForm';
-import {SearchBox} from '~/components/SearchBox';
 import {useTranslation} from '~/i18n/useTranslation';
 
 export type ComponentProps = {className?: string; focusing: boolean;};

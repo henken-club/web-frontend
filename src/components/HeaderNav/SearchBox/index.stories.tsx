@@ -7,7 +7,7 @@ import {SearchBoxContext} from './context';
 import {Component} from '.';
 
 export default {
-  title: 'SearchBox',
+  title: 'HeaderNav/SearchBox',
   component: Component,
   argTypes: {
     registering: {table: {disable: true}},

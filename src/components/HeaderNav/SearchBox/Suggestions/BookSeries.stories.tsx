@@ -1,10 +1,10 @@
 import {Meta, Story} from '@storybook/react';
 import React, {ComponentProps} from 'react';
 
-import {Component} from './Book';
+import {Component} from './BookSeries';
 
 export default {
-  title: 'SearchBox/Suggestions/Book',
+  title: 'HeaderNav/SearchBox/Suggestions/BookSeries',
   component: Component,
   argTypes: {
     registering: {table: {disable: true}},
@@ -17,10 +17,6 @@ export const Primary: Story<StoryProps> = (args) => {
   return <Component {...args} />;
 };
 Primary.args = {
-  id: 'book',
-  title: 'Book_title',
-  authors: [
-    {id: 'book-author-1', name: 'Author1'},
-    {id: 'book-author-2', name: 'Author2'},
-  ],
+  id: 'book_series',
+  title: 'BookSeries_title',
 };
