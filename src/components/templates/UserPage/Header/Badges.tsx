@@ -38,7 +38,6 @@ export const Component: React.VFC<{
   <div
     className={clsx(
       className,
-      ['h-12', 'sm:h-6'],
       [
         'inline-flex',
         ['flex-col', 'sm:flex-row'],

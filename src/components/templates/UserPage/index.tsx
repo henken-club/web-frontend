@@ -42,7 +42,7 @@ export const Component: React.VFC<{
       />
       <div
         className={clsx(
-          [['px-4'], ['py-4']],
+          [['py-4']],
           ['flex', ['flex-col', 'lg:flex-row']],
           [['space-y-4', 'lg:space-y-0'], ['lg:space-x-4']],
         )}
